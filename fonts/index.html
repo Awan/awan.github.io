@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Abdullah">
+<meta name="description" content="I have been using different distributions in my machines. A term which is called in our linux community distrohopping. On different distributions/machines, it&amp;rsquo;s pain to collect packages you can&amp;rsquo;t live without. For me and maybe for you too, the fonts are the part of OS which at least I care about the most.
+Fonts path Different linux distributions package fonts in with different names. So I decided to add the fonts to my dotfiles." />
+<meta name="keywords" content="linux, archlinux, abdullah, ak, bspwm, window manager, dwm, polybar, fonts, linux, fontconfig, fontset, xset, xrdb, xresources, xdefaults" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://abdullah.today/fonts/" />
+
+
+    <title>
+        
+            How to install fonts in Linux :: Abdullah Turabi  — Abdullah Turabi
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://abdullah.today/main.dede02da9537a98158079c023e83573e18127834838ef08172acce888341a797.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/favicon-16x16.png">
+    <link rel="manifest" href="https://abdullah.today/site.webmanifest">
+    <link rel="mask-icon" href="https://abdullah.today/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://abdullah.today/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="How to install fonts in Linux">
+<meta itemprop="description" content="Fonts">
+<meta itemprop="datePublished" content="2019-09-18T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="648">
+<meta itemprop="image" content="https://abdullah.today/"/>
+
+
+
+<meta itemprop="keywords" content="fonts,linux,fontconfig,fontset,xset,xrdb,xresources,xdefaults," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/"/>
+
+<meta name="twitter:title" content="How to install fonts in Linux"/>
+<meta name="twitter:description" content="Fonts"/>
+
+
+
+    <meta property="og:title" content="How to install fonts in Linux" />
+<meta property="og:description" content="Fonts" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/fonts/" />
+<meta property="og:image" content="https://abdullah.today/"/>
+<meta property="article:published_time" content="2019-09-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-18T00:00:00+00:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2019-09-18 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://abdullah.today/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://abdullah.today/images/icons/safari-pinned-tab.svg" color="#6cd55b">
+<link rel="shortcut icon" href="https://abdullah.today/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="msapplication-TileImage" content="https://abdullah.today/images/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="https://abdullah.today/images/icons/browserconfig.xml">
+<meta name="theme-color" content="#3c9159">
+
+
+<script data-ad-client="ca-pub-6819322586059940" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://abdullah.today/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Allah o Akbar Kabeera!</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://abdullah.today/about/">About</a></li><li><a href="https://abdullah.today/posts/">Blog</a></li><li><a href="https://abdullah.today/quran/">Quran</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>4 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://abdullah.today/fonts/">How to install fonts in Linux</a>
+            </h1>
+                <hr />
+                <aside id="toc">
+                <div class="toc-title">Table of Contents</div>
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#fonts-path">Fonts path</a></li>
+    <li><a href="#how-to-get-fonts">How to get fonts?</a></li>
+    <li><a href="#loadreload-fonts">Load/reload fonts</a></li>
+    <li><a href="#autoload-fonts-on-boot">Autoload fonts on boot</a></li>
+  </ul>
+</nav>
+                </aside>
+                <hr />
+
+            
+
+            <div class="post-content">
+                <p>I have been using different distributions in my machines. A term which is called in our linux community <!-- raw HTML omitted -->distrohopping<!-- raw HTML omitted -->.
+On different distributions/machines, it&rsquo;s pain to collect packages you can&rsquo;t live without. For me and maybe for you too, the fonts are the part of OS which at least I care about the most.</p>
+<h2 id="fonts-path">Fonts path</h2>
+<p>Different linux distributions package fonts in with different names. So I decided to add the fonts to my dotfiles. And yeah now I&rsquo;m happy. On any new machine/installation, I don&rsquo;t need to install those fonts.</p>
+<p>Here is the path I have added the fonts which almost all distributions accept today. And it&rsquo;s easy to maintain them too.</p>
+<pre><code>$ ls ~/.local/share/fonts
+ awesome                                  Tamzen7x13b.pt3
+ brands                                   Tamzen7x13b.ttf
+ DejaVuMathTeXGyre.ttf                    Tamzen7x13r-13.fnt
+ DejaVuSans-BoldOblique.ttf               Tamzen7x13r.afm
+ DejaVuSans-Bold.ttf                      Tamzen7x13r.bdf
+ DejaVuSansCondensed-BoldOblique.ttf      Tamzen7x13r.dfont
+ DejaVuSansCondensed-Bold.ttf             Tamzen7x13r.pcf
+ DejaVuSansCondensed-Oblique.ttf          Tamzen7x13r.png
+ DejaVuSansCondensed.ttf                  Tamzen7x13r.pt3
+ DejaVuSans-ExtraLight.ttf                Tamzen7x13r.ttf
+ DejaVuSansMono-BoldOblique.ttf           Tamzen7x14b-14.fnt
+ DejaVuSansMono-Bold.ttf                  Tamzen7x14b.afm
+ DejaVuSansMono-Oblique.ttf               Tamzen7x14b.bdf
+ DejaVuSansMono.ttf                       Tamzen7x14b.dfont
+ DejaVuSans-Oblique.ttf                   Tamzen7x14b.pcf
+ DejaVuSans.ttf                           Tamzen7x14b.png
+ DejaVuSerif-BoldItalic.ttf               Tamzen7x14b.pt3
+ DejaVuSerif-Bold.ttf                     Tamzen7x14b.ttf
+ DejaVuSerifCondensed-BoldItalic.ttf      Tamzen7x14r-14.fnt
+ DejaVuSerifCondensed-Bold.ttf            Tamzen7x14r.afm
+ DejaVuSerifCondensed-Italic.ttf          Tamzen7x14r.bdf
+ DejaVuSerifCondensed.ttf                 Tamzen7x14r.dfont
+ DejaVuSerif-Italic.ttf                   Tamzen7x14r.pcf
+ DejaVuSerif.ttf                          Tamzen7x14r.png
+ devicons-regular.sh                      Tamzen7x14r.pt3
+ devicons-regular.ttf                     Tamzen7x14r.ttf
+ DroidSansFallbackFull.ttf                Tamzen8x15b-15.fnt
+'Font Awesome 5 Brands-Regular-400.otf'   Tamzen8x15b.afm
+'Font Awesome 5 Free-Regular-400.otf'     Tamzen8x15b.bdf
+'Font Awesome 5 Free-Solid-900.otf'       Tamzen8x15b.dfont
+ fontawesome-regular.sh                   Tamzen8x15b.pcf
+ fontawesome-regular.ttf                  Tamzen8x15b.png
+ fontawesome-webfont.ttf                  Tamzen8x15b.pt3
+ fonts.dir                                Tamzen8x15b.ttf
+ Lato-BlackItalic.ttf                     Tamzen8x15r-15.fnt
+ Lato-Black.ttf                           Tamzen8x15r.afm
+ Lato-BoldItalic.ttf                      Tamzen8x15r.bdf
+ Lato-Bold.ttf                            Tamzen8x15r.dfont
+ Lato-HairlineItalic.ttf                  Tamzen8x15r.pcf
+ Lato-Hairline.ttf                        Tamzen8x15r.png
+ Lato-HeavyItalic.ttf                     Tamzen8x15r.pt3
+ Lato-Heavy.ttf                           Tamzen8x15r.ttf
+ Lato-Italic.ttf                          Tamzen8x16b-16.fnt
+ Lato-LightItalic.ttf                     Tamzen8x16b.afm
+ Lato-Light.ttf                           Tamzen8x16b.bdf
+ Lato-MediumItalic.ttf                    Tamzen8x16b.dfont
+ Lato-Medium.ttf                          Tamzen8x16b.pcf
+ Lato-Regular.ttf                         Tamzen8x16b.png
+ Lato-SemiboldItalic.ttf                  Tamzen8x16b.pt3
+ Lato-Semibold.ttf                        Tamzen8x16b.ttf
+ Lato-ThinItalic.ttf                      Tamzen8x16r-16.fnt
+ Lato-Thin.ttf                            Tamzen8x16r.afm
+ LiberationMono-BoldItalic.ttf            Tamzen8x16r.bdf
+ LiberationMono-Bold.ttf                  Tamzen8x16r.dfont
+ LiberationMono-Italic.ttf                Tamzen8x16r.pcf
+ LiberationMono-Regular.ttf               Tamzen8x16r.png
+ LiberationSans-BoldItalic.ttf            Tamzen8x16r.pt3
+ LiberationSans-Bold.ttf                  Tamzen8x16r.ttf
+ LiberationSans-Italic.ttf                TamzenForPowerline10x20b-20.fnt
+ LiberationSansNarrow-BoldItalic.ttf      TamzenForPowerline10x20b.afm
+ LiberationSansNarrow-Bold.ttf            TamzenForPowerline10x20b.bdf
+ LiberationSansNarrow-Italic.ttf          TamzenForPowerline10x20b.dfont
+ LiberationSansNarrow-Regular.ttf         TamzenForPowerline10x20b.pcf
+ LiberationSans-Regular.ttf               TamzenForPowerline10x20b.png
+ LiberationSerif-BoldItalic.ttf           TamzenForPowerline10x20b.pt3
+ LiberationSerif-Bold.ttf                 TamzenForPowerline10x20r-20.fnt
+ LiberationSerif-Italic.ttf               TamzenForPowerline10x20r.afm
+ LiberationSerif-Regular.ttf              TamzenForPowerline10x20r.bdf
+ NafeesWeb.ttf                            TamzenForPowerline10x20r.dfont
+ NotoMono-Regular.ttf                     TamzenForPowerline10x20r.pcf
+ octicons-regular.sh                      TamzenForPowerline10x20r.png
+ octicons-regular.ttf                     TamzenForPowerline10x20r.pt3
+ pomicons-regular.sh                      TamzenForPowerline5x9b-9.fnt
+ pomicons-regular.ttf                     TamzenForPowerline5x9b.afm
+ Powerline10x20.bdf                       TamzenForPowerline5x9b.bdf
+ Powerline5x9.bdf                         TamzenForPowerline5x9b.dfont
+ Powerline6x12.bdf                        TamzenForPowerline5x9b.pcf
+ Powerline7x13.bdf                        TamzenForPowerline5x9b.png
+ Powerline7x14.bdf                        TamzenForPowerline5x9b.pt3
+ Powerline8x15.bdf                        TamzenForPowerline5x9r-9.fnt
+ Powerline8x16.bdf                        TamzenForPowerline5x9r.afm
+ regular                                  TamzenForPowerline5x9r.bdf
+ siji.pcf                                 TamzenForPowerline5x9r.dfont
+ solid                                    TamzenForPowerline5x9r.pcf
+ Symbola_Hinted.ttf                       TamzenForPowerline5x9r.png
+ Symbola.ttf                              TamzenForPowerline5x9r.pt3
+ Tamsyn10x20b.pcf                         TamzenForPowerline6x12b-12.fnt
+ Tamsyn10x20b.psf.gz                      TamzenForPowerline6x12b.afm
+ Tamsyn10x20r.pcf                         TamzenForPowerline6x12b.bdf
+ Tamsyn10x20r.psf.gz                      TamzenForPowerline6x12b.dfont
+ Tamsyn5x9b.pcf                           TamzenForPowerline6x12b.pcf
+ Tamsyn5x9b.psf.gz                        TamzenForPowerline6x12b.png
+ Tamsyn5x9r.pcf                           TamzenForPowerline6x12b.pt3
+ Tamsyn5x9r.psf.gz                        TamzenForPowerline6x12r-12.fnt
+ Tamsyn6x12b.pcf                          TamzenForPowerline6x12r.afm
+ Tamsyn6x12b.psf.gz                       TamzenForPowerline6x12r.bdf
+ Tamsyn6x12r.pcf                          TamzenForPowerline6x12r.dfont
+ Tamsyn6x12r.psf.gz                       TamzenForPowerline6x12r.pcf
+ Tamsyn7x13b.pcf                          TamzenForPowerline6x12r.png
+ Tamsyn7x13b.psf.gz                       TamzenForPowerline6x12r.pt3
+ Tamsyn7x13r.pcf                          TamzenForPowerline7x13b-13.fnt
+ Tamsyn7x13r.psf.gz                       TamzenForPowerline7x13b.afm
+ Tamsyn7x14b.pcf                          TamzenForPowerline7x13b.bdf
+ Tamsyn7x14b.psf.gz                       TamzenForPowerline7x13b.dfont
+ Tamsyn7x14r.pcf                          TamzenForPowerline7x13b.pcf
+ Tamsyn7x14r.psf.gz                       TamzenForPowerline7x13b.png
+ Tamsyn8x15b.pcf                          TamzenForPowerline7x13b.pt3
+ Tamsyn8x15b.psf.gz                       TamzenForPowerline7x13r-13.fnt
+ Tamsyn8x15r.pcf                          TamzenForPowerline7x13r.afm
+ Tamsyn8x15r.psf.gz                       TamzenForPowerline7x13r.bdf
+ Tamsyn8x16b.pcf                          TamzenForPowerline7x13r.dfont
+ Tamsyn8x16b.psf.gz                       TamzenForPowerline7x13r.pcf
+ Tamsyn8x16r.pcf                          TamzenForPowerline7x13r.png
+ Tamsyn8x16r.psf.gz                       TamzenForPowerline7x13r.pt3
+ Tamzen10x20b-20.fnt                      TamzenForPowerline7x14b-14.fnt
+ Tamzen10x20b.afm                         TamzenForPowerline7x14b.afm
+ Tamzen10x20b.bdf                         TamzenForPowerline7x14b.bdf
+ Tamzen10x20b.dfont                       TamzenForPowerline7x14b.dfont
+ Tamzen10x20b.pcf                         TamzenForPowerline7x14b.pcf
+ Tamzen10x20b.png                         TamzenForPowerline7x14b.png
+ Tamzen10x20b.pt3                         TamzenForPowerline7x14b.pt3
+ Tamzen10x20b.ttf                         TamzenForPowerline7x14r-14.fnt
+ Tamzen10x20r-20.fnt                      TamzenForPowerline7x14r.afm
+ Tamzen10x20r.afm                         TamzenForPowerline7x14r.bdf
+ Tamzen10x20r.bdf                         TamzenForPowerline7x14r.dfont
+ Tamzen10x20r.dfont                       TamzenForPowerline7x14r.pcf
+ Tamzen10x20r.pcf                         TamzenForPowerline7x14r.png
+ Tamzen10x20r.png                         TamzenForPowerline7x14r.pt3
+ Tamzen10x20r.pt3                         TamzenForPowerline8x15b-15.fnt
+ Tamzen10x20r.ttf                         TamzenForPowerline8x15b.afm
+ Tamzen5x9b-9.fnt                         TamzenForPowerline8x15b.bdf
+ Tamzen5x9b.afm                           TamzenForPowerline8x15b.dfont
+ Tamzen5x9b.bdf                           TamzenForPowerline8x15b.pcf
+ Tamzen5x9b.dfont                         TamzenForPowerline8x15b.png
+ Tamzen5x9b.pcf                           TamzenForPowerline8x15b.pt3
+ Tamzen5x9b.png                           TamzenForPowerline8x15r-15.fnt
+ Tamzen5x9b.pt3                           TamzenForPowerline8x15r.afm
+ Tamzen5x9b.ttf                           TamzenForPowerline8x15r.bdf
+ Tamzen5x9r-9.fnt                         TamzenForPowerline8x15r.dfont
+ Tamzen5x9r.afm                           TamzenForPowerline8x15r.pcf
+ Tamzen5x9r.bdf                           TamzenForPowerline8x15r.png
+ Tamzen5x9r.dfont                         TamzenForPowerline8x15r.pt3
+ Tamzen5x9r.pcf                           TamzenForPowerline8x16b-16.fnt
+ Tamzen5x9r.png                           TamzenForPowerline8x16b.afm
+ Tamzen5x9r.pt3                           TamzenForPowerline8x16b.bdf
+ Tamzen5x9r.ttf                           TamzenForPowerline8x16b.dfont
+ Tamzen6x12b-12.fnt                       TamzenForPowerline8x16b.pcf
+ Tamzen6x12b.afm                          TamzenForPowerline8x16b.png
+ Tamzen6x12b.bdf                          TamzenForPowerline8x16b.pt3
+ Tamzen6x12b.dfont                        TamzenForPowerline8x16r-16.fnt
+ Tamzen6x12b.pcf                          TamzenForPowerline8x16r.afm
+ Tamzen6x12b.png                          TamzenForPowerline8x16r.bdf
+ Tamzen6x12b.pt3                          TamzenForPowerline8x16r.dfont
+ Tamzen6x12b.ttf                          TamzenForPowerline8x16r.pcf
+ Tamzen6x12r-12.fnt                       TamzenForPowerline8x16r.png
+ Tamzen6x12r.afm                          TamzenForPowerline8x16r.pt3
+ Tamzen6x12r.bdf                          VeraBd.ttf
+ Tamzen6x12r.dfont                        VeraBI.ttf
+ Tamzen6x12r.pcf                          VeraIt.ttf
+ Tamzen6x12r.png                          VeraMoBd.ttf
+ Tamzen6x12r.pt3                          VeraMoBI.ttf
+ Tamzen6x12r.ttf                          VeraMoIt.ttf
+ Tamzen7x13b-13.fnt                       VeraMono.ttf
+ Tamzen7x13b.afm                          VeraSeBd.ttf
+ Tamzen7x13b.bdf                          VeraSe.ttf
+ Tamzen7x13b.dfont                        Vera.ttf
+ Tamzen7x13b.pcf                          VL-Gothic-Regular.ttf
+ Tamzen7x13b.png                          VL-PGothic-Regular.ttf
+
+</code></pre><p>There you can see directories also exist. Just make sure they are world readable. Else they won&rsquo;t work.</p>
+<p>So now you have an idea how to save them. I installed them when I was on Arch Linux and never installed a single font again in my machine running Debian.</p>
+<h2 id="how-to-get-fonts">How to get fonts?</h2>
+<p>Well, As I said I have installed most of the fonts from Arch Linux official/community and AUR and some I downloaded from internet different websites.
+Just install them and create these directories if they already don&rsquo;t exist.</p>
+<pre><code>$ mkdir -p ~/.local/share/fonts
+$ find / -name '*.ttf' -o -name '*.psf' -o -name '*.bdf' -o -name '*.fnt' -o -name '*.ttf' -o -name '*.pcf' -exec cp {} ~/.local/share/fonts \;
+</code></pre><h2 id="loadreload-fonts">Load/reload fonts</h2>
+<p>After copying the files, we have to load them.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fc-cache -fvv
+</code></pre></div><h2 id="autoload-fonts-on-boot">Autoload fonts on boot</h2>
+<p>Put this file in session starting file. Like .Xsession or if you&rsquo;re using xorg-xinit to start your Desktop Environment or Windows Manager then put it into ~/.xinitrc.</p>
+<pre><code>$ xset +fp ~/.local/share/fonts
+$ xset fp rehash
+</code></pre><p>Still have problems? Just lemme know in comments section and I&rsquo;ll be happy to assist you.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://abdullah.today/tags/fonts">fonts</a></span><span class="tag"><a href="https://abdullah.today/tags/linux">linux</a></span><span class="tag"><a href="https://abdullah.today/tags/fontconfig">fontconfig</a></span><span class="tag"><a href="https://abdullah.today/tags/fontset">fontset</a></span><span class="tag"><a href="https://abdullah.today/tags/xset">xset</a></span><span class="tag"><a href="https://abdullah.today/tags/xrdb">xrdb</a></span><span class="tag"><a href="https://abdullah.today/tags/xresources">xresources</a></span><span class="tag"><a href="https://abdullah.today/tags/xdefaults">xdefaults</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>648 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-09-18 05:00 &#43;0500</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://abdullah.today/urxvt/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">URXVT - Terminal for Geeks</span>
+                            </a>
+                        </span>
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://abdullah.today/enable-sudo-with-no-password/">
+                                <span class="button__text">use sudo with no password</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+            <div id="comments" class="thin">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "akpk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://abdullah.today/">Abdullah</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://abdullah.today/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://abdullah.today/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-147400444-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

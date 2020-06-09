@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Abdullah">
+<meta name="description" content="Multihead A few days ago, I relocated myself to new room. Actually this room I use for summer as its way cooler than others. I have a wall-mounted LCD monitor here so today I thought I should share how I do multi screening.
+Hardware I have this lenovo X series machine which is my main machine I use. Its resolution is 1920x1080. The second one is a LCD monitor. And the resolution is 1280x1024." />
+<meta name="keywords" content="linux, archlinux, abdullah, ak, bspwm, window manager, dwm, polybar, polybar, bspwm, multihead, multi-display, multi-screen, dual-monitor, dual-screen, multimonitor" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://abdullah.today/multihead/" />
+
+
+    <title>
+        
+            Multihead with BSPWM and Polybar :: Abdullah Turabi  — Abdullah Turabi
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://abdullah.today/main.dede02da9537a98158079c023e83573e18127834838ef08172acce888341a797.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/favicon-16x16.png">
+    <link rel="manifest" href="https://abdullah.today/site.webmanifest">
+    <link rel="mask-icon" href="https://abdullah.today/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://abdullah.today/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Multihead with BSPWM and Polybar">
+<meta itemprop="description" content="How to configure dual screen in linux?">
+<meta itemprop="datePublished" content="2020-06-02T10:52:37&#43;05:00" />
+<meta itemprop="dateModified" content="2020-06-02T10:52:37&#43;05:00" />
+<meta itemprop="wordCount" content="1051">
+<meta itemprop="image" content="https://abdullah.today/"/>
+
+
+
+<meta itemprop="keywords" content="polybar,bspwm,multihead,multi-display,multi-screen,dual-monitor,dual-screen,multimonitor," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/"/>
+
+<meta name="twitter:title" content="Multihead with BSPWM and Polybar"/>
+<meta name="twitter:description" content="How to configure dual screen in linux?"/>
+
+
+
+    <meta property="og:title" content="Multihead with BSPWM and Polybar" />
+<meta property="og:description" content="How to configure dual screen in linux?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/multihead/" />
+<meta property="og:image" content="https://abdullah.today/"/>
+<meta property="article:published_time" content="2020-06-02T10:52:37+05:00" />
+<meta property="article:modified_time" content="2020-06-02T10:52:37+05:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-06-02 10:52:37 &#43;0500 PKT" />
+
+
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://abdullah.today/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://abdullah.today/images/icons/safari-pinned-tab.svg" color="#6cd55b">
+<link rel="shortcut icon" href="https://abdullah.today/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="msapplication-TileImage" content="https://abdullah.today/images/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="https://abdullah.today/images/icons/browserconfig.xml">
+<meta name="theme-color" content="#3c9159">
+
+
+<script data-ad-client="ca-pub-6819322586059940" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://abdullah.today/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Allah o Akbar Kabeera!</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://abdullah.today/about/">About</a></li><li><a href="https://abdullah.today/posts/">Blog</a></li><li><a href="https://abdullah.today/quran/">Quran</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>5 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://abdullah.today/multihead/">Multihead with BSPWM and Polybar</a>
+            </h1>
+                <hr />
+                <aside id="toc">
+                <div class="toc-title">Table of Contents</div>
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hardware">Hardware</a></li>
+    <li><a href="#software">Software</a></li>
+    <li><a href="#display-manager">Display manager</a></li>
+    <li><a href="#starting-on-boot">Starting on Boot</a></li>
+  </ul>
+</nav>
+                </aside>
+                <hr />
+
+            
+
+            <div class="post-content">
+                <h1 id="multihead">Multihead</h1>
+<p><img src="https://abdullah.today/images/dual-monitor.png" alt="Multihead with bspwm and polybar"></p>
+<p>A few days ago, I relocated myself to new room. Actually this room I use for
+summer as its way cooler than others. I have a wall-mounted LCD monitor here so
+today I thought I should share how I do multi screening.</p>
+<h2 id="hardware">Hardware</h2>
+<p>I have this lenovo X series machine which is my main machine I use. Its
+resolution is 1920x1080.
+The second one is a LCD monitor. And the resolution is 1280x1024.</p>
+<p>My laptop doesn&rsquo;t have VGA port but I have a HDMI port. But I have worked on old
+hardware with VGA port and it works.</p>
+<h2 id="software">Software</h2>
+<p><code>xrandr</code> is what you want. I&rsquo;m using Archlinux and it got installed with
+<code>libinput</code> as dependency. I hope it will be there in other distributions as
+well. If you don&rsquo;t have it, install it using your distribution&rsquo;s package
+manager.</p>
+<p>I use <em>bspwm</em> with <em>polybar</em>. You might have different <em>WMs</em> or <em>DE</em>. Apart from
+polybar, everything would work fine. For polybar, you have to configure it to
+your taste. Or clone my <a href="https://gitlab.com/Abdullah/cfg.git">git repository</a>
+and copy/symlink all files to their respective paths and polybar will work fine.</p>
+<h2 id="display-manager">Display manager</h2>
+<p>I don&rsquo;t use a Display manager. Instead I use <em>xinit</em>. See next section for
+configuring multihead using <em>xinit</em>.</p>
+<h2 id="starting-on-boot">Starting on Boot</h2>
+<p>In <em>bspwm</em>, when you plug HDMI cable in, OS detects it. But for screens to get
+display, you have to logout from <em>bspwm</em>.
+Login again and without configuration, the monitor would be a mirror to your
+laptop. What ever you see on first screen, you would see on second one.</p>
+<p>To make it work, you need to execute some commands.</p>
+<p>First get outputs names using <em>xrandr</em> without some arguments.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+xrandr 
+
+Screen 0: minimum <span style="color:#ae81ff">320</span> x 200, current <span style="color:#ae81ff">3200</span> x 1080, maximum <span style="color:#ae81ff">16384</span> x <span style="color:#ae81ff">16384</span>
+eDP-1 connected primary 1920x1080+0+0 <span style="color:#f92672">(</span>normal left inverted right x axis y axis<span style="color:#f92672">)</span> 309mm x 173mm
+   1920x1080     60.03*+  60.01    59.97    59.96    59.93  
+   1680x1050     59.95    59.88  
+   1400x1050     59.98  
+   1600x900      59.99    59.94    59.95    59.82  
+   1280x1024     60.02  
+   1400x900      59.96    59.88  
+   1280x960      60.00  
+   1440x810      60.00    59.97  
+   1368x768      59.88    59.85  
+   1280x800      59.99    59.97    59.81    59.91  
+   1280x720      60.00    59.99    59.86    59.74  
+   1024x768      60.04    60.00  
+   960x720       60.00  
+   928x696       60.05  
+   896x672       60.01  
+   1024x576      59.95    59.96    59.90    59.82  
+   960x600       59.93    60.00  
+   960x540       59.96    59.99    59.63    59.82  
+   800x600       60.00    60.32    56.25  
+   840x525       60.01    59.88  
+   864x486       59.92    59.57  
+   700x525       59.98  
+   800x450       59.95    59.82  
+   640x512       60.02  
+   700x450       59.96    59.88  
+   640x480       60.00    59.94  
+   720x405       59.51    58.99  
+   684x384       59.88    59.85  
+   640x400       59.88    59.98  
+   640x360       59.86    59.83    59.84    59.32  
+   512x384       60.00  
+   512x288       60.00    59.92  
+   480x270       59.63    59.82  
+   400x300       60.32    56.34  
+   432x243       59.92    59.57  
+   320x240       60.05  
+   360x202       59.51    59.13  
+   320x180       59.84    59.32  
+DP-1 disconnected <span style="color:#f92672">(</span>normal left inverted right x axis y axis<span style="color:#f92672">)</span>
+HDMI-1 disconnected <span style="color:#f92672">(</span>normal left inverted right x axis y axis<span style="color:#f92672">)</span>
+DP-2 disconnected <span style="color:#f92672">(</span>normal left inverted right x axis y axis<span style="color:#f92672">)</span>
+HDMI-2 connected 1280x1024+1920+0 <span style="color:#f92672">(</span>normal left inverted right x axis y axis<span style="color:#f92672">)</span> 708mm x 398mm
+   1280x1024     60.02*+
+   1920x1080     60.00    50.00    59.94    24.00    23.98  
+   1920x1080i    60.00    50.00    59.94  
+   1280x960      60.00  
+   1280x720      60.00    50.00    59.94  
+   1024x768      60.00  
+   800x600       60.32    56.25  
+   720x576       50.00  
+   720x576i      50.00  
+   720x480       60.00    59.94  
+   720x480i      60.00    59.94  
+   640x480       60.00    59.94  
+   720x400       70.08  
+
+</code></pre></div><p>Or to get connected monitors, you can invoke:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+xrandr -q | awk <span style="color:#e6db74">&#39;/ connected / {print $1}&#39;</span>
+
+</code></pre></div><p>You will get output of <em>N</em> lines where <em>N</em> is numbers of connected monitors.</p>
+<p>The first one you see is your laptop. Others are external monitors if you have
+not configured them already or have something in your $PATH which does something
+on hardware change.</p>
+<p>Okay. Let&rsquo;s assume my laptop is <em>eDP-1</em> and my external monitor is <em>HDMI-2</em>.
+I want external monitor to appear at right of my laptop screen:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --auto --right-of eDP-1
+
+</code></pre></div><p>That&rsquo;s it. You can save these two functions in your <em>~/.xprofile</em> to auto
+start multihead on restart. As the configurations above we done, will go
+away after this session.</p>
+<p>Here is my <em>~/.xpofile</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+
+<span style="color:#75715e">#!/bin/sh</span>
+<span style="color:#75715e"># In the name of Allah, the most Gracious, the most Merciful.</span>
+#
+<span style="color:#75715e">#  ▓▓▓▓▓▓▓▓▓▓</span> 
+<span style="color:#75715e"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today&gt;</span> 
+<span style="color:#75715e"># ░▓▓▓▓▓▓▓▓▓▓</span> 
+<span style="color:#75715e"># ░░░░░░░░░░</span> 
+
+
+<span style="color:#75715e"># Xresources file</span>
+user_resources<span style="color:#f92672">=</span>$HOME/.Xresources
+<span style="color:#75715e"># custom keymaps</span>
+user_keymaps<span style="color:#f92672">=</span>$HOME/.Xmodmap
+<span style="color:#75715e"># custom fonts</span>
+user_fonts_dir<span style="color:#f92672">=</span>$HOME/.local/share/fonts
+<span style="color:#75715e"># Inactivity timeout</span>
+inactivity_timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">180</span>
+<span style="color:#75715e"># Time before exectuing lock</span> 
+notify_time<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+
+<span style="color:#75715e"># For some java apps</span>
+
+<span style="color:#75715e">#wmname LG3D &amp;</span>
+
+run<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">if</span> ! pgrep $1 ;
+  <span style="color:#66d9ef">then</span>
+    $@&amp;
+  <span style="color:#66d9ef">fi</span>
+<span style="color:#f92672">}</span>
+
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -d /etc/X11/xinit/xinitrc.d <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+  <span style="color:#66d9ef">for</span> f in /etc/X11/xinit/xinitrc.d/?*.sh ; <span style="color:#66d9ef">do</span>
+    <span style="color:#f92672">[</span> -x $f <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> . $f
+    <span style="color:#66d9ef">done</span>
+    unset f
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#75715e"># Session name</span>
+export DESKTOP_SESSION<span style="color:#f92672">=</span>bspwm
+<span style="color:#75715e"># No tty</span>
+export XDG_SESSION_TYPE<span style="color:#f92672">=</span>x11
+
+tab<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+  <span style="color:#75715e"># Configure only laptop&#39;s screen if no external monitor is connected.</span>
+  xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --brightness 1.0 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --gamma 0.76:0.75:0.68 <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">}</span>
+
+tabular<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+  <span style="color:#75715e"># Configure external monitor if exists</span>
+  tab
+  xrandr --output HDMI-2 --mode 1280x1024 --pos 1920x0 <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Start sxhkd</span> 
+
+sxhkd &amp;
+
+<span style="color:#75715e"># Load Xresources</span> 
+
+<span style="color:#f92672">[</span> -f $user_resources <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> xrdb -merge <span style="color:#e6db74">&#34;</span>$user_resources<span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># Load keymaps</span>
+
+<span style="color:#f92672">[</span> -f $user_keymaps <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> xmodmap <span style="color:#e6db74">&#34;</span>$user_keymaps<span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># Run compositor</span>
+
+run picom -b --config <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">&#34;</span>/.config/picom/picom.conf &amp;
+
+<span style="color:#75715e"># Restore the last wallpaper</span>
+
+<span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">&#34;</span>/.fehbg &amp;
+
+<span style="color:#75715e"># Set cursor shape</span>
+
+xsetroot -cursor_name ul_angle &amp;
+
+<span style="color:#75715e">#xcompmgr -c -f D 5 &amp;</span>
+
+<span style="color:#75715e"># Add fonts directories</span>
+
+xset +fp <span style="color:#e6db74">&#34;</span>$user_fonts_dir<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&amp;&amp;</span> xset fp rehash 
+
+<span style="color:#75715e"># Start urxvt in daemon mode</span>
+
+<span style="color:#75715e"># run urxvtd -q -o -f &amp;</span>
+
+<span style="color:#75715e"># No mouse when idle</span>
+
+run unclutter --ignore-scrolling --fork --timeout <span style="color:#ae81ff">1</span> &amp;
+
+<span style="color:#75715e"># DPMS and lock screen</span>
+
+xset dpms $inactivity_timeout &amp;
+<span style="color:#75715e">#xss-lock -- physlock -mp &#39;Say, &#34;If the sea were ink for [writing] the words of my Lord, the sea would be exhausted before the words of my Lord were exhausted, even if We brought the like of it as a supplement.&#34;&#39; &amp;</span>
+xss-lock -- i3lock -c <span style="color:#ae81ff">000000</span> &amp;
+
+<span style="color:#75715e"># Start Notification daemon</span>
+
+run dunst -c <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">&#34;</span>/.config/dunst/dunstrc &amp;
+
+<span style="color:#75715e"># Mute the mic</span>
+
+pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo true &amp;
+
+<span style="color:#75715e"># Redshift for less eye strain</span>
+
+<span style="color:#75715e">#redshift -c ~/.config/redshift/redshift.conf &amp;</span>
+
+<span style="color:#75715e"># Start tmux if not already running</span>
+
+<span style="color:#f92672">[</span> -z $TMUX <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> tmux new-session -s $USER -d 
+
+<span style="color:#75715e"># Set brightness to 30 at boot</span>
+
+light -S <span style="color:#ae81ff">30</span> &amp;
+
+<span style="color:#75715e"># Configure multihead.</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>xrandr -q | awk <span style="color:#e6db74">&#39;/ connected / {print $1}&#39;</span> | wc -l<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+  tab --primary
+<span style="color:#66d9ef">else</span>
+  tabular
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#75715e"># Start a scratchpad</span>
+
+<span style="color:#75715e">#sleep 1</span>
+<span style="color:#75715e">#urxvtc -T &#39;scratchpad&#39; -geometry 65x20 &amp;</span> 
+<span style="color:#75715e">#termite -t scratchpad &amp;</span>
+xfce4-terminal -T scratchpad --font<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Fantasque Sans Mono Italic 16&#39;</span> &amp;
+
+<span style="color:#75715e"># vim:ft=sh</span>
+
+</code></pre></div><p>Change the resolution and outputs name in it and enjoy multiheading. 😉</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://abdullah.today/tags/polybar">polybar</a></span><span class="tag"><a href="https://abdullah.today/tags/bspwm">bspwm</a></span><span class="tag"><a href="https://abdullah.today/tags/multihead">multihead</a></span><span class="tag"><a href="https://abdullah.today/tags/multi-display">multi-display</a></span><span class="tag"><a href="https://abdullah.today/tags/multi-screen">multi-screen</a></span><span class="tag"><a href="https://abdullah.today/tags/dual-monitor">dual-monitor</a></span><span class="tag"><a href="https://abdullah.today/tags/dual-screen">dual-screen</a></span><span class="tag"><a href="https://abdullah.today/tags/multimonitor">multimonitor</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1051 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-06-02 10:52 &#43;0500</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://abdullah.today/posts/cherry-pick/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">git Cherry Pick</span>
+                            </a>
+                        </span>
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://abdullah.today/posts/bspwm/">
+                                <span class="button__text">BSPWM</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+            <div id="comments" class="thin">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "akpk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://abdullah.today/">Abdullah</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://abdullah.today/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://abdullah.today/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-147400444-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

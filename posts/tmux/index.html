@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Abdullah">
+<meta name="description" content="TMUX tmux is a terminal multiplexer. You can run programs inside a tmux session, detach session and continue running programs in background, reattach later.
+Installation tmux is available in all linux distributions. You can install it using your distribution&amp;rsquo;s package manager. In Arch Linux:
+$ sudo pacman -S tmux Start You can start tmux by invoking tmux command inside your terminal.
+Keybindings The default modifier key is Ctrl &#43; b followed by a key." />
+<meta name="keywords" content="linux, archlinux, abdullah, ak, bspwm, window manager, dwm, polybar, tmux, screen, multiplexer, console" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://abdullah.today/posts/tmux/" />
+
+
+    <title>
+        
+            TMUX :: Abdullah Turabi  — Abdullah Turabi
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://abdullah.today/main.dede02da9537a98158079c023e83573e18127834838ef08172acce888341a797.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/favicon-16x16.png">
+    <link rel="manifest" href="https://abdullah.today/site.webmanifest">
+    <link rel="mask-icon" href="https://abdullah.today/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://abdullah.today/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="TMUX">
+<meta itemprop="description" content="A multiplexer">
+<meta itemprop="datePublished" content="2020-06-06T18:13:35&#43;05:00" />
+<meta itemprop="dateModified" content="2020-06-06T18:13:35&#43;05:00" />
+<meta itemprop="wordCount" content="939">
+<meta itemprop="image" content="https://abdullah.today/"/>
+
+
+
+<meta itemprop="keywords" content="tmux,screen,multiplexer,console," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/"/>
+
+<meta name="twitter:title" content="TMUX"/>
+<meta name="twitter:description" content="A multiplexer"/>
+
+
+
+    <meta property="og:title" content="TMUX" />
+<meta property="og:description" content="A multiplexer" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/posts/tmux/" />
+<meta property="og:image" content="https://abdullah.today/"/>
+<meta property="article:published_time" content="2020-06-06T18:13:35+05:00" />
+<meta property="article:modified_time" content="2020-06-06T18:13:35+05:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-06-06 18:13:35 &#43;0500 PKT" />
+
+
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://abdullah.today/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://abdullah.today/images/icons/safari-pinned-tab.svg" color="#6cd55b">
+<link rel="shortcut icon" href="https://abdullah.today/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="msapplication-TileImage" content="https://abdullah.today/images/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="https://abdullah.today/images/icons/browserconfig.xml">
+<meta name="theme-color" content="#3c9159">
+
+
+<script data-ad-client="ca-pub-6819322586059940" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://abdullah.today/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Allah o Akbar Kabeera!</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://abdullah.today/about/">About</a></li><li><a href="https://abdullah.today/posts/">Blog</a></li><li><a href="https://abdullah.today/quran/">Quran</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>5 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://abdullah.today/posts/tmux/">TMUX</a>
+            </h1>
+                <hr />
+                <aside id="toc">
+                <div class="toc-title">Table of Contents</div>
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#start">Start</a></li>
+        <li><a href="#keybindings">Keybindings</a></li>
+        <li><a href="#detach-session">Detach session</a></li>
+        <li><a href="#re-attach-session">Re attach session</a></li>
+        <li><a href="#windows">Windows</a></li>
+        <li><a href="#panes">Panes</a></li>
+        <li><a href="#my-tmuxconf">My tmux.conf</a></li>
+        <li><a href="#auto-start-tmux-on-boot">Auto start tmux on boot</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </aside>
+                <hr />
+
+            
+
+            <div class="post-content">
+                <h1 id="tmux">TMUX</h1>
+<p><img src="https://abdullah.today/images/tmux.png" alt="vim, htop running inside tmux"></p>
+<p><em>tmux</em> is a terminal multiplexer. You can run programs inside a tmux session,
+detach session and continue running programs in background, reattach later.</p>
+<h3 id="installation">Installation</h3>
+<p><em>tmux</em> is available in all linux distributions. You can install it using your
+distribution&rsquo;s package manager. In <em>Arch Linux</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo pacman -S tmux
+</code></pre></div><h3 id="start">Start</h3>
+<p>You can start <em>tmux</em> by invoking <code>tmux</code> command inside your terminal.</p>
+<h3 id="keybindings">Keybindings</h3>
+<p>The default modifier key is <code>Ctrl + b</code> followed by a key. Press <code>Ctrl + b</code> and
+then hit another key and tmux will get it.</p>
+<p>You can change the default keybindings in <code>~/.tmux.conf</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+$ vi ~/.tmux.conf
+
+...
+
+unbind C-b
+set option -g prefix <span style="color:#e6db74">`</span>
+...
+:wq
+</code></pre></div><p>Here I have removed the default prefix and have bounded &ldquo;`&rdquo; as prefix.
+I found it useful than default prefix.</p>
+<h3 id="detach-session">Detach session</h3>
+<p>You can detach a <em>tmux session</em> by sending it <code>Prefix</code> followed by <code>d</code>.</p>
+<h3 id="re-attach-session">Re attach session</h3>
+<p>You can reattach to a running  <em>tmux session</em> by simply invoking <code>tmux attach-session -t &lt;target_session&gt;</code>. You can get session&rsquo;s name using <code>tmux ls</code>.</p>
+<h3 id="windows">Windows</h3>
+<p>By default, <em>tmux</em> will start a new window running a shell inside it.
+You can create new windows by pressing <code>Prefix</code> followed by <code>c</code>.</p>
+<p>You can go to next window by pressing <code>Prefix</code> followed by <code>n</code>.</p>
+<p>Or you can hit <code>Prefix</code> followed by <code>w</code> and tmux will show you windows opened
+and you can select which window you want to go to.</p>
+<p>To kill a window, go to the window and hit <code>Prefix</code> followed by <code>x</code>.</p>
+<h3 id="panes">Panes</h3>
+<p>A window can have multiple panes.</p>
+<p>To split current window into two panes horizontally, hit <code>Prefix</code> followed by <code>%</code>.
+To split current window into two panes vertically, hit <code>Prefix</code> followed by <code>&quot;</code>.
+To go to next pane, hit <code>Prefix</code> followed by <code>o</code>.
+To toggle between panes, hit <code>Prefix</code> followed by <code>;</code>.
+To kill a pane you&rsquo;re inside, hit <code>Prefix</code> followed by <code>x</code>.</p>
+<h3 id="my-tmuxconf">My tmux.conf</h3>
+<p>Below is my customized <em>tmux.conf</em>. You can copy and then customize it to your
+needs, its well documented with comments.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat ~/.tmux.conf
+
+
+<span style="color:#75715e">#  ██████████ ████     ████ ██     ██ ██     ██</span>
+<span style="color:#75715e"># ░░░░░██░░░ ░██░██   ██░██░██    ░██░░██   ██</span>
+<span style="color:#75715e">#     ░██    ░██░░██ ██ ░██░██    ░██ ░░██ ██</span>
+<span style="color:#75715e">#     ░██    ░██ ░░███  ░██░██    ░██  ░░███</span>
+<span style="color:#75715e">#     ░██    ░██  ░░█   ░██░██    ░██   ██░██</span>
+<span style="color:#75715e">#     ░██    ░██   ░    ░██░██    ░██  ██ ░░██</span>
+<span style="color:#75715e">#     ░██    ░██        ░██░░███████  ██   ░░██</span>
+<span style="color:#75715e">#     ░░     ░░         ░░  ░░░░░░░  ░░     ░░</span>
+#
+<span style="color:#75715e">#  ▓▓▓▓▓▓▓▓▓▓</span>
+<span style="color:#75715e"># ░▓ Author ▓ AK &lt;abdullah@abdullah.today&gt;</span>
+<span style="color:#75715e"># ░▓▓▓▓▓▓▓▓▓▓</span>
+<span style="color:#75715e"># ░░░░░░░░░░</span>
+
+<span style="color:#75715e"># source powerline</span> 
+source /usr/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf
+
+<span style="color:#75715e"># Custom Prefix</span>
+unbind C-b
+set-option -g prefix <span style="color:#e6db74">`</span>
+bind <span style="color:#e6db74">`</span> send-prefix
+
+<span style="color:#75715e"># Shell</span>
+set -g default-command /bin/zsh
+set -g default-shell /bin/zsh
+
+<span style="color:#75715e"># utf-8 support in status bar</span>
+<span style="color:#75715e">#set -g status-utf8 on</span>
+
+<span style="color:#75715e"># Reload the config</span>
+bind r source-file ~/.tmux.conf <span style="color:#ae81ff">\;</span> display <span style="color:#e6db74">&#34;~/.tmux.conf reloaded&#34;</span>
+
+<span style="color:#75715e"># Synchronize panes</span>
+bind e setw synchronize-panes <span style="color:#ae81ff">\;</span> display <span style="color:#e6db74">&#34;synchronize mode&#34;</span>
+
+<span style="color:#75715e"># Splits</span>
+unbind %
+unbind <span style="color:#e6db74">&#39;&#34;&#39;</span>
+bind h split-window -v
+bind v split-window -h
+<span style="color:#75715e">#bind -n M-h send-keys</span> 
+
+<span style="color:#75715e"># enable vi-mode</span>
+setw -g mode-keys vi
+set -g status-keys vi
+
+<span style="color:#75715e"># copy paste</span>
+unbind <span style="color:#f92672">[</span>
+bind Escape copy-mode
+unbind p
+bind p paste-buffer
+bind-key -T copy-mode-vi <span style="color:#e6db74">&#39;v&#39;</span> send -X begin-selection
+bind-key -T copy-mode-vi <span style="color:#e6db74">&#39;y&#39;</span> send -X copy-pipe-and-cancel <span style="color:#e6db74">&#39;xclip -in -selection clipboard&#39;</span>
+
+<span style="color:#75715e"># command mode</span>
+bind : command-prompt
+
+<span style="color:#75715e"># Kill panes</span>
+bind x kill-pane
+
+<span style="color:#75715e"># Status on off key</span>
+bind t set status
+
+<span style="color:#75715e"># Lock the tty</span>
+
+bind b run-shell <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.local/bin/unilock&#34;</span>
+
+<span style="color:#75715e"># Alerts</span>
+setw -g monitor-activity on
+set -g visual-activity on
+
+<span style="color:#75715e"># Enable mouse mode</span>
+setw -g mouse on
+
+<span style="color:#75715e"># Default terminal mode</span>
+set -g default-terminal <span style="color:#e6db74">&#39;screen-256color&#39;</span>
+
+<span style="color:#75715e"># Status and colors</span>
+set -g status-justify left
+set -g status-interval <span style="color:#ae81ff">2</span>
+set -g status-bg colour25
+set -g status-fg colour222
+
+<span style="color:#75715e"># Window status</span>
+set-option -g status-position bottom
+setw -g window-status-format <span style="color:#e6db74">&#34;#[bg=colour246, fg=colour14, bold] #W &#34;</span>
+setw -g window-status-current-format <span style="color:#e6db74">&#34;#[bg=colour25, fg=colour14, bold] #W &#34;</span>
+
+<span style="color:#75715e"># Right status</span>
+set -g status-right-length <span style="color:#ae81ff">100</span>
+set -g status-right  <span style="color:#e6db74">&#39;#(~/.local/bin/tmux-status)&#39;</span>
+set -g status-left-length <span style="color:#ae81ff">50</span>
+set -g status-left <span style="color:#e6db74">&#39;&#39;</span>
+
+<span style="color:#75715e"># Visuals</span>
+setw -g monitor-activity on
+set-option -g bell-action none
+set-option -g visual-activity on
+set-option -g visual-bell off
+set-option -g visual-silence off
+
+<span style="color:#75715e"># clock</span>
+set -g clock-mode-colour colour20
+
+<span style="color:#75715e"># urlview</span>
+run-shell $HOME/.local/bin/tmux.urlview
+
+<span style="color:#75715e"># resize panes</span>
+setw -g aggressive-resize on
+
+<span style="color:#75715e"># No delay</span>
+set -sg escape-time <span style="color:#ae81ff">0</span>
+
+<span style="color:#75715e"># History</span>
+set -g history-limit <span style="color:#ae81ff">10000</span>
+
+<span style="color:#75715e"># Scrolling</span>
+set-option -g terminal-overrides <span style="color:#e6db74">&#39;xterm*:smcup@:rmcup@&#39;</span>
+
+<span style="color:#75715e"># Panes index</span>
+set -g pane-base-index <span style="color:#ae81ff">1</span>
+set -g renumber-windows on
+
+<span style="color:#75715e"># Windows index</span>
+set -g base-index <span style="color:#ae81ff">1</span>
+
+<span style="color:#75715e"># Layouts</span>
+bind Z previous-layout
+bind X next-layout
+
+<span style="color:#75715e"># Detach others</span>
+bind D detach -a
+
+<span style="color:#75715e"># Navigate and resize splits</span>
+is_vim<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ps -o state= -o comm= -t &#39;#{pane_tty}&#39; \
+</span><span style="color:#e6db74">    | grep -iqE &#39;^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?</span>$<span style="color:#e6db74">&#39;&#34;</span>
+bind -n C-h <span style="color:#66d9ef">if</span>-shell <span style="color:#e6db74">&#34;</span>$is_vim<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;send-keys C-h&#34;</span>  <span style="color:#e6db74">&#34;select-pane -L&#34;</span>
+bind -n C-j <span style="color:#66d9ef">if</span>-shell <span style="color:#e6db74">&#34;</span>$is_vim<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;send-keys C-j&#34;</span>  <span style="color:#e6db74">&#34;select-pane -D&#34;</span>
+bind -n C-k <span style="color:#66d9ef">if</span>-shell <span style="color:#e6db74">&#34;</span>$is_vim<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;send-keys C-k&#34;</span>  <span style="color:#e6db74">&#34;select-pane -U&#34;</span>
+bind -n C-l <span style="color:#66d9ef">if</span>-shell <span style="color:#e6db74">&#34;</span>$is_vim<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;send-keys C-l&#34;</span>  <span style="color:#e6db74">&#34;select-pane -R&#34;</span>
+bind -n M-h <span style="color:#66d9ef">if</span>-shell <span style="color:#e6db74">&#34;</span>$is_vim<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;send-keys M-h&#34;</span> <span style="color:#e6db74">&#34;resize-pane -L 2&#34;</span>
+bind -n M-l <span style="color:#66d9ef">if</span>-shell <span style="color:#e6db74">&#34;</span>$is_vim<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;send-keys M-l&#34;</span> <span style="color:#e6db74">&#34;resize-pane -R 2&#34;</span>
+bind -n M-k <span style="color:#66d9ef">if</span>-shell <span style="color:#e6db74">&#34;</span>$is_vim<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;send-keys M-k&#34;</span> <span style="color:#e6db74">&#34;resize-pane -U 2&#34;</span>
+bind -n M-j <span style="color:#66d9ef">if</span>-shell <span style="color:#e6db74">&#34;</span>$is_vim<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;send-keys M-j&#34;</span> <span style="color:#e6db74">&#34;resize-pane -D 2&#34;</span>
+
+</code></pre></div><h3 id="auto-start-tmux-on-boot">Auto start tmux on boot</h3>
+<p>I have these lines in my shell startup file <code>~/.zprofile</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat ~/.zprofile
+
+<span style="color:#75715e">#  ▓▓▓▓▓▓▓▓▓▓</span> 
+<span style="color:#75715e"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today/&gt;</span> 
+<span style="color:#75715e"># ░▓▓▓▓▓▓▓▓▓▓</span> 
+<span style="color:#75715e"># ░░░░░░░░░░</span> 
+
+
+<span style="color:#75715e"># Start X at login</span>    
+    
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -z $DISPLAY <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>tty<span style="color:#66d9ef">)</span> <span style="color:#f92672">=</span> /dev/tty1 <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+  exec startx -- vt1 -keeptty &amp;&gt;/dev/null
+  logout
+<span style="color:#66d9ef">elif</span> <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>tty<span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> /dev/tty1 <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+  sudo loadkeys $HOME/.loadkeysrc
+  tmux has-session -t $USER <span style="color:#f92672">||</span> tmux new-session -t $USER <span style="color:#f92672">&amp;&amp;</span> tmux attach-session -t $USER
+<span style="color:#66d9ef">fi</span>
+
+</code></pre></div><p>So if I login from other than tty1, and if there is an already running <em>tmux
+session</em>, it attaches me to it. Else starts a new session and get me there.
+😉</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://abdullah.today/tags/tmux">tmux</a></span><span class="tag"><a href="https://abdullah.today/tags/screen">screen</a></span><span class="tag"><a href="https://abdullah.today/tags/multiplexer">multiplexer</a></span><span class="tag"><a href="https://abdullah.today/tags/console">console</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>939 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-06-06 18:13 &#43;0500</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://abdullah.today/posts/migrate-from-jekyll/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">Migrate to Hugo from Jekyll</span>
+                            </a>
+                        </span>
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://abdullah.today/posts/cherry-pick/">
+                                <span class="button__text">git Cherry Pick</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+            <div id="comments" class="thin">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "akpk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://abdullah.today/">Abdullah</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://abdullah.today/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://abdullah.today/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-147400444-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

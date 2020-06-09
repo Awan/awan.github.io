@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Abdullah">
+<meta name="description" content="How to install fully encrypted CRUX This post is for crux users who wanna secure their crux installation.
+Partitioning I&amp;rsquo;m gonna use two partitions. First boot partition will be unencrypted which holds kernel. I use secure boot with my own keys. You can find a post in my blog how to do that. and I have some ports too for secure boot. Unencrypted Boot Partition Create a partition more than 200 Mbs for boot ESP with gdisk code ef00." />
+<meta name="keywords" content="linux, archlinux, abdullah, ak, bspwm, window manager, dwm, polybar, encrypted crux, encryption, luks, lvm, encrypted laptop, source based distros, crux" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://abdullah.today/encrypted-crux/" />
+
+
+    <title>
+        
+            How to install CRUX with encryption :: Abdullah Turabi  — Abdullah Turabi
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://abdullah.today/main.dede02da9537a98158079c023e83573e18127834838ef08172acce888341a797.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/favicon-16x16.png">
+    <link rel="manifest" href="https://abdullah.today/site.webmanifest">
+    <link rel="mask-icon" href="https://abdullah.today/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://abdullah.today/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="How to install CRUX with encryption">
+<meta itemprop="description" content="Encrypted CRUX installation">
+<meta itemprop="datePublished" content="2020-05-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1055">
+<meta itemprop="image" content="https://abdullah.today/"/>
+
+
+
+<meta itemprop="keywords" content="encrypted crux,encryption,luks,lvm,encrypted laptop,source based distros,crux," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/"/>
+
+<meta name="twitter:title" content="How to install CRUX with encryption"/>
+<meta name="twitter:description" content="Encrypted CRUX installation"/>
+
+
+
+    <meta property="og:title" content="How to install CRUX with encryption" />
+<meta property="og:description" content="Encrypted CRUX installation" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/encrypted-crux/" />
+<meta property="og:image" content="https://abdullah.today/"/>
+<meta property="article:published_time" content="2020-05-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-12T00:00:00+00:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-05-12 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://abdullah.today/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://abdullah.today/images/icons/safari-pinned-tab.svg" color="#6cd55b">
+<link rel="shortcut icon" href="https://abdullah.today/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="msapplication-TileImage" content="https://abdullah.today/images/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="https://abdullah.today/images/icons/browserconfig.xml">
+<meta name="theme-color" content="#3c9159">
+
+
+<script data-ad-client="ca-pub-6819322586059940" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://abdullah.today/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Allah o Akbar Kabeera!</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://abdullah.today/about/">About</a></li><li><a href="https://abdullah.today/posts/">Blog</a></li><li><a href="https://abdullah.today/quran/">Quran</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>5 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://abdullah.today/encrypted-crux/">How to install CRUX with encryption</a>
+            </h1>
+                <hr />
+                <aside id="toc">
+                <div class="toc-title">Table of Contents</div>
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-install-fully-encrypted-crux">How to install fully encrypted CRUX</a></li>
+    <li><a href="#partitioning">Partitioning</a></li>
+    <li><a href="#unencrypted-boot-partition">Unencrypted Boot Partition</a></li>
+    <li><a href="#encrypted-partition">Encrypted Partition</a></li>
+    <li><a href="#base-system-installation">Base system installation</a></li>
+    <li><a href="#chroot">Chroot</a></li>
+    <li><a href="#fstab">fstab</a></li>
+    <li><a href="#locales">locales</a></li>
+    <li><a href="#rcconf">rc.conf</a></li>
+    <li><a href="#resolvconf">resolv.conf</a></li>
+    <li><a href="#wifi">wifi</a></li>
+    <li><a href="#kernel">Kernel</a></li>
+    <li><a href="#users-and-package-management">Users and package management</a></li>
+    <li><a href="#root-password-and-a-normal-user">Root password and a normal user</a></li>
+    <li><a href="#give-new-user-sudo-access">Give new user sudo access</a></li>
+    <li><a href="#user-for-creating-packages">User for creating packages</a></li>
+    <li><a href="#fakeroot">fakeroot</a></li>
+    <li><a href="#dracut">Dracut</a></li>
+    <li><a href="#bootloader">Bootloader</a></li>
+    <li><a href="#congrats">Congrats!</a></li>
+  </ul>
+</nav>
+                </aside>
+                <hr />
+
+            
+
+            <div class="post-content">
+                <h2 id="how-to-install-fully-encrypted-crux">How to install fully encrypted CRUX</h2>
+<p>This post is for crux users who wanna secure their crux installation.</p>
+<h2 id="partitioning">Partitioning</h2>
+<p>I&rsquo;m gonna use two partitions. First boot partition will be unencrypted which holds kernel. I use secure boot with my own keys. You can find a post in my blog how to do that. and I have some ports too for secure boot. <!-- raw HTML omitted --></p>
+<h2 id="unencrypted-boot-partition">Unencrypted Boot Partition</h2>
+<p>Create a partition more than 200 Mbs for boot ESP with gdisk code ef00.</p>
+<p>Let&rsquo;s create a FAT filesystem on it for EFI.</p>
+<pre><code>
+mkfs.fat -F32 /dev/sda1
+    
+</code></pre><h2 id="encrypted-partition">Encrypted Partition</h2>
+<p>Create an encrypted LUKS container</p>
+<pre><code>cryptsetup luksFormat /dev/sda2
+        
+</code></pre><p>Type uppercase &ldquo;YES&rdquo; and then enter passphrase two times.</p>
+<p>Open the encrypted container.</p>
+<pre><code>cryptsetup open /dev/sda2 crux 
+</code></pre><p>Now the encrypted container is available at /dev/mapper/crux so lets create some lvm stuff and create filesystems and a swap partition.</p>
+<pre><code>pvcreate /dev/mapper/crux
+vgcreate ak /dev/mapper/crux
+lvcreate -L 8G ak -n swap
+lvcreate -L 50G ak -n root
+lvcreate -l 100%FREE ak -n home
+mkfs.ext4 /dev/ak/root -L crux-root
+mkfs.ext4 /dev/ak/home -L crux-home
+mkswap /dev/ak/swap -L crux-swap
+
+</code></pre><p>Mount the partitions and start installations.</p>
+<pre><code>mount /dev/mapper/ak-root /mnt
+mkdir /mnt/{boot,home}
+mount /dev/mapper/ak-home /mnt/home
+mount /dev/sda1 /mnt/boot
+swapon /dev/mapper/ak-swap
+</code></pre><h2 id="base-system-installation">Base system installation</h2>
+<p>Start installation. Type &ldquo;setup&rdquo; and select &ldquo;YES&rdquo;. Install all packages. Make sure you get no error messages once installation is finished.</p>
+<pre><code>setup
+
+</code></pre><h2 id="chroot">Chroot</h2>
+<p>Enter chroot.</p>
+<pre><code>
+setup-chroot
+    
+</code></pre><h2 id="fstab">fstab</h2>
+<p>Check fstab by going to /etc/fstab. Open it with vim. You&rsquo;ll see two uncommented entries there. Leave them as it is. In vim prompt mode just type :r! blkid and you&rsquo;ll get UUIDs of all partitions. Add them there for root, home, boot and swap partitions.</p>
+<h2 id="locales">locales</h2>
+<p>Generate locales.</p>
+<pre><code>localedef -i en_US -f ISO-8859-1 en_US
+localedef -i en_US -f ISO-8859-1 en_US.ISO-8859-1
+localedef -i en_US -f UTF-8 en_US.UTF-8 
+</code></pre><h2 id="rcconf">rc.conf</h2>
+<p>Edit rc.conf. Mine looks like this.</p>
+<pre><code>vim /etc/rc.conf
+
+#
+# /etc/rc.conf: system configuration
+#
+
+FONT=ter-v22n
+KEYMAP=us
+TIMEZONE=Asia/Karachi
+HOSTNAME=cruz
+SYSLOG=sysklogd
+SERVICES=(crond wifi acpid )
+
+# End of file
+    
+</code></pre><h2 id="resolvconf">resolv.conf</h2>
+<p>Edit /etc/resolv.conf. I&rsquo;m using OpenDNS nameserver here.</p>
+<pre><code>vim /etc/resolv.conf
+    
+nameserver 208.67.222.222
+    
+</code></pre><h2 id="wifi">wifi</h2>
+<p>For wireless connection, you can use wpa_supplicant. For example if your interface is wlp3s0 and SSID is nix, add passphrase to it using wpa_passphrase like this.</p>
+<pre><code>wpa_passphrase nix &gt;&gt; /etc/wpa_supplicant.conf
+Reading from STDIN  # Type your passphrase.
+    
+wpa_supplicant -i wlp3s0 -B -c /etc/wpa_supplicant.conf
+dhcpcd wlp3s0
+    
+</code></pre><h2 id="kernel">Kernel</h2>
+<p>Compile the kernel now. Go to the /usr/src/linux directory. Configure the kernel config. Since we are gonna have an encrypted installation, we need some extra drivers. Invoke &lsquo;make menuconfig&rsquo; and enable these options. And also enable what is needed for your hardware. I&rsquo;ll add only options needed for encryption here.</p>
+<pre><code>    
+General setup ---&gt;
+
+  [*] Initial RAM filesystem and RAM disk (iniramfs/initrd) support
+
+
+Device Drivers ---&gt;
+
+  Multiple devices driver support (RAID and LVM) ---&gt;
+    [*] Device mapper support
+    [*] Crypt target support
+
+Cryptographic API ---&gt; 
+  
+  -*- CBC support
+  &lt;*&gt; SHA224 and SHA256 digest algorithm
+  &lt;*&gt; AES cipher algorithms
+
+</code></pre><p>You can get my kernel config from <a href="https://gitlab.com/Abdullah/cfg/raw/master/kernel/config">https://gitlab.com/Abdullah/cfg/raw/master/kernel/config</a> by using wget and then edit it as per your hardware. This one is for Thinkpad with SSD.</p>
+<pre><code>wget https://gitlab.com/Abdullah/cfg/raw/master/kernel/config &gt; .config 
+
+</code></pre><p>After you&rsquo;re done with configuring kernel, compile it. Once it&rsquo;s compiled, copy it to /boot directory and install modules.</p>
+<pre><code>make -j8
+make modules_install
+cp arch/x86/boot/bzImage /boot/vmlinuz
+cp System.map /boot
+</code></pre><h2 id="users-and-package-management">Users and package management</h2>
+<h2 id="root-password-and-a-normal-user">Root password and a normal user</h2>
+<p>Set root password. Create our first user. And then we will create a second user for package management.</p>
+<pre><code>passwd
+useradd -G wheel,audio,video -m -U abdullah
+passwd abdullah
+</code></pre><h2 id="give-new-user-sudo-access">Give new user sudo access</h2>
+<p>Add new created user to sudoers. Uncomment this line in /etc/sudoers.</p>
+<pre><code>%wheel ALL=(ALL) ALL
+</code></pre><h2 id="user-for-creating-packages">User for creating packages</h2>
+<p>Now let&rsquo;s create a user for package management.</p>
+<pre><code>groupadd pkgmk
+useradd -m -g pkgmk pkgmk
+    
+</code></pre><p>Add our user to this newly created group.</p>
+<pre><code>usermod -aG pkgmk abdullah
+    
+</code></pre><h2 id="fakeroot">fakeroot</h2>
+<p>Edit /etc/prt-get.conf to set up fakeroot building.</p>
+<pre><code>makecommand sudo -H -u pkgmk /usr/bin/fakeroot /usr/bin/pkgmk
+    
+</code></pre><p>Edit /etc/pkgmk.conf.</p>
+<pre><code>vim /etc/pkgmk.conf
+    
+PKGMK_SOURCE_DIR=&quot;/home/pkgmk/distfiles&quot;
+PKGMK_PACKAGE_DIR=&quot;/home/pkgmk/packages&quot;
+PKGMK_WORK_DIR=&quot;/home/pkgmk/work/$name&quot;
+    
+</code></pre><p>Create those directories.</p>
+<pre><code>mkdir /home/pkgmk/{distfiles,packages,work}
+chown pkgmk:pkgmk /home/pkgmk/*
+chmod 775 /home/pkgmk/*
+    
+</code></pre><p>Enable contrib repository.</p>
+<pre><code>
+mv /etc/ports/contrib.rsync.inactive /etc/ports/contrib.rsync
+    
+</code></pre><p>Add my custom ports repository.</p>
+<pre><code>
+echo &quot;ROOT_DIR=/usr/ports/ak\nURL=https://abdullah.today/ports&quot; &gt; /etc/ports/ak.httpup
+
+    
+</code></pre><p>Enable contrib and my repository by editing /etc/prt-get.conf. Uncomment the line which says &ldquo;prtdir /usr/ports/contrib&rdquo; and add this line on top of the other port directories path. &ldquo;prtdir /usr/ports/ak&rdquo;. Also don&rsquo;t forget to uncomment the line which says, &ldquo;runscripts yes&rdquo;. After editing the file, it should be look like this.</p>
+<pre><code>    
+###
+### prt-get conf
+###
+
+# note: the order matters: the package found first is used
+prtdir /usr/ports/ak
+prtdir /usr/ports/core
+prtdir /usr/ports/opt
+prtdir /usr/ports/xorg
+
+# the following line enables the multilib compat-32 collection
+#prtdir /usr/ports/compat-32
+
+# the following line enables the user maintained contrib collection
+prtdir /usr/ports/contrib
+
+### use mypackage form local directory
+# prtdir /home/packages/build:mypackage
+
+### log options:
+# writelog enabled         # (enabled|disabled)
+# logmode  overwrite       # (append|overwrite)
+# rmlog_on_success yes     # (no|yes)
+logfile  /var/log/pkgbuild/%n.log
+                           # path, %p=path to port dir, %n=port name
+                           #       %v=version, %r=release
+
+### use alternate cache file (default: /var/lib/pkg/prt-get.cache
+# cachefile /mnt/nfs/cache
+
+### print README information:
+# readme verbose           # (verbose|compact|disabled)
+
+### prefer higher versions in sysup / diff
+# preferhigher no      # (yes|no)
+
+### use regexp search
+# useregex no        # (yes|no)
+
+### run pre- and post-installs scripts; yes is equivalent to the
+### --install-scripts option
+runscripts yes            # (no|yes)
+
+
+### EXPERT SECTION ###
+
+### alternative commands
+# makecommand      pkgmk
+# addcommand       pkgadd
+# removecommand    pkgrm
+# runscriptcommand sh
+makecommand sudo -H -u pkgmk /usr/bin/fakeroot /usr/bin/pkgmk
+
+</code></pre><p>Sync ports now.</p>
+<pre><code>
+ports -u
+    
+</code></pre><p>Get fakeroot installed if you don&rsquo;t have yet.</p>
+<pre><code>
+prt-get install fakeroot
+
+</code></pre><h2 id="dracut">Dracut</h2>
+<p>Get dracut and create an initramfs.</p>
+<pre><code>prt-get depinst dracut
+dracut initramfs.img
+    
+</code></pre><h2 id="bootloader">Bootloader</h2>
+<p>I&rsquo;m using EFISTUB. If you&rsquo;re using some other boot manager like grub, consult their wiki. There are some dracut related variables in this example. I&rsquo;d recommand, create a new file with vim, and then in prompt mode, type :r! blkid so you&rsquo;ll get all UUIDs there in the file. Just copy them in the new file, delete other lines and save it. Then redirect this file&rsquo;s output to shell like this, &lsquo;cat newCreatedFile | sh&rsquo;. It will create a new entry. root-UUID=, rd.luks.uuid=, and rd.lvm.vg=. For EFISTUB, create an entry like this.</p>
+<pre><code>efibootmgr --create --disk /dev/sda --part 1 --label 'CRUX-Encrypted' --loader /vmlinuz --unicode &quot;root=UUID=XXXX-XXXX-XXXX-XXX rw resume=UUID=XXXX-XXXX-XXXX-XXXX rd.luks.uuid=XXXX-XXXX-XXXX-XXXX rd.lvm.vg=ak&quot; --verbose
+    
+</code></pre><h2 id="congrats">Congrats!</h2>
+<p>Congrats! You have now a fully encrypted system. Reboot now. If you have some problems, just send me an email and I&rsquo;ll be glad to help.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://abdullah.today/tags/encrypted-crux">encrypted crux</a></span><span class="tag"><a href="https://abdullah.today/tags/encryption">encryption</a></span><span class="tag"><a href="https://abdullah.today/tags/luks">luks</a></span><span class="tag"><a href="https://abdullah.today/tags/lvm">lvm</a></span><span class="tag"><a href="https://abdullah.today/tags/encrypted-laptop">encrypted laptop</a></span><span class="tag"><a href="https://abdullah.today/tags/source-based-distros">source based distros</a></span><span class="tag"><a href="https://abdullah.today/tags/crux">crux</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1055 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-05-12 05:00 &#43;0500</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://abdullah.today/crux/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">CRUX</span>
+                            </a>
+                        </span>
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://abdullah.today/github-readme/">
+                                <span class="button__text">How to include a screenshot in Github README</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+            <div id="comments" class="thin">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "akpk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://abdullah.today/">Abdullah</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://abdullah.today/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://abdullah.today/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-147400444-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Abdullah">
+<meta name="description" content="What&amp;rsquo;s URxvt? As a linux user, I spend most of my time in terminal emulators. There are alot of emulators available today but none can beat rxvt-unicode.
+The biggest problem most new linux users face is how to configure it. Today I&amp;rsquo;ll explain how you can use it to your needs.
+Most distributions package it with less features enabled. I always compile it from source. So let&amp;rsquo;s start and in the end you&amp;rsquo;ll end up with a perfect terminal emulator." />
+<meta name="keywords" content="linux, archlinux, abdullah, ak, bspwm, window manager, dwm, polybar, rxvt, urxvt, rxvt-unicode, terminal, term, xterm" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://abdullah.today/urxvt/" />
+
+
+    <title>
+        
+            URXVT - Terminal for Geeks :: Abdullah Turabi  — Abdullah Turabi
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://abdullah.today/main.dede02da9537a98158079c023e83573e18127834838ef08172acce888341a797.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/favicon-16x16.png">
+    <link rel="manifest" href="https://abdullah.today/site.webmanifest">
+    <link rel="mask-icon" href="https://abdullah.today/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://abdullah.today/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="URXVT - Terminal for Geeks">
+<meta itemprop="description" content="URXVT - Terminal for Geeks">
+<meta itemprop="datePublished" content="2019-09-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="811">
+<meta itemprop="image" content="https://abdullah.today/"/>
+
+
+
+<meta itemprop="keywords" content="rxvt,urxvt,rxvt-unicode,terminal,term,xterm," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/"/>
+
+<meta name="twitter:title" content="URXVT - Terminal for Geeks"/>
+<meta name="twitter:description" content="URXVT - Terminal for Geeks"/>
+
+
+
+    <meta property="og:title" content="URXVT - Terminal for Geeks" />
+<meta property="og:description" content="URXVT - Terminal for Geeks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/urxvt/" />
+<meta property="og:image" content="https://abdullah.today/"/>
+<meta property="article:published_time" content="2019-09-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-19T00:00:00+00:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2019-09-19 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://abdullah.today/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://abdullah.today/images/icons/safari-pinned-tab.svg" color="#6cd55b">
+<link rel="shortcut icon" href="https://abdullah.today/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="msapplication-TileImage" content="https://abdullah.today/images/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="https://abdullah.today/images/icons/browserconfig.xml">
+<meta name="theme-color" content="#3c9159">
+
+
+<script data-ad-client="ca-pub-6819322586059940" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://abdullah.today/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Allah o Akbar Kabeera!</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://abdullah.today/about/">About</a></li><li><a href="https://abdullah.today/posts/">Blog</a></li><li><a href="https://abdullah.today/quran/">Quran</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>4 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://abdullah.today/urxvt/">URXVT - Terminal for Geeks</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <h4 id="whats-urxvt">What&rsquo;s URxvt?</h4>
+<p>As a linux user, I spend most of my time in terminal emulators. There are alot of emulators available today but none can beat rxvt-unicode.</p>
+<p>The biggest problem most new linux users face is how to configure it. Today I&rsquo;ll explain how you can use it to your needs.</p>
+<p>Most distributions package it with less features enabled. I always compile it from source. So let&rsquo;s start and in the end you&rsquo;ll end up with a perfect terminal emulator.</p>
+<p>Get the source and compile it.</p>
+<pre><code>$ wget http://dist.schmorp.de/rxvt-unicode/Attic/rxvt-unicode-9.22.tar.bz2
+$ tar xvf rxvt-unicode-9.22.tar.bz2
+$ cd rxvt-unicode-9.22
+$ ./configure --enable-everything --enable-256-color
+$ make
+# make install
+</code></pre><p>&ndash;enable-everything will compile all things for us except 256 color support. So keep that in mind.</p>
+<p>So now rxvt-unicode is installed, just execute it. You won&rsquo;t like it out of the box. We have to configure it.</p>
+<h4 id="configuration">Configuration</h4>
+<p>rxvt-unicode reads the configuration from two files, ~/.Xresources or ~/.Xdefaults. So here I&rsquo;m gonna put my ~/.Xdefaults, just copy it to your home directory as ~/.Xdefaults. You can always get the latest one <a href="https://gitlab.com/Abdullah/cfg/-/blob/master/etc/.Xresources">here</a>.</p>
+<pre><code>$ cat ~/.Xresources
+
+! In the name of Allah, the most Gracious, the most Merciful.
+! 
+!  ▓▓▓▓▓▓▓▓▓▓
+! ░▓ Author ▓ Abdullah &lt;https://abdullah.today&gt;
+! ░▓▓▓▓▓▓▓▓▓▓
+! ░░░░░░░░░░
+! 
+! ░█░█░█▀▄░█▀▀░█▀▀░█▀█░█░█░█▀▄░█▀▀░█▀▀░█▀▀
+! ░▄▀▄░█▀▄░█▀▀░▀▀█░█░█░█░█░█▀▄░█░░░█▀▀░▀▀█
+! ░▀░▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀
+
+
+! Colors
+
+!black
+*color0                    : #1C1C1C
+*color8                    : #4d4d4d
+!red
+*color1                    : #D81860
+*color9                    : #F00060
+!green
+*color2                    : #B7CE42
+*color10                   : #BDE077
+!yellow
+*color3                    : #FEA63C
+*color11                   : #FFE863
+!blue
+*color4                    : #66AABB
+*color12                   : #AACCBB
+!magenta
+*color5                    : #B7416E
+*color13                   : #BB4466
+!cyan
+*color6                    : #5E7175
+*color14                   : #A3BABF
+!white
+*color7                    : #DDEEDD
+*color15                   : #6C887A
+*.foreground  : #fffaf4
+*.background  : #0e1019
+*.cursorColor : #ff0018
+
+! URxvt 
+
+! if remote host is having problems with rxvt-unicode, copy
+! /usr/share/terminfo/r/rxvt-unicode at hosts ~/.terminfo/r/rxvt-unicode
+
+URxvt*font                 : xft:FantasqueSansMono Nerd Font:Italic:size=21,
+xft:Fantasque Sans Mono:Italic:size=21, xft:DejaVu Sans Mono for
+Powerline:size=21, xft:Segoe UI Emoji:size=21, xft:SimHei:size=21
+URxvt*boldfont             : xft:Bitstream Vera Sans
+Mono:Bold:size=17:antialias=true
+URxvt*bolditalicfont       : xft:Bitstream Vera Sans
+Mono:Bold:italic:size=17:antialias=true
+URxvt*utf                  : 1
+URxvt*locale               : 1
+URxvt.imlocale             : en_US.UTF-8
+URxvt*letterSpace          : 0
+URxvt*termName             : rxvt-unicode-256color
+URxvt*geometry             : 96x30
+URxvt*background           : #1B2B34
+URxvt*reverseVideo         : 0
+URxvt*loginShell           : 0
+URxvt*jumpScroll           : 1
+URxvt*skipScroll           : 1
+URxvt*pastableTabs         : 1
+URxvt*scrollstyle          : plain
+URxvt*scrollBar            : 0
+URxvt*scrollBar_right      : 0
+URxvt*scrollBar_floating   : 0
+URxvt*scrollBar_align      : centre
+URxvt*thickness            : 0
+URxvt*scrollTtyOutput      : 0
+URxvt*scrollTtyKeypress    : 1
+URxvt*scrollWithBuffer     : 1
+URxvt*inheritPixmap        : 0
+URxvt*transparent          : 0
+URxvt*tintColor            : #ffffff
+URxvt*shading              : 145
+URxvt*blurRadius           : 1x65
+URxvt*fading               : 25
+URxvt*fadeColor            : #008B8B
+URxvt*utmpInhibit          : 1
+URxvt*urgentOnBell         : 1
+URxvt*visualBell           : 0
+URxvt*mapAlert             : 0
+URxvt*meta8                : 0
+URxvt*mouseWheelScrollPage : 0
+URxvt*tripleclickwords     : 0
+URxvt*insecure             : 0
+URxvt*cursorUnderline      : 1
+URxvt*cursorBlink          : 0
+URxvt*pointerBlank         : 1
+URxvt*iconFile             :
+/usr/share/icons/Adwaita/16x16/apps/utilities-terminal-symbolic.symbolic.png
+URxvt*pointerShape         : ul_angle
+URxvt*intensityStyles      : 1
+URxvt*saveLines            : 9999
+URxvt*buffered             : 1
+URxvt*depth                : 32
+URxvt*visual               : 0x16f
+URxvt*override-redirect    : 0
+URxvt*externalBorder       : 15
+URxvt*internalBorder       : 15
+URxvt*borderLess           : 0
+URxvt*lineSpace            : 0
+URxvt*skipBuiltinGlyphs    : 0
+URxvt*pointerBlankDelay    : 1
+URxvt*print-pipe           : cat &gt;  /tmp/$(echo urxvt.dump.$(date
++'%Y%M%d%H%m%S'))
+URxvt*modifier             :
+URxvt*cutchars             : BACKSLASH &quot; &quot;
+'&quot;'&amp;()*,;&lt;=&gt;?@[]^{|}\&quot;()*,&lt;&gt;[]{}|''&quot;\
+URxvt*secondaryScreen      : 1
+URxvt*secondaryScroll      : 0
+URxvt*perl-lib             : /home/ak/.urxvt/ext
+URxvt*iso14755             : 1
+URxvt*iso14755_52          : 1
+URxvt*matcher.button       : 2
+URxvt*url-launcher         : /usr/bin/google-chrome-stable
+URxvt*url-select.underline : 1
+URxvt*matcher.rend.0       : Uline Bold fg5
+URxvt*selection.pattern-0  : ([[                           : word
+: ]]+)
+URxvt*keysym.M-C-c         : selection                     : rot13
+URxvt*perl-ext-common      : vim,default,matcher,font-size
+URxvt*vim-scrollback       : M-s
+URxvt*vim-scrollback-paste : M-p
+URxvt*clipboard.copycmd    : xsel -ib
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+
+
+! Polybar
+
+polybar*background             : #24292A
+polybar*foreground             : #ccd2be
+polybar*fading                 : 15
+polybar*fadeColor              : black
+polybar*cursorColor            : #16A085
+polybar*pointerColorBackground : #2B2C2B
+polybar*pointerColorForeground : #16A085
+polybar*urgent                 : #B34747
+
+! black dark/light
+polybar*color0                 : #24292A
+polybar*color8                 : #3c4140
+
+! red dark/light
+polybar*color1                 : #ff8843
+polybar*color9                 : #c48851
+
+! green dark/light
+polybar*color2                 : #7a8d5c
+polybar*color10                : #aec199
+
+! yellow dark/light
+polybar*color3                 : #a69658
+polybar*color11                : #c4b268
+
+! blue dark/light
+polybar*color4                 : #7b90a9
+polybar*color12                : #91aac7
+
+! magenta dark/light
+polybar*color5                 : #aa6161
+polybar*color13                : #e78484
+
+! cyan dark/light
+polybar*color6                 : #698885
+polybar*color14                : #83a5a1
+
+! white dark/light
+polybar*color7                 : #a8b298
+polybar*color15                : #ccd2be
+
+! pink
+polybar*color16                : #9181E7
+
+! purple
+polybar*color17                : #D7AFF9
+
+
+! XTERM
+
+XTerm.vt100.faceName         :Fantasque Sans
+Mono:italic:size=15:antialias=true
+XTerm.vt100.boldFont         :Fantasque Sans Mono:bold:italic:size=15
+xterm.scaleHeight           : 1.01
+xterm*termName              : xterm-256color
+xterm*geometry              : 96x30
+xterm*reverseVideo          : 0
+xterm*loginShell            : 1
+
+! Dmenu
+
+dmenu.selforeground:      #474c57
+dmenu.background:         #ffffff
+dmenu.selbackground:      #4ec2e8
+dmenu.foreground:         #474c57
+
+! rofi
+
+rofi.color-enabled: true
+rofi.color-window: #ffffff, #ffffff, #ffffff
+rofi.color-normal: #ffffff, #474c57, #ffffff, #ffffff, #4ec2e8
+rofi.color-active: #ffffff, #fec7cd, #ffffff, #ffffff, #95c1c0
+rofi.color-urgent: #ffffff, #f59335, #ffffff, #ffffff, #f59335  
+
+! Cursor
+
+Xcursor.size                : 16
+
+! Xautolock
+
+Xautolock.locker            : &quot;/usr/bin/physlock -mp 'Aur tum apny Rab ki kon
+kon c nematon ko jhutlawo gy?'&quot;
+
+
+</code></pre><p>After saving the file, we have to load it.</p>
+<pre><code>$ xrdb -load ~/.Xdefaults
+</code></pre><p>Now execute it. You may not have the fonts I use so maybe you face some errors. Just install those fonts or change them.</p>
+<p>I also have written a post about <a href="https://abdullah.today/fonts.html">fonts</a>.</p>
+<p>Still have problems? Just lemme know and I&rsquo;ll be happy to assist you.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://abdullah.today/tags/rxvt">rxvt</a></span><span class="tag"><a href="https://abdullah.today/tags/urxvt">urxvt</a></span><span class="tag"><a href="https://abdullah.today/tags/rxvt-unicode">rxvt-unicode</a></span><span class="tag"><a href="https://abdullah.today/tags/terminal">terminal</a></span><span class="tag"><a href="https://abdullah.today/tags/term">term</a></span><span class="tag"><a href="https://abdullah.today/tags/xterm">xterm</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>811 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-09-19 05:00 &#43;0500</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://abdullah.today/debian-fresh-install/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">Things to do after a new Debian installation</span>
+                            </a>
+                        </span>
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://abdullah.today/fonts/">
+                                <span class="button__text">How to install fonts in Linux</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+            <div id="comments" class="thin">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "akpk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://abdullah.today/">Abdullah</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://abdullah.today/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://abdullah.today/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-147400444-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

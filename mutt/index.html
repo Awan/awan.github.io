@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Abdullah">
+<meta name="description" content="why commandline? TL;DR
+powerful and efficient!
+I have been creating multiple accounts for email since 2009. Some of the accounts I still have them in 2019 and others I don&amp;rsquo;t have access to. I realized that having your own email server on your own domain is a good thing. So I started creating mail server. I did that well. Learned a lot.
+As you know I like things to keep minimalistic yet powerful than most written GUI apps." />
+<meta name="keywords" content="linux, archlinux, abdullah, ak, bspwm, window manager, dwm, polybar, mutt, email, commandline_email, neomutt, isync, mbsync, sendmail, mail" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://abdullah.today/mutt/" />
+
+
+    <title>
+        
+            My Email Setup :: Abdullah Turabi  — Abdullah Turabi
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://abdullah.today/main.dede02da9537a98158079c023e83573e18127834838ef08172acce888341a797.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/favicon-16x16.png">
+    <link rel="manifest" href="https://abdullah.today/site.webmanifest">
+    <link rel="mask-icon" href="https://abdullah.today/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://abdullah.today/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="My Email Setup">
+<meta itemprop="description" content="My Terminal based mail setup">
+<meta itemprop="datePublished" content="2019-09-17T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-17T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1022">
+<meta itemprop="image" content="https://abdullah.today/"/>
+
+
+
+<meta itemprop="keywords" content="mutt,email,commandline_email,neomutt,isync,mbsync,sendmail,mail," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/"/>
+
+<meta name="twitter:title" content="My Email Setup"/>
+<meta name="twitter:description" content="My Terminal based mail setup"/>
+
+
+
+    <meta property="og:title" content="My Email Setup" />
+<meta property="og:description" content="My Terminal based mail setup" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/mutt/" />
+<meta property="og:image" content="https://abdullah.today/"/>
+<meta property="article:published_time" content="2019-09-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-17T00:00:00+00:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2019-09-17 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://abdullah.today/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://abdullah.today/images/icons/safari-pinned-tab.svg" color="#6cd55b">
+<link rel="shortcut icon" href="https://abdullah.today/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="msapplication-TileImage" content="https://abdullah.today/images/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="https://abdullah.today/images/icons/browserconfig.xml">
+<meta name="theme-color" content="#3c9159">
+
+
+<script data-ad-client="ca-pub-6819322586059940" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://abdullah.today/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Allah o Akbar Kabeera!</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://abdullah.today/about/">About</a></li><li><a href="https://abdullah.today/posts/">Blog</a></li><li><a href="https://abdullah.today/quran/">Quran</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>5 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://abdullah.today/mutt/">My Email Setup</a>
+            </h1>
+                <hr />
+                <aside id="toc">
+                <div class="toc-title">Table of Contents</div>
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-commandline">why commandline?</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#install-required-tools">Install required tools</a>
+      <ul>
+        <li><a href="#sync-mail-accounts">sync mail accounts</a></li>
+      </ul>
+    </li>
+    <li><a href="#isync">isync</a></li>
+    <li><a href="#mutt">Mutt</a></li>
+    <li><a href="#automate-it-with-systemd">Automate it with systemd</a>
+      <ul>
+        <li><a href="#password-management">Password management</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </aside>
+                <hr />
+
+            
+
+            <div class="post-content">
+                <h2 id="why-commandline">why commandline?</h2>
+<p><em><em>TL;DR</em></em></p>
+<p>powerful and efficient!</p>
+<p>I have been creating multiple accounts for email since 2009. Some of the
+accounts I still have them in 2019 and others I don&rsquo;t have access to. I realized that having your own email server on your own domain is a good thing. So I started creating mail server. I did that well. Learned a lot.</p>
+<p>As you know I like things to keep minimalistic yet powerful than most written
+GUI apps. So here is how I use a command line email client <!-- raw HTML omitted -->Mutt<!-- raw HTML omitted --> with many other tools which make it perfect setup.</p>
+<p>There are several scenarios. Like if you have an email server, you can ssh into it and start reading your email inside some tmux session.</p>
+<p>But what I have is totally different.</p>
+<p>I use isync to sync my remote mailbox with local one, invoke notmuch and
+read/reply the emails using mutt.</p>
+<h3 id="installation">Installation</h3>
+<h2 id="install-required-tools">Install required tools</h2>
+<pre><code>$ sudo apt install -y isync mutt notmuch
+
+</code></pre><h3 id="sync-mail-accounts">sync mail accounts</h3>
+<h2 id="isync">isync</h2>
+<p>I use <!-- raw HTML omitted -->isync<!-- raw HTML omitted --> to sync mailboxes.</p>
+<p>Let&rsquo;s configure it.</p>
+<pre><code>IMAPAccount abdullah
+Host imap.gmail.com
+User user@gmail.com
+PassCmd &quot;gpg -dq ~/.local/share/misc/abdullah.gpg&quot;
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore abdullah-remote
+Account abdullah
+
+MaildirStore abdullah-local
+Subfolders Verbatim
+Path ~/.mail/
+Inbox ~/.mail/Inbox
+
+Channel abdullah
+Master :abdullah-remote:
+Slave :abdullah-local:
+Patterns *
+CopyArrivalDate yes
+Create Both
+SyncState *
+
+
+</code></pre><p>Replace mailbox stuff with yours where necessary. And start isync.</p>
+<pre><code>$ mbsync -VXa 
+</code></pre><p>Don&rsquo;t forget to run <!-- raw HTML omitted -->notmuch<!-- raw HTML omitted --> before or after it. Answer all questions
+it asks, it&rsquo;s one time process. You can edit the cofiguration later, they
+reside in your home directory.</p>
+<h2 id="mutt">Mutt</h2>
+<p>Mutt is a command line utility which runs inside a terminal session.
+Pretty easy to use and have tons of features.</p>
+<p>Mut looks for configuration files for user base in $HOME/.config/mutt/. So
+create this directory.</p>
+<pre><code>$ mkdir -p ~/.config/mutt/credentials
+touch ~/.config/mutt/muttrc
+</code></pre><p>Edit <!-- raw HTML omitted -->muttrc<!-- raw HTML omitted --> to your needs. I&rsquo;m pasting mine here for reference.</p>
+<pre><code>$ cat ~/.config/mutt/muttrc
+
+
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ Author ▓ Abdullah &lt;https://abdullah.today/&gt;
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░
+#
+
+
+# source important files
+
+source $HOME/.config/mutt/colorrc
+source $HOME/.config/mutt/gpgforak.rc
+source ~/.config/mutt/aliases
+
+
+
+set folder                         = ~/.mail
+mailboxes                          = `echo $HOME/.mail/*`
+set from                           = abdullah@abdullah.today
+set sendmail                       = msmtp
+set abort_noattach                 = &quot;no&quot;
+set abort_noattach_regexp          = &quot;attach&quot;
+set abort_nosubject                = &quot;ask-yes&quot;
+set alias_file                     = &quot;~/.config/mutt/aliases&quot; #source it
+set alias_format                   = &quot;%4n %2f %t %-10a   %r&quot;
+set allow_8bit                     = &quot;yes&quot;
+set allow_ansi                     = &quot;no&quot;
+set arrow_cursor                   = &quot;yes&quot;
+set ascii_chars                    = &quot;no&quot;
+set askbcc                         = &quot;no&quot;
+set askcc                          = &quot;no&quot;
+set assumed_charset                =
+set attach_charset                 =
+set attach_format                  = &quot;%u%D%I %t%4n %T%.40d%&gt; [%.7m/%.10M, %.6e%?C?, %C?, %s] &quot;
+set attach_sep                     = &quot;\n&quot;
+set attach_split                   = &quot;yes&quot;
+set attribution                    = &quot;On %d, %n wrote:&quot;
+set attribution_locale             =
+set auto_tag                       = &quot;no&quot;
+set autoedit                       = &quot;yes&quot;
+set beep                           = &quot;yes&quot;
+set beep_new                       = &quot;yes&quot;
+set bounce                         = &quot;ask-yes&quot;
+set bounce_delivered               = &quot;no&quot;
+set braille_friendly               = &quot;no&quot;
+set browser_abbreviate_mailboxes  = &quot;yes&quot;
+set certificate_file              = &quot;~/.config/mutt/certs&quot;
+set crypt_autosign                = yes
+set crypt_replyencrypt            = yes
+set date_format                   = &quot;%d/%m&quot;
+set editor                        = vim
+set fast_reply                    = yes
+set header_cache                  = ~/.cache/mutt
+set imap_keepalive                = 300
+set include                       = yes
+set mail_check                    = 60
+set mail_check_stats              = yes
+set mailcap_path                  = ~/.config/mutt/mailcap
+set mbox_type                     = Maildir
+set message_cachedir              = ~/.cache/mutt/messages
+set pager                         = vim
+set pager_context                 = 3
+set pager_index_lines             = 8
+set pgp_autosign                  = yes
+set pgp_replysign                 = yes
+set pgp_replysignencrypted        = yes
+set pgp_sign_as                   = 0x5CBC7BC7
+set pgp_timeout                   = 3600
+set pgp_use_gpg_agent             = yes
+set postpone_encrypt              = yes
+set postpone_encrypt_as           = 0xE6E81782
+set postponed                     = ~/.mail/Drafts
+set prompt_after                  = no
+set quote_regexp                  = &quot;^( {0,4}[&gt;|:#%]| {0,4}[a-z0-9]+[&gt;|]+)+&quot;
+set record                        = ~/.mail/Sent
+set trash                         = ~/.mail/Trash
+set reply_regexp                  = &quot;^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*&quot;
+set rfc2047_parameters            = yes
+set send_charset                  = utf-8
+set sidebar_format                = &quot;%B%?F? [%F]?%* %?N?%N/?%S&quot;
+set sidebar_visible               = yes
+set thorough_search
+set sidebar_width                 = 24
+set status_chars                  = &quot; *%A&quot;
+set sig_dashes                    = no
+set signature                     = ~/.config/mutt/signature
+set sort                          = threads
+set sort_aux                      = reverse-last-date-received
+set spoolfile                     = ~/.mail/INBOX
+set ssl_force_tls                 = yes
+set ssl_starttls                  = yes
+set timeout                       = 3
+set use_from                      = yes
+set quit
+set visual                        = vim
+set wait_key                      = no
+set status_format                 = &quot;───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%&gt;─%?p?( %p postponed )?───&quot;
+set sort_re
+set edit_headers
+unset confirmappend
+unset imap_passive
+unset mark_old
+set smart_wrap
+unset markers
+set pipe_decode
+set text_flowed
+set pager_stop
+auto_view application/pgp-encrypted
+set menu_scroll
+set uncollapse_jump
+set delete
+set tilde
+set imap_check_subscribed
+
+# HTML
+
+auto_view text/html
+alternative_order text/enriched text/plain text/html
+alternative_order text/plain text/enriched text/html
+alternative_order text/plain text/html
+
+# Keybindings
+
+bind attach &lt;return&gt; view-mailcap
+bind attach,index G last-entry
+bind attach,index g first-entry
+bind attach,index,pager \CD next-page
+bind attach,index,pager \CU previous-page
+bind browser $ check-new
+bind index   \t   next-unread
+bind index  ,\t previous-unread
+bind index &lt;space&gt;  collapse-thread
+bind index &lt;tab&gt;    sync-mailbox
+bind index G        last-entry
+bind index R        group-reply
+bind index,pager &lt;down&gt;   sidebar-next
+bind index,pager &lt;right&gt;  sidebar-open
+bind index,pager &lt;up&gt;     sidebar-prev
+bind pager G bottom
+bind pager R  group-reply
+bind pager g top
+bind pager gg top
+bind pager j  next-line
+bind pager k  previous-line
+
+# colors
+
+color header blue default &quot;^(Subject)&quot;
+color index red white &quot;~v~(~F)!~N&quot;
+color sidebar_new yellow default
+
+# macros
+
+macro index C &quot;&lt;copy-message&gt;?&lt;toggle-mailboxes&gt;&quot; 
+# macro index q &quot;&lt;sync-mailbox&gt;&lt;shell-escape&gt;/usr/bin/offlineimap -o &gt;/dev/null 2&gt;&amp;1&lt;enter&gt;&lt;quit&gt;&quot;
+macro index M &quot;&lt;save-message&gt;?&lt;toggle-mailboxes&gt;&quot;
+macro index O &quot;&lt;shell-escape&gt;mbsync -Va&lt;enter&gt;&quot; 
+macro index \Cr &quot;T~U&lt;enter&gt;&lt;tag-prefix&gt;&lt;clear-flag&gt;N&lt;untag-pattern&gt;.&lt;enter&gt;&quot; 
+macro index,pager U &quot;&lt;enter-command&gt;set pipe_decode  = yes&lt;enter&gt;&lt;pipe-message&gt;urlview&lt;enter&gt;&lt;enter-command&gt;set pipe_decode = no&lt;enter&gt;&quot;&quot;view URLs&quot;
+
+# headers
+
+my_hdr User-Agent: 'Eat your heart out, Windows Lusers'
+hdr_order from: to: cc: date: subject:
+unhdr_order *
+
+#vim:filetype=muttrc
+
+</code></pre><h2 id="automate-it-with-systemd">Automate it with systemd</h2>
+<p>You can automate it with systemd. Here are two files which will invoke isync
+a minute after your machine is rebooted and then after every two minutes
+synchronization.</p>
+<p>A service file:</p>
+<pre><code>$ cat ~/.config/systemd/user/isync.service
+
+[Unit]
+Description=Mailbox Sync
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mbsync -VXa
+ExecStartPost=/usr/bin/notmuch new
+
+</code></pre><p>and a timer:</p>
+<pre><code>$ cat ~/.config/systemd/user/isync.timer
+
+[Unit]
+Description=Mailbox Sync Timer
+
+[Timer]
+OnBootSec=1m
+OnUnitActiveSec=2m
+Unit=isync.service
+
+[Install]
+WantedBy=timers.target
+
+</code></pre><p>Start them using:</p>
+<pre><code>$ systemctl --user --now enable isync.timer
+
+</code></pre><h3 id="password-management">Password management</h3>
+<p>I use encrypted passwords. You can check my
+<a href="https://gitlab.com/Abdullah/cfg.git">dotfiles</a> for
+reference.</p>
+<p>Voila! You have a perfect email setup now. You can enable extra functionality
+like encryption, password management, aliasing etc&hellip; Just have a look
+<a href="https://gitlab.com/Abdullah/cfg.git">here</a> if you
+think something isn&rsquo;t discussed or well-explained, and don&rsquo;t forget to comment and lemme know about your thoughts.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://abdullah.today/tags/mutt">mutt</a></span><span class="tag"><a href="https://abdullah.today/tags/email">email</a></span><span class="tag"><a href="https://abdullah.today/tags/commandline_email">commandline_email</a></span><span class="tag"><a href="https://abdullah.today/tags/neomutt">neomutt</a></span><span class="tag"><a href="https://abdullah.today/tags/isync">isync</a></span><span class="tag"><a href="https://abdullah.today/tags/mbsync">mbsync</a></span><span class="tag"><a href="https://abdullah.today/tags/sendmail">sendmail</a></span><span class="tag"><a href="https://abdullah.today/tags/mail">mail</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1022 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-09-17 05:00 &#43;0500</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://abdullah.today/enable-sudo-with-no-password/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">use sudo with no password</span>
+                            </a>
+                        </span>
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://abdullah.today/posts/latest-nodejs-in-debian/">
+                                <span class="button__text">latest nodejs for debian and derived distributions</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+            <div id="comments" class="thin">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "akpk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://abdullah.today/">Abdullah</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://abdullah.today/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://abdullah.today/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-147400444-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

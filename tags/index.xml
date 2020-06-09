@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Abdullah Turabi</title>
+    <link>https://abdullah.today/tags/</link>
+    <description>Recent content in Tags on Abdullah Turabi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 06 Jun 2020 18:13:35 +0500</lastBuildDate>
+    
+	<atom:link href="https://abdullah.today/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>console</title>
+      <link>https://abdullah.today/tags/console/</link>
+      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/console/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multiplexer</title>
+      <link>https://abdullah.today/tags/multiplexer/</link>
+      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/multiplexer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>screen</title>
+      <link>https://abdullah.today/tags/screen/</link>
+      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/screen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tmux</title>
+      <link>https://abdullah.today/tags/tmux/</link>
+      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/tmux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>advanced git</title>
+      <link>https://abdullah.today/tags/advanced-git/</link>
+      <pubDate>Thu, 04 Jun 2020 14:25:08 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/advanced-git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>branches</title>
+      <link>https://abdullah.today/tags/branches/</link>
+      <pubDate>Thu, 04 Jun 2020 14:25:08 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/branches/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cherry-pick</title>
+      <link>https://abdullah.today/tags/cherry-pick/</link>
+      <pubDate>Thu, 04 Jun 2020 14:25:08 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/cherry-pick/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://abdullah.today/tags/development/</link>
+      <pubDate>Thu, 04 Jun 2020 14:25:08 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://abdullah.today/tags/git/</link>
+      <pubDate>Thu, 04 Jun 2020 14:25:08 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bspwm</title>
+      <link>https://abdullah.today/tags/bspwm/</link>
+      <pubDate>Tue, 02 Jun 2020 10:52:37 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/bspwm/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
