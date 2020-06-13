@@ -2843,6 +2843,9 @@ monitor = XWAYLAND0
 ; vim:ft=dosini
 
 </code></pre><h1 id="bspwm">BSPWM</h1>
+<blockquote>
+<p><strong><em>UPDATE:</em></strong> Here is a <a href="https://abdullah.today/bspwm">post</a> for BSPWM.</p>
+</blockquote>
 <p>bspwm is a tiling window manager, it uses <code>sxhkd</code> for keybindings and windows
 management keybindings. Here is both configurations for both programs. You can use <code>xbindkeys</code> there&hellip;</p>
 <pre><code>$ cat $HOME/.config/bspwm/bspwrc
