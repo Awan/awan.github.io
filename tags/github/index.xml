@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github on Abdullah</title>
+    <link>https://abdullah.today/tags/github/</link>
+    <description>Recent content in github on Abdullah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://abdullah.today/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to include a screenshot in Github README</title>
+      <link>https://abdullah.today/github-readme/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://abdullah.today/github-readme/</guid>
+      <description>A picture is worth 1000 words. Working with github repos, sometimes you want to include a screenshot in your repos. Today I&amp;rsquo;ll help you getting this done in one step.
+Go to your repo page and click on issues.
+Click new issue
+Take a screenshot you wanna add and paste it there using Control + V or whatever you like.
+   ;(adsbygoogle = window.adsbygoogle || []).push({})  You will get a link once the screenshot is uploaded.</description>
+    </item>
+    
+    <item>
+      <title>Create/paste snippets from Terminal</title>
+      <link>https://abdullah.today/gists/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://abdullah.today/gists/</guid>
+      <description>What&amp;rsquo;s snippet/gist? gist is a piece of code or maybe some important text shared on Github or Gitlab. It&amp;rsquo;s actually a git repository so you can clone it, work on it locally and push changes.
+Share gists from Terminal There are multiple programs available in many distributions for this purpose. You just have to find it. On Arch Linux, you can install gist.
+Here is how it works in terminal.</description>
+    </item>
+    
+    <item>
+      <title>How to contribute to open source project</title>
+      <link>https://abdullah.today/contribution-with-git/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://abdullah.today/contribution-with-git/</guid>
+      <description>So you want to contribute to some open source project which is hosted on git[hub,lab] or some other git website. Here is all you want to do.
+Fork the repository Create a personal fork. On github, visit the project repository and hit fork. It will fork the project in your personal account.
+Clone it Clone it in your local machine so you can work on it. Remember you are cloning the fork, and not the original project.</description>
+    </item>
+    
+  </channel>
+</rss>

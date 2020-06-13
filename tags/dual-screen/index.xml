@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dual-screen on Abdullah</title>
+    <link>https://abdullah.today/tags/dual-screen/</link>
+    <description>Recent content in dual-screen on Abdullah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 02 Jun 2020 10:52:37 +0500</lastBuildDate>
+    
+	<atom:link href="https://abdullah.today/tags/dual-screen/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multihead with BSPWM and Polybar</title>
+      <link>https://abdullah.today/multihead/</link>
+      <pubDate>Tue, 02 Jun 2020 10:52:37 +0500</pubDate>
+      
+      <guid>https://abdullah.today/multihead/</guid>
+      <description>Multihead A few days ago, I relocated myself to new room. Actually this room I use for summer as its way cooler than others. I have a wall-mounted LCD monitor here so today I thought I should share how I do multi screening.
+Hardware I have this lenovo X series machine which is my main machine I use. Its resolution is 1920x1080.
+The second one is a LCD monitor. And the resolution is 1280x1024.</description>
+    </item>
+    
+  </channel>
+</rss>

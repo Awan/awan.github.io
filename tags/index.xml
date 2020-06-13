@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Abdullah</title>
+    <link>https://abdullah.today/tags/</link>
+    <description>Recent content in Tags on Abdullah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 11 Jun 2020 20:46:02 +0500</lastBuildDate>
+    
+	<atom:link href="https://abdullah.today/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bukhari</title>
+      <link>https://abdullah.today/tags/bukhari/</link>
+      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/bukhari/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hadees</title>
+      <link>https://abdullah.today/tags/hadees/</link>
+      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/hadees/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hadith</title>
+      <link>https://abdullah.today/tags/hadith/</link>
+      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/hadith/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hadith_of_day</title>
+      <link>https://abdullah.today/tags/hadith_of_day/</link>
+      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/hadith_of_day/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Muslim</title>
+      <link>https://abdullah.today/tags/muslim/</link>
+      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/muslim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sayings of Muhammad(PBUH)</title>
+      <link>https://abdullah.today/tags/sayings-of-muhammadpbuh/</link>
+      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/sayings-of-muhammadpbuh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>console</title>
+      <link>https://abdullah.today/tags/console/</link>
+      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/console/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multiplexer</title>
+      <link>https://abdullah.today/tags/multiplexer/</link>
+      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/multiplexer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>screen</title>
+      <link>https://abdullah.today/tags/screen/</link>
+      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/screen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tmux</title>
+      <link>https://abdullah.today/tags/tmux/</link>
+      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/tmux/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

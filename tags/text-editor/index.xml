@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>text editor on Abdullah</title>
+    <link>https://abdullah.today/tags/text-editor/</link>
+    <description>Recent content in text editor on Abdullah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 11 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://abdullah.today/tags/text-editor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to use vIM as IDE in Debian, Ubuntu, Mint</title>
+      <link>https://abdullah.today/vim-as-ide/</link>
+      <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://abdullah.today/vim-as-ide/</guid>
+      <description>Been using source based distributions for a long time. Source based distributions are cool for systems with limited resources. But what if you don&amp;rsquo;t have enough time?
+Debian is one of the oldest distribution there which is known for stability. Stability? Well that never had been a priority for me but for some reasons I came to it and now using it for some months. It&amp;rsquo;s a cool distribution.
+Well, that enough said, let&amp;rsquo;s come to the topic.</description>
+    </item>
+    
+  </channel>
+</rss>
