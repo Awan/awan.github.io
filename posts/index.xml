@@ -9,6 +9,54 @@
         <atom:link href="https://abdullah.today/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>How to set FQDN in Linux</title>
+            <link>https://abdullah.today/posts/fqdn/</link>
+            <pubDate>Sun, 21 Jun 2020 13:26:14 +0500</pubDate>
+            
+            <guid>https://abdullah.today/posts/fqdn/</guid>
+            <description>What is FQDN? FQDN stands for Fully Qualified Domain Name. It&amp;rsquo;s complete domain name for a computer or host on the internet. FQDN is made of two things: hostname and domain name.
+Let me give you an example for demonstration.
+FQDN for my mail server is myemailserver.abdullah.today.
+The hostname is myemailserver. The domain is abdullah.today.
+Requirements You will need:
+ IP Address Hostname FQDN  Edit hosts file Edit the /etc/hosts file and append this like this.</description>
+            <content type="html"><![CDATA[<h3 id="what-is-fqdn">What is FQDN?</h3>
+<p>FQDN stands for Fully Qualified Domain Name.
+It&rsquo;s complete domain name for a computer or host on the internet.
+FQDN is made of two things:
+hostname and domain name.</p>
+<p>Let me give you an example for demonstration.</p>
+<p>FQDN for my mail server is <code>myemailserver.abdullah.today</code>.</p>
+<p>The hostname is <code>myemailserver</code>.
+The domain is <code>abdullah.today</code>.</p>
+<h2 id="requirements">Requirements</h2>
+<p>You will need:</p>
+<ul>
+<li>IP Address</li>
+<li>Hostname</li>
+<li>FQDN</li>
+</ul>
+<h2 id="edit-hosts-file">Edit hosts file</h2>
+<p>Edit the <code>/etc/hosts</code> file and append this like this.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/hosts</span>
+...
+192.168.1.100 myemailserver.abdullah.today myemailserver
+...
+:wq!
+</code></pre></div><p>Replace IP address with your host IP, hostname with what your want to set or what you already have set.</p>
+<h2 id="edit-hostname">Edit hostname</h2>
+<p>Edit <code>/etc/hostname</code> and replace with your new hostname if you want to change
+hostname as well.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/hostname</span>
+
+myemailserver
+
+:wq!
+</code></pre></div><p>Or you can use <code>hostnamectl</code> to set hostname.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>TMUX</title>
             <link>https://abdullah.today/tmux/</link>
             <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>

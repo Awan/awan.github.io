@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 11 Jun 2020 20:46:02 +0500</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2020 13:26:14 +0500</lastBuildDate>
     
 	<atom:link href="https://abdullah.today/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>fqdn</title>
+      <link>https://abdullah.today/tags/fqdn/</link>
+      <pubDate>Sun, 21 Jun 2020 13:26:14 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/fqdn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hostname</title>
+      <link>https://abdullah.today/tags/hostname/</link>
+      <pubDate>Sun, 21 Jun 2020 13:26:14 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/hostname/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bukhari</title>
@@ -81,24 +99,6 @@
       <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
       
       <guid>https://abdullah.today/tags/multiplexer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>screen</title>
-      <link>https://abdullah.today/tags/screen/</link>
-      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/screen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tmux</title>
-      <link>https://abdullah.today/tags/tmux/</link>
-      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/tmux/</guid>
       <description></description>
     </item>
     
