@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 21 Jun 2020 13:26:14 +0500</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2020 18:58:13 +0500</lastBuildDate>
     
 	<atom:link href="https://abdullah.today/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git</title>
+      <link>https://abdullah.today/tags/git/</link>
+      <pubDate>Sun, 12 Jul 2020 18:58:13 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git configuration</title>
+      <link>https://abdullah.today/tags/git-configuration/</link>
+      <pubDate>Sun, 12 Jul 2020 18:58:13 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/git-configuration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>initial git setup</title>
+      <link>https://abdullah.today/tags/initial-git-setup/</link>
+      <pubDate>Sun, 12 Jul 2020 18:58:13 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/initial-git-setup/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>fqdn</title>
@@ -72,33 +99,6 @@
       <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
       
       <guid>https://abdullah.today/tags/muslim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sayings of Muhammad(PBUH)</title>
-      <link>https://abdullah.today/tags/sayings-of-muhammadpbuh/</link>
-      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/sayings-of-muhammadpbuh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>console</title>
-      <link>https://abdullah.today/tags/console/</link>
-      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/console/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>multiplexer</title>
-      <link>https://abdullah.today/tags/multiplexer/</link>
-      <pubDate>Sat, 06 Jun 2020 18:13:35 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/multiplexer/</guid>
       <description></description>
     </item>
     

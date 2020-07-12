@@ -9,6 +9,39 @@
         <atom:link href="https://abdullah.today/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Git Initial Setup</title>
+            <link>https://abdullah.today/configure-git/</link>
+            <pubDate>Sun, 12 Jul 2020 18:58:13 +0500</pubDate>
+            
+            <guid>https://abdullah.today/configure-git/</guid>
+            <description>How to configure Git Git is a version control system by Linus Torvalds, same person who wrote linux kernel.
+Installation In Archlinux, you can install git by:
+$ sudo pacman -S git In Debian and derived distributions:
+$ sudo apt install -y git Configuration You have to tell git about the author who committed changes so lets do it.
+Name and Email Tell git about your name and email:
+$ git config --global user.</description>
+            <content type="html"><![CDATA[<h1 id="how-to-configure-git">How to configure Git</h1>
+<p>Git is a version control system by Linus Torvalds, same person who wrote linux kernel.</p>
+<h3 id="installation">Installation</h3>
+<p>In Archlinux, you can install git by:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ sudo pacman -S git
+</code></pre></div><p>In Debian and derived distributions:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ sudo apt install -y git
+</code></pre></div><h3 id="configuration">Configuration</h3>
+<p>You have to tell git about the author who committed changes so lets do it.</p>
+<h3 id="name-and-email">Name and Email</h3>
+<p>Tell git about your name and email:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ git config --global user.name <span class="s1">&#39;Abdullah&#39;</span>
+$ git config --global user.email <span class="s1">&#39;abdullah@abdullah.today&#39;</span>
+</code></pre></div><p>Replace <code>Abdullah</code> and with your name and <code>abdullah@abdullah.today</code> with your name and email.</p>
+<h3 id="signing-key">Signing key</h3>
+<p>If you use gpg to sign the commits/tags, you have to tell git about your signing key.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ git config --global user.signingkey <span class="s1">&#39;abdullah@abdullah.today&#39;</span>
+</code></pre></div><p>Replace <code>abdullah@abdullah.today</code> with your email address you used when creating gpg keypair.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>How to set FQDN in Linux</title>
             <link>https://abdullah.today/posts/fqdn/</link>
             <pubDate>Sun, 21 Jun 2020 13:26:14 +0500</pubDate>
