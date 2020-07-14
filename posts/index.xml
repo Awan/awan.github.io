@@ -9,6 +9,70 @@
         <atom:link href="https://abdullah.today/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Kalilinux Persistence</title>
+            <link>https://abdullah.today/posts/kalilinux-persistence/</link>
+            <pubDate>Tue, 14 Jul 2020 17:22:11 +0500</pubDate>
+            
+            <guid>https://abdullah.today/posts/kalilinux-persistence/</guid>
+            <description>Getting Kalilinux image Go to Downloads and download latest live image. Make sure you don&amp;rsquo;t download the installer image.
+Make USB bootable Use dd to write the kali image to USB.
+In linux environment:
+# dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M Replace kali-linux-xxxx.x-live-amd64.iso with downloaded iso iamge path and /dev/sdX with path of your USB device. You can find USB path by running lsblk in terminal. Make sure you don&amp;rsquo;t select the existing linux installation drive.</description>
+            <content type="html"><![CDATA[<h2 id="getting-kalilinux-image">Getting Kalilinux image</h2>
+<p>Go to <a href="https://kali.org/downloads">Downloads</a> and download latest live image. Make sure you don&rsquo;t download the installer image.</p>
+<h2 id="make-usb-bootable">Make USB bootable</h2>
+<p>Use <code>dd</code> to write the kali image to USB.</p>
+<p>In linux environment:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M</span>
+</code></pre></div><p>Replace <code>kali-linux-xxxx.x-live-amd64.iso</code> with downloaded iso iamge path and <code>/dev/sdX</code> with path of your USB device. You can find USB path by running <code>lsblk</code> in terminal. Make sure you don&rsquo;t select the existing linux installation drive.</p>
+<h2 id="create-persistence-partition">Create persistence partition</h2>
+<p>Create a primary partition with <code>fdisk</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># fdisk /dev/sdx</span>
+
+Welcome to fdisk <span class="o">(</span>util-linux 2.35.2<span class="o">)</span>.
+Changes will remain in memory only, <span class="k">until</span> you decide to write them.
+Be careful before using the write command.
+
+The device contains <span class="s1">&#39;iso9660&#39;</span> signature and it will be removed by a write command. See fdisk<span class="o">(</span>8<span class="o">)</span> man page and --wipe option <span class="k">for</span> more details.
+
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
+Partition <span class="nb">type</span>
+   p   primary <span class="o">(</span><span class="m">3</span> primary, <span class="m">0</span> extended, <span class="m">1</span> free<span class="o">)</span>
+   e   extended <span class="o">(</span>container <span class="k">for</span> logical partitions<span class="o">)</span>
+Select <span class="o">(</span>default e<span class="o">)</span>:p
+
+Selected partition <span class="m">3</span>
+
+</code></pre></div><p>Press <code>n</code> to create a new partition. Type <code>p</code> to make it primary. Hit enter twice so all the remaining space would be allocated to new partition.</p>
+<p>Type <code>w</code> to write changes to USB drive.</p>
+<h2 id="create-filesystem">Create filesystem</h2>
+<p>Create ext4 filesystem in new partition.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+<span class="c1"># mkfs.ext4 /dev/sdX3 -L persistence</span>
+<span class="c1"># e2label /dev/sdX3 persistence</span>
+
+</code></pre></div><h2 id="mount-new-partition">Mount new partition</h2>
+<p>Mount the new created partition somewhere in your filesystem.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+<span class="c1"># mount /dev/sdX3 /mnt</span>
+
+</code></pre></div><h2 id="create-configuration">Create configuration</h2>
+<p>Create a configuration file in new partition which we mounted earlier at <code>/mnt</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+<span class="c1"># echo &#34;/ union&#34; &gt; /mnt/persistence.conf</span>
+
+</code></pre></div><h2 id="un-mount-the-partition">Un-mount the partition</h2>
+<p>Un-mount the partition.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+<span class="c1"># umount /dev/sdX3</span>
+
+</code></pre></div><h2 id="reboot">Reboot</h2>
+<p>Reboot and press your hardware dedicated button to boot from new created USB. Don&rsquo;t forget to select the persistence option from Kali menu.</p>
+<p>Thanks for reading. 😉</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Git Initial Setup</title>
             <link>https://abdullah.today/configure-git/</link>
             <pubDate>Sun, 12 Jul 2020 18:58:13 +0500</pubDate>

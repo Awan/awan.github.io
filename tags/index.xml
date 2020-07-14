@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 12 Jul 2020 18:58:13 +0500</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2020 17:22:11 +0500</lastBuildDate>
     
 	<atom:link href="https://abdullah.today/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bootable</title>
+      <link>https://abdullah.today/tags/bootable/</link>
+      <pubDate>Tue, 14 Jul 2020 17:22:11 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/bootable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kali linux</title>
+      <link>https://abdullah.today/tags/kali-linux/</link>
+      <pubDate>Tue, 14 Jul 2020 17:22:11 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/kali-linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kali linux persistence</title>
+      <link>https://abdullah.today/tags/kali-linux-persistence/</link>
+      <pubDate>Tue, 14 Jul 2020 17:22:11 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/kali-linux-persistence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux in usb</title>
+      <link>https://abdullah.today/tags/linux-in-usb/</link>
+      <pubDate>Tue, 14 Jul 2020 17:22:11 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/linux-in-usb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>usb</title>
+      <link>https://abdullah.today/tags/usb/</link>
+      <pubDate>Tue, 14 Jul 2020 17:22:11 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/usb/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>git</title>
@@ -54,51 +99,6 @@
       <pubDate>Sun, 21 Jun 2020 13:26:14 +0500</pubDate>
       
       <guid>https://abdullah.today/tags/hostname/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bukhari</title>
-      <link>https://abdullah.today/tags/bukhari/</link>
-      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/bukhari/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hadees</title>
-      <link>https://abdullah.today/tags/hadees/</link>
-      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/hadees/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hadith</title>
-      <link>https://abdullah.today/tags/hadith/</link>
-      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/hadith/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hadith_of_day</title>
-      <link>https://abdullah.today/tags/hadith_of_day/</link>
-      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/hadith_of_day/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Muslim</title>
-      <link>https://abdullah.today/tags/muslim/</link>
-      <pubDate>Thu, 11 Jun 2020 20:46:02 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/muslim/</guid>
       <description></description>
     </item>
     

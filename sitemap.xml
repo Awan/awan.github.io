@@ -574,7 +574,42 @@
   
   <url>
     <loc>https://abdullah.today/</loc>
-    <lastmod>2020-07-13T00:31:44+05:00</lastmod>
+    <lastmod>2020-07-14T17:54:38+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/tags/bootable/</loc>
+    <lastmod>2020-07-14T17:54:38+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/tags/kali-linux/</loc>
+    <lastmod>2020-07-14T17:54:38+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/tags/kali-linux-persistence/</loc>
+    <lastmod>2020-07-14T17:54:38+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/posts/kalilinux-persistence/</loc>
+    <lastmod>2020-07-14T17:54:38+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/tags/linux-in-usb/</loc>
+    <lastmod>2020-07-14T17:54:38+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/tags/</loc>
+    <lastmod>2020-07-14T17:54:38+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/tags/usb/</loc>
+    <lastmod>2020-07-14T17:54:38+05:00</lastmod>
   </url>
   
   <url>
@@ -594,11 +629,6 @@
   
   <url>
     <loc>https://abdullah.today/tags/initial-git-setup/</loc>
-    <lastmod>2020-07-13T00:31:44+05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://abdullah.today/tags/</loc>
     <lastmod>2020-07-13T00:31:44+05:00</lastmod>
   </url>
   
