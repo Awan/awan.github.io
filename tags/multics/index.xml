@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>multics on Abdullah</title>
+    <link>https://abdullah.today/tags/multics/</link>
+    <description>Recent content in multics on Abdullah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 17 Aug 2020 07:57:05 +0500</lastBuildDate>
+    
+	<atom:link href="https://abdullah.today/tags/multics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Crack Airtel Card</title>
+      <link>https://abdullah.today/posts/crack-airtel-card/</link>
+      <pubDate>Mon, 17 Aug 2020 07:57:05 +0500</pubDate>
+      
+      <guid>https://abdullah.today/posts/crack-airtel-card/</guid>
+      <description>Crack Airtel Card A few days ago I was asked to crack a card. So today I thought to write a post for this method.
+Prerequisites  A linux machine log file hashcat Some common sense  Getting the hashes Open log file and search for CW and decrypted CW. Remove the leading zeros and copy the last 16 characters for first appearing CW&amp;rsquo;s. Do same with decrypted CW. Enjoin them with a : so it will look like this:</description>
+    </item>
+    
+  </channel>
+</rss>
