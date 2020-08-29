@@ -9,59 +9,6 @@
         <atom:link href="https://abdullah.today/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Crack Airtel Card</title>
-            <link>https://abdullah.today/posts/crack-airtel-card/</link>
-            <pubDate>Mon, 17 Aug 2020 07:57:05 +0500</pubDate>
-            
-            <guid>https://abdullah.today/posts/crack-airtel-card/</guid>
-            <description>Crack Airtel Card A few days ago I was asked to crack a card. So today I thought to write a post for this method.
-Prerequisites  A linux machine log file hashcat Some common sense  Getting the hashes Open log file and search for CW and decrypted CW. Remove the leading zeros and copy the last 16 characters for first appearing CW&amp;rsquo;s. Do same with decrypted CW. Enjoin them with a : so it will look like this:</description>
-            <content type="html"><![CDATA[<h2 id="crack-airtel-card">Crack Airtel Card</h2>
-<p>A few days ago I was asked to crack a card. So today I thought to write a post for this method.</p>
-<h3 id="prerequisites">Prerequisites</h3>
-<ul>
-<li>A linux machine</li>
-<li>log file</li>
-<li>hashcat</li>
-<li>Some common sense</li>
-</ul>
-<h3 id="getting-the-hashes">Getting the hashes</h3>
-<p>Open log file and search for CW and decrypted CW.
-Remove the leading zeros and copy the last 16 characters for first appearing CW&rsquo;s.
-Do same with decrypted CW.
-Enjoin them with a :
-so it will look like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">1234567890123456:1234567890123456
-</code></pre></div><h3 id="installing-required-software">Installing required software</h3>
-<p><code>hashcat</code> is available in most linux distributions but installing it from your package manager isn&rsquo;t preferred.
-Grab the latest archive and install it. Assuming you have a Ubuntu installation. Let&rsquo;s install the required packages using Ubuntu package manager first:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
-$ sudo apt install -y build-essential unzip unrar tmux curl p7zip ocl-icd-libopencl1 opencl-headers clinfo nvidia-driver-390 nvidia-cuda-toolkit
-$ nvidia-smi
-$ sudo reboot -f
-$ sudo add-apt-repository ppa:graphics-drivers/ppa
-$ sudo apt update
-$ sudo apt install -y mesa-common-dev freeglut3-dev
-$ sudo reboot -f
-</code></pre></div><p>Let&rsquo;s fetch the latest <code>hashcat</code> from hashcat&rsquo;s website.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ curl -o hashcat-6.1.1.7z https://hashcat.net/files/hashcat-6.1.1.7z
-$ 7zr x hashcat-6.1.1.7z
-$ <span class="nb">cd</span> hashcat-6.1.1
-$ sudo ln -s hashcat64.bin /usr/bin/hashcat
-$ sudo cp -R OpenCL/ /usr/bin/
-$ sudo cp hashcat.hcstat2 /usr/bin/
-$ sudo cp hashcat.hctune /usr/bin/
-</code></pre></div><h3 id="start-cracking">Start cracking</h3>
-<p>Now we have installed required software. Let&rsquo;s start the real work.</p>
-<p>Start a tmux session and issue following command. Replace <code>CW:DCW</code> with what you have copied above.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ hashcat -m <span class="m">14000</span> CW:DCW -a <span class="m">3</span> -1 /usr/share/hashcat/charsets/DES_full.charset -o key.txt --hex-charset ?1?1?1?1?1?1?1?1 -w <span class="m">4</span> --outfile-format <span class="m">5</span>
-</code></pre></div><p>Once command is completed, you will get the cracked key in key.txt.</p>
-<h3 id="happy-cracking">Happy Cracking</h3>
-<p>Congrats!. You just have cracked the card. If this tutorial helped you, don&rsquo;t forget to share and leave your thoughts in comments section.</p>
-]]></content>
-        </item>
-        
-        <item>
             <title>Kalilinux Persistence</title>
             <link>https://abdullah.today/posts/kalilinux-persistence/</link>
             <pubDate>Tue, 14 Jul 2020 17:22:11 +0500</pubDate>
