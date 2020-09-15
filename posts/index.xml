@@ -9,6 +9,279 @@
         <atom:link href="https://abdullah.today/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>How to Share Android Screen</title>
+            <link>https://abdullah.today/posts/how-to-share-android-screen/</link>
+            <pubDate>Tue, 15 Sep 2020 13:21:18 +0500</pubDate>
+            
+            <guid>https://abdullah.today/posts/how-to-share-android-screen/</guid>
+            <description>There are times you want to share your android phone&amp;rsquo;s screen with your Linux/Windows desktop. Like if you have got broken screen or for some purpose.
+So this post may help you.
+Requirements  Android phone ADB installed  In Arch Linux, you can install ADB with:
+$ sudo pacman -S android-tools There is a program which is used to screen sharing. You can install it using AUR in Arch Linux, use apt if you are using Ubuntu/Debian.</description>
+            <content type="html"><![CDATA[<p>There are times you want to share your android phone&rsquo;s screen with your Linux/Windows desktop. Like if you have got broken screen or for some purpose.</p>
+<p>So this post may help you.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Android phone</li>
+<li>ADB installed</li>
+</ul>
+<p>In Arch Linux, you can install ADB with:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+$ sudo pacman -S android-tools
+
+</code></pre></div><p>There is a program which is used to screen sharing. You can install it using AUR in Arch Linux, use apt if you are using Ubuntu/Debian. It&rsquo;s called scrcpy in repositories.</p>
+<p>For Arch Linux, you can go to <a href="https://aur.archlinux.org/packages/scrcpy/">this link</a>.
+And here is the Windows <a href="https://github.com/Genymobile/scrcpy/releases/download/v1.16/scrcpy-win64-v1.16.zip">link</a>.</p>
+<p>Once installed, enable USB debugging,plug your android device. And run:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+$ scrcpy
+
+</code></pre></div><p>Scrcpy has many options which you can explore like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+$ scrcpy --help
+
+Usage: scrcpy <span class="o">[</span>options<span class="o">]</span>
+
+Options:
+
+    --always-on-top
+        Make scrcpy window always on top <span class="o">(</span>above other windows<span class="o">)</span>.
+
+    -b, --bit-rate value
+        Encode the video at the given bit-rate, expressed in bits/s.
+        Unit suffixes are supported: <span class="s1">&#39;K&#39;</span> <span class="o">(</span>x1000<span class="o">)</span> and <span class="s1">&#39;M&#39;</span> <span class="o">(</span>x1000000<span class="o">)</span>.
+        Default is 8000000.
+
+    --codec-options key<span class="o">[</span>:type<span class="o">]=</span>value<span class="o">[</span>,...<span class="o">]</span>
+        Set a list of comma-separated key:type<span class="o">=</span>value options <span class="k">for</span> the
+        device encoder.
+        The possible values <span class="k">for</span> <span class="s1">&#39;type&#39;</span> are <span class="s1">&#39;int&#39;</span> <span class="o">(</span>default<span class="o">)</span>, <span class="s1">&#39;long&#39;</span>,
+        <span class="s1">&#39;float&#39;</span> and <span class="s1">&#39;string&#39;</span>.
+        The list of possible codec options is available in the
+        Android documentation:
+        &lt;https://d.android.com/reference/android/media/MediaFormat&gt;
+
+    --crop width:height:x:y
+        Crop the device screen on the server.
+        The values are expressed in the device natural orientation
+        <span class="o">(</span>typically, portrait <span class="k">for</span> a phone, landscape <span class="k">for</span> a tablet<span class="o">)</span>.
+        Any --max-size value is computed on the cropped size.
+
+    --display id
+        Specify the display id to mirror.
+
+        The list of possible display ids can be listed by:
+            adb shell dumpsys display
+        <span class="o">(</span>search <span class="s2">&#34;mDisplayId=&#34;</span> in the output<span class="o">)</span>
+
+        Default is 0.
+
+    --force-adb-forward
+        Do not attempt to use <span class="s2">&#34;adb reverse&#34;</span> to connect to the
+        the device.
+
+    -f, --fullscreen
+        Start in fullscreen.
+
+    -h, --help
+        Print this help.
+
+    --lock-video-orientation value
+        Lock video orientation to value.
+        Possible values are -1 <span class="o">(</span>unlocked<span class="o">)</span>, 0, 1, <span class="m">2</span> and 3.
+        Natural device orientation is 0, and each increment adds a
+        <span class="m">90</span> degrees rotation counterclockwise.
+        Default is -1 <span class="o">(</span>unlocked<span class="o">)</span>.
+
+    --max-fps value
+        Limit the frame rate of screen capture <span class="o">(</span>officially supported
+        ince Android 10, but may work on earlier versions<span class="o">)</span>.
+
+    -m, --max-size value
+        Limit both the width and height of the video to value. The
+        other dimension is computed so that the device aspect-ratio
+        is preserved.
+        Default is <span class="m">0</span> <span class="o">(</span>unlimited<span class="o">)</span>.
+
+    -n, --no-control
+        Disable device control <span class="o">(</span>mirror the device in read-only<span class="o">)</span>.
+
+    -N, --no-display
+        Do not display device <span class="o">(</span>only when screen recording is
+        enabled<span class="o">)</span>.
+
+    --no-mipmaps
+        If the renderer is OpenGL 3.0+ or OpenGL ES 2.0+, <span class="k">then</span>
+        mipmaps are automatically generated to improve downscaling
+        quality. This option disables the generation of mipmaps.
+
+    -p, --port port<span class="o">[</span>:port<span class="o">]</span>
+        Set the TCP port <span class="o">(</span>range<span class="o">)</span> used by the client to listen.
+        Default is 27183:27199.
+
+    --prefer-text
+        Inject alpha characters and space as text events instead of
+        key events.
+        This avoids issues when combining multiple keys to enter a
+        special character, but breaks the expected behavior of alpha
+        keys in games <span class="o">(</span>typically WASD<span class="o">)</span>.
+
+    --push-target path
+        Set the target directory <span class="k">for</span> pushing files to the device by
+        drag <span class="p">&amp;</span> drop. It is passed as-is to <span class="s2">&#34;adb push&#34;</span>.
+        Default is <span class="s2">&#34;/sdcard/&#34;</span>.
+
+    -r, --record file.mp4
+        Record screen to file.
+        The format is determined by the --record-format option <span class="k">if</span>
+        set, or by the file extension <span class="o">(</span>.mp4 or .mkv<span class="o">)</span>.
+
+    --record-format format
+        Force recording format <span class="o">(</span>either mp4 or mkv<span class="o">)</span>.
+
+    --render-driver name
+        Request SDL to use the given render driver <span class="o">(</span>this is just a
+        hint<span class="o">)</span>.
+        Supported names are currently <span class="s2">&#34;direct3d&#34;</span>, <span class="s2">&#34;opengl&#34;</span>,
+        <span class="s2">&#34;opengles2&#34;</span>, <span class="s2">&#34;opengles&#34;</span>, <span class="s2">&#34;metal&#34;</span> and <span class="s2">&#34;software&#34;</span>.
+        &lt;https://wiki.libsdl.org/SDL_HINT_RENDER_DRIVER&gt;
+
+    --render-expired-frames
+        By default, to minimize latency, scrcpy always renders the
+        last available decoded frame, and drops any previous ones.
+        This flag forces to render all frames, at a cost of a
+        possible increased latency.
+
+    --rotation value
+        Set the initial display rotation.
+        Possibles values are 0, 1, <span class="m">2</span> and 3. Each increment adds a <span class="m">90</span>
+        degrees rotation counterclockwise.
+
+    -s, --serial serial
+        The device serial number. Mandatory only <span class="k">if</span> several devices
+        are connected to adb.
+
+    -S, --turn-screen-off
+        Turn the device screen off immediately.
+
+    -t, --show-touches
+        Enable <span class="s2">&#34;show touches&#34;</span> on start, restore the initial value
+        on exit.
+        It only shows physical touches <span class="o">(</span>not clicks from scrcpy<span class="o">)</span>.
+
+    -v, --version
+        Print the version of scrcpy.
+
+    -V, --verbosity value
+        Set the log level <span class="o">(</span>debug, info, warn or error<span class="o">)</span>.
+        Default is info.
+
+    -w, --stay-awake
+        Keep the device on <span class="k">while</span> scrcpy is running.
+
+    --window-borderless
+        Disable window decorations <span class="o">(</span>display borderless window<span class="o">)</span>.
+
+    --window-title text
+        Set a custom window title.
+
+    --window-x value
+        Set the initial window horizontal position.
+        Default is <span class="s2">&#34;auto&#34;</span>.
+
+    --window-y value
+        Set the initial window vertical position.
+        Default is <span class="s2">&#34;auto&#34;</span>.
+
+    --window-width value
+        Set the initial window width.
+        Default is <span class="m">0</span> <span class="o">(</span>automatic<span class="o">)</span>.
+
+    --window-height value
+        Set the initial window width.
+        Default is <span class="m">0</span> <span class="o">(</span>automatic<span class="o">)</span>.
+
+Shortcuts:
+
+    Ctrl+f
+        Switch fullscreen mode
+
+    Ctrl+Left
+        Rotate display left
+
+    Ctrl+Right
+        Rotate display right
+
+    Ctrl+g
+        Resize window to 1:1 <span class="o">(</span>pixel-perfect<span class="o">)</span>
+
+    Ctrl+x
+    Double-click on black borders
+        Resize window to remove black borders
+
+    Ctrl+h
+    Middle-click
+        Click on HOME
+
+    Ctrl+b
+    Ctrl+Backspace
+    Right-click <span class="o">(</span>when screen is on<span class="o">)</span>
+        Click on BACK
+
+    Ctrl+s
+        Click on APP_SWITCH
+
+    Ctrl+m
+        Click on MENU
+
+    Ctrl+Up
+        Click on VOLUME_UP
+
+    Ctrl+Down
+        Click on VOLUME_DOWN
+
+    Ctrl+p
+        Click on POWER <span class="o">(</span>turn screen on/off<span class="o">)</span>
+
+    Right-click <span class="o">(</span>when screen is off<span class="o">)</span>
+        Power on
+
+    Ctrl+o
+        Turn device screen off <span class="o">(</span>keep mirroring<span class="o">)</span>
+
+    Ctrl+Shift+o
+        Turn device screen on
+
+    Ctrl+r
+        Rotate device screen
+
+    Ctrl+n
+        Expand notification panel
+
+    Ctrl+Shift+n
+        Collapse notification panel
+
+    Ctrl+c
+        Copy device clipboard to computer
+
+    Ctrl+v
+        Paste computer clipboard to device
+
+    Ctrl+Shift+v
+        Copy computer clipboard to device <span class="o">(</span>and paste <span class="k">if</span> the device
+        runs Android &gt;<span class="o">=</span> 7<span class="o">)</span>
+
+    Ctrl+i
+        Enable/disable FPS counter <span class="o">(</span>print frames/second in logs<span class="o">)</span>
+
+    Drag <span class="p">&amp;</span> drop APK file
+        Install APK from computer
+
+</code></pre></div><p>I hope you&rsquo;ve enjoyed this article. If you have any questions, ask in comment sections.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Kalilinux Persistence</title>
             <link>https://abdullah.today/posts/kalilinux-persistence/</link>
             <pubDate>Tue, 14 Jul 2020 17:22:11 +0500</pubDate>
