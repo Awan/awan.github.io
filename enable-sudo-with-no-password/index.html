@@ -190,14 +190,14 @@ ask for your password and command is executed.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo visudo
 </code></pre></div><p>On my Debian installation, it looks like this:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">## /etc/sudoers</span>
-#
+<span class="c1">#</span>
 <span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>
-#
+<span class="c1">#</span>
 <span class="c1"># Please consider adding local content in /etc/sudoers.d/ instead of</span>
 <span class="c1"># directly modifying this file.</span>
-#
+<span class="c1">#</span>
 <span class="c1"># See the man page for details on how to write a sudoers file.</span>
-#
+<span class="c1">#</span>
 Defaults	env_reset
 Defaults	mail_badpass
 Defaults	<span class="nv">secure_path</span><span class="o">=</span><span class="s2">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
@@ -223,14 +223,14 @@ root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">
 <p>Here is my sudoers file.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo cat /etc/sudoers
 
-#
+<span class="c1">#</span>
 <span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>
-#
+<span class="c1">#</span>
 <span class="c1"># Please consider adding local content in /etc/sudoers.d/ instead of</span>
 <span class="c1"># directly modifying this file.</span>
-#
+<span class="c1">#</span>
 <span class="c1"># See the man page for details on how to write a sudoers file.</span>
-#
+<span class="c1">#</span>
 Defaults	env_reset
 Defaults	mail_badpass
 Defaults	<span class="nv">secure_path</span><span class="o">=</span><span class="s2">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>

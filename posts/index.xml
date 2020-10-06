@@ -9,6 +9,50 @@
         <atom:link href="https://abdullah.today/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>SSH Passwordless Authentication</title>
+            <link>https://abdullah.today/posts/ssh-passwordless-authentication/</link>
+            <pubDate>Tue, 06 Oct 2020 13:45:06 +0500</pubDate>
+            
+            <guid>https://abdullah.today/posts/ssh-passwordless-authentication/</guid>
+            <description>SSH login without password? Yeah you heard it right. Today I&amp;rsquo;m going to teach you how you can enable passwordless authentication in ssh.
+You can login to your linux servers without password. How? Keep reading&amp;hellip;
+Edit the SSH main configuration file.
+$ sudo vi /etc/ssh/sshd_config ... PubkeyAuthentication yes ... Edit this line. If you see no, change it to yes. If this line is commented out, uncomment it.
+Restart ssh.</description>
+            <content type="html"><![CDATA[<h3 id="ssh-login-without-password">SSH login without password?</h3>
+<p>Yeah you heard it right. Today I&rsquo;m going to teach you how you can enable passwordless authentication in ssh.</p>
+<p>You can login to your linux servers without password. How? Keep reading&hellip;</p>
+<p>Edit the SSH main configuration file.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+$ sudo vi /etc/ssh/sshd_config
+
+
+...
+
+PubkeyAuthentication yes
+
+...
+
+</code></pre></div><p>Edit this line. If you see <code>no</code>, change it to <code>yes</code>. If this line is commented out, uncomment it.</p>
+<p>Restart ssh.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+$ sudo systemctl restart sshd
+
+</code></pre></div><p>In local client, create a new ssh key if you don&rsquo;t have one.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+$ ssh-keygen
+
+</code></pre></div><p>Hit enter to all questions.</p>
+<p>Now copy your public key and upload it to your server&rsquo;s user&rsquo;s home directory&rsquo;s .ssh directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+$ ssh-copy-id user@remote_host
+
+</code></pre></div><p>Now you can login to your server without even asking for a password.</p>
+<p>Thanks for reading.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>How to Share Android Screen</title>
             <link>https://abdullah.today/posts/how-to-share-android-screen/</link>
             <pubDate>Tue, 15 Sep 2020 13:21:18 +0500</pubDate>
@@ -528,7 +572,7 @@ needs, its well documented with comments.</p>
 <span class="c1">#     ░██    ░██   ░    ░██░██    ░██  ██ ░░██</span>
 <span class="c1">#     ░██    ░██        ░██░░███████  ██   ░░██</span>
 <span class="c1">#     ░░     ░░         ░░  ░░░░░░░  ░░     ░░</span>
-#
+<span class="c1">#</span>
 <span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
 <span class="c1"># ░▓ Author ▓ AK &lt;abdullah@abdullah.today&gt;</span>
 <span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
@@ -903,7 +947,7 @@ $ vim ~/.xprofile_
 
 <span class="c1">#!/bin/sh</span>
 <span class="c1"># In the name of Allah, the most Gracious, the most Merciful.</span>
-#
+<span class="c1">#</span>
 <span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
 <span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today&gt;</span>
 <span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
@@ -1122,7 +1166,7 @@ source it from <code>~/.xinitrc</code>. This way you can use any display manager
 
 <span class="c1">#!/bin/sh</span>
 <span class="c1"># In the name of Allah, the most Gracious, the most Merciful.</span>
-#
+<span class="c1">#</span>
 <span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
 <span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today&gt;</span>
 <span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
@@ -1694,9 +1738,9 @@ Partitioning I&amp;rsquo;m gonna use two partitions. First boot partition will b
 <p>Edit rc.conf. Mine looks like this.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/rc.conf</span>
 
-#
+<span class="c1">#</span>
 <span class="c1"># /etc/rc.conf: system configuration</span>
-#
+<span class="c1">#</span>
 
 <span class="nv">FONT</span><span class="o">=</span>ter-v22n
 <span class="nv">KEYMAP</span><span class="o">=</span>us
@@ -4179,14 +4223,14 @@ ask for your password and command is executed.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo visudo
 </code></pre></div><p>On my Debian installation, it looks like this:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">## /etc/sudoers</span>
-#
+<span class="c1">#</span>
 <span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>
-#
+<span class="c1">#</span>
 <span class="c1"># Please consider adding local content in /etc/sudoers.d/ instead of</span>
 <span class="c1"># directly modifying this file.</span>
-#
+<span class="c1">#</span>
 <span class="c1"># See the man page for details on how to write a sudoers file.</span>
-#
+<span class="c1">#</span>
 Defaults	env_reset
 Defaults	mail_badpass
 Defaults	<span class="nv">secure_path</span><span class="o">=</span><span class="s2">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
@@ -4212,14 +4256,14 @@ root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">
 <p>Here is my sudoers file.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo cat /etc/sudoers
 
-#
+<span class="c1">#</span>
 <span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>
-#
+<span class="c1">#</span>
 <span class="c1"># Please consider adding local content in /etc/sudoers.d/ instead of</span>
 <span class="c1"># directly modifying this file.</span>
-#
+<span class="c1">#</span>
 <span class="c1"># See the man page for details on how to write a sudoers file.</span>
-#
+<span class="c1">#</span>
 Defaults	env_reset
 Defaults	mail_badpass
 Defaults	<span class="nv">secure_path</span><span class="o">=</span><span class="s2">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
@@ -4355,7 +4399,7 @@ $ touch ~/.config/mutt/muttrc
 <span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today/&gt;</span>
 <span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
 <span class="c1"># ░░░░░░░░░░</span>
-#
+<span class="c1">#</span>
 
 
 <span class="c1"># source important files</span>

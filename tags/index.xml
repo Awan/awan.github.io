@@ -7,10 +7,42 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 15 Sep 2020 13:21:18 +0500</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2020 13:45:06 +0500</lastBuildDate><atom:link href="https://abdullah.today/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>login</title>
+      <link>https://abdullah.today/tags/login/</link>
+      <pubDate>Tue, 06 Oct 2020 13:45:06 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/login/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://abdullah.today/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>passwordless authentication</title>
+      <link>https://abdullah.today/tags/passwordless-authentication/</link>
+      <pubDate>Tue, 06 Oct 2020 13:45:06 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/passwordless-authentication/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>pubkey authentication</title>
+      <link>https://abdullah.today/tags/pubkey-authentication/</link>
+      <pubDate>Tue, 06 Oct 2020 13:45:06 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/pubkey-authentication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://abdullah.today/tags/ssh/</link>
+      <pubDate>Tue, 06 Oct 2020 13:45:06 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/ssh/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>adb</title>
@@ -63,42 +95,6 @@
       <pubDate>Tue, 15 Sep 2020 13:21:18 +0500</pubDate>
       
       <guid>https://abdullah.today/tags/screen-sharing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>screensharing</title>
-      <link>https://abdullah.today/tags/screensharing/</link>
-      <pubDate>Tue, 15 Sep 2020 13:21:18 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/screensharing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bukhari</title>
-      <link>https://abdullah.today/tags/bukhari/</link>
-      <pubDate>Tue, 25 Aug 2020 10:09:20 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/bukhari/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hadees</title>
-      <link>https://abdullah.today/tags/hadees/</link>
-      <pubDate>Tue, 25 Aug 2020 10:09:20 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/hadees/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hadith</title>
-      <link>https://abdullah.today/tags/hadith/</link>
-      <pubDate>Tue, 25 Aug 2020 10:09:20 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/hadith/</guid>
       <description></description>
     </item>
     
