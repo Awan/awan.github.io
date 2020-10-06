@@ -20,6 +20,7 @@ Edit the SSH main configuration file.
 $ sudo vi /etc/ssh/sshd_config ... PubkeyAuthentication yes ... Edit this line. If you see no, change it to yes. If this line is commented out, uncomment it.
 Restart ssh.</description>
             <content type="html"><![CDATA[<h3 id="ssh-login-without-password">SSH login without password?</h3>
+<p><img src="/images/sshlogin.png" alt="ssh authentication without password"></p>
 <p>Yeah you heard it right. Today I&rsquo;m going to teach you how you can enable passwordless authentication in ssh.</p>
 <p>You can login to your linux servers without password. How? Keep reading&hellip;</p>
 <p>Edit the SSH main configuration file.</p>
@@ -48,6 +49,12 @@ $ ssh-keygen
 $ ssh-copy-id user@remote_host
 
 </code></pre></div><p>Now you can login to your server without even asking for a password.</p>
+<p>Here is a YouTube demonstration video.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/GT7yeeO1ewU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 <p>Thanks for reading.</p>
 ]]></content>
         </item>
