@@ -745,7 +745,13 @@ set-option -g terminal-overrides <span class="s1">&#39;xterm*:smcup@:rmcup@&#39;
 
 </code></pre></div><p>So if I login from other than tty1, and if there is an already running <em>tmux
 session</em>, it attaches me to it. Else starts a new session and get me there.
-😉</p>
+😉
+Here is a demonstration video.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/uiSUJP8Xv5A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 ]]></content>
         </item>
         
@@ -1098,6 +1104,12 @@ xfce4-terminal -T scratchpad --font<span class="o">=</span><span class="s1">&#39
 :wq
 
 </code></pre></div><p>Change the resolution and outputs name in it and enjoy multiheading. 😉</p>
+<p>Here is a demonstration video.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Gjj-wcdc0-w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 ]]></content>
         </item>
         
@@ -1644,6 +1656,12 @@ You can now show the URIs by <code>show-messages</code> command.</p>
 </code></pre></div><p>It will provide you both [web, ssh] priviliged and non-privileged links.
 Share with your friends how you like.</p>
 <p>Enjoy!</p>
+<p>Here is a demonstration video.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/7yJRWL5TlFg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 ]]></content>
         </item>
         
@@ -3985,6 +4003,12 @@ kon c nematon ko jhutlawo gy?'&quot;
 </code></pre><p>Now execute it. You may not have the fonts I use so maybe you face some errors. Just install those fonts or change them.</p>
 <p>I also have written a post about <a href="https://abdullah.today/fonts.html">fonts</a>.</p>
 <p>Still have problems? Just lemme know and I&rsquo;ll be happy to assist you.</p>
+<p>Here is a demonstration video.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/HxFL6HaDyIM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 ]]></content>
         </item>
         
@@ -4645,6 +4669,12 @@ reference.</p>
 like encryption, password management, aliasing etc&hellip; Just have a look
 <a href="https://gitlab.com/Abdullah/cfg.git">here</a> if you
 think something isn&rsquo;t discussed or well-explained, and don&rsquo;t forget to comment and lemme know about your thoughts.</p>
+<p>Here is a demonstration video.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/vdTFRaM7YjQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 ]]></content>
         </item>
         
@@ -4841,6 +4871,12 @@ Return<!-- raw HTML omitted -->.</p>
 <p><img src="/images/dwm-resize.png" alt=""></p>
 <p>For now, it&rsquo;s enough for you to get started. I&rsquo;ll update it soon. In sha
 Allah.</p>
+<p>Here is a demonstration video.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/QweZB60EG4g" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 ]]></content>
         </item>
         
