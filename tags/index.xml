@@ -7,7 +7,61 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 06 Oct 2020 13:45:06 +0500</lastBuildDate><atom:link href="https://abdullah.today/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Nov 2020 07:32:13 +0500</lastBuildDate><atom:link href="https://abdullah.today/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gmail</title>
+      <link>https://abdullah.today/tags/gmail/</link>
+      <pubDate>Sun, 29 Nov 2020 07:32:13 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/gmail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mail</title>
+      <link>https://abdullah.today/tags/mail/</link>
+      <pubDate>Sun, 29 Nov 2020 07:32:13 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/mail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>msmtp</title>
+      <link>https://abdullah.today/tags/msmtp/</link>
+      <pubDate>Sun, 29 Nov 2020 07:32:13 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/msmtp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mutt</title>
+      <link>https://abdullah.today/tags/mutt/</link>
+      <pubDate>Sun, 29 Nov 2020 07:32:13 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/mutt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>suckless</title>
+      <link>https://abdullah.today/tags/suckless/</link>
+      <pubDate>Sun, 29 Nov 2020 07:32:13 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/suckless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terminal</title>
+      <link>https://abdullah.today/tags/terminal/</link>
+      <pubDate>Sun, 29 Nov 2020 07:32:13 +0500</pubDate>
+      
+      <guid>https://abdullah.today/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>login</title>
       <link>https://abdullah.today/tags/login/</link>
@@ -41,60 +95,6 @@
       <pubDate>Tue, 06 Oct 2020 13:45:06 +0500</pubDate>
       
       <guid>https://abdullah.today/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>adb</title>
-      <link>https://abdullah.today/tags/adb/</link>
-      <pubDate>Tue, 15 Sep 2020 13:21:18 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/adb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>android</title>
-      <link>https://abdullah.today/tags/android/</link>
-      <pubDate>Tue, 15 Sep 2020 13:21:18 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>android debugging bride</title>
-      <link>https://abdullah.today/tags/android-debugging-bride/</link>
-      <pubDate>Tue, 15 Sep 2020 13:21:18 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/android-debugging-bride/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>android-debugging</title>
-      <link>https://abdullah.today/tags/android-debugging/</link>
-      <pubDate>Tue, 15 Sep 2020 13:21:18 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/android-debugging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>scrcpy</title>
-      <link>https://abdullah.today/tags/scrcpy/</link>
-      <pubDate>Tue, 15 Sep 2020 13:21:18 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/scrcpy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>screen sharing</title>
-      <link>https://abdullah.today/tags/screen-sharing/</link>
-      <pubDate>Tue, 15 Sep 2020 13:21:18 +0500</pubDate>
-      
-      <guid>https://abdullah.today/tags/screen-sharing/</guid>
       <description></description>
     </item>
     

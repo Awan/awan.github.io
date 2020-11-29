@@ -9,6 +9,82 @@
         <atom:link href="https://abdullah.today/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Send Mail Using Gmail using Command Line</title>
+            <link>https://abdullah.today/send-mail-using-gmail-from-terminal/</link>
+            <pubDate>Sun, 29 Nov 2020 07:32:13 +0500</pubDate>
+            
+            <guid>https://abdullah.today/send-mail-using-gmail-from-terminal/</guid>
+            <description>Yeah, you can send mail from your gmail account using command line.
+Requirements You have two options here.
+Gmail account settings Either enable less secure apps in your Google account or Generate an app password .
+Tools being used For Arch Linux:
+$ sudo pacman -S msmtp For Debian, Ubuntu and other Debian derived distributions:
+$ sudo apt install -y msmtp For Fedora, CentOS, Redhat etc:
+$ sudo dnf install msmtp Encrypt password Using gpg, we are going to encrypt our password.</description>
+            <content type="html"><![CDATA[<p>Yeah, you can send mail from your gmail account using command line.</p>
+<h3 id="requirements">Requirements</h3>
+<p>You have two options here.</p>
+<h3 id="gmail-account-settings">Gmail account settings</h3>
+<p>Either <a href=https://myaccount.google.com/lesssecureapps
+    
+    target=_blank rel="noopener noreferrer"
+>enable less secure apps</a>
+ in your Google account or <a href=https://myaccount.google.com/apppasswords
+    
+    target=_blank rel="noopener noreferrer"
+>Generate an app password</a>
+.</p>
+<h3 id="tools-being-used">Tools being used</h3>
+<p>For Arch Linux:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S msmtp 
+</code></pre></div><p>For Debian, Ubuntu and other Debian derived distributions:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt install -y msmtp
+</code></pre></div><p>For Fedora, CentOS, Redhat etc:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo dnf install msmtp
+</code></pre></div><h3 id="encrypt-password">Encrypt password</h3>
+<p>Using <code>gpg</code>, we are going to encrypt our password. I have a detailed video tutorial on <code>gpg</code> if you&rsquo;re interested.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/lDyj78M6_dQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ gpg -er <span class="s1">&#39;your gpg keyID&#39;</span> -o ~/.gmail-password.gpg -
+</code></pre></div><p>Now enter the password for your gmail from first step. Once done, enter <code>Ctrl + D</code>.</p>
+<h3 id="configure-msmtp">Configure msmtp</h3>
+<p>Paste this into <code>~/.msmtprc</code> or if you want <code>msmtp</code> system wide so any user on this system can use this gmail account to send mails, copy it to <code>/etc/msmtprc</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">defaults
+auth    on
+tls     on
+tls_starttls    on
+tls_trust_file  /etc/ssl/certs/ca-certificates.crt
+logfile     ~/.msmtp.log
+
+account myaccount
+host    smtp.gmail.com
+port    <span class="m">587</span>
+from    your_gmail_address
+user    your_gmail_address
+passwordeval    <span class="s2">&#34;echo </span><span class="k">$(</span>gpg --batch -q --decrypt ~/.gmail-password.gpg<span class="k">)</span><span class="s2">&#34;</span>
+
+account default: myaccount
+</code></pre></div><p>Replace <code>your_gmail_address</code> with your gmail address.</p>
+<p>Voila.</p>
+<h3 id="send-a-test-mail">Send a test mail</h3>
+<p>We are done now. Just send a test mail now.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">echo</span> <span class="s2">&#34;Just a test mail&#34;</span> <span class="p">|</span> msmtp -a default <span class="s1">&#39;some email address&#39;</span>
+</code></pre></div><h3 id="use-with-mutt">Use with mutt</h3>
+<p>You can use this <code>msmtp</code> setup with <code>mutt</code> which is suck less mail client and runs in a terminal.
+I have a detailed video tutorial on <code>mutt</code> here.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/vdTFRaM7YjQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>Thanks for reading.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>SSH Passwordless Authentication</title>
             <link>https://abdullah.today/posts/ssh-passwordless-authentication/</link>
             <pubDate>Tue, 06 Oct 2020 13:45:06 +0500</pubDate>
@@ -81,8 +157,16 @@ $ sudo pacman -S android-tools There is a program which is used to screen sharin
 $ sudo pacman -S android-tools
 
 </code></pre></div><p>There is a program which is used to screen sharing. You can install it using AUR in Arch Linux, use apt if you are using Ubuntu/Debian. It&rsquo;s called scrcpy in repositories.</p>
-<p>For Arch Linux, you can go to <a href="https://aur.archlinux.org/packages/scrcpy/">this link</a>.
-And here is the Windows <a href="https://github.com/Genymobile/scrcpy/releases/download/v1.16/scrcpy-win64-v1.16.zip">link</a>.</p>
+<p>For Arch Linux, you can go to <a href=https://aur.archlinux.org/packages/scrcpy/
+    
+    target=_blank rel="noopener noreferrer"
+>this link</a>
+.
+And here is the Windows <a href=https://github.com/Genymobile/scrcpy/releases/download/v1.16/scrcpy-win64-v1.16.zip
+    
+    target=_blank rel="noopener noreferrer"
+>link</a>
+.</p>
 <p>Once installed, enable USB debugging,plug your android device. And run:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
 $ scrcpy
@@ -349,7 +433,11 @@ Make USB bootable Use dd to write the kali image to USB.
 In linux environment:
 # dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M Replace kali-linux-xxxx.x-live-amd64.iso with downloaded iso iamge path and /dev/sdX with path of your USB device. You can find USB path by running lsblk in terminal. Make sure you don&amp;rsquo;t select the existing linux installation drive.</description>
             <content type="html"><![CDATA[<h2 id="getting-kalilinux-image">Getting Kalilinux image</h2>
-<p>Go to <a href="https://kali.org/downloads">Downloads</a> and download latest live image. Make sure you don&rsquo;t download the installer image.</p>
+<p>Go to <a href=https://kali.org/downloads
+    
+    target=_blank rel="noopener noreferrer"
+>Downloads</a>
+ and download latest live image. Make sure you don&rsquo;t download the installer image.</p>
 <h2 id="make-usb-bootable">Make USB bootable</h2>
 <p>Use <code>dd</code> to write the kali image to USB.</p>
 <p>In linux environment:</p>
@@ -784,7 +872,11 @@ what if you have only some commits you want to apply to <em>master</em> branch?
 Here <em>cherry-pick</em> is your friend.</p>
 <h2 id="create-a-new-branch">Create a new branch</h2>
 <p>I&rsquo;m doing all this to explain it to new git_comers.
-My website readers know that <a href="https://abdullah.today/">my site</a> is a git
+My website readers know that <a href=https://abdullah.today/
+    
+    target=_blank rel="noopener noreferrer"
+>my site</a>
+ is a git
 repository.</p>
 <p><img src="/images/git-site.png" alt="my site is git repository"></p>
 <p>So I&rsquo;m on <em>master</em> branch. I&rsquo;m going to create a new branch from this branch,
@@ -854,7 +946,11 @@ well. If you don&rsquo;t have it, install it using your distribution&rsquo;s pac
 manager.</p>
 <p>I use <em>bspwm</em> with <em>polybar</em>. You might have different <em>WMs</em> or <em>DE</em>. Apart from
 polybar, everything would work fine. For polybar, you have to configure it to
-your taste. Or clone my <a href="https://gitlab.com/Abdullah/cfg.git">git repository</a>
+your taste. Or clone my <a href=https://gitlab.com/Abdullah/cfg.git
+    
+    target=_blank rel="noopener noreferrer"
+>git repository</a>
+
 and copy/symlink all files to their respective paths and polybar will work fine.</p>
 <h2 id="display-manager">Display manager</h2>
 <script
@@ -1124,10 +1220,18 @@ Installation bspwm is available in almost all major distributions. If you can&am
 Configuration bspwm uses sxhkd for keyboard shortcuts. It has no other way to handle with keyboard input and instead provides bspc program as its interface.</description>
             <content type="html"><![CDATA[<h1 id="bspwm">BSPWM</h1>
 <p>BSPWM is a tiling window manager that represents windows as the leaves of a
-full binary tree. It has support for <a href="https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html">EWMH</a> and multihead.</p>
+full binary tree. It has support for <a href=https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html
+    
+    target=_blank rel="noopener noreferrer"
+>EWMH</a>
+ and multihead.</p>
 <h2 id="installation">Installation</h2>
 <p>bspwm is available in almost all major distributions. If you can&rsquo;t find it in
-your OS, clone the <a href="https://github.com/baskerville/bspwm">repository</a> and
+your OS, clone the <a href=https://github.com/baskerville/bspwm
+    
+    target=_blank rel="noopener noreferrer"
+>repository</a>
+ and
 build it.</p>
 <h2 id="configuration">Configuration</h2>
 <p><em>bspwm</em> uses <em>sxhkd</em> for keyboard shortcuts. It has no other way to handle with keyboard input and instead provides <em>bspc</em> program as its interface.
@@ -1328,12 +1432,24 @@ xfce4-terminal -T scratchpad --font<span class="o">=</span><span class="s1">&#39
 
 </code></pre></div><p>The file is well-commented. So you can copy and edit it to your likings.</p>
 <h2 id="barpanel">Bar/Panel</h2>
-<p>I&rsquo;m using <a href="https://github.com/jaagr/polybar">polybar</a> with <em>bspwm</em>. To be
-honest, it was the reason I left <a href="https://dwm.suckless.org">dwm</a> because
+<p>I&rsquo;m using <a href=https://github.com/jaagr/polybar
+    
+    target=_blank rel="noopener noreferrer"
+>polybar</a>
+ with <em>bspwm</em>. To be
+honest, it was the reason I left <a href=https://dwm.suckless.org
+    
+    target=_blank rel="noopener noreferrer"
+>dwm</a>
+ because
 even with patching <em>dwm</em>, I wasn&rsquo;t able to use polybar with it. <em>bspwm</em> is
 <em>EWMH</em> supported so you can use almost any bar with it.
 I&rsquo;m starting polybar from <code>~/.config/bspwm/bspwmrc</code>. More on polybar, you
-can find a <a href="https://abdullah.today/polybar">post</a> in my blog to know more about
+can find a <a href=https://abdullah.today/polybar
+    
+    target=_blank rel="noopener noreferrer"
+>post</a>
+ in my blog to know more about
 it.</p>
 <h2 id="rules">Rules</h2>
 <p>In <em>bspwm</em>, you can define rules for windows how and where they appear.
@@ -1569,7 +1685,11 @@ tmate is terminal sharing software you can use it to connect with your friends a
             <content type="html"><![CDATA[<h2 id="whats-tmate">What&rsquo;s tmate?</h2>
 <p>On *nix systems, sometimes we need support. And geeks don&rsquo;t like GUI apps just
 to have your system in front of them, at least I don&rsquo;t like that 😉</p>
-<p><a href="https://tmate.io">tmate</a> is terminal sharing software you can use it to
+<p><a href=https://tmate.io
+    
+    target=_blank rel="noopener noreferrer"
+>tmate</a>
+ is terminal sharing software you can use it to
 connect with your friends and you both work from there.
 It&rsquo;s available in many distributions repos and in case you aren&rsquo;t lucky
 enough, you can compile it from source or there are pre-compiled binaries
@@ -2096,18 +2216,34 @@ cd /var/www/html &amp;&amp; git clone ~/z/mysite.git &amp;&amp; cd mysite.git &a
             <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
             
             <guid>https://abdullah.today/gists/</guid>
-            <description>What&amp;rsquo;s snippet/gist? gist is a piece of code or maybe some important text shared on Github or Gitlab. It&amp;rsquo;s actually a git repository so you can clone it, work on it locally and push changes.
-Share gists from Terminal There are multiple programs available in many distributions for this purpose. You just have to find it. On Arch Linux, you can install gist.
+            <description>What&amp;rsquo;s snippet/gist? gist is a piece of code or maybe some important text shared on Github or Gitlab . It&amp;rsquo;s actually a git repository so you can clone it, work on it locally and push changes.
+Share gists from Terminal There are multiple programs available in many distributions for this purpose. You just have to find it. On Arch Linux , you can install gist .
 Here is how it works in terminal.</description>
             <content type="html"><![CDATA[<h2 id="whats-snippetgist">What&rsquo;s snippet/gist?</h2>
 <p>gist is a piece of code or maybe some important text shared on
-<a href="https://github.com">Github</a> or <a href="https://gitlab.com">Gitlab</a>.
+<a href=https://github.com
+    
+    target=_blank rel="noopener noreferrer"
+>Github</a>
+ or <a href=https://gitlab.com
+    
+    target=_blank rel="noopener noreferrer"
+>Gitlab</a>
+.
 It&rsquo;s actually a git repository so you can clone it, work on it locally and push
 changes.</p>
 <h2 id="share-gists-from-terminal">Share gists from Terminal</h2>
 <p>There are multiple programs available in many distributions for this purpose.
-You just have to find it. On <a href="https://archlinux.org">Arch Linux</a>, you can
-install <a href="https://www.archlinux.org/packages/community/any/gist/">gist</a>.</p>
+You just have to find it. On <a href=https://archlinux.org
+    
+    target=_blank rel="noopener noreferrer"
+>Arch Linux</a>
+, you can
+install <a href=https://www.archlinux.org/packages/community/any/gist/
+    
+    target=_blank rel="noopener noreferrer"
+>gist</a>
+.</p>
 <p>Here is how it works in terminal.</p>
 <p><img src="/images/gists-1.png" alt="share text using gist"></p>
 <p>You can update an existing gist if you know its hash ID. It has a man page yeah
@@ -2365,12 +2501,20 @@ On linux, you can use dd:
 # dd if=downloaded iso file of=/dev/sdX status=progress where X is your USB device&amp;rsquo;s ID.</description>
             <content type="html"><![CDATA[<h1 id="whats-arch-linux">What&rsquo;s <strong>Arch Linux</strong>?</h1>
 <p><img src="/images/arch.jpg" alt="Arch Linux"></p>
-<p><a href="https://archlinux.org">Arch Linux</a> is a free
+<p><a href=https://archlinux.org
+    
+    target=_blank rel="noopener noreferrer"
+>Arch Linux</a>
+ is a free
 and open source linux distribution based on the rule Keep it Simple.</p>
 <h3 id="installation">Installation</h3>
 <p>Arch Linux has no graphical installer. You have to install using CLI.</p>
 <h3 id="installation-media-creation">Installation media creation</h3>
-<p>Go to <a href="https://archlinux.org/download">Downloads page</a> and select a nearby mirror. Download the iso file. If you&rsquo;re on Windows, you can use rufus to create a bootable media.</p>
+<p>Go to <a href=https://archlinux.org/download
+    
+    target=_blank rel="noopener noreferrer"
+>Downloads page</a>
+ and select a nearby mirror. Download the iso file. If you&rsquo;re on Windows, you can use rufus to create a bootable media.</p>
 <p>On linux, you can use <strong>dd</strong>:</p>
 <pre><code># dd if=downloaded iso file of=/dev/sdX status=progress
 </code></pre><p>where X is your USB device&rsquo;s ID. Don&rsquo;t use a single partition. Use the whole
@@ -2571,10 +2715,18 @@ options cryptdevice=UUID=&lt;YOUR-PARTITION-UUID&gt;:lvm:allow-discards resume=/
             <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
             
             <guid>https://abdullah.today/polybar/</guid>
-            <description>I recently tried to compile polybar and used it with tiling window manager bspwm.
+            <description>I recently tried to compile polybar and used it with tiling window manager bspwm .
 Polybar Here is my bar configuration I have been using for over the years with i3, bspwm, dwm and many other window managers even with xfce4.
 $ cat $HOME/.config/polybar/config [colors] background = #FF000000 background-alt = ${xrdb:polybar*color8} foreground = ${xrdb:polybar*foreground} urgent = #B34747 foreground-alt = #555 primary = ${xrdb:polybar*color3} secondary = ${xrdb:polybar*color1} alert = ${xrdb:polybar*color13} [settings] screenchange-reload = true screenchange = true throttle-output = 5 throttle-output-for = 10 throttle-input-for = 30 compositing-background = source compositing-foreground = over compositing-overline = over compositing-underline = over compositing-border = over pseudo-transparency = true [global/wm] margin-top = 0 margin-bottom = 0 [bar/eDP-1] monitor = ${env:MONITOR:eDP-1} monitor-fallback = eDP1 bottom = false width = 100% height = 25 offset-x = 0 offset-y = 0 radius = 10 fixed-center = true background = ${colors.</description>
-            <content type="html"><![CDATA[<p>I recently tried to compile <a href="https://github.com/polybar/polybar.git">polybar</a> and used it with tiling window manager <a href="https://github.com/baskerville/bspwm.git">bspwm</a>.</p>
+            <content type="html"><![CDATA[<p>I recently tried to compile <a href=https://github.com/polybar/polybar.git
+    
+    target=_blank rel="noopener noreferrer"
+>polybar</a>
+ and used it with tiling window manager <a href=https://github.com/baskerville/bspwm.git
+    
+    target=_blank rel="noopener noreferrer"
+>bspwm</a>
+.</p>
 <h2 id="polybar">Polybar</h2>
 <p>Here is my bar configuration I have been using for over the years with i3,
 bspwm, dwm and many other window managers even with xfce4.</p>
@@ -3343,7 +3495,11 @@ monitor = XWAYLAND0
 
 </code></pre><h1 id="bspwm">BSPWM</h1>
 <blockquote>
-<p><strong><em>UPDATE:</em></strong> Here is a <a href="https://abdullah.today/bspwm">post</a> for BSPWM.</p>
+<p><strong><em>UPDATE:</em></strong> Here is a <a href=https://abdullah.today/bspwm
+    
+    target=_blank rel="noopener noreferrer"
+>post</a>
+ for BSPWM.</p>
 </blockquote>
 <p>bspwm is a tiling window manager, it uses <code>sxhkd</code> for keybindings and windows
 management keybindings. Here is both configurations for both programs. You can use <code>xbindkeys</code> there&hellip;</p>
@@ -3640,7 +3796,11 @@ editors like nano but I never been interested in them. To be honest
 still I only know how to exit from nano when a command is run by me
 and nano was the default editor there.</p>
 <p>I have been maintaining my
-<a href="https://gitlab.com/Abdullah/cfg.git">dotfiles</a> no matter which distribution I was using. But still I had to compile things for vIM and other cool software I use in my daily routine.</p>
+<a href=https://gitlab.com/Abdullah/cfg.git
+    
+    target=_blank rel="noopener noreferrer"
+>dotfiles</a>
+ no matter which distribution I was using. But still I had to compile things for vIM and other cool software I use in my daily routine.</p>
 <p>I was looking for some tool using <!-- raw HTML omitted --> apt search <!-- raw HTML omitted --> and found
 <!-- raw HTML omitted --> vim-youcompleteme <!-- raw HTML omitted --> in search results. Which leaded me to
 install it. I installed it and it also installed its dependencies.
@@ -3670,7 +3830,11 @@ $ sudo update-alternatives --set vi /usr/bin/vim.nox
 <p>After everything is installed, now you can configure vIM to use these plugins. For example, I use <!-- raw HTML omitted -->vim-youcompleteme<!-- raw HTML omitted -->.</p>
 <pre><code>$ vam install youcompleteme
 </code></pre><p>That&rsquo;s it. You can always have a look at my
-<a href="https://gitlab.com/Abdullah/cfg.git">dotfiles</a>
+<a href=https://gitlab.com/Abdullah/cfg.git
+    
+    target=_blank rel="noopener noreferrer"
+>dotfiles</a>
+
 if have some issues. Enjoy using vIM.</p>
 ]]></content>
         </item>
@@ -3682,13 +3846,17 @@ if have some issues. Enjoy using vIM.</p>
             
             <guid>https://abdullah.today/debian-fresh-install/</guid>
             <description>So you have a new Debian installation? Maybe a minimal install like I do? Don&amp;rsquo;t worry, I have you covered what to do next.
-Setup a sudo user without password Go here.
+Setup a sudo user without password Go here .
 Install software Install software for daily use.
 $ sudo apt install build-essential \ git zsh mpv feh xss-lock urlview \ xbindkeys stow offlineimap mutt msmtp \ notmuch vim.nox rxvt-unicode -y Setup touchpad If you have a machine that supports multitouch, enabling tap to click is a good option.</description>
             <content type="html"><![CDATA[<p>So you have a new Debian installation? Maybe a minimal install like I do?
 Don&rsquo;t worry, I have you covered what to do next.</p>
 <h2 id="setup-a-sudo-user-without-password">Setup a sudo user without password</h2>
-<p>Go <a href="https://abdullah.today/enable-sudo-with-no-password.html">here</a>.</p>
+<p>Go <a href=https://abdullah.today/enable-sudo-with-no-password.html
+    
+    target=_blank rel="noopener noreferrer"
+>here</a>
+.</p>
 <h2 id="install-software">Install software</h2>
 <p>Install software for daily use.</p>
 <pre><code>$ sudo apt install build-essential \
@@ -3774,7 +3942,11 @@ $ make
 </code></pre><p>&ndash;enable-everything will compile all things for us except 256 color support. So keep that in mind.</p>
 <p>So now rxvt-unicode is installed, just execute it. You won&rsquo;t like it out of the box. We have to configure it.</p>
 <h4 id="configuration">Configuration</h4>
-<p>rxvt-unicode reads the configuration from two files, ~/.Xresources or ~/.Xdefaults. So here I&rsquo;m gonna put my ~/.Xdefaults, just copy it to your home directory as ~/.Xdefaults. You can always get the latest one <a href="https://gitlab.com/Abdullah/cfg/-/blob/master/etc/.Xresources">here</a>.</p>
+<p>rxvt-unicode reads the configuration from two files, ~/.Xresources or ~/.Xdefaults. So here I&rsquo;m gonna put my ~/.Xdefaults, just copy it to your home directory as ~/.Xdefaults. You can always get the latest one <a href=https://gitlab.com/Abdullah/cfg/-/blob/master/etc/.Xresources
+    
+    target=_blank rel="noopener noreferrer"
+>here</a>
+.</p>
 <pre><code>$ cat ~/.Xresources
 
 ! In the name of Allah, the most Gracious, the most Merciful.
@@ -4001,7 +4173,11 @@ kon c nematon ko jhutlawo gy?'&quot;
 </code></pre><p>After saving the file, we have to load it.</p>
 <pre><code>$ xrdb -load ~/.Xdefaults
 </code></pre><p>Now execute it. You may not have the fonts I use so maybe you face some errors. Just install those fonts or change them.</p>
-<p>I also have written a post about <a href="https://abdullah.today/fonts.html">fonts</a>.</p>
+<p>I also have written a post about <a href=https://abdullah.today/fonts.html
+    
+    target=_blank rel="noopener noreferrer"
+>fonts</a>
+.</p>
 <p>Still have problems? Just lemme know and I&rsquo;ll be happy to assist you.</p>
 <p>Here is a demonstration video.</p>
 
@@ -4663,11 +4839,19 @@ synchronization.</p>
 
 </code></pre></div><h3 id="password-management">Password management</h3>
 <p>I use encrypted passwords. You can check my
-<a href="https://gitlab.com/Abdullah/cfg.git">dotfiles</a> for
+<a href=https://gitlab.com/Abdullah/cfg.git
+    
+    target=_blank rel="noopener noreferrer"
+>dotfiles</a>
+ for
 reference.</p>
 <p>Voila! You have a perfect email setup now. You can enable extra functionality
 like encryption, password management, aliasing etc&hellip; Just have a look
-<a href="https://gitlab.com/Abdullah/cfg.git">here</a> if you
+<a href=https://gitlab.com/Abdullah/cfg.git
+    
+    target=_blank rel="noopener noreferrer"
+>here</a>
+ if you
 think something isn&rsquo;t discussed or well-explained, and don&rsquo;t forget to comment and lemme know about your thoughts.</p>
 <p>Here is a demonstration video.</p>
 
@@ -4803,17 +4987,28 @@ rootfs is installed and resume UUID is your encrypted swap partition UUID.</p>
             <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
             
             <guid>https://abdullah.today/dwm/</guid>
-            <description>What&amp;rsquo;s DWM? DWM is a Tiling window manager by Suckless community.
+            <description>What&amp;rsquo;s DWM? DWM is a Tiling window manager by Sucklesscommunity .
 Installation You can install dwm by using your distribution package maangers. But as dwm is configured by hand before compilation, so it&amp;rsquo;s recommended you clone its repository, configure and then compile it for your system. I have a fork which you may like.
    ;(adsbygoogle = window.adsbygoogle || []).push({})  Configuration In the root directory, there is a file config.</description>
             <content type="html"><![CDATA[<h2 id="whats-dwm">What&rsquo;s <strong>DWM</strong>?</h2>
-<p><a href="https://dwm.suckless.org">DWM</a> is a Tiling window manager by <a href="https://suckless.org/">Suckless
-community</a>.</p>
+<p><a href=https://dwm.suckless.org
+    
+    target=_blank rel="noopener noreferrer"
+>DWM</a>
+ is a Tiling window manager by <a href=https://suckless.org/
+    
+    target=_blank rel="noopener noreferrer"
+>Sucklesscommunity</a>
+.</p>
 <h3 id="installation">Installation</h3>
 <p>You can install <strong>dwm</strong> by using your distribution package maangers. But as
 <strong>dwm</strong> is configured by hand before compilation, so it&rsquo;s recommended you clone
 its repository, configure and then compile it for your system. I have a
-<a href="https://gitlab.com/Abdullah/dwm.git">fork</a> which you may like.</p>
+<a href=https://gitlab.com/Abdullah/dwm.git
+    
+    target=_blank rel="noopener noreferrer"
+>fork</a>
+ which you may like.</p>
 <script
   async
   src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
@@ -4927,9 +5122,17 @@ Clone the repository or download/copy the beautify.py if you don&amp;rsquo;t wan
             <content type="html"><![CDATA[<p>So assuming you&rsquo;re not using a DE and don&rsquo;t wanna install a tool which comes
 with a lot of dependencies just to automate the boring stuf of changing
 wallpapers (root window of Xorg). I wrote a simple Python
-<a href="https://github.com/Awan/beautify.git">program</a> which you can use as systemd
+<a href=https://github.com/Awan/beautify.git
+    
+    target=_blank rel="noopener noreferrer"
+>program</a>
+ which you can use as systemd
 unit too.</p>
-<p>Clone the <a href="https://github.com/Awan/beautify.git">repository</a> or download/copy
+<p>Clone the <a href=https://github.com/Awan/beautify.git
+    
+    target=_blank rel="noopener noreferrer"
+>repository</a>
+ or download/copy
 the beautify.py if you don&rsquo;t want systemd part. I&rsquo;d recommend ~/bin for such
 executable scripts. You can execute it from <em>.xinitrc</em> or <em>.xprofile</em>. For
 systemd there is explaination in repository readme file too.</p>
