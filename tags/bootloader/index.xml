@@ -10,10 +10,10 @@
     <lastBuildDate>Fri, 13 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://abdullah.today/tags/bootloader/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>EFISTUB</title>
-      <link>https://abdullah.today/efistub/</link>
+      <link>https://abdullah.today/EFISTUB/</link>
       <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://abdullah.today/efistub/</guid>
+      <guid>https://abdullah.today/EFISTUB/</guid>
       <description>So in this post I&amp;rsquo;m gonna guide you how you can use efistub, a feature which you can use to boot the kernel without an extra boot manager(grub, systemd-boot, rEFInd etc.)
 Create a boot entry using efibootmgr.
 # efibootmgr --create --disk /dev/sda --part 1 --label Debian --loader /vmlinuz --unicode &amp;quot;root=/dev/sda2 rw initrd=\initrd.img&amp;quot; --verbose Explaination of the command.

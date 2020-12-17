@@ -9,6 +9,36 @@
         <atom:link href="https://abdullah.today/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Linux Filesystem Directory Structure</title>
+            <link>https://abdullah.today/posts/linux-filesystem-directory-structure/</link>
+            <pubDate>Thu, 17 Dec 2020 14:24:49 +0500</pubDate>
+            
+            <guid>https://abdullah.today/posts/linux-filesystem-directory-structure/</guid>
+            <description>Unlike other operating systems, in linux everything starts from /. This is called root directory.
+You can use cd command to navigate in filesystem. If you&amp;rsquo;re inside some directory and you want to know where you&amp;rsquo;re inside the directory tree, just type pwd and it will show you the current working directory. pwd stands for print working directory.
+cd command needs some arguments if you want to visit some other directory.</description>
+            <content type="html"><![CDATA[<p>Unlike other operating systems, in linux everything starts from /. This is called root directory.</p>
+<p>You can use <code>cd</code> command to navigate in filesystem. If you&rsquo;re inside some directory and you want to know where you&rsquo;re inside the directory tree, just type <code>pwd</code> and it will show you the current working directory. <code>pwd</code> stands for <code>print working directory</code>.</p>
+<p><code>cd</code> command needs some arguments if you want to visit some other directory. By default if you don&rsquo;t provide it some arguments, it will change the directory to user home directory. If you start a terminal emulator or a virtual console, it starts inside user home directory be default as well.</p>
+<p><code>cd</code> needs a pathname if you want to change directory to some directory inside the filesystem. A pathname is a route to that directory.
+There are two types of pathnames.</p>
+<h3 id="absolute-pathnames">Absolute Pathnames</h3>
+<p>An absolute pathname starts from root directory /. For example if you want to visit <code>/usr/bin</code>, you type / first. Then the directory name.
+Absolute pathnames are complete paths starting from / (where filesystem begins) to the file or directory.</p>
+<h3 id="relative-pathnames">Relative pathnames</h3>
+<p>Unlike absolute pathname, relative pathnames start from current working directory (pwd).
+If you&rsquo;re in <code>/var/log</code> directory, and you want to visit <code>journal</code> directory which is a child directory of current working directory, you type <code>cd journal</code>.</p>
+<p>If you want to visit the parent directory of current working directory which in this case is <code>/var</code>, just type, <code>cd ../var</code>.</p>
+<p>I have a YouTube video tutorial on this topic as well.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/fUmSm4LD3gQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+]]></content>
+        </item>
+        
+        <item>
             <title>Send Mail Using Gmail using Command Line</title>
             <link>https://abdullah.today/send-mail-using-gmail-from-terminal/</link>
             <pubDate>Sun, 29 Nov 2020 07:32:13 +0500</pubDate>
@@ -3778,10 +3808,10 @@ super + x
         
         <item>
             <title>How to use vIM as IDE in Debian, Ubuntu, Mint</title>
-            <link>https://abdullah.today/vim-as-ide/</link>
+            <link>https://abdullah.today/vim-as-IDE/</link>
             <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
             
-            <guid>https://abdullah.today/vim-as-ide/</guid>
+            <guid>https://abdullah.today/vim-as-IDE/</guid>
             <description>Been using source based distributions for a long time. Source based distributions are cool for systems with limited resources. But what if you don&amp;rsquo;t have enough time?
 Debian is one of the oldest distribution there which is known for stability. Stability? Well that never had been a priority for me but for some reasons I came to it and now using it for some months. It&amp;rsquo;s a cool distribution.
 Well, that enough said, let&amp;rsquo;s come to the topic.</description>
@@ -4428,10 +4458,10 @@ $ xset fp rehash
         
         <item>
             <title>use sudo with no password</title>
-            <link>https://abdullah.today/enable-sudo-with-no-password/</link>
+            <link>https://abdullah.today/enable%20sudo%20with%20no%20password/</link>
             <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
             
-            <guid>https://abdullah.today/enable-sudo-with-no-password/</guid>
+            <guid>https://abdullah.today/enable%20sudo%20with%20no%20password/</guid>
             <description>In Unix world, we shouldn&amp;rsquo;t use administrator user without some important stuff which needs access to it. There is a utility sudo we can use to have administrator access. But everytime you invoke it, it asks for your user&amp;rsquo;s password.
 Today, I&amp;rsquo;m going to guide you, how you can use sudowithout password.
 Once you install Debian, you get some option to create a user. And if you choose the option, &amp;ldquo;Don&amp;rsquo;t use root for login&amp;rdquo;, this new user becomes privileged user by default.</description>
@@ -4917,10 +4947,10 @@ $ sudo apt install -y google-chrome-stable
         
         <item>
             <title>EFISTUB</title>
-            <link>https://abdullah.today/efistub/</link>
+            <link>https://abdullah.today/EFISTUB/</link>
             <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
             
-            <guid>https://abdullah.today/efistub/</guid>
+            <guid>https://abdullah.today/EFISTUB/</guid>
             <description>So in this post I&amp;rsquo;m gonna guide you how you can use efistub, a feature which you can use to boot the kernel without an extra boot manager(grub, systemd-boot, rEFInd etc.)
 Create a boot entry using efibootmgr.
 # efibootmgr --create --disk /dev/sda --part 1 --label Debian --loader /vmlinuz --unicode &amp;quot;root=/dev/sda2 rw initrd=\initrd.img&amp;quot; --verbose Explaination of the command.

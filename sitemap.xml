@@ -574,47 +574,77 @@
   
   <url>
     <loc>https://abdullah.today/</loc>
-    <lastmod>2020-11-29T07:32:13+05:00</lastmod>
+    <lastmod>2020-12-17T15:00:48+05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://abdullah.today/tags/gmail/</loc>
-    <lastmod>2020-11-29T07:32:13+05:00</lastmod>
+    <loc>https://abdullah.today/tags/absolute-pathnames/</loc>
+    <lastmod>2020-12-17T15:00:48+05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://abdullah.today/tags/mail/</loc>
-    <lastmod>2020-11-29T07:32:13+05:00</lastmod>
+    <loc>https://abdullah.today/tags/filesystem/</loc>
+    <lastmod>2020-12-17T15:00:48+05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://abdullah.today/tags/msmtp/</loc>
-    <lastmod>2020-11-29T07:32:13+05:00</lastmod>
+    <loc>https://abdullah.today/posts/linux-filesystem-directory-structure/</loc>
+    <lastmod>2020-12-17T15:00:48+05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://abdullah.today/tags/mutt/</loc>
-    <lastmod>2020-11-29T07:32:13+05:00</lastmod>
+    <loc>https://abdullah.today/tags/linux-filesystem-directory-structure/</loc>
+    <lastmod>2020-12-17T15:00:48+05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://abdullah.today/send-mail-using-gmail-from-terminal/</loc>
-    <lastmod>2020-11-29T07:32:13+05:00</lastmod>
+    <loc>https://abdullah.today/tags/pathnames/</loc>
+    <lastmod>2020-12-17T15:00:48+05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://abdullah.today/tags/suckless/</loc>
-    <lastmod>2020-11-29T07:32:13+05:00</lastmod>
+    <loc>https://abdullah.today/tags/relative-pathnames/</loc>
+    <lastmod>2020-12-17T15:00:48+05:00</lastmod>
   </url>
   
   <url>
     <loc>https://abdullah.today/tags/</loc>
-    <lastmod>2020-11-29T07:32:13+05:00</lastmod>
+    <lastmod>2020-12-17T15:00:48+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/tags/gmail/</loc>
+    <lastmod>2020-11-29T09:12:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/tags/mail/</loc>
+    <lastmod>2020-11-29T09:12:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/tags/msmtp/</loc>
+    <lastmod>2020-11-29T09:12:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/tags/mutt/</loc>
+    <lastmod>2020-11-29T09:12:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/send-mail-using-gmail-from-terminal/</loc>
+    <lastmod>2020-11-29T09:12:40+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://abdullah.today/tags/suckless/</loc>
+    <lastmod>2020-11-29T09:12:40+05:00</lastmod>
   </url>
   
   <url>
     <loc>https://abdullah.today/tags/terminal/</loc>
-    <lastmod>2020-11-29T07:32:13+05:00</lastmod>
+    <lastmod>2020-11-29T09:12:40+05:00</lastmod>
   </url>
   
   <url>
@@ -1793,7 +1823,7 @@
   </url>
   
   <url>
-    <loc>https://abdullah.today/vim-as-ide/</loc>
+    <loc>https://abdullah.today/vim-as-IDE/</loc>
     <lastmod>2020-11-20T03:28:05+05:00</lastmod>
   </url>
   
@@ -1898,7 +1928,7 @@
   </url>
   
   <url>
-    <loc>https://abdullah.today/enable-sudo-with-no-password/</loc>
+    <loc>https://abdullah.today/enable%20sudo%20with%20no%20password/</loc>
     <lastmod>2020-11-20T03:28:05+05:00</lastmod>
   </url>
   
@@ -2008,7 +2038,7 @@
   </url>
   
   <url>
-    <loc>https://abdullah.today/efistub/</loc>
+    <loc>https://abdullah.today/EFISTUB/</loc>
     <lastmod>2020-11-20T03:28:05+05:00</lastmod>
   </url>
   

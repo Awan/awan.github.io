@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Abdullah">
+<meta name="description" content="Unlike other operating systems, in linux everything starts from /. This is called root directory.
+You can use cd command to navigate in filesystem. If you&amp;rsquo;re inside some directory and you want to know where you&amp;rsquo;re inside the directory tree, just type pwd and it will show you the current working directory. pwd stands for print working directory.
+cd command needs some arguments if you want to visit some other directory." />
+<meta name="keywords" content="abdullahtoday, abdullah, linux, archlinux, ak, bspwm, window manager, dwm, polybar, pentesting, kalilinux, termux, desktop environment, ubuntu, tty, minimalism, fsf, open source, gnu, gpg, encryption, debian, mint, fedora, operating systems, hacker, hacking, linux filesystem directory structure, filesystem, pathnames, absolute pathnames, relative pathnames" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://abdullah.today/posts/linux-filesystem-directory-structure/" />
+
+
+    <title>
+        
+            Linux Filesystem Directory Structure :: Abdullah  — Tech related Blog
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://abdullah.today/main.393856bf2c430bb6c01d7af07c6fe966e7cce8073435cfbbc46e590bab7405ef.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="css/syntax.css">
+    
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/favicon-16x16.png">
+    <link rel="manifest" href="https://abdullah.today/site.webmanifest">
+    <link rel="mask-icon" href="https://abdullah.today/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://abdullah.today/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Linux Filesystem Directory Structure">
+<meta itemprop="description" content="Unlike other operating systems, in linux everything starts from /. This is called root directory.
+You can use cd command to navigate in filesystem. If you&rsquo;re inside some directory and you want to know where you&rsquo;re inside the directory tree, just type pwd and it will show you the current working directory. pwd stands for print working directory.
+cd command needs some arguments if you want to visit some other directory.">
+<meta itemprop="datePublished" content="2020-12-17T14:24:49+05:00" />
+<meta itemprop="dateModified" content="2020-12-17T15:00:48+05:00" />
+<meta itemprop="wordCount" content="252">
+<meta itemprop="image" content="https://abdullah.today/"/>
+
+
+
+<meta itemprop="keywords" content="linux filesystem directory structure,filesystem,pathnames,absolute pathnames,relative pathnames," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/"/>
+
+<meta name="twitter:title" content="Linux Filesystem Directory Structure"/>
+<meta name="twitter:description" content="Unlike other operating systems, in linux everything starts from /. This is called root directory.
+You can use cd command to navigate in filesystem. If you&rsquo;re inside some directory and you want to know where you&rsquo;re inside the directory tree, just type pwd and it will show you the current working directory. pwd stands for print working directory.
+cd command needs some arguments if you want to visit some other directory."/>
+
+
+
+    <meta property="og:title" content="Linux Filesystem Directory Structure" />
+<meta property="og:description" content="Unlike other operating systems, in linux everything starts from /. This is called root directory.
+You can use cd command to navigate in filesystem. If you&rsquo;re inside some directory and you want to know where you&rsquo;re inside the directory tree, just type pwd and it will show you the current working directory. pwd stands for print working directory.
+cd command needs some arguments if you want to visit some other directory." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/posts/linux-filesystem-directory-structure/" />
+<meta property="og:image" content="https://abdullah.today/"/>
+<meta property="article:published_time" content="2020-12-17T14:24:49+05:00" />
+<meta property="article:modified_time" content="2020-12-17T15:00:48+05:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-12-17 14:24:49 &#43;0500 PKT" />
+
+
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://abdullah.today/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://abdullah.today/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://abdullah.today/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://abdullah.today/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://abdullah.today/images/icons/safari-pinned-tab.svg" color="#6cd55b">
+<link rel="shortcut icon" href="https://abdullah.today/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="msapplication-TileImage" content="https://abdullah.today/images/icons/mstile-144x144.png">
+<meta name="description" content="A tech related blog about unix/linux and other open source software and their configurations">
+<meta name="msapplication-config" content="https://abdullah.today/images/icons/browserconfig.xml">
+<meta name="theme-color" content="#3c9159">
+
+
+<script data-ad-client="ca-pub-6819322586059940" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<meta property="fb:pages" content="100662648026522" />
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://abdullah.today/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Allah o Akbar Kabeera!</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#FF69B4;
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://abdullah.today/about/">About</a></li><li><a href="https://abdullah.today/posts/">Blog</a></li><li><a href="https://abdullah.today/hadith">Hadith</a></li><li><a href="https://abdullah.today/quran/">Quran</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>2 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://abdullah.today/posts/linux-filesystem-directory-structure/">Linux Filesystem Directory Structure</a>
+            </h1>
+                <hr />
+                <aside id="toc">
+                <div class="toc-title">Table of Contents</div>
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#absolute-pathnames">Absolute Pathnames</a></li>
+        <li><a href="#relative-pathnames">Relative pathnames</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </aside>
+                <hr />
+
+            
+
+            <div class="post-content">
+                <p>Unlike other operating systems, in linux everything starts from /. This is called root directory.</p>
+<p>You can use <code>cd</code> command to navigate in filesystem. If you&rsquo;re inside some directory and you want to know where you&rsquo;re inside the directory tree, just type <code>pwd</code> and it will show you the current working directory. <code>pwd</code> stands for <code>print working directory</code>.</p>
+<p><code>cd</code> command needs some arguments if you want to visit some other directory. By default if you don&rsquo;t provide it some arguments, it will change the directory to user home directory. If you start a terminal emulator or a virtual console, it starts inside user home directory be default as well.</p>
+<p><code>cd</code> needs a pathname if you want to change directory to some directory inside the filesystem. A pathname is a route to that directory.
+There are two types of pathnames.</p>
+<h3 id="absolute-pathnames">Absolute Pathnames</h3>
+<p>An absolute pathname starts from root directory /. For example if you want to visit <code>/usr/bin</code>, you type / first. Then the directory name.
+Absolute pathnames are complete paths starting from / (where filesystem begins) to the file or directory.</p>
+<h3 id="relative-pathnames">Relative pathnames</h3>
+<p>Unlike absolute pathname, relative pathnames start from current working directory (pwd).
+If you&rsquo;re in <code>/var/log</code> directory, and you want to visit <code>journal</code> directory which is a child directory of current working directory, you type <code>cd journal</code>.</p>
+<p>If you want to visit the parent directory of current working directory which in this case is <code>/var</code>, just type, <code>cd ../var</code>.</p>
+<p>I have a YouTube video tutorial on this topic as well.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/fUmSm4LD3gQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://abdullah.today/tags/linux-filesystem-directory-structure">linux filesystem directory structure</a></span><span class="tag"><a href="https://abdullah.today/tags/filesystem">filesystem</a></span><span class="tag"><a href="https://abdullah.today/tags/pathnames">pathnames</a></span><span class="tag"><a href="https://abdullah.today/tags/absolute-pathnames">absolute pathnames</a></span><span class="tag"><a href="https://abdullah.today/tags/relative-pathnames">relative pathnames</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>252 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>17-12-2020 14:24 &#43;0500</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg><a href="https://gitlab.com/Abdullah/mazdigar/commit/d73593e1eb93e9ccb2aa24ccccdae48ed1497ab6" target="_blank" rel="noopener">d73593e</a> by <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-gitlab" xmlns="http://www.w3.org/2000/svg"><path d="M15.97 9.058l-.895-2.756L13.3.842c-.09-.282-.488-.282-.58 0L10.946 6.3H5.054L3.28.842C3.188.56 2.79.56 2.7.84L.924 6.3.03 9.058c-.082.25.008.526.22.682L8 15.37l7.75-5.63c.212-.156.302-.43.22-.682"/></svg><a href="https://gitlab.com/Abdullah"target="_blank" rel="noopener">Abdullah</a> at 17-12-2020 15:00 &#43;0500</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://abdullah.today/send-mail-using-gmail-from-terminal/">
+                                <span class="button__text">Send Mail Using Gmail using Command Line</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+            <div id="comments" class="thin">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "akpk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://abdullah.today/">Abdullah</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://abdullah.today/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://abdullah.today/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-147400444-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>
