@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>How to install fonts in Linux - Abdullah Khabir</title><meta name="Description" content="Fonts"><meta property="og:title" content="How to install fonts in Linux" />
+<meta property="og:description" content="Fonts" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/fonts/" />
+<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="article:published_time" content="2019-09-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/logo.png"/>
+
+<meta name="twitter:title" content="How to install fonts in Linux"/>
+<meta name="twitter:description" content="Fonts"/>
+<meta name="application-name" content="Abdullah Khabir">
+<meta name="apple-mobile-web-app-title" content="Abdullah Khabir"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://abdullah.today/fonts/" /><link rel="prev" href="https://abdullah.today/enable-sudo-with-no-password/" /><link rel="next" href="https://abdullah.today/urxvt/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to install fonts in Linux",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/abdullah.today\/fonts\/"
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "fonts, linux, fontconfig, fontset, xset, xrdb, xresources, xdefaults","wordcount":  834 ,
+        "url": "https:\/\/abdullah.today\/fonts\/","datePublished": "2019-09-18T00:00:00+00:00","dateModified": "2019-09-18T00:00:00+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Abdullah Khabir"
+            },"description": "Fonts"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="Some reminders"> InfoSec </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/Awan" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="Some reminders">InfoSec</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/Awan" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">How to install fonts in Linux</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-18">2019-09-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;834 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;<span id="/fonts/" class="leancloud_visitors" data-flag-title="How to install fonts in Linux">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#fonts-path">Fonts path</a></li>
+    <li><a href="#how-to-get-fonts">How to get fonts?</a></li>
+    <li><a href="#loadreload-fonts">Load/reload fonts</a></li>
+    <li><a href="#autoload-fonts-on-boot">Autoload fonts on boot</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>I have been using different distributions in my machines. A term which is called in our linux community <b>distrohopping</b>.
+On different distributions/machines, it&rsquo;s pain to collect packages you can&rsquo;t live without. For me and maybe for you too, the fonts are the part of OS which at least I care about the most.</p>
+<h2 id="fonts-path">Fonts path</h2>
+<p>Different linux distributions package fonts in with different names. So I decided to add the fonts to my dotfiles. And yeah now I&rsquo;m happy. On any new machine/installation, I don&rsquo;t need to install those fonts.</p>
+<p>Here is the path I have added the fonts which almost all distributions accept today. And it&rsquo;s easy to maintain them too.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ ls ~/.local/share/fonts
+ awesome                                  Tamzen7x13b.pt3
+ brands                                   Tamzen7x13b.ttf
+ DejaVuMathTeXGyre.ttf                    Tamzen7x13r-13.fnt
+ DejaVuSans-BoldOblique.ttf               Tamzen7x13r.afm
+ DejaVuSans-Bold.ttf                      Tamzen7x13r.bdf
+ DejaVuSansCondensed-BoldOblique.ttf      Tamzen7x13r.dfont
+ DejaVuSansCondensed-Bold.ttf             Tamzen7x13r.pcf
+ DejaVuSansCondensed-Oblique.ttf          Tamzen7x13r.png
+ DejaVuSansCondensed.ttf                  Tamzen7x13r.pt3
+ DejaVuSans-ExtraLight.ttf                Tamzen7x13r.ttf
+ DejaVuSansMono-BoldOblique.ttf           Tamzen7x14b-14.fnt
+ DejaVuSansMono-Bold.ttf                  Tamzen7x14b.afm
+ DejaVuSansMono-Oblique.ttf               Tamzen7x14b.bdf
+ DejaVuSansMono.ttf                       Tamzen7x14b.dfont
+ DejaVuSans-Oblique.ttf                   Tamzen7x14b.pcf
+ DejaVuSans.ttf                           Tamzen7x14b.png
+ DejaVuSerif-BoldItalic.ttf               Tamzen7x14b.pt3
+ DejaVuSerif-Bold.ttf                     Tamzen7x14b.ttf
+ DejaVuSerifCondensed-BoldItalic.ttf      Tamzen7x14r-14.fnt
+ DejaVuSerifCondensed-Bold.ttf            Tamzen7x14r.afm
+ DejaVuSerifCondensed-Italic.ttf          Tamzen7x14r.bdf
+ DejaVuSerifCondensed.ttf                 Tamzen7x14r.dfont
+ DejaVuSerif-Italic.ttf                   Tamzen7x14r.pcf
+ DejaVuSerif.ttf                          Tamzen7x14r.png
+ devicons-regular.sh                      Tamzen7x14r.pt3
+ devicons-regular.ttf                     Tamzen7x14r.ttf
+ DroidSansFallbackFull.ttf                Tamzen8x15b-15.fnt
+<span class="s1">&#39;Font Awesome 5 Brands-Regular-400.otf&#39;</span>   Tamzen8x15b.afm
+<span class="s1">&#39;Font Awesome 5 Free-Regular-400.otf&#39;</span>     Tamzen8x15b.bdf
+<span class="s1">&#39;Font Awesome 5 Free-Solid-900.otf&#39;</span>       Tamzen8x15b.dfont
+ fontawesome-regular.sh                   Tamzen8x15b.pcf
+ fontawesome-regular.ttf                  Tamzen8x15b.png
+ fontawesome-webfont.ttf                  Tamzen8x15b.pt3
+ fonts.dir                                Tamzen8x15b.ttf
+ Lato-BlackItalic.ttf                     Tamzen8x15r-15.fnt
+ Lato-Black.ttf                           Tamzen8x15r.afm
+ Lato-BoldItalic.ttf                      Tamzen8x15r.bdf
+ Lato-Bold.ttf                            Tamzen8x15r.dfont
+ Lato-HairlineItalic.ttf                  Tamzen8x15r.pcf
+ Lato-Hairline.ttf                        Tamzen8x15r.png
+ Lato-HeavyItalic.ttf                     Tamzen8x15r.pt3
+ Lato-Heavy.ttf                           Tamzen8x15r.ttf
+ Lato-Italic.ttf                          Tamzen8x16b-16.fnt
+ Lato-LightItalic.ttf                     Tamzen8x16b.afm
+ Lato-Light.ttf                           Tamzen8x16b.bdf
+ Lato-MediumItalic.ttf                    Tamzen8x16b.dfont
+ Lato-Medium.ttf                          Tamzen8x16b.pcf
+ Lato-Regular.ttf                         Tamzen8x16b.png
+ Lato-SemiboldItalic.ttf                  Tamzen8x16b.pt3
+ Lato-Semibold.ttf                        Tamzen8x16b.ttf
+ Lato-ThinItalic.ttf                      Tamzen8x16r-16.fnt
+ Lato-Thin.ttf                            Tamzen8x16r.afm
+ LiberationMono-BoldItalic.ttf            Tamzen8x16r.bdf
+ LiberationMono-Bold.ttf                  Tamzen8x16r.dfont
+ LiberationMono-Italic.ttf                Tamzen8x16r.pcf
+ LiberationMono-Regular.ttf               Tamzen8x16r.png
+ LiberationSans-BoldItalic.ttf            Tamzen8x16r.pt3
+ LiberationSans-Bold.ttf                  Tamzen8x16r.ttf
+ LiberationSans-Italic.ttf                TamzenForPowerline10x20b-20.fnt
+ LiberationSansNarrow-BoldItalic.ttf      TamzenForPowerline10x20b.afm
+ LiberationSansNarrow-Bold.ttf            TamzenForPowerline10x20b.bdf
+ LiberationSansNarrow-Italic.ttf          TamzenForPowerline10x20b.dfont
+ LiberationSansNarrow-Regular.ttf         TamzenForPowerline10x20b.pcf
+ LiberationSans-Regular.ttf               TamzenForPowerline10x20b.png
+ LiberationSerif-BoldItalic.ttf           TamzenForPowerline10x20b.pt3
+ LiberationSerif-Bold.ttf                 TamzenForPowerline10x20r-20.fnt
+ LiberationSerif-Italic.ttf               TamzenForPowerline10x20r.afm
+ LiberationSerif-Regular.ttf              TamzenForPowerline10x20r.bdf
+ NafeesWeb.ttf                            TamzenForPowerline10x20r.dfont
+ NotoMono-Regular.ttf                     TamzenForPowerline10x20r.pcf
+ octicons-regular.sh                      TamzenForPowerline10x20r.png
+ octicons-regular.ttf                     TamzenForPowerline10x20r.pt3
+ pomicons-regular.sh                      TamzenForPowerline5x9b-9.fnt
+ pomicons-regular.ttf                     TamzenForPowerline5x9b.afm
+ Powerline10x20.bdf                       TamzenForPowerline5x9b.bdf
+ Powerline5x9.bdf                         TamzenForPowerline5x9b.dfont
+ Powerline6x12.bdf                        TamzenForPowerline5x9b.pcf
+ Powerline7x13.bdf                        TamzenForPowerline5x9b.png
+ Powerline7x14.bdf                        TamzenForPowerline5x9b.pt3
+ Powerline8x15.bdf                        TamzenForPowerline5x9r-9.fnt
+ Powerline8x16.bdf                        TamzenForPowerline5x9r.afm
+ regular                                  TamzenForPowerline5x9r.bdf
+ siji.pcf                                 TamzenForPowerline5x9r.dfont
+ solid                                    TamzenForPowerline5x9r.pcf
+ Symbola_Hinted.ttf                       TamzenForPowerline5x9r.png
+ Symbola.ttf                              TamzenForPowerline5x9r.pt3
+ Tamsyn10x20b.pcf                         TamzenForPowerline6x12b-12.fnt
+ Tamsyn10x20b.psf.gz                      TamzenForPowerline6x12b.afm
+ Tamsyn10x20r.pcf                         TamzenForPowerline6x12b.bdf
+ Tamsyn10x20r.psf.gz                      TamzenForPowerline6x12b.dfont
+ Tamsyn5x9b.pcf                           TamzenForPowerline6x12b.pcf
+ Tamsyn5x9b.psf.gz                        TamzenForPowerline6x12b.png
+ Tamsyn5x9r.pcf                           TamzenForPowerline6x12b.pt3
+ Tamsyn5x9r.psf.gz                        TamzenForPowerline6x12r-12.fnt
+ Tamsyn6x12b.pcf                          TamzenForPowerline6x12r.afm
+ Tamsyn6x12b.psf.gz                       TamzenForPowerline6x12r.bdf
+ Tamsyn6x12r.pcf                          TamzenForPowerline6x12r.dfont
+ Tamsyn6x12r.psf.gz                       TamzenForPowerline6x12r.pcf
+ Tamsyn7x13b.pcf                          TamzenForPowerline6x12r.png
+ Tamsyn7x13b.psf.gz                       TamzenForPowerline6x12r.pt3
+ Tamsyn7x13r.pcf                          TamzenForPowerline7x13b-13.fnt
+ Tamsyn7x13r.psf.gz                       TamzenForPowerline7x13b.afm
+ Tamsyn7x14b.pcf                          TamzenForPowerline7x13b.bdf
+ Tamsyn7x14b.psf.gz                       TamzenForPowerline7x13b.dfont
+ Tamsyn7x14r.pcf                          TamzenForPowerline7x13b.pcf
+ Tamsyn7x14r.psf.gz                       TamzenForPowerline7x13b.png
+ Tamsyn8x15b.pcf                          TamzenForPowerline7x13b.pt3
+ Tamsyn8x15b.psf.gz                       TamzenForPowerline7x13r-13.fnt
+ Tamsyn8x15r.pcf                          TamzenForPowerline7x13r.afm
+ Tamsyn8x15r.psf.gz                       TamzenForPowerline7x13r.bdf
+ Tamsyn8x16b.pcf                          TamzenForPowerline7x13r.dfont
+ Tamsyn8x16b.psf.gz                       TamzenForPowerline7x13r.pcf
+ Tamsyn8x16r.pcf                          TamzenForPowerline7x13r.png
+ Tamsyn8x16r.psf.gz                       TamzenForPowerline7x13r.pt3
+ Tamzen10x20b-20.fnt                      TamzenForPowerline7x14b-14.fnt
+ Tamzen10x20b.afm                         TamzenForPowerline7x14b.afm
+ Tamzen10x20b.bdf                         TamzenForPowerline7x14b.bdf
+ Tamzen10x20b.dfont                       TamzenForPowerline7x14b.dfont
+ Tamzen10x20b.pcf                         TamzenForPowerline7x14b.pcf
+ Tamzen10x20b.png                         TamzenForPowerline7x14b.png
+ Tamzen10x20b.pt3                         TamzenForPowerline7x14b.pt3
+ Tamzen10x20b.ttf                         TamzenForPowerline7x14r-14.fnt
+ Tamzen10x20r-20.fnt                      TamzenForPowerline7x14r.afm
+ Tamzen10x20r.afm                         TamzenForPowerline7x14r.bdf
+ Tamzen10x20r.bdf                         TamzenForPowerline7x14r.dfont
+ Tamzen10x20r.dfont                       TamzenForPowerline7x14r.pcf
+ Tamzen10x20r.pcf                         TamzenForPowerline7x14r.png
+ Tamzen10x20r.png                         TamzenForPowerline7x14r.pt3
+ Tamzen10x20r.pt3                         TamzenForPowerline8x15b-15.fnt
+ Tamzen10x20r.ttf                         TamzenForPowerline8x15b.afm
+ Tamzen5x9b-9.fnt                         TamzenForPowerline8x15b.bdf
+ Tamzen5x9b.afm                           TamzenForPowerline8x15b.dfont
+ Tamzen5x9b.bdf                           TamzenForPowerline8x15b.pcf
+ Tamzen5x9b.dfont                         TamzenForPowerline8x15b.png
+ Tamzen5x9b.pcf                           TamzenForPowerline8x15b.pt3
+ Tamzen5x9b.png                           TamzenForPowerline8x15r-15.fnt
+ Tamzen5x9b.pt3                           TamzenForPowerline8x15r.afm
+ Tamzen5x9b.ttf                           TamzenForPowerline8x15r.bdf
+ Tamzen5x9r-9.fnt                         TamzenForPowerline8x15r.dfont
+ Tamzen5x9r.afm                           TamzenForPowerline8x15r.pcf
+ Tamzen5x9r.bdf                           TamzenForPowerline8x15r.png
+ Tamzen5x9r.dfont                         TamzenForPowerline8x15r.pt3
+ Tamzen5x9r.pcf                           TamzenForPowerline8x16b-16.fnt
+ Tamzen5x9r.png                           TamzenForPowerline8x16b.afm
+ Tamzen5x9r.pt3                           TamzenForPowerline8x16b.bdf
+ Tamzen5x9r.ttf                           TamzenForPowerline8x16b.dfont
+ Tamzen6x12b-12.fnt                       TamzenForPowerline8x16b.pcf
+ Tamzen6x12b.afm                          TamzenForPowerline8x16b.png
+ Tamzen6x12b.bdf                          TamzenForPowerline8x16b.pt3
+ Tamzen6x12b.dfont                        TamzenForPowerline8x16r-16.fnt
+ Tamzen6x12b.pcf                          TamzenForPowerline8x16r.afm
+ Tamzen6x12b.png                          TamzenForPowerline8x16r.bdf
+ Tamzen6x12b.pt3                          TamzenForPowerline8x16r.dfont
+ Tamzen6x12b.ttf                          TamzenForPowerline8x16r.pcf
+ Tamzen6x12r-12.fnt                       TamzenForPowerline8x16r.png
+ Tamzen6x12r.afm                          TamzenForPowerline8x16r.pt3
+ Tamzen6x12r.bdf                          VeraBd.ttf
+ Tamzen6x12r.dfont                        VeraBI.ttf
+ Tamzen6x12r.pcf                          VeraIt.ttf
+ Tamzen6x12r.png                          VeraMoBd.ttf
+ Tamzen6x12r.pt3                          VeraMoBI.ttf
+ Tamzen6x12r.ttf                          VeraMoIt.ttf
+ Tamzen7x13b-13.fnt                       VeraMono.ttf
+ Tamzen7x13b.afm                          VeraSeBd.ttf
+ Tamzen7x13b.bdf                          VeraSe.ttf
+ Tamzen7x13b.dfont                        Vera.ttf
+ Tamzen7x13b.pcf                          VL-Gothic-Regular.ttf
+ Tamzen7x13b.png                          VL-PGothic-Regular.ttf
+
+
+</code></pre></td></tr></table>
+</div>
+</div><p>There you can see directories also exist. Just make sure they are world readable. Else they won&rsquo;t work.</p>
+<script
+  async
+  src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+>
+</script>
+<ins
+  class="adsbygoogle"
+  style="display:block; text-align:center;"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-6819322586059940"
+  data-ad-slot="8253681033"
+>
+</ins>
+<script>
+  ;(adsbygoogle = window.adsbygoogle || []).push({})
+</script>
+
+<p>So now you have an idea how to save them. I installed them when I was on Arch Linux and never installed a single font again in my machine running Debian.</p>
+<h2 id="how-to-get-fonts">How to get fonts?</h2>
+<p>Well, As I said I have installed most of the fonts from Arch Linux official/community and AUR and some I downloaded from internet different websites.
+Just install them and create these directories if they already don&rsquo;t exist.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ mkdir -p ~/.local/share/fonts
+$ find / -name <span class="s1">&#39;*.ttf&#39;</span> -o -name <span class="s1">&#39;*.psf&#39;</span> -o -name <span class="s1">&#39;*.bdf&#39;</span> -o -name <span class="s1">&#39;*.fnt&#39;</span> -o -name <span class="s1">&#39;*.ttf&#39;</span> -o -name <span class="s1">&#39;*.pcf&#39;</span> -exec cp <span class="o">{}</span> ~/.local/share/fonts <span class="se">\;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="loadreload-fonts">Load/reload fonts</h2>
+<p>After copying the files, we have to load them.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ fc-cache -fvv
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="autoload-fonts-on-boot">Autoload fonts on boot</h2>
+<script
+  async
+  src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+>
+</script>
+<ins
+  class="adsbygoogle"
+  style="display:block; text-align:center;"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-6819322586059940"
+  data-ad-slot="8253681033"
+>
+</ins>
+<script>
+  ;(adsbygoogle = window.adsbygoogle || []).push({})
+</script>
+
+<p>Put this file in session starting file. Like .Xsession or if you&rsquo;re using xorg-xinit to start your Desktop Environment or Windows Manager then put it into ~/.xinitrc.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ xset +fp ~/.local/share/fonts
+$ xset fp rehash
+</code></pre></td></tr></table>
+</div>
+</div><p>Still have problems? Just lemme know in comments section and I&rsquo;ll be happy to assist you.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-09-18</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://abdullah.today/fonts/" data-title="How to install fonts in Linux" data-via="AbdullahToday" data-hashtags="fonts,linux,fontconfig,fontset,xset,xrdb,xresources,xdefaults"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://abdullah.today/fonts/" data-hashtag="fonts"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://abdullah.today/fonts/" data-title="How to install fonts in Linux"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://abdullah.today/fonts/" data-title="How to install fonts in Linux"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://abdullah.today/fonts/" data-title="How to install fonts in Linux"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/fonts/">fonts</a>,&nbsp;<a href="/tags/linux/">linux</a>,&nbsp;<a href="/tags/fontconfig/">fontconfig</a>,&nbsp;<a href="/tags/fontset/">fontset</a>,&nbsp;<a href="/tags/xset/">xset</a>,&nbsp;<a href="/tags/xrdb/">xrdb</a>,&nbsp;<a href="/tags/xresources/">xresources</a>,&nbsp;<a href="/tags/xdefaults/">xdefaults</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/enable-sudo-with-no-password/" class="prev" rel="prev" title="use sudo with no password"><i class="fas fa-angle-left fa-fw"></i>use sudo with no password</a>
+            <a href="/urxvt/" class="next" rel="next" title="URXVT - Terminal for Geeks">URXVT - Terminal for Geeks<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://abdullah.today" target="_blank">Abdullah Khabir</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"3L4LIEJSP4","algoliaIndex":"index.en","algoliaSearchKey":"5d79bed67aeb5ed5e5a990cfad81ebde","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

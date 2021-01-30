@@ -1,0 +1,25 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>vim - Tag - Abdullah Khabir</title>
+        <link>https://abdullah.today/tags/vim/</link>
+        <description>vim - Tag - Abdullah Khabir</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 10 May 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://abdullah.today/tags/vim/" rel="self" type="application/rss+xml" /><item>
+    <title>How to manage a website using git</title>
+    <link>https://abdullah.today/site-as-git-repo/</link>
+    <pubDate>Sun, 10 May 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/site-as-git-repo/</guid>
+    <description><![CDATA[Git is another awesome tool developed and maintained by Linus Torvalds who wrote linux kernel. In this post I&rsquo;ll explain how can we use it for our site maintenance. I have a vps on which my site is hosted along with a mail server, git server and a web server too. But I&rsquo;m sure this guide can be used with shared hosting accounts with some modifications.
+Install git. Once installed, as root user, create git user and add it to www-data group.]]></description>
+</item><item>
+    <title>How to use vIM as IDE in Debian, Ubuntu, Mint</title>
+    <link>https://abdullah.today/vim-as-ide/</link>
+    <pubDate>Fri, 11 Oct 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/vim-as-ide/</guid>
+    <description><![CDATA[Been using source based distributions for a long time. Source based distributions are cool for systems with limited resources. But what if you don&rsquo;t have enough time?
+Debian is one of the oldest distribution there which is known for stability. Stability? Well that never had been a priority for me but for some reasons I came to it and now using it for some months. It&rsquo;s a cool distribution.
+Well, that enough said, let&rsquo;s come to the topic.]]></description>
+</item></channel>
+</rss>

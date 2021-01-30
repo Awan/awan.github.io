@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>BSPWM - Abdullah Khabir</title><meta name="Description" content="A tiling window manager"><meta property="og:title" content="BSPWM" />
+<meta property="og:description" content="A tiling window manager" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/bspwm/" />
+<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="article:published_time" content="2020-06-01T19:02:44+05:00" />
+<meta property="article:modified_time" content="2020-06-01T19:02:44+05:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/logo.png"/>
+
+<meta name="twitter:title" content="BSPWM"/>
+<meta name="twitter:description" content="A tiling window manager"/>
+<meta name="application-name" content="Abdullah Khabir">
+<meta name="apple-mobile-web-app-title" content="Abdullah Khabir"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://abdullah.today/bspwm/" /><link rel="prev" href="https://abdullah.today/tmate/" /><link rel="next" href="https://abdullah.today/multihead/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "BSPWM",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/abdullah.today\/bspwm\/"
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "bspwm, wm, window managers, tiling window manager, workflow","wordcount":  2044 ,
+        "url": "https:\/\/abdullah.today\/bspwm\/","datePublished": "2020-06-01T19:02:44+05:00","dateModified": "2020-06-01T19:02:44+05:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Abdullah Khabir"
+            },"description": "A tiling window manager"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="Some reminders"> InfoSec </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/Awan" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="Some reminders">InfoSec</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/Awan" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">BSPWM</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-01">2020-06-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2044 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;<span id="/bspwm/" class="leancloud_visitors" data-flag-title="BSPWM">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#configuration">Configuration</a></li>
+    <li><a href="#start">Start</a></li>
+    <li><a href="#auto-start-programs">Auto-start programs</a></li>
+    <li><a href="#barpanel">Bar/Panel</a></li>
+    <li><a href="#rules">Rules</a></li>
+    <li><a href="#scratchpad">Scratchpad</a></li>
+    <li><a href="#misc-settings">Misc settings</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#borders">Borders</a></li>
+            <li><a href="#mouse">Mouse</a></li>
+            <li><a href="#focus">Focus</a></li>
+            <li><a href="#no-borders">No borders</a></li>
+            <li><a href="#split-ratio">Split ratio</a></li>
+            <li><a href="#ewmh">EWMH</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="bspwm">BSPWM</h1>
+<p>BSPWM is a tiling window manager that represents windows as the leaves of a
+full binary tree. It has support for <a href="https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html" target="_blank" rel="noopener noreffer">EWMH</a> and multihead.</p>
+<h2 id="installation">Installation</h2>
+<p>bspwm is available in almost all major distributions. If you can&rsquo;t find it in
+your OS, clone the <a href="https://github.com/baskerville/bspwm" target="_blank" rel="noopener noreffer">repository</a> and
+build it.</p>
+<h2 id="configuration">Configuration</h2>
+<p><em>bspwm</em> uses <em>sxhkd</em> for keyboard shortcuts. It has no other way to handle with keyboard input and instead provides <em>bspc</em> program as its interface.
+So you have to configure the keyboard shortcuts in another file.
+<em>bspwm</em> installs <em>sxhkd</em> as its dependency mostly. If you don&rsquo;t want to use it and
+want to use some other hotkey daemon like <em>xbindkeys</em> or something else, you can
+install that and configure it for you. <em>sxhkd</em> is from the same developer as
+<em>bspwm</em> with powerful and compact configuration syntax.</p>
+<p>Create directories first:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">mkdir -p ~/.config/<span class="o">{</span>bspwm,sxhkd<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>Copy the configuration files from <code>/usr/share/doc/</code>. You might have a
+different path for these files in your filesystem. Find them and copy over
+there.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
+cp /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
+</code></pre></td></tr></table>
+</div>
+</div><p>Cool. Now you have configuration files placed in correct location, you can
+start <em>bspwm</em> but wait. will you mind editing them?
+Edit them with some editor and change the defaults to how you like, change default programs.</p>
+<h2 id="start">Start</h2>
+<p>I use <em>xinit</em> to start my window manager. But you can use any display manager
+to boot into <em>bspwm</em>. Here is my <code>~/.xinitrc</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">
+$ cat ~/.xinitrc
+
+
+<span class="c1">#!/bin/sh</span>
+
+<span class="nv">coded_by</span><span class="o">=</span><span class="s1">&#39;
+</span><span class="s1">
+</span><span class="s1">In the name of Allah, the most Gracious, the most Merciful.
+</span><span class="s1">
+</span><span class="s1">▓▓▓▓▓▓▓▓▓▓
+</span><span class="s1">░▓ Author ▓ Abdullah &lt;https://abdullah.today&gt;
+</span><span class="s1">░▓▓▓▓▓▓▓▓▓▓
+</span><span class="s1">░░░░░░░░░░
+</span><span class="s1">
+</span><span class="s1">░█▀▀░▀█▀░█▀█░█▀▄░▀█▀░█░█
+</span><span class="s1">░▀▀█░░█░░█▀█░█▀▄░░█░░▄▀▄
+</span><span class="s1">░▀▀▀░░▀░░▀░▀░▀░▀░░▀░░▀░▀
+</span><span class="s1">&#39;</span>
+
+
+<span class="o">[</span> -f ~/.xprofile <span class="o">]</span> <span class="o">&amp;&amp;</span> . ~/.xprofile
+<span class="nb">exec</span> bspwm &gt;/tmp/bspwm-<span class="s2">&#34;</span><span class="nv">$USER</span><span class="s2">&#34;</span>.log 2&gt;<span class="p">&amp;</span><span class="m">1</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>It&rsquo;s enought to boot into <em>bspwm</em>. But we want some programs to run at
+startup.</p>
+<h2 id="auto-start-programs">Auto-start programs</h2>
+<p>You can start applications from <code>~/.config/bspwmrc</code> or <code>~/.xprofile</code>.
+If you use some display manager, you can start applications from <code>~/.xprofile</code>. It&rsquo;s sourced when display manager starts.</p>
+<p>You can have a <em>autostart.sh</em> in your <code>~/.config/bspwm/</code> and execute from <code>~/.config/bspwm/bspwmrc</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cat ~/.config/bspwm/bspwmrc
+...
+<span class="nv">$HOME</span>/.config/bspwm/autostart.sh <span class="p">&amp;</span>
+...
+</code></pre></td></tr></table>
+</div>
+</div><p>or a better way to do this is launching your programs from  <code>~/.xprofile</code> and
+source it from <code>~/.xinitrc</code>. This way you can use any display manager or xinit and you don&rsquo;t need extra configuration or a script.</p>
+<p>Here is my <code>~/.xprofile</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">cat ~/.xprofile
+
+
+<span class="c1">#!/bin/sh</span>
+<span class="c1"># In the name of Allah, the most Gracious, the most Merciful.</span>
+<span class="c1">#</span>
+<span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
+<span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today&gt;</span>
+<span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
+<span class="c1"># ░░░░░░░░░░</span>
+
+
+<span class="c1"># Xresources file</span>
+<span class="nv">user_resources</span><span class="o">=</span><span class="nv">$HOME</span>/.Xresources
+<span class="c1"># custom keymaps</span>
+<span class="nv">user_keymaps</span><span class="o">=</span><span class="nv">$HOME</span>/.Xmodmap
+<span class="c1"># custom fonts</span>
+<span class="nv">user_fonts_dir</span><span class="o">=</span><span class="nv">$HOME</span>/.local/share/fonts
+<span class="c1"># Inactivity timeout</span>
+<span class="nv">inactivity_timeout</span><span class="o">=</span><span class="m">180</span>
+<span class="c1"># Time before exectuing lock</span>
+<span class="nv">notify_time</span><span class="o">=</span><span class="m">10</span>
+
+<span class="c1"># For some java apps</span>
+
+<span class="c1">#wmname LG3D &amp;</span>
+
+run<span class="o">()</span> <span class="o">{</span>
+<span class="k">if</span> ! pgrep <span class="nv">$1</span> <span class="p">;</span>
+<span class="k">then</span>
+<span class="nv">$@</span><span class="p">&amp;</span>
+<span class="k">fi</span>
+<span class="o">}</span>
+
+
+<span class="k">if</span> <span class="o">[</span> -d /etc/X11/xinit/xinitrc.d <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="k">for</span> f in /etc/X11/xinit/xinitrc.d/?*.sh <span class="p">;</span> <span class="k">do</span>
+<span class="o">[</span> -x <span class="nv">$f</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> . <span class="nv">$f</span>
+<span class="k">done</span>
+<span class="nb">unset</span> f
+<span class="k">fi</span>
+
+<span class="c1"># Session name</span>
+<span class="nb">export</span> <span class="nv">DESKTOP_SESSION</span><span class="o">=</span>bspwm
+<span class="c1"># No tty</span>
+<span class="nb">export</span> <span class="nv">XDG_SESSION_TYPE</span><span class="o">=</span>x11
+
+tab<span class="o">()</span> <span class="o">{</span>
+<span class="c1"># Configure only laptop&#39;s screen if no external monitor is connected.</span>
+xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --brightness 1.0 <span class="se">\
+</span><span class="se"></span>--gamma 0.76:0.75:0.68 <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
+<span class="o">}</span>
+
+tabular<span class="o">()</span> <span class="o">{</span>
+<span class="c1"># Configure external monitor if exists</span>
+tab
+xrandr --output HDMI-2 --mode 1280x1024 --pos 1920x0 <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
+<span class="o">}</span>
+
+<span class="c1"># Start sxhkd</span>
+
+sxhkd <span class="p">&amp;</span>
+
+<span class="c1"># Load Xresources</span>
+
+<span class="o">[</span> -f <span class="nv">$user_resources</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> xrdb -merge <span class="s2">&#34;</span><span class="nv">$user_resources</span><span class="s2">&#34;</span>
+
+<span class="c1"># Load keymaps</span>
+
+<span class="o">[</span> -f <span class="nv">$user_keymaps</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> xmodmap <span class="s2">&#34;</span><span class="nv">$user_keymaps</span><span class="s2">&#34;</span>
+
+<span class="c1"># Run compositor</span>
+
+run picom -b --config <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.config/picom/picom.conf <span class="p">&amp;</span>
+
+<span class="c1"># Restore the last wallpaper</span>
+
+<span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.fehbg <span class="p">&amp;</span>
+
+<span class="c1"># Set cursor shape</span>
+
+xsetroot -cursor_name ul_angle <span class="p">&amp;</span>
+
+<span class="c1">#xcompmgr -c -f D 5 &amp;</span>
+
+<span class="c1"># Add fonts directories</span>
+
+xset +fp <span class="s2">&#34;</span><span class="nv">$user_fonts_dir</span><span class="s2">&#34;</span> <span class="o">&amp;&amp;</span> xset fp rehash
+
+<span class="c1"># Start urxvt in daemon mode</span>
+
+<span class="c1"># run urxvtd -q -o -f &amp;</span>
+
+<span class="c1"># No mouse when idle</span>
+
+run unclutter --ignore-scrolling --fork --timeout <span class="m">1</span> <span class="p">&amp;</span>
+
+<span class="c1"># DPMS and lock screen</span>
+
+xset dpms <span class="nv">$inactivity_timeout</span> <span class="p">&amp;</span>
+<span class="c1">#xss-lock -- physlock -mp &#39;Say, &#34;If the sea were ink for [writing] the words of my Lord, the sea would be exhausted before the words of my Lord were exhausted, even if We brought the like of it as a supplement.&#34;&#39; &amp;</span>
+xss-lock -- i3lock -c <span class="m">000000</span> <span class="p">&amp;</span>
+
+<span class="c1"># Start Notification daemon</span>
+
+run dunst -c <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.config/dunst/dunstrc <span class="p">&amp;</span>
+
+<span class="c1"># Mute the mic</span>
+
+pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo <span class="nb">true</span> <span class="p">&amp;</span>
+
+<span class="c1"># Redshift for less eye strain</span>
+
+<span class="c1">#redshift -c ~/.config/redshift/redshift.conf &amp;</span>
+
+<span class="c1"># Start tmux if not already running</span>
+
+<span class="o">[</span> -z <span class="nv">$TMUX</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> tmux new-session -s <span class="nv">$USER</span> -d
+
+<span class="c1"># Set brightness to 30 at boot</span>
+
+light -S <span class="m">30</span> <span class="p">&amp;</span>
+
+<span class="c1"># Configure multihead.</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="k">$(</span>xrandr -q <span class="p">|</span> awk <span class="s1">&#39;/ connected / {print $1}&#39;</span> <span class="p">|</span> wc -l<span class="k">)</span><span class="s2">&#34;</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+tab --primary
+<span class="k">else</span>
+tabular
+<span class="k">fi</span>
+
+<span class="c1"># Start a scratchpad</span>
+
+<span class="c1">#sleep 1</span>
+<span class="c1">#urxvtc -T &#39;scratchpad&#39; -geometry 65x20 &amp;</span>
+<span class="c1">#termite -t scratchpad &amp;</span>
+xfce4-terminal -T scratchpad --font<span class="o">=</span><span class="s1">&#39;Fantasque Sans Mono Italic 16&#39;</span> <span class="p">&amp;</span>
+
+<span class="c1"># vim:ft=sh</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>The file is well-commented. So you can copy and edit it to your likings.</p>
+<h2 id="barpanel">Bar/Panel</h2>
+<p>I&rsquo;m using <a href="https://github.com/jaagr/polybar" target="_blank" rel="noopener noreffer">polybar</a> with <em>bspwm</em>. To be
+honest, it was the reason I left <a href="https://dwm.suckless.org" target="_blank" rel="noopener noreffer">dwm</a> because
+even with patching <em>dwm</em>, I wasn&rsquo;t able to use polybar with it. <em>bspwm</em> is
+<em>EWMH</em> supported so you can use almost any bar with it.
+I&rsquo;m starting polybar from <code>~/.config/bspwm/bspwmrc</code>. More on polybar, you
+can find a <a href="https://abdullah.today/polybar" target="_blank" rel="noopener noreffer">post</a> in my blog to know more about
+it.</p>
+<h2 id="rules">Rules</h2>
+<p>In <em>bspwm</em>, you can define rules for windows how and where they appear.
+You can add a rule in <code>~/.config/bswpm/bspwmrc</code> like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">bspc rule -a Chromium <span class="nv">desktop</span><span class="o">=</span>^2
+</code></pre></td></tr></table>
+</div>
+</div><p>This rule will always open Chromium on desktop 2.</p>
+<p>Or if you have some applications with complex window rules, you can define
+them in a script and execute that script from <code>~/.config/bspwm/bspwrc</code> like
+this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">bspc config external_rules_command <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.config/bspwm/external_rules&#34;</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>Here is my <em>external_rules</em> script:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.config/bspwm/external_rules
+
+
+<span class="c1">#!/bin/sh</span>
+
+<span class="nv">coded_by</span><span class="o">=</span><span class="s1">&#39;
+</span><span class="s1">
+</span><span class="s1">In the name of Allah, the most Gracious, the most Merciful.
+</span><span class="s1">
+</span><span class="s1"> ▓▓▓▓▓▓▓▓▓▓
+</span><span class="s1">░▓ Author ▓ Abdullah &lt;https://abdullah.today&gt;
+</span><span class="s1">░▓▓▓▓▓▓▓▓▓▓
+</span><span class="s1">░░░░░░░░░░
+</span><span class="s1">
+</span><span class="s1">░█▀▄░█▀▀░█▀█░█░█░█▄█░░░█▀▄░█░█░█░░░█▀▀░█▀▀
+</span><span class="s1">░█▀▄░▀▀█░█▀▀░█▄█░█░█░░░█▀▄░█░█░█░░░█▀▀░▀▀█
+</span><span class="s1">░▀▀░░▀▀▀░▀░░░▀░▀░▀░▀░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀
+</span><span class="s1">&#39;</span>
+
+
+<span class="nv">wid</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nv">class</span><span class="o">=</span><span class="nv">$2</span>
+<span class="nv">instance</span><span class="o">=</span><span class="nv">$3</span>
+<span class="nv">title</span><span class="o">=</span><span class="k">$(</span>xdotool getwindowname <span class="nv">$wid</span><span class="k">)</span>
+
+<span class="k">case</span> <span class="nv">$class</span> in
+  <span class="o">[</span>Rr<span class="o">]</span>edshift-*<span class="p">|</span><span class="o">[</span>Tt<span class="o">]</span>int2<span class="p">|</span><span class="o">[</span>Pp<span class="o">]</span>inentry-*<span class="p">|</span><span class="o">[</span>Mm<span class="o">]</span>pv<span class="p">|</span><span class="o">[</span>Mm<span class="o">]</span>u<span class="o">[</span>Pp<span class="o">][</span>Dd<span class="o">][</span>Ff<span class="o">]</span><span class="p">|</span><span class="o">[</span>Mm<span class="o">]</span>Player<span class="p">|</span><span class="o">[</span>Tt<span class="o">]</span>hunar<span class="p">|</span><span class="o">[</span>Ff<span class="o">]</span>im<span class="p">|</span><span class="o">[</span>Gg<span class="o">]</span>picview<span class="p">|</span><span class="o">[</span>Nn<span class="o">]</span>itrogen<span class="p">|</span><span class="o">[</span>Aa<span class="o">]</span>randr<span class="p">|</span><span class="o">[</span>Gg<span class="o">]</span>alculator<span class="p">|</span><span class="o">[</span>Ff<span class="o">]</span>ont-manager<span class="p">|</span><span class="o">[</span>Oo<span class="o">]</span>blogout<span class="p">|</span><span class="o">[</span>Pp<span class="o">]</span>eek<span class="p">|</span><span class="o">[</span>Ss<span class="o">]</span>kype<span class="p">|</span><span class="o">[</span>Xx<span class="o">]</span>fce4-appfinder<span class="p">|</span><span class="o">[</span>Xx<span class="o">]</span>fce4-about<span class="p">|</span><span class="o">[</span>Gg<span class="o">]</span>pick<span class="p">|</span><span class="o">[</span>Gg<span class="o">]</span>mrun<span class="p">|</span><span class="o">[</span>Xx<span class="o">][</span>Cc<span class="o">]</span>alc<span class="p">|</span><span class="o">[</span>Pp<span class="o">]</span>avucontrol<span class="p">|</span><span class="o">[</span>Vv<span class="o">]</span>lc<span class="p">|</span><span class="o">[</span>Ee<span class="o">]</span>o<span class="o">[</span>mg<span class="o">]</span><span class="p">|</span><span class="o">[</span>Ff<span class="o">]</span>eh<span class="p">|</span><span class="o">[</span>Rr<span class="o">]</span>istretto<span class="p">|</span><span class="o">[</span>Ss<span class="o">]</span>xiv<span class="p">|</span><span class="o">[</span>Pp<span class="o">]</span>qiv<span class="p">|</span><span class="o">[</span>Aa<span class="o">]</span>tril<span class="p">|</span><span class="o">[</span>Ee<span class="o">]</span>vince<span class="p">|</span><span class="o">[</span>Zz<span class="o">]</span>athura<span class="p">|</span>scratchpad<span class="p">|</span>fzfmenu<span class="o">)</span>
+  <span class="nb">echo</span> <span class="s2">&#34;state = floating&#34;</span>
+  <span class="nb">echo</span> <span class="s2">&#34;center = on&#34;</span>
+  <span class="p">;;</span>
+  Google-chrome<span class="o">)</span>
+    <span class="nb">echo</span> <span class="s2">&#34;desktop = ^2&#34;</span>
+    <span class="p">;;</span>
+  Opera<span class="o">)</span>
+    <span class="nb">echo</span> <span class="s2">&#34;desktop = ^3&#34;</span>
+    <span class="p">;;</span>
+  Gimp<span class="o">)</span>
+   <span class="nb">echo</span> <span class="s2">&#34;desktop = ^5&#34;</span>
+   <span class="p">;;</span>
+ Anydesk<span class="o">)</span>
+   <span class="nb">echo</span> <span class="s2">&#34;desktop = ^4&#34;</span>
+   <span class="nb">echo</span> <span class="s2">&#34;follow = on&#34;</span>
+   <span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="k">case</span> <span class="nv">$title</span> in
+  scratchpad<span class="o">)</span>
+    <span class="nb">echo</span> <span class="s2">&#34;state = floating&#34;</span>
+    <span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="c1"># vim:ft=sh</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="scratchpad">Scratchpad</h2>
+<p>I love to use a terminal emulator mostly. So I have a hidden terminal window
+in floating mode. Whenever I need it, I just press the keybinds and it
+appears on top of other apps so I can copy/paste something to it.</p>
+<p>There are multiple way to achieve this. But what I have done is different. Not
+just terminal window, any window can be pushed to scratchpad.</p>
+<p>Copy this script in <code>~/.config/bspwm/scratchpad.sh</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/sh
+</span><span class="cp"></span>
+<span class="nv">coded_by</span><span class="o">=</span><span class="s1">&#39;
+</span><span class="s1">In the name of Allah, the most Gracious, the most Merciful.
+</span><span class="s1">
+</span><span class="s1">▓▓▓▓▓▓▓▓▓▓
+</span><span class="s1">░▓ Author ▓ Abdullah &lt;https://abdullah.today&gt;
+</span><span class="s1">░▓▓▓▓▓▓▓▓▓▓
+</span><span class="s1">░░░░░░░░░░
+</span><span class="s1">
+</span><span class="s1">░█▀▀░█▀▀░█▀▄░█▀█░▀█▀░█▀▀░█░█░█▀█░█▀█░█▀▄
+</span><span class="s1">░▀▀█░█░░░█▀▄░█▀█░░█░░█░░░█▀█░█▀▀░█▀█░█░█
+</span><span class="s1">░▀▀▀░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀░▀░▀░░░▀░▀░▀▀░
+</span><span class="s1">&#39;</span>
+
+
+toggle_flag<span class="o">()</span> <span class="o">{</span>
+<span class="nv">id</span><span class="o">=</span><span class="k">$(</span>bspc query -N -n <span class="s2">&#34;focused&#34;</span><span class="k">)</span>
+<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$id</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>xprop -id <span class="s2">&#34;</span><span class="nv">$id</span><span class="s2">&#34;</span> <span class="p">|</span> grep <span class="s2">&#34;_SCRATCH_ORDER&#34;</span> <span class="p">|</span> wc -l<span class="k">)</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+xprop -id <span class="nv">$id</span> -remove _SCRATCH_ORDER
+xprop -id <span class="nv">$id</span> -remove _SCRATCH_VISIBILITY
+<span class="k">else</span>
+xprop -id <span class="nv">$id</span> -f _SCRATCH_ORDER 32ii -set _SCRATCH_ORDER <span class="k">$(</span>date +%s,%N<span class="k">)</span>
+xprop -id <span class="nv">$id</span> -f _SCRATCH_VISIBILITY 8i -set _SCRATCH_VISIBILITY <span class="m">0</span>
+xdotool windowunmap <span class="nv">$id</span>
+<span class="k">fi</span>
+<span class="k">fi</span>
+<span class="o">}</span>
+
+switch_app<span class="o">()</span> <span class="o">{</span>
+<span class="nv">id</span><span class="o">=</span><span class="k">$(</span>bspc query -N -n <span class="s2">&#34;focused&#34;</span><span class="k">)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>xprop -id <span class="s2">&#34;</span><span class="nv">$id</span><span class="s2">&#34;</span> <span class="p">|</span> grep <span class="s2">&#34;_SCRATCH_VISIBILITY(INTEGER) = 1&#34;</span> <span class="p">|</span> wc -l<span class="k">)</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+xprop -id <span class="nv">$id</span> -f _SCRATCH_VISIBILITY 8i -set _SCRATCH_VISIBILITY <span class="m">0</span>
+xdotool windowunmap <span class="nv">$id</span>
+<span class="k">fi</span>
+
+<span class="nv">sid</span><span class="o">=</span><span class="k">$(</span>
+<span class="nv">id</span><span class="o">=</span><span class="k">$(</span>bspc query -N -n <span class="s2">&#34;focused&#34;</span><span class="k">)</span><span class="p">;</span>
+<span class="k">for</span> w in <span class="k">$(</span>xwininfo -root -children <span class="p">|</span> grep -e <span class="s2">&#34;^\s*0x[0-9a-f]\+&#34;</span> -o<span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$w</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;</span><span class="nv">$id</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="nv">t</span><span class="o">=</span><span class="k">$(</span>xprop -id <span class="nv">$w</span> _SCRATCH_ORDER <span class="p">|</span> grep <span class="s1">&#39; = \(.*\)&#39;</span><span class="k">)</span>
+<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$t</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="nb">echo</span> <span class="nv">$t</span> <span class="nv">$w</span>
+<span class="k">fi</span>
+<span class="k">fi</span>
+<span class="k">done</span> <span class="p">|</span> sort -n <span class="p">|</span> head -n1 <span class="p">|</span> cut -d<span class="s2">&#34; &#34;</span> -f <span class="m">5</span>
+<span class="k">)</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$sid</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&#34;%04d&#34;</span> <span class="nv">$sid</span><span class="k">)</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&#34;%04d&#34;</span> <span class="nv">$id</span><span class="k">)</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$sid</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;</span><span class="nv">$id</span><span class="s2">&#34;</span>
+xprop -id <span class="nv">$sid</span> -f _SCRATCH_ORDER 32ii -set _SCRATCH_ORDER <span class="k">$(</span>date +%s,%N<span class="k">)</span>
+xprop -id <span class="nv">$sid</span> -f _SCRATCH_VISIBILITY 8i -set _SCRATCH_VISIBILITY <span class="m">1</span>
+xdotool windowmap <span class="nv">$sid</span>
+bspc node -f <span class="nv">$sid</span>
+<span class="k">fi</span>
+<span class="o">}</span>
+
+
+<span class="nv">op</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$op</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;toggle-flag&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+toggle_flag
+<span class="k">elif</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$op</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;switch-app&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+switch_app
+<span class="k">fi</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>And add this line to your <code>~/.config/sxhkd/sxhkdrc</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># Push focused window to scratchpad (background)
+
+super + shift + i
+&#34;$HOME&#34;/.config/bspwm/scratchpad.sh toggle-flag
+
+# Hide/Un-Hide a window pushed to scratchpad previously
+
+super + i
+&#34;$HOME&#34;/.config/bspwm/scratchpad.sh switch-app
+</code></pre></td></tr></table>
+</div>
+</div><p>Now you can use <code>Super + Shift + i</code> to hide the focused window and <code>Super + i</code>
+to get it back.</p>
+<h2 id="misc-settings">Misc settings</h2>
+<h4 id="borders">Borders</h4>
+<p>There are active, normal, focused window colors settings available:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">
+$ cat ~/.config/bspwm/bspwmrc
+...
+<span class="c1"># Colors</span>
+
+<span class="nv">dark_moderate_blue</span><span class="o">=</span><span class="s2">&#34;#5e81ac&#34;</span>
+<span class="nv">pure_cyan</span><span class="o">=</span><span class="s2">&#34;#00FFFF&#34;</span>
+<span class="nv">pure_magenta</span><span class="o">=</span><span class="s2">&#34;#FF00FF&#34;</span>
+<span class="nv">vivid_red</span><span class="o">=</span><span class="s2">&#34;#ff3232&#34;</span>
+<span class="nv">hot_pink</span><span class="o">=</span><span class="s2">&#34;#ff69b4&#34;</span>
+<span class="nv">up_maroon</span><span class="o">=</span><span class="s2">&#34;#7b1113&#34;</span>
+
+
+
+<span class="c1"># Feedback color of preselection</span>
+
+bspc config presel_feedback_color   <span class="nv">$up_maroon</span>
+
+<span class="c1"># Focused Border color</span>
+
+bspc config focused_border_color    <span class="nv">$hot_pink</span>
+
+<span class="c1"># Active border color</span>
+
+bspc config active_border_color     <span class="nv">$pure_magenta</span>
+
+<span class="c1"># Normal border color</span>
+
+bspc config normal_border_color     <span class="nv">$pure_cyan</span>
+
+...
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="mouse">Mouse</h4>
+<p>While you press and hold <em>SUPER</em> key and hit these mouse buttons, these actions can be done:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ vi ~/.config/bspwm/bspwmrc
+...
+<span class="c1"># Pointer actions when pressing mod + button</span>
+
+bspc config pointer_action1         move
+bspc config pointer_action2         resize_side
+bspc config pointer_action3         resize_corner
+...
+:wq!
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="focus">Focus</h4>
+<p>When you move your mouse to some window, it should get focused. This behaviour is disabled by default which I use mostly and found helpful. Enable it by appending this line to your <em>bspwmrc</em>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ bspc config focus_follows_pointer <span class="nb">true</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="no-borders">No borders</h4>
+<p>If you have only one window open on a desktop, you might not want it to have
+borders. Append it to <em>bspwmrc</em>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ bspc config borderless_monocle <span class="nb">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="split-ratio">Split ratio</h4>
+<p>How much area the new window should take? You can configure this behaviour using
+this command or by appending it to <em>bspwmrc</em>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">bspc config split_ratio 0.50
+</code></pre></td></tr></table>
+</div>
+</div><p>It will alot half of the available screen to new window.</p>
+<h4 id="ewmh">EWMH</h4>
+<p>Ignore EWMH focus requests. If true, opening new program in already opened instance will have direct focus too. Like if you&rsquo;re on desktop 8 and you open a URL from mutt, and chrome is configured as url launcher, it will send the url to chrome opened
+in 2nd desktop and switch to it.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">bspc config ignore_ewmh_focus <span class="nb">false</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>I think its enough for now. <em>BSPWM</em> is amazing and very useful if you know
+scripting. If need assistance on <em>BSPWM</em>, you can always ask in comments.
+Thanks for reading. 😉</p>
+<p>Here is a demonstration video.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/Y_aX-TOPREc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-06-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://abdullah.today/bspwm/" data-title="BSPWM" data-via="AbdullahToday" data-hashtags="bspwm,wm,window managers,tiling window manager,workflow"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://abdullah.today/bspwm/" data-hashtag="bspwm"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://abdullah.today/bspwm/" data-title="BSPWM"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://abdullah.today/bspwm/" data-title="BSPWM"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://abdullah.today/bspwm/" data-title="BSPWM"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/bspwm/">bspwm</a>,&nbsp;<a href="/tags/wm/">wm</a>,&nbsp;<a href="/tags/window-managers/">window managers</a>,&nbsp;<a href="/tags/tiling-window-manager/">tiling window manager</a>,&nbsp;<a href="/tags/workflow/">workflow</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/tmate/" class="prev" rel="prev" title="Terminal Sharing service"><i class="fas fa-angle-left fa-fw"></i>Terminal Sharing service</a>
+            <a href="/multihead/" class="next" rel="next" title="Multihead with BSPWM and Polybar">Multihead with BSPWM and Polybar<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://abdullah.today" target="_blank">Abdullah Khabir</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"3L4LIEJSP4","algoliaIndex":"index.en","algoliaSearchKey":"5d79bed67aeb5ed5e5a990cfad81ebde","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

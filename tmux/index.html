@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>TMUX - Abdullah Khabir</title><meta name="Description" content="A terminal multiplexer"><meta property="og:title" content="TMUX" />
+<meta property="og:description" content="A terminal multiplexer" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/tmux/" />
+<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="article:published_time" content="2020-06-06T18:13:35+05:00" />
+<meta property="article:modified_time" content="2020-06-06T18:13:35+05:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/logo.png"/>
+
+<meta name="twitter:title" content="TMUX"/>
+<meta name="twitter:description" content="A terminal multiplexer"/>
+<meta name="application-name" content="Abdullah Khabir">
+<meta name="apple-mobile-web-app-title" content="Abdullah Khabir"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://abdullah.today/tmux/" /><link rel="prev" href="https://abdullah.today/cherry-pick/" /><link rel="next" href="https://abdullah.today/fqdn/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "TMUX",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/abdullah.today\/tmux\/"
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "tmux, screen, multiplexer, console","wordcount":  1131 ,
+        "url": "https:\/\/abdullah.today\/tmux\/","datePublished": "2020-06-06T18:13:35+05:00","dateModified": "2020-06-06T18:13:35+05:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Abdullah Khabir"
+            },"description": "A terminal multiplexer"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="Some reminders"> InfoSec </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/Awan" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="Some reminders">InfoSec</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/Awan" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">TMUX</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-06">2020-06-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1131 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;<span id="/tmux/" class="leancloud_visitors" data-flag-title="TMUX">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#start">Start</a></li>
+        <li><a href="#keybindings">Keybindings</a></li>
+        <li><a href="#detach-session">Detach session</a></li>
+        <li><a href="#re-attach-session">Re attach session</a></li>
+        <li><a href="#windows">Windows</a></li>
+        <li><a href="#panes">Panes</a></li>
+        <li><a href="#my-tmuxconf">My tmux.conf</a></li>
+        <li><a href="#auto-start-tmux-on-boot">Auto start tmux on boot</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="tmux">TMUX</h1>
+<p><em>tmux</em> is a terminal multiplexer. You can run programs inside a tmux session,
+detach session and continue running programs in background, reattach later.</p>
+<h3 id="installation">Installation</h3>
+<p><em>tmux</em> is available in all linux distributions. You can install it using your
+distribution&rsquo;s package manager. In <em>Arch Linux</em>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S tmux
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="start">Start</h3>
+<p>You can start <em>tmux</em> by invoking <code>tmux</code> command inside your terminal.</p>
+<h3 id="keybindings">Keybindings</h3>
+<p>The default modifier key is <code>Ctrl + b</code> followed by a key. Press <code>Ctrl + b</code> and
+then hit another key and tmux will get it.</p>
+<p>You can change the default keybindings in <code>~/.tmux.conf</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">
+$ vi ~/.tmux.conf
+
+...
+
+unbind C-b
+<span class="nb">set</span> option -g prefix <span class="sb">`</span>
+...
+:wq
+</code></pre></td></tr></table>
+</div>
+</div><p>Here I have removed the default prefix and have bounded &ldquo;`&rdquo; as prefix.
+I found it useful than default prefix.</p>
+<h3 id="detach-session">Detach session</h3>
+<p>You can detach a <em>tmux session</em> by sending it <code>Prefix</code> followed by <code>d</code>.</p>
+<h3 id="re-attach-session">Re attach session</h3>
+<p>You can reattach to a running  <em>tmux session</em> by simply invoking <code>tmux attach-session -t &lt;target_session&gt;</code>. You can get session&rsquo;s name using <code>tmux ls</code>.</p>
+<h3 id="windows">Windows</h3>
+<p>By default, <em>tmux</em> will start a new window running a shell inside it.
+You can create new windows by pressing <code>Prefix</code> followed by <code>c</code>.</p>
+<p>You can go to next window by pressing <code>Prefix</code> followed by <code>n</code>.</p>
+<p>Or you can hit <code>Prefix</code> followed by <code>w</code> and tmux will show you windows opened
+and you can select which window you want to go to.</p>
+<p>To kill a window, go to the window and hit <code>Prefix</code> followed by <code>x</code>.</p>
+<h3 id="panes">Panes</h3>
+<p><script
+  async
+  src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+>
+</script>
+<ins
+  class="adsbygoogle"
+  style="display:block; text-align:center;"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-6819322586059940"
+  data-ad-slot="8253681033"
+>
+</ins>
+<script>
+  ;(adsbygoogle = window.adsbygoogle || []).push({})
+</script>
+
+A window can have multiple panes.</p>
+<p>To split current window into two panes horizontally, hit <code>Prefix</code> followed by <code>%</code>.
+To split current window into two panes vertically, hit <code>Prefix</code> followed by <code>&quot;</code>.
+To go to next pane, hit <code>Prefix</code> followed by <code>o</code>.
+To toggle between panes, hit <code>Prefix</code> followed by <code>;</code>.
+To kill a pane you&rsquo;re inside, hit <code>Prefix</code> followed by <code>x</code>.</p>
+<h3 id="my-tmuxconf">My tmux.conf</h3>
+<p><script
+  async
+  src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+>
+</script>
+<ins
+  class="adsbygoogle"
+  style="display:block; text-align:center;"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-6819322586059940"
+  data-ad-slot="8253681033"
+>
+</ins>
+<script>
+  ;(adsbygoogle = window.adsbygoogle || []).push({})
+</script>
+
+Below is my customized <em>tmux.conf</em>. You can copy and then customize it to your
+needs, its well documented with comments.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.tmux.conf
+
+
+<span class="c1">#  ██████████ ████     ████ ██     ██ ██     ██</span>
+<span class="c1"># ░░░░░██░░░ ░██░██   ██░██░██    ░██░░██   ██</span>
+<span class="c1">#     ░██    ░██░░██ ██ ░██░██    ░██ ░░██ ██</span>
+<span class="c1">#     ░██    ░██ ░░███  ░██░██    ░██  ░░███</span>
+<span class="c1">#     ░██    ░██  ░░█   ░██░██    ░██   ██░██</span>
+<span class="c1">#     ░██    ░██   ░    ░██░██    ░██  ██ ░░██</span>
+<span class="c1">#     ░██    ░██        ░██░░███████  ██   ░░██</span>
+<span class="c1">#     ░░     ░░         ░░  ░░░░░░░  ░░     ░░</span>
+<span class="c1">#</span>
+<span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
+<span class="c1"># ░▓ Author ▓ AK &lt;abdullah@abdullah.today&gt;</span>
+<span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
+<span class="c1"># ░░░░░░░░░░</span>
+
+<span class="c1"># source powerline</span>
+<span class="nb">source</span> /usr/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf
+
+<span class="c1"># Custom Prefix</span>
+unbind C-b
+set-option -g prefix <span class="sb">`</span>
+<span class="nb">bind</span> <span class="sb">`</span> send-prefix
+
+<span class="c1"># Shell</span>
+<span class="nb">set</span> -g default-command /bin/zsh
+<span class="nb">set</span> -g default-shell /bin/zsh
+
+<span class="c1"># utf-8 support in status bar</span>
+<span class="c1">#set -g status-utf8 on</span>
+
+<span class="c1"># Reload the config</span>
+<span class="nb">bind</span> r source-file ~/.tmux.conf <span class="se">\;</span> display <span class="s2">&#34;~/.tmux.conf reloaded&#34;</span>
+
+<span class="c1"># Synchronize panes</span>
+<span class="nb">bind</span> e setw synchronize-panes <span class="se">\;</span> display <span class="s2">&#34;synchronize mode&#34;</span>
+
+<span class="c1"># Splits</span>
+unbind %
+unbind <span class="s1">&#39;&#34;&#39;</span>
+<span class="nb">bind</span> h split-window -v
+<span class="nb">bind</span> v split-window -h
+<span class="c1">#bind -n M-h send-keys</span>
+
+<span class="c1"># enable vi-mode</span>
+setw -g mode-keys vi
+<span class="nb">set</span> -g status-keys vi
+
+<span class="c1"># copy paste</span>
+unbind <span class="o">[</span>
+<span class="nb">bind</span> Escape copy-mode
+unbind p
+<span class="nb">bind</span> p paste-buffer
+bind-key -T copy-mode-vi <span class="s1">&#39;v&#39;</span> send -X begin-selection
+bind-key -T copy-mode-vi <span class="s1">&#39;y&#39;</span> send -X copy-pipe-and-cancel <span class="s1">&#39;xclip -in -selection clipboard&#39;</span>
+
+<span class="c1"># command mode</span>
+<span class="nb">bind</span> : command-prompt
+
+<span class="c1"># Kill panes</span>
+<span class="nb">bind</span> x kill-pane
+
+<span class="c1"># Status on off key</span>
+<span class="nb">bind</span> t <span class="nb">set</span> status
+
+<span class="c1"># Lock the tty</span>
+
+<span class="nb">bind</span> b run-shell <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.local/bin/unilock&#34;</span>
+
+<span class="c1"># Alerts</span>
+setw -g monitor-activity on
+<span class="nb">set</span> -g visual-activity on
+
+<span class="c1"># Enable mouse mode</span>
+setw -g mouse on
+
+<span class="c1"># Default terminal mode</span>
+<span class="nb">set</span> -g default-terminal <span class="s1">&#39;screen-256color&#39;</span>
+
+<span class="c1"># Status and colors</span>
+<span class="nb">set</span> -g status-justify left
+<span class="nb">set</span> -g status-interval <span class="m">2</span>
+<span class="nb">set</span> -g status-bg colour25
+<span class="nb">set</span> -g status-fg colour222
+
+<span class="c1"># Window status</span>
+set-option -g status-position bottom
+setw -g window-status-format <span class="s2">&#34;#[bg=colour246, fg=colour14, bold] #W &#34;</span>
+setw -g window-status-current-format <span class="s2">&#34;#[bg=colour25, fg=colour14, bold] #W &#34;</span>
+
+<span class="c1"># Right status</span>
+<span class="nb">set</span> -g status-right-length <span class="m">100</span>
+<span class="nb">set</span> -g status-right  <span class="s1">&#39;#(~/.local/bin/tmux-status)&#39;</span>
+<span class="nb">set</span> -g status-left-length <span class="m">50</span>
+<span class="nb">set</span> -g status-left <span class="s1">&#39;&#39;</span>
+
+<span class="c1"># Visuals</span>
+setw -g monitor-activity on
+set-option -g bell-action none
+set-option -g visual-activity on
+set-option -g visual-bell off
+set-option -g visual-silence off
+
+<span class="c1"># clock</span>
+<span class="nb">set</span> -g clock-mode-colour colour20
+
+<span class="c1"># urlview</span>
+run-shell <span class="nv">$HOME</span>/.local/bin/tmux.urlview
+
+<span class="c1"># resize panes</span>
+setw -g aggressive-resize on
+
+<span class="c1"># No delay</span>
+<span class="nb">set</span> -sg escape-time <span class="m">0</span>
+
+<span class="c1"># History</span>
+<span class="nb">set</span> -g history-limit <span class="m">10000</span>
+
+<span class="c1"># Scrolling</span>
+set-option -g terminal-overrides <span class="s1">&#39;xterm*:smcup@:rmcup@&#39;</span>
+
+<span class="c1"># Panes index</span>
+<span class="nb">set</span> -g pane-base-index <span class="m">1</span>
+<span class="nb">set</span> -g renumber-windows on
+
+<span class="c1"># Windows index</span>
+<span class="nb">set</span> -g base-index <span class="m">1</span>
+
+<span class="c1"># Layouts</span>
+<span class="nb">bind</span> Z previous-layout
+<span class="nb">bind</span> X next-layout
+
+<span class="c1"># Detach others</span>
+<span class="nb">bind</span> D detach -a
+
+<span class="c1"># Navigate and resize splits</span>
+<span class="nv">is_vim</span><span class="o">=</span><span class="s2">&#34;ps -o state= -o comm= -t &#39;#{pane_tty}&#39; \
+</span><span class="s2">    | grep -iqE &#39;^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?</span>$<span class="s2">&#39;&#34;</span>
+<span class="nb">bind</span> -n C-h <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-h&#34;</span>  <span class="s2">&#34;select-pane -L&#34;</span>
+<span class="nb">bind</span> -n C-j <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-j&#34;</span>  <span class="s2">&#34;select-pane -D&#34;</span>
+<span class="nb">bind</span> -n C-k <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-k&#34;</span>  <span class="s2">&#34;select-pane -U&#34;</span>
+<span class="nb">bind</span> -n C-l <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-l&#34;</span>  <span class="s2">&#34;select-pane -R&#34;</span>
+<span class="nb">bind</span> -n M-h <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-h&#34;</span> <span class="s2">&#34;resize-pane -L 2&#34;</span>
+<span class="nb">bind</span> -n M-l <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-l&#34;</span> <span class="s2">&#34;resize-pane -R 2&#34;</span>
+<span class="nb">bind</span> -n M-k <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-k&#34;</span> <span class="s2">&#34;resize-pane -U 2&#34;</span>
+<span class="nb">bind</span> -n M-j <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-j&#34;</span> <span class="s2">&#34;resize-pane -D 2&#34;</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="auto-start-tmux-on-boot">Auto start tmux on boot</h3>
+<p>I have these lines in my shell startup file <code>~/.zprofile</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.zprofile
+
+<span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
+<span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today/&gt;</span>
+<span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
+<span class="c1"># ░░░░░░░░░░</span>
+
+
+<span class="c1"># Start X at login</span>
+
+
+<span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$DISPLAY</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">[[</span> <span class="k">$(</span>tty<span class="k">)</span> <span class="o">=</span> /dev/tty1 <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">exec</span> startx -- vt1 -keeptty <span class="p">&amp;</span>&gt;/dev/null
+  <span class="nb">logout</span>
+<span class="k">elif</span> <span class="o">[[</span> <span class="k">$(</span>tty<span class="k">)</span> !<span class="o">=</span> /dev/tty1 <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+  sudo loadkeys <span class="nv">$HOME</span>/.loadkeysrc
+  tmux has-session -t <span class="nv">$USER</span> <span class="o">||</span> tmux new-session -t <span class="nv">$USER</span> <span class="o">&amp;&amp;</span> tmux attach-session -t <span class="nv">$USER</span>
+<span class="k">fi</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>So if I login from other than tty1, and if there is an already running <em>tmux
+session</em>, it attaches me to it. Else starts a new session and get me there.
+😉
+Here is a demonstration video.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/uiSUJP8Xv5A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-06-06</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://abdullah.today/tmux/" data-title="TMUX" data-via="AbdullahToday" data-hashtags="tmux,screen,multiplexer,console"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://abdullah.today/tmux/" data-hashtag="tmux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://abdullah.today/tmux/" data-title="TMUX"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://abdullah.today/tmux/" data-title="TMUX"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://abdullah.today/tmux/" data-title="TMUX"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/tmux/">tmux</a>,&nbsp;<a href="/tags/screen/">screen</a>,&nbsp;<a href="/tags/multiplexer/">multiplexer</a>,&nbsp;<a href="/tags/console/">console</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/cherry-pick/" class="prev" rel="prev" title="git Cherry Pick"><i class="fas fa-angle-left fa-fw"></i>git Cherry Pick</a>
+            <a href="/fqdn/" class="next" rel="next" title="How to set FQDN in Linux">How to set FQDN in Linux<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://abdullah.today" target="_blank">Abdullah Khabir</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"3L4LIEJSP4","algoliaIndex":"index.en","algoliaSearchKey":"5d79bed67aeb5ed5e5a990cfad81ebde","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

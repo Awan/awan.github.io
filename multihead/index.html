@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Multihead with BSPWM and Polybar - Abdullah Khabir</title><meta name="Description" content="How to configure dual screen in linux?"><meta property="og:title" content="Multihead with BSPWM and Polybar" />
+<meta property="og:description" content="How to configure dual screen in linux?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/multihead/" />
+<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="article:published_time" content="2020-06-02T10:52:37+05:00" />
+<meta property="article:modified_time" content="2020-06-02T10:52:37+05:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/logo.png"/>
+
+<meta name="twitter:title" content="Multihead with BSPWM and Polybar"/>
+<meta name="twitter:description" content="How to configure dual screen in linux?"/>
+<meta name="application-name" content="Abdullah Khabir">
+<meta name="apple-mobile-web-app-title" content="Abdullah Khabir"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://abdullah.today/multihead/" /><link rel="prev" href="https://abdullah.today/bspwm/" /><link rel="next" href="https://abdullah.today/cherry-pick/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Multihead with BSPWM and Polybar",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/abdullah.today\/multihead\/"
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "polybar, bspwm, multihead, multi-display, multi-screen, dual-monitor, dual-screen, multimonitor","wordcount":  1273 ,
+        "url": "https:\/\/abdullah.today\/multihead\/","datePublished": "2020-06-02T10:52:37+05:00","dateModified": "2020-06-02T10:52:37+05:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Abdullah Khabir"
+            },"description": "How to configure dual screen in linux?"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="Some reminders"> InfoSec </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/Awan" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="Some reminders">InfoSec</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/Awan" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Multihead with BSPWM and Polybar</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-02">2020-06-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1273 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;<span id="/multihead/" class="leancloud_visitors" data-flag-title="Multihead with BSPWM and Polybar">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#hardware">Hardware</a></li>
+    <li><a href="#software">Software</a></li>
+    <li><a href="#display-manager">Display manager</a></li>
+    <li><a href="#starting-on-boot">Starting on Boot</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="multihead">Multihead</h1>
+<p>A few days ago, I relocated myself to new room. Actually this room I use for
+summer as its way cooler than others. I have a wall-mounted LCD monitor here so
+today I thought I should share how I do multi screening.</p>
+<h2 id="hardware">Hardware</h2>
+<p>I have this lenovo X series machine which is my main machine I use.
+Its resolution is 1920x1080.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/multi-2.png"
+        data-srcset="/images/multi-2.png, /images/multi-2.png 1.5x, /images/multi-2.png 2x"
+        data-sizes="auto"
+        alt="/images/multi-2.png"
+        title="x1 carbon" /></p>
+<p>The second one is a LCD monitor. And the resolution is 1280x1024.</p>
+<p>My laptop doesn&rsquo;t have VGA port but I have a HDMI port. But I have worked on old
+hardware with VGA port and it works.</p>
+<h2 id="software">Software</h2>
+<p><code>xrandr</code> is what you want. I&rsquo;m using Archlinux and it got installed with
+<code>libinput</code> as dependency. I hope it will be there in other distributions as
+well. If you don&rsquo;t have it, install it using your distribution&rsquo;s package
+manager.</p>
+<p>I use <em>bspwm</em> with <em>polybar</em>. You might have different <em>WMs</em> or <em>DE</em>. Apart from
+polybar, everything would work fine. For polybar, you have to configure it to
+your taste. Or clone my <a href="https://gitlab.com/Abdullah/cfg.git" target="_blank" rel="noopener noreffer">git repository</a>
+and copy/symlink all files to their respective paths and polybar will work fine.</p>
+<h2 id="display-manager">Display manager</h2>
+<script
+  async
+  src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+>
+</script>
+<ins
+  class="adsbygoogle"
+  style="display:block; text-align:center;"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-6819322586059940"
+  data-ad-slot="8253681033"
+>
+</ins>
+<script>
+  ;(adsbygoogle = window.adsbygoogle || []).push({})
+</script>
+
+<p>I don&rsquo;t use a Display manager. Instead I use <em>xinit</em>. See next section for
+configuring multihead using <em>xinit</em>.</p>
+<h2 id="starting-on-boot">Starting on Boot</h2>
+<p>In <em>bspwm</em>, when you plug HDMI cable in, OS detects it. But for screens to get
+display, you have to logout from <em>bspwm</em>.
+Login again and without configuration, the monitor would be a mirror to your
+laptop. What ever you see on first screen, you would see on second one.</p>
+<p>To make it work, you need to execute some commands.</p>
+<p>First get outputs names using <em>xrandr</em> without some arguments.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">
+xrandr
+
+Screen 0: minimum <span class="m">320</span> x 200, current <span class="m">3200</span> x 1080, maximum <span class="m">16384</span> x <span class="m">16384</span>
+eDP-1 connected primary 1920x1080+0+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 309mm x 173mm
+   1920x1080     60.03*+  60.01    59.97    59.96    59.93
+   1680x1050     59.95    59.88
+   1400x1050     59.98
+   1600x900      59.99    59.94    59.95    59.82
+   1280x1024     60.02
+   1400x900      59.96    59.88
+   1280x960      60.00
+   1440x810      60.00    59.97
+   1368x768      59.88    59.85
+   1280x800      59.99    59.97    59.81    59.91
+   1280x720      60.00    59.99    59.86    59.74
+   1024x768      60.04    60.00
+   960x720       60.00
+   928x696       60.05
+   896x672       60.01
+   1024x576      59.95    59.96    59.90    59.82
+   960x600       59.93    60.00
+   960x540       59.96    59.99    59.63    59.82
+   800x600       60.00    60.32    56.25
+   840x525       60.01    59.88
+   864x486       59.92    59.57
+   700x525       59.98
+   800x450       59.95    59.82
+   640x512       60.02
+   700x450       59.96    59.88
+   640x480       60.00    59.94
+   720x405       59.51    58.99
+   684x384       59.88    59.85
+   640x400       59.88    59.98
+   640x360       59.86    59.83    59.84    59.32
+   512x384       60.00
+   512x288       60.00    59.92
+   480x270       59.63    59.82
+   400x300       60.32    56.34
+   432x243       59.92    59.57
+   320x240       60.05
+   360x202       59.51    59.13
+   320x180       59.84    59.32
+DP-1 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
+HDMI-1 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
+DP-2 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
+HDMI-2 connected 1280x1024+1920+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 708mm x 398mm
+   1280x1024     60.02*+
+   1920x1080     60.00    50.00    59.94    24.00    23.98
+   1920x1080i    60.00    50.00    59.94
+   1280x960      60.00
+   1280x720      60.00    50.00    59.94
+   1024x768      60.00
+   800x600       60.32    56.25
+   720x576       50.00
+   720x576i      50.00
+   720x480       60.00    59.94
+   720x480i      60.00    59.94
+   640x480       60.00    59.94
+   720x400       70.08
+
+</code></pre></td></tr></table>
+</div>
+</div><p>Or to get connected monitors, you can invoke:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">
+xrandr -q <span class="p">|</span> awk <span class="s1">&#39;/ connected / {print $1}&#39;</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>You will get output of <em>N</em> lines where <em>N</em> is numbers of connected monitors.</p>
+<p>The first one you see is your laptop. Others are external monitors if you have
+not configured them already or have something in your $PATH which does something
+on hardware change.</p>
+<p>Okay. Let&rsquo;s assume my laptop is <em>eDP-1</em> and my external monitor is <em>HDMI-2</em>.
+I want external monitor to appear at right of my laptop screen:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --auto --right-of eDP-1
+
+</code></pre></td></tr></table>
+</div>
+</div><p>That&rsquo;s it. You can save these two functions in your <em>~/.xprofile</em> to auto
+start multihead on restart. As the configurations above we done, will go
+away after this session.</p>
+<p>Here is my <em>~/.xpofile</em>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">
+$ vim ~/.xprofile_
+
+<span class="c1">#!/bin/sh</span>
+<span class="c1"># In the name of Allah, the most Gracious, the most Merciful.</span>
+<span class="c1">#</span>
+<span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
+<span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today&gt;</span>
+<span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
+<span class="c1"># ░░░░░░░░░░</span>
+
+
+<span class="c1"># Xresources file</span>
+<span class="nv">user_resources</span><span class="o">=</span><span class="nv">$HOME</span>/.Xresources
+<span class="c1"># custom keymaps</span>
+<span class="nv">user_keymaps</span><span class="o">=</span><span class="nv">$HOME</span>/.Xmodmap
+<span class="c1"># custom fonts</span>
+<span class="nv">user_fonts_dir</span><span class="o">=</span><span class="nv">$HOME</span>/.local/share/fonts
+<span class="c1"># Inactivity timeout</span>
+<span class="nv">inactivity_timeout</span><span class="o">=</span><span class="m">180</span>
+<span class="c1"># Time before exectuing lock</span>
+<span class="nv">notify_time</span><span class="o">=</span><span class="m">10</span>
+
+<span class="c1"># For some java apps</span>
+
+<span class="c1">#wmname LG3D &amp;</span>
+
+run<span class="o">()</span> <span class="o">{</span>
+  <span class="k">if</span> ! pgrep <span class="nv">$1</span> <span class="p">;</span>
+  <span class="k">then</span>
+    <span class="nv">$@</span><span class="p">&amp;</span>
+  <span class="k">fi</span>
+<span class="o">}</span>
+
+
+<span class="k">if</span> <span class="o">[</span> -d /etc/X11/xinit/xinitrc.d <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="k">for</span> f in /etc/X11/xinit/xinitrc.d/?*.sh <span class="p">;</span> <span class="k">do</span>
+    <span class="o">[</span> -x <span class="nv">$f</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> . <span class="nv">$f</span>
+    <span class="k">done</span>
+    <span class="nb">unset</span> f
+<span class="k">fi</span>
+
+<span class="c1"># Session name</span>
+<span class="nb">export</span> <span class="nv">DESKTOP_SESSION</span><span class="o">=</span>bspwm
+<span class="c1"># No tty</span>
+<span class="nb">export</span> <span class="nv">XDG_SESSION_TYPE</span><span class="o">=</span>x11
+
+tab<span class="o">()</span> <span class="o">{</span>
+  <span class="c1"># Configure only laptop&#39;s screen if no external monitor is connected.</span>
+  xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --brightness 1.0 <span class="se">\
+</span><span class="se"></span>    --gamma 0.76:0.75:0.68 <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
+<span class="o">}</span>
+
+tabular<span class="o">()</span> <span class="o">{</span>
+  <span class="c1"># Configure external monitor if exists</span>
+  tab
+  xrandr --output HDMI-2 --mode 1280x1024 --pos 1920x0 <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
+<span class="o">}</span>
+
+<span class="c1"># Start sxhkd</span>
+
+sxhkd <span class="p">&amp;</span>
+
+<span class="c1"># Load Xresources</span>
+
+<span class="o">[</span> -f <span class="nv">$user_resources</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> xrdb -merge <span class="s2">&#34;</span><span class="nv">$user_resources</span><span class="s2">&#34;</span>
+
+<span class="c1"># Load keymaps</span>
+
+<span class="o">[</span> -f <span class="nv">$user_keymaps</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> xmodmap <span class="s2">&#34;</span><span class="nv">$user_keymaps</span><span class="s2">&#34;</span>
+
+<span class="c1"># Run compositor</span>
+
+run picom -b --config <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.config/picom/picom.conf <span class="p">&amp;</span>
+
+<span class="c1"># Restore the last wallpaper</span>
+
+<span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.fehbg <span class="p">&amp;</span>
+
+<span class="c1"># Set cursor shape</span>
+
+xsetroot -cursor_name ul_angle <span class="p">&amp;</span>
+
+<span class="c1">#xcompmgr -c -f D 5 &amp;</span>
+
+<span class="c1"># Add fonts directories</span>
+
+xset +fp <span class="s2">&#34;</span><span class="nv">$user_fonts_dir</span><span class="s2">&#34;</span> <span class="o">&amp;&amp;</span> xset fp rehash
+
+<span class="c1"># Start urxvt in daemon mode</span>
+
+<span class="c1"># run urxvtd -q -o -f &amp;</span>
+
+<span class="c1"># No mouse when idle</span>
+
+run unclutter --ignore-scrolling --fork --timeout <span class="m">1</span> <span class="p">&amp;</span>
+
+<span class="c1"># DPMS and lock screen</span>
+
+xset dpms <span class="nv">$inactivity_timeout</span> <span class="p">&amp;</span>
+<span class="c1">#xss-lock -- physlock -mp &#39;Say, &#34;If the sea were ink for [writing] the words of my Lord, the sea would be exhausted before the words of my Lord were exhausted, even if We brought the like of it as a supplement.&#34;&#39; &amp;</span>
+xss-lock -- i3lock -c <span class="m">000000</span> <span class="p">&amp;</span>
+
+<span class="c1"># Start Notification daemon</span>
+
+run dunst -c <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.config/dunst/dunstrc <span class="p">&amp;</span>
+
+<span class="c1"># Mute the mic</span>
+
+pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo <span class="nb">true</span> <span class="p">&amp;</span>
+
+<span class="c1"># Redshift for less eye strain</span>
+
+<span class="c1">#redshift -c ~/.config/redshift/redshift.conf &amp;</span>
+
+<span class="c1"># Start tmux if not already running</span>
+
+<span class="o">[</span> -z <span class="nv">$TMUX</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> tmux new-session -s <span class="nv">$USER</span> -d
+
+<span class="c1"># Set brightness to 30 at boot</span>
+
+light -S <span class="m">30</span> <span class="p">&amp;</span>
+
+<span class="c1"># Configure multihead.</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="k">$(</span>xrandr -q <span class="p">|</span> awk <span class="s1">&#39;/ connected / {print $1}&#39;</span> <span class="p">|</span> wc -l<span class="k">)</span><span class="s2">&#34;</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  tab --primary
+<span class="k">else</span>
+  tabular
+<span class="k">fi</span>
+
+<span class="c1"># Start a scratchpad</span>
+
+<span class="c1">#sleep 1</span>
+<span class="c1">#urxvtc -T &#39;scratchpad&#39; -geometry 65x20 &amp;</span>
+<span class="c1">#termite -t scratchpad &amp;</span>
+xfce4-terminal -T scratchpad --font<span class="o">=</span><span class="s1">&#39;Fantasque Sans Mono Italic 16&#39;</span> <span class="p">&amp;</span>
+
+<span class="c1"># vim:ft=sh</span>
+
+:wq
+
+</code></pre></td></tr></table>
+</div>
+</div><p>Change the resolution and outputs name in it and enjoy multiheading. 😉</p>
+<p>Here is a demonstration video.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/Gjj-wcdc0-w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-06-02</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://abdullah.today/multihead/" data-title="Multihead with BSPWM and Polybar" data-via="AbdullahToday" data-hashtags="polybar,bspwm,multihead,multi-display,multi-screen,dual-monitor,dual-screen,multimonitor"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://abdullah.today/multihead/" data-hashtag="polybar"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://abdullah.today/multihead/" data-title="Multihead with BSPWM and Polybar"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://abdullah.today/multihead/" data-title="Multihead with BSPWM and Polybar"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://abdullah.today/multihead/" data-title="Multihead with BSPWM and Polybar"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/polybar/">polybar</a>,&nbsp;<a href="/tags/bspwm/">bspwm</a>,&nbsp;<a href="/tags/multihead/">multihead</a>,&nbsp;<a href="/tags/multi-display/">multi-display</a>,&nbsp;<a href="/tags/multi-screen/">multi-screen</a>,&nbsp;<a href="/tags/dual-monitor/">dual-monitor</a>,&nbsp;<a href="/tags/dual-screen/">dual-screen</a>,&nbsp;<a href="/tags/multimonitor/">multimonitor</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/bspwm/" class="prev" rel="prev" title="BSPWM"><i class="fas fa-angle-left fa-fw"></i>BSPWM</a>
+            <a href="/cherry-pick/" class="next" rel="next" title="git Cherry Pick">git Cherry Pick<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://abdullah.today" target="_blank">Abdullah Khabir</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"3L4LIEJSP4","algoliaIndex":"index.en","algoliaSearchKey":"5d79bed67aeb5ed5e5a990cfad81ebde","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

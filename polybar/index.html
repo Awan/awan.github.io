@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Polybar - A stylish bar - Abdullah Khabir</title><meta name="Description" content="Polybar - A stylish bar"><meta property="og:title" content="Polybar - A stylish bar" />
+<meta property="og:description" content="Polybar - A stylish bar" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/polybar/" />
+<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="article:published_time" content="2019-10-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-12T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/logo.png"/>
+
+<meta name="twitter:title" content="Polybar - A stylish bar"/>
+<meta name="twitter:description" content="Polybar - A stylish bar"/>
+<meta name="application-name" content="Abdullah Khabir">
+<meta name="apple-mobile-web-app-title" content="Abdullah Khabir"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://abdullah.today/polybar/" /><link rel="prev" href="https://abdullah.today/vim-as-ide/" /><link rel="next" href="https://abdullah.today/encrypted-archlinux/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Polybar - A stylish bar",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/abdullah.today\/polybar\/"
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "polybar, bspwm, status_bar","wordcount":  4296 ,
+        "url": "https:\/\/abdullah.today\/polybar\/","datePublished": "2019-10-12T00:00:00+00:00","dateModified": "2019-10-12T00:00:00+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Abdullah Khabir"
+            },"description": "Polybar - A stylish bar"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="Some reminders"> InfoSec </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/Awan" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="Some reminders">InfoSec</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/Awan" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Polybar - A stylish bar</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-12">2019-10-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4296 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;21 minutes&nbsp;<span id="/polybar/" class="leancloud_visitors" data-flag-title="Polybar - A stylish bar">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#polybar">Polybar</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#sxhkd">SXHKD</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>I recently tried to compile <a href="https://github.com/polybar/polybar.git" target="_blank" rel="noopener noreffer">polybar</a> and used it with tiling window manager <a href="https://github.com/baskerville/bspwm.git" target="_blank" rel="noopener noreffer">bspwm</a>.</p>
+<h2 id="polybar">Polybar</h2>
+<p>Here is my bar configuration I have been using for over the years with i3,
+bspwm, dwm and many other window managers even with xfce4.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span><span class="lnt">316
+</span><span class="lnt">317
+</span><span class="lnt">318
+</span><span class="lnt">319
+</span><span class="lnt">320
+</span><span class="lnt">321
+</span><span class="lnt">322
+</span><span class="lnt">323
+</span><span class="lnt">324
+</span><span class="lnt">325
+</span><span class="lnt">326
+</span><span class="lnt">327
+</span><span class="lnt">328
+</span><span class="lnt">329
+</span><span class="lnt">330
+</span><span class="lnt">331
+</span><span class="lnt">332
+</span><span class="lnt">333
+</span><span class="lnt">334
+</span><span class="lnt">335
+</span><span class="lnt">336
+</span><span class="lnt">337
+</span><span class="lnt">338
+</span><span class="lnt">339
+</span><span class="lnt">340
+</span><span class="lnt">341
+</span><span class="lnt">342
+</span><span class="lnt">343
+</span><span class="lnt">344
+</span><span class="lnt">345
+</span><span class="lnt">346
+</span><span class="lnt">347
+</span><span class="lnt">348
+</span><span class="lnt">349
+</span><span class="lnt">350
+</span><span class="lnt">351
+</span><span class="lnt">352
+</span><span class="lnt">353
+</span><span class="lnt">354
+</span><span class="lnt">355
+</span><span class="lnt">356
+</span><span class="lnt">357
+</span><span class="lnt">358
+</span><span class="lnt">359
+</span><span class="lnt">360
+</span><span class="lnt">361
+</span><span class="lnt">362
+</span><span class="lnt">363
+</span><span class="lnt">364
+</span><span class="lnt">365
+</span><span class="lnt">366
+</span><span class="lnt">367
+</span><span class="lnt">368
+</span><span class="lnt">369
+</span><span class="lnt">370
+</span><span class="lnt">371
+</span><span class="lnt">372
+</span><span class="lnt">373
+</span><span class="lnt">374
+</span><span class="lnt">375
+</span><span class="lnt">376
+</span><span class="lnt">377
+</span><span class="lnt">378
+</span><span class="lnt">379
+</span><span class="lnt">380
+</span><span class="lnt">381
+</span><span class="lnt">382
+</span><span class="lnt">383
+</span><span class="lnt">384
+</span><span class="lnt">385
+</span><span class="lnt">386
+</span><span class="lnt">387
+</span><span class="lnt">388
+</span><span class="lnt">389
+</span><span class="lnt">390
+</span><span class="lnt">391
+</span><span class="lnt">392
+</span><span class="lnt">393
+</span><span class="lnt">394
+</span><span class="lnt">395
+</span><span class="lnt">396
+</span><span class="lnt">397
+</span><span class="lnt">398
+</span><span class="lnt">399
+</span><span class="lnt">400
+</span><span class="lnt">401
+</span><span class="lnt">402
+</span><span class="lnt">403
+</span><span class="lnt">404
+</span><span class="lnt">405
+</span><span class="lnt">406
+</span><span class="lnt">407
+</span><span class="lnt">408
+</span><span class="lnt">409
+</span><span class="lnt">410
+</span><span class="lnt">411
+</span><span class="lnt">412
+</span><span class="lnt">413
+</span><span class="lnt">414
+</span><span class="lnt">415
+</span><span class="lnt">416
+</span><span class="lnt">417
+</span><span class="lnt">418
+</span><span class="lnt">419
+</span><span class="lnt">420
+</span><span class="lnt">421
+</span><span class="lnt">422
+</span><span class="lnt">423
+</span><span class="lnt">424
+</span><span class="lnt">425
+</span><span class="lnt">426
+</span><span class="lnt">427
+</span><span class="lnt">428
+</span><span class="lnt">429
+</span><span class="lnt">430
+</span><span class="lnt">431
+</span><span class="lnt">432
+</span><span class="lnt">433
+</span><span class="lnt">434
+</span><span class="lnt">435
+</span><span class="lnt">436
+</span><span class="lnt">437
+</span><span class="lnt">438
+</span><span class="lnt">439
+</span><span class="lnt">440
+</span><span class="lnt">441
+</span><span class="lnt">442
+</span><span class="lnt">443
+</span><span class="lnt">444
+</span><span class="lnt">445
+</span><span class="lnt">446
+</span><span class="lnt">447
+</span><span class="lnt">448
+</span><span class="lnt">449
+</span><span class="lnt">450
+</span><span class="lnt">451
+</span><span class="lnt">452
+</span><span class="lnt">453
+</span><span class="lnt">454
+</span><span class="lnt">455
+</span><span class="lnt">456
+</span><span class="lnt">457
+</span><span class="lnt">458
+</span><span class="lnt">459
+</span><span class="lnt">460
+</span><span class="lnt">461
+</span><span class="lnt">462
+</span><span class="lnt">463
+</span><span class="lnt">464
+</span><span class="lnt">465
+</span><span class="lnt">466
+</span><span class="lnt">467
+</span><span class="lnt">468
+</span><span class="lnt">469
+</span><span class="lnt">470
+</span><span class="lnt">471
+</span><span class="lnt">472
+</span><span class="lnt">473
+</span><span class="lnt">474
+</span><span class="lnt">475
+</span><span class="lnt">476
+</span><span class="lnt">477
+</span><span class="lnt">478
+</span><span class="lnt">479
+</span><span class="lnt">480
+</span><span class="lnt">481
+</span><span class="lnt">482
+</span><span class="lnt">483
+</span><span class="lnt">484
+</span><span class="lnt">485
+</span><span class="lnt">486
+</span><span class="lnt">487
+</span><span class="lnt">488
+</span><span class="lnt">489
+</span><span class="lnt">490
+</span><span class="lnt">491
+</span><span class="lnt">492
+</span><span class="lnt">493
+</span><span class="lnt">494
+</span><span class="lnt">495
+</span><span class="lnt">496
+</span><span class="lnt">497
+</span><span class="lnt">498
+</span><span class="lnt">499
+</span><span class="lnt">500
+</span><span class="lnt">501
+</span><span class="lnt">502
+</span><span class="lnt">503
+</span><span class="lnt">504
+</span><span class="lnt">505
+</span><span class="lnt">506
+</span><span class="lnt">507
+</span><span class="lnt">508
+</span><span class="lnt">509
+</span><span class="lnt">510
+</span><span class="lnt">511
+</span><span class="lnt">512
+</span><span class="lnt">513
+</span><span class="lnt">514
+</span><span class="lnt">515
+</span><span class="lnt">516
+</span><span class="lnt">517
+</span><span class="lnt">518
+</span><span class="lnt">519
+</span><span class="lnt">520
+</span><span class="lnt">521
+</span><span class="lnt">522
+</span><span class="lnt">523
+</span><span class="lnt">524
+</span><span class="lnt">525
+</span><span class="lnt">526
+</span><span class="lnt">527
+</span><span class="lnt">528
+</span><span class="lnt">529
+</span><span class="lnt">530
+</span><span class="lnt">531
+</span><span class="lnt">532
+</span><span class="lnt">533
+</span><span class="lnt">534
+</span><span class="lnt">535
+</span><span class="lnt">536
+</span><span class="lnt">537
+</span><span class="lnt">538
+</span><span class="lnt">539
+</span><span class="lnt">540
+</span><span class="lnt">541
+</span><span class="lnt">542
+</span><span class="lnt">543
+</span><span class="lnt">544
+</span><span class="lnt">545
+</span><span class="lnt">546
+</span><span class="lnt">547
+</span><span class="lnt">548
+</span><span class="lnt">549
+</span><span class="lnt">550
+</span><span class="lnt">551
+</span><span class="lnt">552
+</span><span class="lnt">553
+</span><span class="lnt">554
+</span><span class="lnt">555
+</span><span class="lnt">556
+</span><span class="lnt">557
+</span><span class="lnt">558
+</span><span class="lnt">559
+</span><span class="lnt">560
+</span><span class="lnt">561
+</span><span class="lnt">562
+</span><span class="lnt">563
+</span><span class="lnt">564
+</span><span class="lnt">565
+</span><span class="lnt">566
+</span><span class="lnt">567
+</span><span class="lnt">568
+</span><span class="lnt">569
+</span><span class="lnt">570
+</span><span class="lnt">571
+</span><span class="lnt">572
+</span><span class="lnt">573
+</span><span class="lnt">574
+</span><span class="lnt">575
+</span><span class="lnt">576
+</span><span class="lnt">577
+</span><span class="lnt">578
+</span><span class="lnt">579
+</span><span class="lnt">580
+</span><span class="lnt">581
+</span><span class="lnt">582
+</span><span class="lnt">583
+</span><span class="lnt">584
+</span><span class="lnt">585
+</span><span class="lnt">586
+</span><span class="lnt">587
+</span><span class="lnt">588
+</span><span class="lnt">589
+</span><span class="lnt">590
+</span><span class="lnt">591
+</span><span class="lnt">592
+</span><span class="lnt">593
+</span><span class="lnt">594
+</span><span class="lnt">595
+</span><span class="lnt">596
+</span><span class="lnt">597
+</span><span class="lnt">598
+</span><span class="lnt">599
+</span><span class="lnt">600
+</span><span class="lnt">601
+</span><span class="lnt">602
+</span><span class="lnt">603
+</span><span class="lnt">604
+</span><span class="lnt">605
+</span><span class="lnt">606
+</span><span class="lnt">607
+</span><span class="lnt">608
+</span><span class="lnt">609
+</span><span class="lnt">610
+</span><span class="lnt">611
+</span><span class="lnt">612
+</span><span class="lnt">613
+</span><span class="lnt">614
+</span><span class="lnt">615
+</span><span class="lnt">616
+</span><span class="lnt">617
+</span><span class="lnt">618
+</span><span class="lnt">619
+</span><span class="lnt">620
+</span><span class="lnt">621
+</span><span class="lnt">622
+</span><span class="lnt">623
+</span><span class="lnt">624
+</span><span class="lnt">625
+</span><span class="lnt">626
+</span><span class="lnt">627
+</span><span class="lnt">628
+</span><span class="lnt">629
+</span><span class="lnt">630
+</span><span class="lnt">631
+</span><span class="lnt">632
+</span><span class="lnt">633
+</span><span class="lnt">634
+</span><span class="lnt">635
+</span><span class="lnt">636
+</span><span class="lnt">637
+</span><span class="lnt">638
+</span><span class="lnt">639
+</span><span class="lnt">640
+</span><span class="lnt">641
+</span><span class="lnt">642
+</span><span class="lnt">643
+</span><span class="lnt">644
+</span><span class="lnt">645
+</span><span class="lnt">646
+</span><span class="lnt">647
+</span><span class="lnt">648
+</span><span class="lnt">649
+</span><span class="lnt">650
+</span><span class="lnt">651
+</span><span class="lnt">652
+</span><span class="lnt">653
+</span><span class="lnt">654
+</span><span class="lnt">655
+</span><span class="lnt">656
+</span><span class="lnt">657
+</span><span class="lnt">658
+</span><span class="lnt">659
+</span><span class="lnt">660
+</span><span class="lnt">661
+</span><span class="lnt">662
+</span><span class="lnt">663
+</span><span class="lnt">664
+</span><span class="lnt">665
+</span><span class="lnt">666
+</span><span class="lnt">667
+</span><span class="lnt">668
+</span><span class="lnt">669
+</span><span class="lnt">670
+</span><span class="lnt">671
+</span><span class="lnt">672
+</span><span class="lnt">673
+</span><span class="lnt">674
+</span><span class="lnt">675
+</span><span class="lnt">676
+</span><span class="lnt">677
+</span><span class="lnt">678
+</span><span class="lnt">679
+</span><span class="lnt">680
+</span><span class="lnt">681
+</span><span class="lnt">682
+</span><span class="lnt">683
+</span><span class="lnt">684
+</span><span class="lnt">685
+</span><span class="lnt">686
+</span><span class="lnt">687
+</span><span class="lnt">688
+</span><span class="lnt">689
+</span><span class="lnt">690
+</span><span class="lnt">691
+</span><span class="lnt">692
+</span><span class="lnt">693
+</span><span class="lnt">694
+</span><span class="lnt">695
+</span><span class="lnt">696
+</span><span class="lnt">697
+</span><span class="lnt">698
+</span><span class="lnt">699
+</span><span class="lnt">700
+</span><span class="lnt">701
+</span><span class="lnt">702
+</span><span class="lnt">703
+</span><span class="lnt">704
+</span><span class="lnt">705
+</span><span class="lnt">706
+</span><span class="lnt">707
+</span><span class="lnt">708
+</span><span class="lnt">709
+</span><span class="lnt">710
+</span><span class="lnt">711
+</span><span class="lnt">712
+</span><span class="lnt">713
+</span><span class="lnt">714
+</span><span class="lnt">715
+</span><span class="lnt">716
+</span><span class="lnt">717
+</span><span class="lnt">718
+</span><span class="lnt">719
+</span><span class="lnt">720
+</span><span class="lnt">721
+</span><span class="lnt">722
+</span><span class="lnt">723
+</span><span class="lnt">724
+</span><span class="lnt">725
+</span><span class="lnt">726
+</span><span class="lnt">727
+</span><span class="lnt">728
+</span><span class="lnt">729
+</span><span class="lnt">730
+</span><span class="lnt">731
+</span><span class="lnt">732
+</span><span class="lnt">733
+</span><span class="lnt">734
+</span><span class="lnt">735
+</span><span class="lnt">736
+</span><span class="lnt">737
+</span><span class="lnt">738
+</span><span class="lnt">739
+</span><span class="lnt">740
+</span><span class="lnt">741
+</span><span class="lnt">742
+</span><span class="lnt">743
+</span><span class="lnt">744
+</span><span class="lnt">745
+</span><span class="lnt">746
+</span><span class="lnt">747
+</span><span class="lnt">748
+</span><span class="lnt">749
+</span><span class="lnt">750
+</span><span class="lnt">751
+</span><span class="lnt">752
+</span><span class="lnt">753
+</span><span class="lnt">754
+</span><span class="lnt">755
+</span><span class="lnt">756
+</span><span class="lnt">757
+</span><span class="lnt">758
+</span><span class="lnt">759
+</span><span class="lnt">760
+</span><span class="lnt">761
+</span><span class="lnt">762
+</span><span class="lnt">763
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cat $HOME/.config/polybar/config
+[colors]
+background = #FF000000
+background-alt = ${xrdb:polybar*color8}
+foreground = ${xrdb:polybar*foreground}
+urgent = #B34747
+foreground-alt = #555
+primary = ${xrdb:polybar*color3}
+secondary = ${xrdb:polybar*color1}
+alert = ${xrdb:polybar*color13}
+
+
+[settings]
+screenchange-reload = true
+screenchange = true
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+pseudo-transparency = true
+
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+
+[bar/eDP-1]
+monitor = ${env:MONITOR:eDP-1}
+monitor-fallback = eDP1
+bottom = false
+width = 100%
+height = 25
+offset-x = 0
+offset-y = 0
+radius = 10
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 0
+line-color = #f00
+border-size = 0
+border-top-size = 0
+border-color = ${xrdb:background}
+padding-left = 0
+padding-right = 1
+module-margin-left = 2
+module-margin-right = 2
+font-0 =  FontAwesome
+font-1 = Monospace:weight=regular:pixelsize=13
+font-2 = DejaVu Sans:pixelsize=11
+font-3 =  Segoe UI Emoji
+modules-right = bspwm
+modules-center = mpd
+modules-left = date hijri wlan battery temperature cpu memory pulseaudio arch_backlight
+tray-position = right
+tray-padding = 6
+;tray-background = #24292A00
+tray-background = ${root.background}
+wm-restack = bspwm
+override-redirect = false
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+inline-mode = false
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+fuzzy-match = false
+ws-icon-0 = &#34;I&#34;
+ws-icon-1 = &#34;II&#34;
+ws-icon-2 = &#34;III&#34;
+ws-icon-3 = &#34;IV&#34;
+ws-icon-4 = &#34;V&#34;
+ws-icon-5 = &#34;VI&#34;
+ws-icon-6 = &#34;VII&#34;
+ws-icon-7 = &#34;VIII&#34;
+ws-icon-8 = &#34;IX&#34;
+ws-icon-9 = &#34;X&#34;
+format = &lt;label-state&gt; &lt;label-mode&gt;
+label-monitor = %name%
+label-dimmed-foreground = #555
+;label-dimmed-focused-background = #f00
+label-focused = %icon% %name%
+label-focused-underline= ${colors.primary}
+label-focused-foreground = #f00000
+label-occupied = %icon% %name%
+label-occupied-underline = #555555
+label-urgent = %icon% %name%
+label-urgent-underline = ${colors.primary}
+label-urgent-background = ${colors.alert}
+label-empty = %icon% %name%
+label-empty-foreground = #d700ff
+;label-empty-foreground = ${colors.foreground-alt}
+label-monocle = &#34;  &#34;
+label-monocle-foreground = #fff995
+label-tiled = &#34;  &#34;
+;label-tiled-foreground = #750080
+label-tiled-foreground = #00ffff
+label-fullscreen = &#34;  &#34;
+;label-floating = &#34;  &#34;
+label-floating = &#34;  &#34;
+label-floating-foreground = #ff45ff
+label-pseudotiled = &#34;  &#34;
+label-locked = &#34;  &#34;
+label-locked-foreground = #bd2c40
+label-sticky = &#34;  &#34;
+label-sticky-foreground = #fba922
+label-private = &#34;     &#34;
+label-private-foreground = #bd2c40
+label-marked = &#34; &#34;
+label-marked-foreground = #0000ff
+label-separator = 
+label-separator-padding = 3
+label-separator-foreground = #ffb52a
+label-occupied-padding = 3
+label-empty-padding = 3
+label-urgent-padding = 3
+
+
+
+[module/xwindow]
+type = internal/xwindow
+label = &#34;    /  %title:0:48:...%&#34;
+
+
+[module/backlight-acpi]
+type = internal/backlight
+sub = module/backlight-acpi
+base = module/xbacklight
+inherit = module/xbacklight
+card = intel_backlight
+format = &lt;ramp&gt;&lt;label&gt;
+label = %percentage%%
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+
+;[module/backlight]
+;type = internal/backlight
+;card = intel_backlight
+;;output = eDP-1
+;format = &lt;ramp&gt;&lt;label&gt;
+;label = %percentage%%
+;label-foreground = #3EC13F
+;format-padding = 1
+;ramp-0 = 🌕
+;ramp-1 = 🌔
+;ramp-2 = 🌓
+;ramp-3 = 🌒
+;ramp-4 = 🌑
+;enable-scroll = true
+;scroll-up = exec light -A 5
+;scroll-down = exec light -U 6
+;
+
+[module/pavolume]
+type = custom/script
+tail = true
+label = %output%
+label-foreground = #D1FF00
+exec = ~/.config/polybar/scripts/pavolume.sh --listen
+click-right = exec pavucontrol
+scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
+scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
+format-underline = #3EC13F
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+
+[module/xworkspaces]
+type = internal/xworkspaces
+pin-workspaces = true
+; Create click handler used to focus desktop
+enable-click = true
+index-sort = true
+wrapping-scroll = false
+#ws-num = 9
+icon-0 = code;♚
+icon-1 = office;♛
+icon-2 = graphics;♜
+icon-3 = mail;♝
+icon-4 = web;♞
+icon-default = ♟
+show-all = true
+label-empty-foreground =  ${colors.foreground-alt}
+#label-empty = %icon%
+label-mode-padding = 3
+label-mode-foreground = ${colors.background}
+label-mode-background = #a8df5a
+label-focused = %icon%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+label-unfocused = %icon%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+; visible = Active workspace on unfocused monitor
+label-visible = %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+; urgent = Workspace with urgency hint set
+label-urgent-foreground = ${xrdb:polybar*color8}
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+; Create scroll handlers used to cycle desktops
+enable-scroll = true
+label-monitor = %name%
+format = &lt;label-state&gt;
+label-active = %icon% %name%
+label-active-foreground = #ffffff
+#label-active-background = #3f3f3f
+label-active-underline = #fba922
+label-occupied = %icon%
+label-occupied-underline = #555555
+label-urgent = %icon%
+#label-empty = %icon%
+#label-empty-foreground = #55
+
+
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+#interval = 3.0
+tail = true
+format-connected = &lt;ramp-signal&gt; &lt;label-connected&gt;
+format-connected-underline = #9f78e1
+label-connected =  %essid%%{A}
+label-connected-foreground = ${xrdb:polybar.color16}
+label-disconnected = 
+format-disconnected = &lt;label-disconnected&gt;
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+;ramp-signal-0 = 😱
+;ramp-signal-1 = 😠
+;ramp-signal-2 = 😒
+;ramp-signal-3 = 😊
+;ramp-signal-4 = 😃
+;ramp-signal-5 = 😈
+
+;label-connected = %essid%
+;format-disconnected = &lt;label-disconnected&gt;
+;label-disconnected =   Disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+format-packetloss = &lt;animation-packetloss&gt; &lt;label-connected&gt;
+animation-packetloss-0 = ⚠
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 📶
+animation-packetloss-1-foreground = #000000
+; Framerate in milliseconds
+animation-packetloss-framerate = 500
+label-packetloss = %essid%
+label-packetloss-foreground = #eefafafa
+;ramp-signal-0 =  
+;ramp-signal-1 =  
+;ramp-signal-2 =  
+;ramp-signal-3 =  
+;ramp-signal-4 =  
+;ramp-signal-5 =  
+
+ramp-signal-foreground = ${colors.foreground-alt}
+
+
+[module/xbacklight]
+type = internal/xbacklight
+format = &lt;label&gt; &lt;bar&gt;
+bar-width = 10
+bar-indicator =  
+bar-indicator-foreground = #fff
+bar-empty = 
+bar-fill = 
+format-prefix = &#34; &#34;
+label-foreground = #3EC13F
+format-padding = 1
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = &#34;cpu &#34;
+format-prefix-foreground = ${xrdb:polybar.color3}
+format-underline = #f90000
+label = %percentage%%
+label-foreground = ${xrdb:polybar.color16}
+
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = &#34;mem &#34;
+format-prefix-foreground = ${xrdb:polybar.color2}
+format-underline = #4bffdc
+label = %percentage_used%%
+label-foreground = ${xrdb:polybar.color12}
+
+
+[module/date]
+type = internal/date
+interval = 1
+date = &#34; %a %d %b -&#34;
+date-alt = &#34; %d %b -&#34;
+time = %H:%M
+time-alt = %H:%M:%S
+format-prefix = &#34; &#34;
+;format-prefix = &#34;🕓&#34;
+format-prefix-foreground = ${xrdb:polybar*color5}
+format-underline = #0a6cf5
+;label = %date% %time%
+label = %time%
+label-foreground = #9A32DB
+
+[module/time]
+type = custom/script
+exec = ~/.config/polybar/scripts/time.py
+format-prefix = &#34; &#34;
+format-prefix-foreground = ${xrdb:polybar*color4}
+format-underline = #0a6cf5
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC0
+full-at = 100
+poll-interval = 5
+time-format = %H:%M
+format-charging = &lt;animation-charging&gt; &lt;label-charging&gt;
+format-charging-underline = #ffb52a
+label-charging =  %percentage%% %time%
+label-charging-foreground = ${xrdb:polybar.color9}
+format-discharging = &lt;ramp-capacity&gt; &lt;label-discharging&gt;
+format-discharging-underline = ${self.format-charging-underline}
+label-discharging = %percentage%% %time%
+label-discharging-foreground = ${xrdb:polybar.color9}
+format-full = &lt;ramp-capacity&gt; &lt;label-full&gt;
+format-full-prefix = &#34; &#34;
+format-full-prefix-foreground = ${xrdb:polybar.color1}
+format-full-underline = ${self.format-charging-underline}
+;label-full = %percentage%% - fully charged!
+ramp-capacity-0 = &#34; &#34;
+ramp-capacity-1 = &#34; &#34;
+ramp-capacity-2 = &#34; &#34;
+ramp-capacity-3 = &#34; &#34;
+ramp-capacity-4 = &#34; &#34;
+ramp-capacity-foreground = ${colors.foreground-alt}
+animation-charging-0 = &#34;  &#34;
+animation-charging-1 = &#34;  &#34;
+animation-charging-2 = &#34;  &#34;
+animation-charging-3 = &#34;  &#34;
+animation-charging-4 = &#34;  &#34;
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+
+[module/battery2]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 95
+
+format-charging = &#34;&lt;animation-charging&gt;&lt;label-charging&gt;&#34;
+;format-charging-underline = ${colors.foreground}
+label-charging = %percentage%% - time left %time%
+label-charging-foreground = ${colors.foreground}
+label-charging-background = ${colors.background}
+
+format-discharging = &#34;&lt;ramp-capacity&gt;&lt;label-discharging&gt;&#34;
+;format-discharging-underline = ${self.format-charging-underline}
+label-discharging = %percentage%% - time left %time%
+label-discharging-foreground = ${colors.foreground}
+label-discharging-background = ${colors.background}
+
+format-full-prefix = &#34;  &#34;
+format-full-prefix-foreground = ${colors.foreground}
+format-full-prefix-background = ${colors.background}
+;format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = &#34;  &#34;
+ramp-capacity-0-foreground = ${colors.alert}
+ramp-capacity-1 = &#34;  &#34;
+ramp-capacity-2 = &#34;  &#34;
+ramp-capacity-3 = &#34;  &#34;
+ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-background = ${colors.background}
+
+animation-charging-0 = &#34;  &#34;
+animation-charging-1 = &#34;  &#34;
+animation-charging-2 = &#34;  &#34;
+animation-charging-3 = &#34;  &#34;
+animation-charging-foreground = ${colors.foreground}
+animation-charging-background = ${colors.background}
+animation-charging-framerate = 750
+
+
+[module/mpd]
+type = internal/mpd
+format-online = &#34;&lt;label-song&gt; &lt;label-time&gt; &lt;icon-prev&gt; &lt;icon-stop&gt; &lt;toggle&gt; &lt;icon-next&gt;&#34;
+format-underline = #FF00DB
+format-prefix-foreground = #00A5FF
+icon-prev = 
+icon-stop = 
+icon-play-prefix = #f00
+icon-play = 
+icon-pause = 
+icon-next = 
+label-song = %title%
+label-song-foreground = #00A5FF
+label-song-maxlen = 40
+label-song-ellipsis = true
+bar-progress-width = 10
+bar-progress-indicator = 
+bar-progress-fill = 
+bar-progress-empty = 
+bar-progress-fill-foreground = #ff0
+bar-progress-fill-background = ${colors.background}
+bar-progress-indicator-foreground = ${colors.foreground}
+;format-online-foreground = ${colors.foreground}
+;format-online-background = ${colors.background}
+label-time-foreground = #ff0
+
+[module/gmail]
+type = custom/script
+#exec = python3 ~/.config/polybar/gmail/run.py 2&gt;/dev/null
+#exec = ping -c 1 google.com 2&amp;&gt;/dev/null &amp;&amp; python3 ~/.config/polybar/gmail/run.py || echo &#39;no network&#39;
+exec = ~/bin/gmailScript4Polybar 
+tail = true
+click-right= /usr/bin/google-chrome-stable https://mail.google.com
+click-left= urxvtc -e mutg
+;format-background = #00A5FF
+;format-underline = #FF00DB
+
+[module/abdullah]
+type = custom/script
+exec = python3 ~/.config/polybar/abdullah/inbox.py 
+tail = true
+interval = 60
+click-right= google-chrome https://mail.google.com
+click-left= urxvtc -e mutt -F ~/.config/mutt/muttrc
+;format-background = #00A5FF
+;format-underline = #FF00DB
+
+[module/mail]
+type = custom/script
+#exec = python3 ~/.config/polybar/theak/myinbox.py 2&gt;/dev/null
+#exec = python3 ~/.config/polybar/theak/networktheak.py
+tail = true
+#exec = &#34;if ping -c 1 google.com &amp;&gt; /dev/null \
+#then python3 ~/.config/polybar/theak/myinbox.py \
+#else \
+#  echo &#34;no network&#34;
+#  fi&#34;
+#exec = &#34;ping -c 1 theak.me \&amp;&gt; /dev/null &amp;&amp; python3 ~/.config/polybar/theak/myinbox.py || echo &#34;
+exec = ping -c 1 theak.me \&amp;&gt; /dev/null \&amp;&amp; python3 ~/.config/polybar/theak/myinbox.py || echo &#39;no network&#39;
+#click-right= qutebrowser https://mail.theak.me
+click-left= urxvtc -e mutt 
+#format-background = #00A5FF
+format-underline = #FF00DB
+
+
+[module/music]
+type = custom/script
+exec = mpc current | skroll -l
+tail = true
+
+
+[module/mpd1]
+type = custom/script
+exec = ~/.config/polybar/scripts/mpd.sh
+tail = true
+format-foreground = ${colors.foreground}
+format-underline = #FF00DB
+format-prefix-foreground = #00A5FF
+format-background = ${colors.background}
+click-left = exec smus
+click-right = mpc pause &amp; pkill -F /tmp/smus.pid
+
+
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/scripts/isactive-bluetooth.sh
+tail = true
+;format-foreground = ${colors.foreground}
+format-underline = #FF00DB
+format-background = ${colors.background}
+format-prefix = &#34;&#34;
+
+
+[module/menu]
+type = custom/menu
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close =  cancel
+label-close-foreground = ${xrdb:polybar*color9}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+format-spacing = 1
+;label-open = &#34;  &#34;
+;label-open-foreground = ${colors.foreground}
+;label-close = &#34;  &#34;
+;label-close-foreground = ${colors.foreground}
+;label-separator = &#34;│&#34;
+;label-separator-foreground = ${colors.foreground-alt}
+menu-0-0 = Top
+menu-0-0-exec = menu-open-1
+menu-0-1 = Extra
+menu-0-1-exec = menu-open-2
+menu-0-2 = Music
+menu-0-2-exec = menu-open-3
+menu-0-3 = Power
+menu-0-3-exec = menu-open-4
+menu-1-0 = &#34;  &#34;
+menu-1-0-exec = qutebrowser
+menu-1-1 = &#34;  &#34;
+menu-1-1-exec = urxvt
+menu-1-2 = &#34;  &#34;
+menu-1-2-exec = urxvtc -e ranger
+menu-1-3 = &#34;  &#34;
+menu-1-3-exec = subl3
+menu-2-0 = &#34;  &#34;
+menu-2-0-exec = gimp-2.8
+menu-2-1 = &#34;  &#34;
+menu-2-1-exec = spotify --force-device-scale-factor=1.5
+menu-2-2 = &#34;  &#34;
+menu-2-2-exec = deluge
+menu-2-3 = &#34;  &#34;
+menu-2-3-exec = claws-mail
+menu-2-4 = &#34;  &#34;
+menu-2-4-exec = steam-runtime
+menu-2-5 = &#34;  &#34;
+menu-2-5-exec = scrot %F-%S_$wx$h_scrot.png -e &#39;mv $f /tmp/foo.png&#39;
+menu-3-0 = &#34;  &#34;
+menu-3-0-exec = $HOME/bin/smus
+menu-3-1 = &#34;  &#34;
+menu-3-1-exec = mpc prev
+menu-3-2 = &#34;  &#34;
+menu-3-2-exec = mpc stop 
+menu-3-3 = &#34;  &#34;
+menu-3-3-exec = mpc pause 
+menu-3-4 = &#34;  &#34;
+menu-3-4-exec = mpc next
+menu-4-0 = &#34;  &#34;
+menu-4-0-exec = lock
+menu-4-1 = &#34;  &#34;
+menu-4-1-exec = systemctl reboot
+menu-4-2 = &#34;  &#34;
+menu-4-2-exec = systemctl poweroff
+
+
+[module/arch_backlight]
+type = custom/script
+exec = ~/.config/polybar/scripts/backlight.sh
+tail = true
+scroll-up = exec light -A 5
+scroll-down = exec light -U 5
+format-prefix = &#34; &#34;
+label = %output%%
+label-foreground = #3EC13F
+format-padding = 1
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+exec = light | cut -d . -f1
+format = &lt;label&gt;
+;tail = true
+;interval = 0.2
+label = %percentage%%
+enable-scroll = true
+scroll-up = exec /usr/sbin/light -A 5
+scroll-down = exec /usr/sbin/light -U 5
+format-prefix = &#34; &#34;
+;label = %output%%
+label-foreground = #3EC13F
+format-padding = 1
+
+
+
+[module/mpd-new]
+type = internal/mpd
+format-online = &lt;label-song&gt; &lt;icon-prev&gt; &lt;toggle&gt; &lt;icon-next&gt; &lt;icon-random&gt;  &lt;icon-repeat&gt; &lt;label-time&gt; 
+format-offline = &lt;label-offline&gt;
+label-offline =  no music
+icon-prev = 
+icon-stop = o
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-seekf = &gt;&gt;
+icon-random = 
+icon-repeat = 
+label-song = 𝄞 %title% - %artist% 
+label-song-maxlen = 25
+label-song-ellipsis = true
+toggle-on-foreground = #e60053
+toggle-off-foreground = #66
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+use-ui-max = true
+format-volume = &lt;ramp-volume&gt;&lt;label-volume&gt; 
+label-volume =  %percentage%%
+label-volume-foreground = ${xrdb:polybar.color13}
+label-muted = 🔇 
+label-muted-foreground = #
+label-active-font = 4
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = true
+bar-volume-indicator = 
+bar-volume-indicator-font = 2
+bar-volume-fill = 
+bar-volume-fill-font = 2
+bar-volume-empty = 
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+[module/mic]
+type = internal/pulseaudio
+sink = alsa_input.pci-0000_00_1b.0.analog-stereo
+format-volume = &lt;label-volume&gt; &lt;bar-volume&gt;
+label-volume =  %percentage%%
+label-volume-foreground = ${root.foreground}
+label-muted = 🔇 muted
+label-muted-foreground = #666
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-font = 2
+bar-volume-fill = 
+bar-volume-fill-font = 2
+bar-volume-empty = 
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+
+[module/tags]
+type = internal/xworkspaces
+label-active = %name%
+label-active-padding = 2
+label-active-background = ${colors.background}
+label-active-foreground = ${colors.foreground}
+label-occupied = %name%
+label-occupied-background = #ff0000
+label-empty = %name%
+label-empty-padding = 2
+label-urgent = %name%
+label-urgent-padding = 2
+label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.foreground}
+
+
+[module/temperature]
+type = internal/temperature
+interval = 3
+thermal-zone = 0
+warn-temperature = 70
+format = &lt;ramp&gt;&lt;label&gt;
+format-padding = 1
+;label = %{A1:termite --exec=&#39;watch sensors&#39; &amp; disown:} %temperature%%{A}
+label-foreground = ${xrdb:polybar.color11}
+ramp-0 = &#34;&#34;
+ramp-0-foreground = ${xrdb:polybar*color4}
+ramp-1 = &#34;&#34;
+ramp-1-foreground = ${xrdb:polybar*color16}
+ramp-2 = &#34;&#34;
+ramp-2-foreground = ${xrdb:polybar*color17}
+ramp-3 = &#34;&#34;
+ramp-3-foreground = ${xrdb:polybar*urgent}
+format-warn = &lt;label-warn&gt;
+label-warn = &#34; %temperature-c%&#34;
+label-warn-padding = 1
+label-warn-foreground = ${xrdb:polybar.urgent}
+
+
+[module/window_switch]
+type = custom/script
+interval = 5
+label = &#34;%{A1:skippy-xd:} %{A3:skippy-xd:} %output% %{A} %{A}&#34;
+exec = echo &#34;&#34;
+format = &lt;label&gt;
+
+[module/hijri]
+type = custom/script
+#exec = &#34;python -c &#39;from ummalqura.hijri_date import HijriDate; from datetime import date; print(HijriDate.get_hijri_date(date.today()))&#39;&#34;
+exec = ~/.config/polybar/scripts/hijri.py
+tail = false
+interval = 180
+label-foreground = ${xrdb:polybar.color5}
+
+
+[bar/dwm]
+inherit = settings
+background = ${colors.background}
+foreground = ${colors.foreground}
+override-redirect = true
+;width = 55%
+;height = 26
+;offset-x = 45%
+modules-left = date wlan memory cpu pulseaudio backlight-acpi battery 
+modules-right = mpd-new
+modules-center = window_switch
+font-0 =  Segoe UI Emoji
+font-1 = DejaVu Sans:pixelsize=11
+bottom = true
+width = 100%
+height = 20
+;offset-x = 1%
+offset-y = -1
+radius = 0
+fixed-center = true
+line-size = 0
+line-color = #f00
+border-size = 0
+border-color = #00000000
+padding-left = 0
+padding-right = 1
+module-margin-left = 2
+module-margin-right = 2
+
+
+[bar/HDMI-2]
+inherit = bar/eDP-1
+monitor = HDMI-2
+
+
+
+[bar/XWAYLAND0]
+inherit = bar/eDP-1
+monitor = XWAYLAND0
+
+; vim:ft=dosini
+
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="bspwm">BSPWM</h1>
+<blockquote>
+<p><strong><em>UPDATE:</em></strong> Here is a <a href="https://abdullah.today/bspwm" target="_blank" rel="noopener noreffer">post</a> for BSPWM.</p>
+</blockquote>
+<p>bspwm is a tiling window manager, it uses <code>sxhkd</code> for keybindings and windows
+management keybindings. Here is both configurations for both programs. You can use <code>xbindkeys</code> there&hellip;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat <span class="nv">$HOME</span>/.config/bspwm/bspwrc
+
+<span class="c1">#! /bin/sh</span>
+
+sxhkd <span class="p">&amp;</span>
+xsetroot -cursor_name left_ptr
+<span class="nv">$HOME</span>/.config/bspwm/autostart.sh <span class="p">&amp;</span>
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc config border_width         <span class="m">2</span>
+bspc config window_gap           <span class="m">7</span>
+bspc config split_ratio          0.52
+bspc config borderless_monocle   <span class="nb">true</span>
+bspc config gapless_monocle      <span class="nb">true</span>
+bspc config top_padding	       	 <span class="m">0</span>
+bspc config split_ratio          0.50
+bspc config borderless_monocle   <span class="nb">true</span>
+bspc config gapless_monocle      <span class="nb">true</span>
+bspc config focus_follows_pointer <span class="nb">true</span>
+bspc config click_to_focus        <span class="nb">true</span>
+bspc config focus_by_distance     <span class="nb">true</span>
+bspc config history_aware_focus   <span class="nb">true</span>
+bspc config single_monocle        <span class="nb">false</span>
+bspc config normal_border_color   <span class="s2">&#34;#4c566a&#34;</span>
+bspc config focused_border_color  <span class="s2">&#34;#5e81ac&#34;</span>
+bspc config presel_feedback_color <span class="s2">&#34;#5e81ac&#34;</span>
+
+bspc rule -a Sxiv <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
+bspc rule -a Chromium <span class="nv">desktop</span><span class="o">=</span><span class="s1">&#39;^2&#39;</span>
+bspc rule -a Kupfer.py <span class="nv">focus</span><span class="o">=</span>on
+bspc rule -a Screenkey <span class="nv">manage</span><span class="o">=</span>off
+<span class="c1">#bspc rule -a URxvt follow=on focus=on</span>
+bspc rule -a feh <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
+bspc rule -a Gpicview <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
+bspc rule -a Pavucontrol <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
+bspc rule -a mpv <span class="nv">state</span><span class="o">=</span>floating <span class="nv">sticky</span><span class="o">=</span>on
+bspc rule -a feh <span class="nv">state</span><span class="o">=</span>floating
+bspc rule -a Nitrogen <span class="nv">state</span><span class="o">=</span>floating
+bspc rule -a Arandr <span class="nv">state</span><span class="o">=</span>floating
+bspc rule -a Galculator <span class="nv">state</span><span class="o">=</span>floating
+bspc rule -a Font-manager <span class="nv">state</span><span class="o">=</span>floating
+bspc rule -a Oblogout <span class="nv">state</span><span class="o">=</span>floating
+<span class="c1">#bspc rule -a Peek state=floating</span>
+<span class="c1">#bspc rule -a Skype state=floating</span>
+<span class="c1">#bspc rule -a Pavucontrol state=floating sticky=on</span>
+<span class="c1">#bspc rule -a Xfce4-appfinder  state=floating sticky=on</span>
+<span class="c1">#bspc rule -a Gpick state=floating sticky=on</span>
+
+
+<span class="c1"># Colors</span>
+bspc config focused_border_color <span class="s2">&#34;#d8dee8&#34;</span>
+bspc config normal_border_color <span class="s2">&#34;#2f343f&#34;</span>
+
+<span class="c1"># Scratchpad </span>
+bspc rule <span class="nv">title</span><span class="o">=</span>scratchpad <span class="nv">class</span><span class="o">=</span>scratchpad <span class="nv">sticky</span><span class="o">=</span>on <span class="nv">state</span><span class="o">=</span>floating <span class="nv">hidden</span><span class="o">=</span>on
+urxvtc -name scratchpad -geometry 75x20 <span class="p">&amp;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="sxhkd">SXHKD</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cat <span class="nv">$HOME</span>/.config/sxhkd/sxhkdrc
+
+<span class="c1">#!/bin/sh</span>
+
+<span class="c1"># Reload functions</span>
+<span class="c1">#super + Escape</span>
+<span class="c1">#	&#34;$XDG_CONFIG_HOME&#34;/sxhkd/functions</span>
+
+<span class="c1"># Reload sxhkd</span>
+super + Escape
+  pkill -USR1 -x sxhkd
+
+<span class="c1"># Exit bspwm</span>
+super + <span class="nb">shift</span> + q
+  bspc quit
+
+<span class="c1"># Alternate between the tiled and monocle layout</span>
+super + t
+	bspc desktop -l next
+
+<span class="c1"># Swap the current node and the biggest node</span>
+super + g
+	bspc node -s biggest
+
+<span class="c1"># Kill a window</span>
+super + q
+  bspc node -c
+
+<span class="c1"># Scratchpad</span>
+super + i
+  ~/.local/bin/scratchtoggle
+
+super + Return
+  urxvtc
+
+Alt + Return
+  termite
+
+super + d
+  dmenu_run
+
+super + <span class="o">{</span>h,j,k,l<span class="o">}</span>
+	bspc node -f <span class="o">{</span>west,south,north,east<span class="o">}</span>
+
+super + w
+  <span class="nv">$BROWSER</span>
+
+super + alt + <span class="o">{</span>0-9<span class="o">}</span>
+	mpc -q seek <span class="o">{</span>0-9<span class="o">}</span>0%
+
+super + <span class="o">{</span>_,alt + <span class="o">}{</span>h,j,k,l<span class="o">}</span>
+	bspc node -<span class="o">{</span>f,s<span class="o">}</span> <span class="o">{</span>west,south,north,east<span class="o">}</span>
+
+<span class="c1">#XF86Audio{RaiseVolume,LowerVolume,Mute}</span>
+<span class="c1">#	amixer {-q set Master 5%+,-q set Master 5%-,set Master toggle}</span>
+
+<span class="c1"># set the window state</span>
+super + <span class="o">{</span>t,shift + t,s,f<span class="o">}</span>
+	bspc node -t <span class="o">{</span>tiled,pseudo_tiled,floating,fullscreen<span class="o">}</span>
+
+<span class="c1"># set the node flags</span>
+super + ctrl + <span class="o">{</span>m,x,y,z<span class="o">}</span>
+	bspc node -g <span class="o">{</span>marked,locked,sticky,private<span class="o">}</span>
+
+<span class="c1"># Music</span>
+XF86LaunchA
+  mpc toggle
+
+<span class="c1">#</span>
+<span class="c1"># focus/swap</span>
+<span class="c1">#</span>
+
+<span class="c1"># focus the node in the given direction</span>
+<span class="c1">#super + {_,shift + }{h,j,k,l}</span>
+<span class="c1">#	bspc node -{f,s} {west,south,north,east}</span>
+
+<span class="c1"># focus the node for the given path jump</span>
+super + <span class="o">{</span>p,b,comma,period<span class="o">}</span>
+	bspc node -f @<span class="o">{</span>parent,brother,first,second<span class="o">}</span>
+
+<span class="c1"># focus the next/previous node in the current desktop</span>
+super + <span class="o">{</span>_,shift + <span class="o">}</span>c
+	bspc node -f <span class="o">{</span>next,prev<span class="o">}</span>.local
+
+<span class="c1"># focus the next/previous desktop in the current monitor</span>
+super + bracket<span class="o">{</span>left,right<span class="o">}</span>
+	bspc desktop -f <span class="o">{</span>prev,next<span class="o">}</span>.local
+
+<span class="c1"># focus the last node/desktop</span>
+super + <span class="o">{</span>Tab,semicolon<span class="o">}</span>
+	bspc <span class="o">{</span>node,desktop<span class="o">}</span> -f next
+
+<span class="c1"># focus the older or newer node in the focus history</span>
+super + <span class="o">{</span>o,i<span class="o">}</span>
+	bspc wm -h off<span class="p">;</span> <span class="se">\
+</span><span class="se"></span>	bspc node <span class="o">{</span>older,newer<span class="o">}</span> -f<span class="p">;</span> <span class="se">\
+</span><span class="se"></span>	bspc wm -h on
+
+<span class="c1"># focus or send to the given desktop</span>
+super + <span class="o">{</span>_,shift + <span class="o">}{</span>1-9,0<span class="o">}</span>
+	bspc <span class="o">{</span>desktop -f,node -d<span class="o">}</span> <span class="s1">&#39;^{1-9,10}&#39;</span>
+
+<span class="c1">#</span>
+<span class="c1"># preselect</span>
+<span class="c1">#</span>
+
+<span class="c1"># preselect the direction</span>
+super + ctrl + <span class="o">{</span>h,j,k,l<span class="o">}</span>
+	bspc node -p <span class="o">{</span>west,south,north,east<span class="o">}</span>
+
+<span class="c1"># preselect the ratio</span>
+super + ctrl + <span class="o">{</span>1-9<span class="o">}</span>
+	bspc node -o 0.<span class="o">{</span>1-9<span class="o">}</span>
+
+<span class="c1"># cancel the preselection for the focused node</span>
+super + ctrl + space
+	bspc node -p cancel
+
+<span class="c1"># cancel the preselection for the focused desktop</span>
+super + ctrl + <span class="nb">shift</span> + space
+	bspc query -N -d <span class="p">|</span> xargs -I id -n <span class="m">1</span> bspc node id -p cancel
+
+<span class="c1">#</span>
+<span class="c1"># move/resize</span>
+<span class="c1">#</span>
+
+<span class="c1"># expand a window by moving one of its side outward</span>
+super + <span class="nb">shift</span> + <span class="o">{</span>h,j,k,l<span class="o">}</span>
+	bspc node -z <span class="o">{</span>left -20 0,bottom <span class="m">0</span> 20,top <span class="m">0</span> -20,right <span class="m">20</span> 0<span class="o">}</span>
+
+<span class="c1"># contract a window by moving one of its side inward</span>
+super + alt + <span class="nb">shift</span> + <span class="o">{</span>h,j,k,l<span class="o">}</span>
+	bspc node -z <span class="o">{</span>right -20 0,top <span class="m">0</span> 20,bottom <span class="m">0</span> -20,left <span class="m">20</span> 0<span class="o">}</span>
+
+<span class="c1"># move a floating window</span>
+super + <span class="o">{</span>Left,Down,Up,Right<span class="o">}</span>
+	bspc node -v <span class="o">{</span>-20 0,0 20,0 -20,20 0<span class="o">}</span>
+
+
+
+
+
+<span class="c1">############################################################################ </span>
+<span class="c1">#                                        ▗▄▖       ▗▖                      # </span>
+<span class="c1">#                                        ▝▜▌       ▐▌                      # </span>
+<span class="c1">#     ▐▙█▙  ▟█▙  █▟█▌▗▟██▖ ▟█▙ ▐▙██▖ ▟██▖ ▐▌       ▐▌▟▛  ▟█▙ ▝█ █▌▗▟██▖    # </span>
+<span class="c1">#     ▐▛ ▜▌▐▙▄▟▌ █▘  ▐▙▄▖▘▐▛ ▜▌▐▛ ▐▌ ▘▄▟▌ ▐▌       ▐▙█  ▐▙▄▟▌ █▖█ ▐▙▄▖▘    # </span>
+<span class="c1">#     ▐▌ ▐▌▐▛▀▀▘ █    ▀▀█▖▐▌ ▐▌▐▌ ▐▌▗█▀▜▌ ▐▌       ▐▛█▖ ▐▛▀▀▘ ▐█▛  ▀▀█▖    # </span>
+<span class="c1">#     ▐█▄█▘▝█▄▄▌ █   ▐▄▄▟▌▝█▄█▘▐▌ ▐▌▐▙▄█▌ ▐▙▄      ▐▌▝▙ ▝█▄▄▌  █▌ ▐▄▄▟▌    # </span>
+<span class="c1">#     ▐▌▀▘  ▝▀▀  ▀    ▀▀▀  ▝▀▘ ▝▘ ▝▘ ▀▀▝▘  ▀▀      ▝▘ ▀▘ ▝▀▀   █   ▀▀▀     # </span>
+<span class="c1">#     ▐▌                                                      █▌           # </span>
+<span class="c1">############################################################################ </span>
+
+<span class="c1"># Brightness keys</span>
+XF86MonBrightnessDown
+  xbacklight -5
+
+XF86MonBrightnessUp
+  xbacklight +5
+
+<span class="c1"># Raise Volume</span>
+XF86AudioRaiseVolume
+        amixer <span class="nb">set</span> Master 10%+
+
+
+<span class="c1"># Lower Volume</span>
+XF86AudioLowerVolume
+        amixer <span class="nb">set</span> Master 10%-
+
+<span class="c1"># Mute </span>
+XF86AudioMute
+        amixer -D pulse <span class="nb">set</span> Master 1+ toggle
+
+<span class="c1"># Screenshot</span>
+Print
+    import -window root /tmp/foo.png<span class="p">;</span> cat /tmp/foo.png <span class="p">|</span> xclip -selection clipboard -t image/png
+
+<span class="c1"># File Manager</span>
+XF86Explorer
+    urxvtc -e ranger
+
+<span class="c1">## Mouse buttons</span>
+<span class="c1">#super + button{1-3}</span>
+<span class="c1">#   bspc pointer -g {move,resize_side,resize_corner}</span>
+<span class="c1">#</span>
+<span class="c1">#super + !button{1-3}</span>
+<span class="c1">#   bspc pointer -t %i %i</span>
+<span class="c1">#</span>
+<span class="c1">#super + @button{1-3}</span>
+<span class="c1">#   bspc pointer -u</span>
+<span class="c1">#</span>
+
+<span class="c1"># Music little backward/forward</span>
+alt + bracket<span class="o">{</span>left,right<span class="o">}</span>
+  mpc seek <span class="o">{</span>-10,+10<span class="o">}</span>
+
+<span class="c1"># Music backward/forward</span>
+alt + <span class="nb">shift</span> + bracket<span class="o">{</span>left,right<span class="o">}</span>
+  mpc seek <span class="o">{</span>-120,+120<span class="o">}</span>
+ 
+<span class="c1"># Lock the screen</span>
+super + x
+  slock
+
+<span class="c1"># vim:ft=sxhkdrc</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>I hope you will get a working desktop experience with these configurations. It&rsquo;s easy to manipulate them to your needs.</p>
+<p>Here is a demonstration video.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/9iKVKyaUayc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-10-12</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://abdullah.today/polybar/" data-title="Polybar - A stylish bar" data-via="AbdullahToday" data-hashtags="polybar,bspwm,status_bar"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://abdullah.today/polybar/" data-hashtag="polybar"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://abdullah.today/polybar/" data-title="Polybar - A stylish bar"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://abdullah.today/polybar/" data-title="Polybar - A stylish bar"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://abdullah.today/polybar/" data-title="Polybar - A stylish bar"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/polybar/">polybar</a>,&nbsp;<a href="/tags/bspwm/">bspwm</a>,&nbsp;<a href="/tags/status_bar/">status_bar</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/vim-as-ide/" class="prev" rel="prev" title="How to use vIM as IDE in Debian, Ubuntu, Mint"><i class="fas fa-angle-left fa-fw"></i>How to use vIM as IDE in Debian, Ubuntu, Mint</a>
+            <a href="/encrypted-archlinux/" class="next" rel="next" title="Encrypted Arch Linux installation">Encrypted Arch Linux installation<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://abdullah.today" target="_blank">Abdullah Khabir</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"search":{"algoliaAppID":"3L4LIEJSP4","algoliaIndex":"index.en","algoliaSearchKey":"5d79bed67aeb5ed5e5a990cfad81ebde","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

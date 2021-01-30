@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>dotfiles - Tag - Abdullah Khabir</title>
+        <link>https://abdullah.today/tags/dotfiles/</link>
+        <description>dotfiles - Tag - Abdullah Khabir</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 12 Jan 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://abdullah.today/tags/dotfiles/" rel="self" type="application/rss+xml" /><item>
+    <title>Encrypted dotfiles with GnuPG</title>
+    <link>https://abdullah.today/encrypted-dotfiles/</link>
+    <pubDate>Sun, 12 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/encrypted-dotfiles/</guid>
+    <description><![CDATA[What these dotfiles are? In unix world, most programs are configured command line and they save their configurations in homedir usually a file which names start with a dot. Thus dotfiles.
+Power users care about them alot. You can store your dotfiles on some git server like github or gitlab and many other options there like you can host them on your VPS as well. If you use git to store them and you don&rsquo;t have a private repository, anybody can see them.]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>google-chrome - Tag - Abdullah Khabir</title>
+        <link>https://abdullah.today/tags/google-chrome/</link>
+        <description>google-chrome - Tag - Abdullah Khabir</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Sep 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://abdullah.today/tags/google-chrome/" rel="self" type="application/rss+xml" /><item>
+    <title>Google Chrome for deiban and derived distributions</title>
+    <link>https://abdullah.today/chrome/</link>
+    <pubDate>Sun, 15 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/chrome/</guid>
+    <description><![CDATA[You&rsquo;ll have to admit google chrome is super fast. Along with other plugins I love to use it as main browser. But unfortunately it isn&rsquo;t in debian repositories.
+So how to install it? Here is the procedure you can follow to get latest chrome from google.
+1 2 3  $ echo &#39;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&#39; | sudo tee -a /etc/apt/sources.list &gt; /dev/null $ sudo apt update $ sudo apt install -y google-chrome-stable      ;(adsbygoogle = window.]]></description>
+</item></channel>
+</rss>

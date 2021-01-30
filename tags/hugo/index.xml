@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>hugo - Tag - Abdullah Khabir</title>
+        <link>https://abdullah.today/tags/hugo/</link>
+        <description>hugo - Tag - Abdullah Khabir</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 10 May 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://abdullah.today/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+    <title>How to manage a website using git</title>
+    <link>https://abdullah.today/site-as-git-repo/</link>
+    <pubDate>Sun, 10 May 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/site-as-git-repo/</guid>
+    <description><![CDATA[Git is another awesome tool developed and maintained by Linus Torvalds who wrote linux kernel. In this post I&rsquo;ll explain how can we use it for our site maintenance. I have a vps on which my site is hosted along with a mail server, git server and a web server too. But I&rsquo;m sure this guide can be used with shared hosting accounts with some modifications.
+Install git. Once installed, as root user, create git user and add it to www-data group.]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>mbsync - Tag - Abdullah Khabir</title>
+        <link>https://abdullah.today/tags/mbsync/</link>
+        <description>mbsync - Tag - Abdullah Khabir</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 17 Sep 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://abdullah.today/tags/mbsync/" rel="self" type="application/rss+xml" /><item>
+    <title>My Email Setup</title>
+    <link>https://abdullah.today/mutt/</link>
+    <pubDate>Tue, 17 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/mutt/</guid>
+    <description><![CDATA[why commandline? TL;DR
+powerful and efficient!
+I have been creating multiple accounts for email since 2009. Some of the accounts I still have them in 2019 and others I don&rsquo;t have access to. I realized that having your own email server on your own domain is a good thing. So I started creating mail server. I did that well. Learned a lot.
+   ;(adsbygoogle = window.adsbygoogle || []).push({})  As you know I like things to keep minimalistic yet powerful than most written GUI apps.]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>terminal sharing - Tag - Abdullah Khabir</title>
+        <link>https://abdullah.today/tags/terminal-sharing/</link>
+        <description>terminal sharing - Tag - Abdullah Khabir</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 17 May 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://abdullah.today/tags/terminal-sharing/" rel="self" type="application/rss+xml" /><item>
+    <title>Terminal Sharing service</title>
+    <link>https://abdullah.today/tmate/</link>
+    <pubDate>Sun, 17 May 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/tmate/</guid>
+    <description><![CDATA[What&rsquo;s tmate? On *nix systems, sometimes we need support. And geeks don&rsquo;t like GUI apps just to have your system in front of them, at least I don&rsquo;t like that 😉
+tmate is terminal sharing software you can use it to connect with your friends and you both work from there. It&rsquo;s available in many distributions repos and in case you aren&rsquo;t lucky enough, you can compile it from source or there are pre-compiled binaries there in their Github page.]]></description>
+</item></channel>
+</rss>
