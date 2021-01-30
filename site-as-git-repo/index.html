@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/abdullah.today\/site-as-git-repo\/"
-        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "git, web development, website, hugo, vim","wordcount":  376 ,
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "git, web development, website, hugo, vim","wordcount":  370 ,
         "url": "https:\/\/abdullah.today\/site-as-git-repo\/","datePublished": "2020-05-10T00:00:00+00:00","dateModified": "2020-05-10T00:00:00+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
@@ -101,38 +101,27 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">How to manage a website using git</h1><div class="post-meta">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">How to manage a website using git</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-10">2020-05-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;376 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-10">2020-05-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;370 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>Git is another awesome tool developed and maintained by Linus Torvalds who wrote linux kernel. In this post I&rsquo;ll explain how can we use it for our site maintenance. I have a vps on which my site is hosted along with a mail server, git server and a web server too. But I&rsquo;m sure this guide can be used with shared hosting accounts with some modifications.</p>
+        </div><div class="content" id="content"><p>Git is another awesome tool developed and maintained by Linus Torvalds who wrote linux kernel. In this post I&rsquo;ll explain how can we use it for our site maintenance. I have a vps on which my site is hosted along with a mail server, git server and a web server too. But I&rsquo;m sure this guide can be used with shared hosting accounts with some modifications.</p>
 <p>Install git. Once installed, as root user, create git user and add it to www-data group.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">useradd git -m -G www-data
+<pre class="chroma"><code class="language-bash" data-lang="bash">useradd git -m -G www-data
 </code></pre></td></tr></table>
 </div>
 </div><p>Login into this new git user.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">su - git
-
+<pre class="chroma"><code class="language-bash" data-lang="bash">su - git
 </code></pre></td></tr></table>
 </div>
 </div><p>Create an ssh directory for this account.</p>
@@ -141,7 +130,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir .ssh
+<pre class="chroma"><code class="language-bash" data-lang="bash">mkdir .ssh
 </code></pre></td></tr></table>
 </div>
 </div><p>Upload your user ssh public key to this directory how you want. I use pastebin here. Assuming you pasted your public key somewhere on pastebin, I&rsquo;ll fetch it using curl.</p>
@@ -150,29 +139,25 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">curl -o .ssh/authorized_keys &#39;pastebin address where you pasted the public key&#39;
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o .ssh/authorized_keys <span class="s1">&#39;pastebin address where you pasted the public key&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Create a directory for your user you wanna use for your site or this user maybe the one you use to login to your vps using ssh. I&rsquo;ll use user z for this post.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd &amp;&amp; mkdir z &amp;&amp; cd z
-
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="o">&amp;&amp;</span> mkdir z <span class="o">&amp;&amp;</span> <span class="nb">cd</span> z
 </code></pre></td></tr></table>
 </div>
 </div><p>Create a git repo here now.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">git init --bare mysite.git
-
+<pre class="chroma"><code class="language-bash" data-lang="bash">git init --bare mysite.git
 </code></pre></td></tr></table>
 </div>
 </div><p>Create a hook in .git directory.</p>
@@ -182,39 +167,33 @@
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo &#34;#!/bin/sh \
-cd /var/www/html \
-unset GIT_DIR  \
-git pull \ &#34; &gt; ~/z/mysite.git/hooks/post-receive &amp;&amp; chmod +X ~/z/mysite.git/hooks/post-receive
-
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;#!/bin/sh \
+</span><span class="s2">cd /var/www/html \
+</span><span class="s2">unset GIT_DIR  \
+</span><span class="s2">git pull \ &#34;</span> &gt; ~/z/mysite.git/hooks/post-receive <span class="o">&amp;&amp;</span> chmod +X ~/z/mysite.git/hooks/post-receive
 </code></pre></td></tr></table>
 </div>
 </div><p>That&rsquo;s it. Now go to the directory where your site is hosted, in this example we used /var/www/html for site and z as username which is used to maintain our site in future using git like in above hook we used that. You can modify both hook and here this code too according to your needs.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-cd /var/www/html &amp;&amp; git clone ~/z/mysite.git &amp;&amp; cd mysite.git &amp;&amp; mv * /var/www/html/ &amp;&amp;  cd /var/www/html &amp;&amp; rm -rf mysite.git
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /var/www/html <span class="o">&amp;&amp;</span> git clone ~/z/mysite.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mysite.git <span class="o">&amp;&amp;</span> mv * /var/www/html/ <span class="o">&amp;&amp;</span>  <span class="nb">cd</span> /var/www/html <span class="o">&amp;&amp;</span> rm -rf mysite.git
 </code></pre></td></tr></table>
 </div>
 </div><p>We have made it. Now in your local machine, clone this repo this way.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone &#39;your vps ip or domain if it&#39;s pointed to your vps&#39;:z/site.git
-
+<pre class="chroma"><code class="language-bash" data-lang="bash">git clone <span class="s1">&#39;your vps ip or domain if it&#39;</span>s pointed to your vps<span class="err">&#39;</span>:z/site.git
 </code></pre></td></tr></table>
 </div>
-</div><p>cd into the directory you just cloned, do some modifications and push the changes and you&rsquo;ll see the magic. If you have some problems just ping me and I&rsquo;ll be glad to help.</p>
+</div><p>Go to the directory you just cloned, do some modifications and push the changes and you&rsquo;ll see the magic. If you have some problems just ping me and I&rsquo;ll be glad to help.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
