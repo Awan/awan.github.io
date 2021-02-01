@@ -4,9 +4,17 @@
         <link>https://abdullah.today/</link>
         <description>An InfoSec related Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
-            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 30 Jan 2021 18:37:13 &#43;0500</lastBuildDate>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 01 Feb 2021 19:41:58 &#43;0500</lastBuildDate>
             <atom:link href="https://abdullah.today/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Honda125 2021</title>
+    <link>https://abdullah.today/honda125-2021/</link>
+    <pubDate>Mon, 01 Feb 2021 19:41:58 &#43;0500</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/honda125-2021/</guid>
+    <description><![CDATA[So here is new bike for 2021. Here are some pictures. I hope you&rsquo;ll like them&hellip;
+Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  ]]></description>
+</item><item>
     <title>Linux Filesystem Directory Structure</title>
     <link>https://abdullah.today/linux-filesystem-directory-structure/</link>
     <pubDate>Thu, 17 Dec 2020 14:24:49 &#43;0500</pubDate>
@@ -100,14 +108,5 @@ Keybindings The default modifier key is Ctrl + b followed by a key.]]></descript
 I&rsquo;m using git since I started using linux. Cherry-pick is one of those commands I do alot with git. Right now I&rsquo;m preparing a new cherry and will pick it later. 😉
 What&rsquo;s cherry-pick? According to man(1) git-cherry-pick:
 1 2 3 4  Given one or more existing commits, apply the change each one introduces, recording a new commit for each. This requires your working tree to be clean (no modifications from the HEAD commit).]]></description>
-</item><item>
-    <title>Multihead with BSPWM and Polybar</title>
-    <link>https://abdullah.today/multihead/</link>
-    <pubDate>Tue, 02 Jun 2020 10:52:37 &#43;0500</pubDate>
-    <author>Author</author>
-    <guid>https://abdullah.today/multihead/</guid>
-    <description><![CDATA[Multihead A few days ago, I relocated myself to new room. Actually this room I use for summer as its way cooler than others. I have a wall-mounted LCD monitor here so today I thought I should share how I do multi screening.
-Hardware I have this lenovo X series machine which is my main machine I use. Its resolution is 1920x1080.
-The second one is a LCD monitor. And the resolution is 1280x1024.]]></description>
 </item></channel>
 </rss>

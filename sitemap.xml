@@ -2,17 +2,24 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://abdullah.today/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/quran/1/</loc><lastmod>2020-05-28T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/bike/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/honda/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/honda125/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/honda125-2021/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/hondacg125/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/posts/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/ride/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/about/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/about/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/about-me/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://abdullah.today/tags/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/absolute-pathnames/</loc><lastmod>2020-12-17T14:24:49&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/filesystem/</loc><lastmod>2020-12-17T14:24:49&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/linux-filesystem-directory-structure/</loc><lastmod>2020-12-17T14:24:49&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/linux-filesystem-directory-structure/</loc><lastmod>2020-12-17T14:24:49&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/pathnames/</loc><lastmod>2020-12-17T14:24:49&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://abdullah.today/posts/</loc><lastmod>2020-12-17T14:24:49&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/relative-pathnames/</loc><lastmod>2020-12-17T14:24:49&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/gmail/</loc><lastmod>2020-11-29T07:32:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/mail/</loc><lastmod>2020-11-29T07:32:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -71,6 +78,10 @@
             <loc>https://abdullah.today/tags/window-managers/</loc><lastmod>2020-06-01T19:02:44&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/wm/</loc><lastmod>2020-06-01T19:02:44&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/workflow/</loc><lastmod>2020-06-01T19:02:44&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/tags/fateha/</loc><lastmod>2020-05-28T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/tags/quran/</loc><lastmod>2020-05-28T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/quran/</loc><lastmod>2020-05-28T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/tags/shuraim/</loc><lastmod>2020-05-28T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/rdp/</loc><lastmod>2020-05-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/remote/</loc><lastmod>2020-05-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/terminal-sharing/</loc><lastmod>2020-05-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qurans on Abdullah Khabir</title>
+    <link>https://abdullah.today/quran/</link>
+    <description>Recent content in Qurans on Abdullah Khabir</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
+    <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://abdullah.today/quran/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Surah Fateha</title>
+      <link>https://abdullah.today/quran/1/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      <author>abdullah@abdullah.today (Abdullah Khabir)</author>
+      <guid>https://abdullah.today/quran/1/</guid>
+      <description>Surah Fateha        </description>
+    </item>
+    
+  </channel>
+</rss>
