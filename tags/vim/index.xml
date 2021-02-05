@@ -14,10 +14,10 @@
 Install git. Once installed, as root user, create git user and add it to www-data group.]]></description>
 </item><item>
     <title>How to use vIM as IDE in Debian, Ubuntu, Mint</title>
-    <link>https://abdullah.today/vim-as-ide/</link>
+    <link>https://abdullah.today/vim-as-IDE/</link>
     <pubDate>Fri, 11 Oct 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>https://abdullah.today/vim-as-ide/</guid>
+    <guid>https://abdullah.today/vim-as-IDE/</guid>
     <description><![CDATA[Been using source based distributions for a long time. Source based distributions are cool for systems with limited resources. But what if you don&rsquo;t have enough time?
 Debian is one of the oldest distribution there which is known for stability. Stability? Well that never had been a priority for me but for some reasons I came to it and now using it for some months. It&rsquo;s a cool distribution.
 Well, that enough said, let&rsquo;s come to the topic.]]></description>

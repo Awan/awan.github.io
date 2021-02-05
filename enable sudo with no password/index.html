@@ -5,37 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Things to do after a new Debian installation - Abdullah Khabir</title><meta name="Description" content="Things to do after a new Debian installation"><meta property="og:title" content="Things to do after a new Debian installation" />
-<meta property="og:description" content="Things to do after a new Debian installation" />
+        <title>use sudo with no password - Abdullah Khabir</title><meta name="Description" content="How to enable sudo without password in Debian, Ubuntu, Mint"><meta property="og:title" content="use sudo with no password" />
+<meta property="og:description" content="How to enable sudo without password in Debian, Ubuntu, Mint" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/debian-fresh-install/" />
+<meta property="og:url" content="https://abdullah.today/enable%20sudo%20with%20no%20password/" />
 <meta property="og:image" content="https://abdullah.today/logo.png"/>
-<meta property="article:published_time" content="2019-09-22T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-09-22T00:00:00+00:00" />
+<meta property="article:published_time" content="2019-09-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-18T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
-<meta name="twitter:title" content="Things to do after a new Debian installation"/>
-<meta name="twitter:description" content="Things to do after a new Debian installation"/>
+<meta name="twitter:title" content="use sudo with no password"/>
+<meta name="twitter:description" content="How to enable sudo without password in Debian, Ubuntu, Mint"/>
 <meta name="application-name" content="Abdullah Khabir">
 <meta name="apple-mobile-web-app-title" content="Abdullah Khabir"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://abdullah.today/debian-fresh-install/" /><link rel="prev" href="https://abdullah.today/urxvt/" /><link rel="next" href="https://abdullah.today/vim-as-IDE/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://abdullah.today/enable%20sudo%20with%20no%20password/" /><link rel="prev" href="https://abdullah.today/mutt/" /><link rel="next" href="https://abdullah.today/fonts/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Things to do after a new Debian installation",
+        "headline": "use sudo with no password",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/abdullah.today\/debian-fresh-install\/"
-        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "debian, fresh install","wordcount":  339 ,
-        "url": "https:\/\/abdullah.today\/debian-fresh-install\/","datePublished": "2019-09-22T00:00:00+00:00","dateModified": "2019-09-22T00:00:00+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@id": "https:\/\/abdullah.today\/enable%20sudo%20with%20no%20password\/"
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "sudo, visudo, privileges","wordcount":  436 ,
+        "url": "https:\/\/abdullah.today\/enable%20sudo%20with%20no%20password\/","datePublished": "2019-09-18T00:00:00+00:00","dateModified": "2019-09-18T00:00:00+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
                 "@type": "Person",
                 "name": "Abdullah Khabir"
-            },"description": "Things to do after a new Debian installation"
+            },"description": "How to enable sudo without password in Debian, Ubuntu, Mint"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -104,115 +104,35 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Things to do after a new Debian installation</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">use sudo with no password</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-22">2019-09-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;339 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-18">2019-09-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;436 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#setup-a-sudo-user-without-password">Setup a sudo user without password</a></li>
-    <li><a href="#install-software">Install software</a></li>
-    <li><a href="#setup-touchpad">Setup touchpad</a></li>
-    <li><a href="#brightness-keys">Brightness Keys</a></li>
-    <li><a href="#automatically-lock-screen-on-resume-from-suspension">Automatically lock screen on resume from suspension</a></li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><p>So you have a new Debian installation? Maybe a minimal install like I do?
-Don&rsquo;t worry, I have you covered what to do next.</p>
-<h2 id="setup-a-sudo-user-without-password">Setup a sudo user without password</h2>
-<p>Go <a href="https://abdullah.today/enable-sudo-with-no-password.html" target="_blank" rel="noopener noreffer">here</a>.</p>
-<h2 id="install-software">Install software</h2>
-<p>Install software for daily use.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt install build-essential \
- git zsh mpv feh xss-lock urlview \
- xbindkeys stow offlineimap mutt msmtp \
- notmuch vim.nox rxvt-unicode -y 
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="setup-touchpad">Setup touchpad</h2>
-<p>If you have a machine that supports multitouch, enabling tap to click is a good option. Create directories if they don&rsquo;t have already created.</p>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>In Unix world, we shouldn&rsquo;t use administrator user without some important stuff
+which needs access to it. There is a utility <b> sudo </b> we can use to have
+administrator access. But everytime you invoke it, it asks for your user&rsquo;s
+password.</p>
+<p>Today, I&rsquo;m going to guide you, how you can use <b>sudo</b> without password.</p>
+<p>Once you install <b>Debian</b>, you get some option to create a user. And if you
+choose the option, &ldquo;Don&rsquo;t use root for login&rdquo;, this new user becomes privileged
+user by default. Which means you can invoke any command by using sudo. It will
+ask for your password and command is executed.</p>
+<p>Assuming you have a privileged user, edit sudoers file.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo mkdir -p /etc/X11/xorg.conf.d
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo visudo
 </code></pre></td></tr></table>
 </div>
-</div><p>Create a file here as 20-libinput.conf. Mine looks like:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cat /etc/X11/xorg.conf.d/20-libinput.conf
-
-Section &#34;InputClass&#34;
-	Identifier &#34;libinput touchpad catchall&#34;
-  MatchIsTouchpad &#34;on&#34;
-  Driver &#34;libinput&#34;
-  MatchDevicePath &#34;/dev/input/event*&#34;
-  Option &#34;Tapping&#34; &#34;on&#34;
-  Option &#34;TappingButtonMap&#34; &#34;lrm&#34;
-  Option &#34;NaturalScrolling&#34; &#34;true&#34;
-EndSection
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="brightness-keys">Brightness Keys</h2>
-<p>On some hardware, brightness keys don&rsquo;t work out of the box. So create a file
-<b>30-backlight.conf</b> in the same directory as you did in touchpad file.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cat /etc/X11/xorg.conf.d/30-backlight.conf 
-
-Section &#34;Device&#34;
-	Identifier &#34;card0&#34;
-	Driver	   &#34;intel&#34;
-	Option	   &#34;Backlight&#34; &#34;intel_backlight&#34;
-	BusID      &#34;PCI:0:2:0&#34;
-EndSection
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="automatically-lock-screen-on-resume-from-suspension">Automatically lock screen on resume from suspension</h2>
-<p>systemd-logind automatically suspends the laptop if lid is closed. But you have
-to create another unit file and enable it to lock the screen on resume from
-suspension.</p>
-<p>Create a file <b>/etc/systemd/system/wakelock@.service</b> with following
-contents. Put your favorite locker application path in ExecStart if you don&rsquo;t
-use slock.</p>
+</div><p>On my Debian installation, it looks like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -228,69 +148,164 @@ use slock.</p>
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cat /etc/systemd/system/wakelock@.service
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">## /etc/sudoers</span>
+<span class="c1">#</span>
+<span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>
+<span class="c1">#</span>
+<span class="c1"># Please consider adding local content in /etc/sudoers.d/ instead of</span>
+<span class="c1"># directly modifying this file.</span>
+<span class="c1">#</span>
+<span class="c1"># See the man page for details on how to write a sudoers file.</span>
+<span class="c1">#</span>
+Defaults	env_reset
+Defaults	mail_badpass
+Defaults	<span class="nv">secure_path</span><span class="o">=</span><span class="s2">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
 
-[Unit]
-Description=Automatically lock the screen on resume from suspension
-Before=sleep.target suspend.target
+<span class="c1"># Host alias specification</span>
 
-[Service]
-User=%i
-Environment=DISPLAY=:0
-ExecStart=/usr/bin/slock
+<span class="c1"># User alias specification</span>
 
-[Install]
-WantedBy=sleep.target suspend.target
+<span class="c1"># Cmnd alias specification</span>
+
+<span class="c1"># User privilege specification</span>
+root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+
+<span class="c1"># Allow members of group sudo to execute any command</span>
+%sudo	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+
+<span class="c1"># See sudoers(5) for more information on &#34;#include&#34; directives:</span>
+
+<span class="c1">#includedir /etc/sudoers.d</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>Reload the systemd daemon and enable/start it. Replace <b>YOUR USERNAME</b> with
-your username.</p>
+</div><p>At the end of the file, just append this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo systemctl daemon-reload
-$ sudo systemctl enable wakelock@&lt;YOUR USERNAME&gt;.service
-$ sudo systemctl start wakelock@&lt;YOUR USERNAME&gt;.service
+<pre class="chroma"><code class="language-bash" data-lang="bash">username <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> NOPASSWD:ALL
 </code></pre></td></tr></table>
 </div>
-</div><p>That&rsquo;s it. I&rsquo;ll update this article for more things I remember or anytime I had
-to reinstall and find something I had to do&hellip;</p>
+</div><p>Replace <b>username</b> with your username.</p>
+<p>Here is my sudoers file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo cat /etc/sudoers
+
+<span class="c1">#</span>
+<span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>
+<span class="c1">#</span>
+<span class="c1"># Please consider adding local content in /etc/sudoers.d/ instead of</span>
+<span class="c1"># directly modifying this file.</span>
+<span class="c1">#</span>
+<span class="c1"># See the man page for details on how to write a sudoers file.</span>
+<span class="c1">#</span>
+Defaults	env_reset
+Defaults	mail_badpass
+Defaults	<span class="nv">secure_path</span><span class="o">=</span><span class="s2">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
+
+<span class="c1"># Host alias specification</span>
+
+<span class="c1"># User alias specification</span>
+
+<span class="c1"># Cmnd alias specification</span>
+
+<span class="c1"># User privilege specification</span>
+root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+
+<span class="c1"># Allow members of group sudo to execute any command</span>
+%sudo	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+
+<span class="c1"># See sudoers(5) for more information on &#34;#include&#34; directives:</span>
+
+<span class="c1"># I don&#39;t want a password everytime for my user.</span>
+ak	<span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> NOPASSWD:ALL
+<span class="c1">#includedir /etc/sudoers.d</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now open a new terminal and try to install something using sudo. You won&rsquo;t be
+asked to enter your password from now.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2019-09-22</span>
+                <span>Updated on 2019-09-18</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://abdullah.today/debian-fresh-install/" data-title="Things to do after a new Debian installation" data-via="AbdullahToday" data-hashtags="debian,fresh install"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://abdullah.today/debian-fresh-install/" data-hashtag="debian"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://abdullah.today/debian-fresh-install/" data-title="Things to do after a new Debian installation"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://abdullah.today/debian-fresh-install/" data-title="Things to do after a new Debian installation"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://abdullah.today/debian-fresh-install/" data-title="Things to do after a new Debian installation"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://abdullah.today/enable%20sudo%20with%20no%20password/" data-title="use sudo with no password" data-via="AbdullahToday" data-hashtags="sudo,visudo,privileges"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://abdullah.today/enable%20sudo%20with%20no%20password/" data-hashtag="sudo"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://abdullah.today/enable%20sudo%20with%20no%20password/" data-title="use sudo with no password"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://abdullah.today/enable%20sudo%20with%20no%20password/" data-title="use sudo with no password"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://abdullah.today/enable%20sudo%20with%20no%20password/" data-title="use sudo with no password"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/debian/">debian</a>,&nbsp;<a href="/tags/fresh-install/">fresh install</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/sudo/">sudo</a>,&nbsp;<a href="/tags/visudo/">visudo</a>,&nbsp;<a href="/tags/privileges/">privileges</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/urxvt/" class="prev" rel="prev" title="URXVT - Terminal for Geeks"><i class="fas fa-angle-left fa-fw"></i>URXVT - Terminal for Geeks</a>
-            <a href="/vim-as-IDE/" class="next" rel="next" title="How to use vIM as IDE in Debian, Ubuntu, Mint">How to use vIM as IDE in Debian, Ubuntu, Mint<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/mutt/" class="prev" rel="prev" title="My Email Setup"><i class="fas fa-angle-left fa-fw"></i>My Email Setup</a>
+            <a href="/fonts/" class="next" rel="next" title="How to install fonts in Linux">How to install fonts in Linux<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="fb-root" class="comment"></div>
             <div
                 class="fb-comments"
-                data-href="https://abdullah.today/debian-fresh-install/"
+                data-href="https://abdullah.today/enable%20sudo%20with%20no%20password/"
                 data-width="100%"
                 data-numposts="10"
             ></div><noscript>

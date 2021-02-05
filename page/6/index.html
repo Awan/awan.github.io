@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.75.0" />
+	<meta name="generator" content="Hugo 0.80.0" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -106,12 +106,12 @@
           Read! And your Lord is the Most Generous.
           Who taught by the pen.</h3></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/efistub/">EFISTUB</a>
+        <a href="/EFISTUB/">EFISTUB</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-09-13">2019-09-13</time></span></div><div class="content">So in this post I&rsquo;m gonna guide you how you can use efistub, a feature which you can use to boot the kernel without an extra boot manager(grub, systemd-boot, rEFInd etc.)
 Create a boot entry using efibootmgr.
 1  # efibootmgr --create --disk /dev/sda --part 1 --label Debian --loader /vmlinuz --unicode &#34;root=/dev/sda2 rw initrd=\initrd.img&#34; --verbose   Explaination of the command.
 1 2 3 4 5 6 7  --create &#39;creates a new boot entry&#39; --disk &#39;disk where you wanna create the boot entry&#39; --part &#39;partition number&#39; --label &#39;the label for new entry&#39; --loader &#39;loader to boot, it&#39;s vmlinuz in this example&#39; --unicode &#39;kernel parameters you can define here like initrd, swap, encrypted container for root&#39; --verbose &#39;let it verbose&#39;   I have an encrypted installation on my machine so here is how I create an entry for me.</div><div class="post-footer">
-        <a href="/efistub/">Read More</a><div class="post-tags">
+        <a href="/EFISTUB/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/efistub/">efistub</a>,&nbsp;<a href="/tags/efibootmgr/">efibootmgr</a>,&nbsp;<a href="/tags/bootloader/">bootloader</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/dwm/">dwm window manager</a>
