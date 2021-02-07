@@ -12,9 +12,9 @@
             <loc>https://abdullah.today/posts/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/ride/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://abdullah.today/about/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://abdullah.today/tags/about/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://abdullah.today/tags/about-me/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/about/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://abdullah.today/tags/about/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://abdullah.today/tags/about-me/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://abdullah.today/tags/absolute-pathnames/</loc><lastmod>2020-12-17T14:24:49&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/filesystem/</loc><lastmod>2020-12-17T14:24:49&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/linux-filesystem-directory-structure/</loc><lastmod>2020-12-17T14:24:49&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
