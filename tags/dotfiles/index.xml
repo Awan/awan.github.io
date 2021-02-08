@@ -4,7 +4,17 @@
         <link>https://abdullah.today/tags/dotfiles/</link>
         <description>dotfiles - Tag - Abdullah Khabir</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
-            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 12 Jan 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://abdullah.today/tags/dotfiles/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 08 Feb 2021 11:37:18 &#43;0500</lastBuildDate><atom:link href="https://abdullah.today/tags/dotfiles/" rel="self" type="application/rss+xml" /><item>
+    <title>Openbsd Dedicated Dotfiles</title>
+    <link>https://abdullah.today/openbsd-dedicated-dotfiles/</link>
+    <pubDate>Mon, 08 Feb 2021 11:37:18 &#43;0500</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/openbsd-dedicated-dotfiles/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/think-securely.png" referrerpolicy="no-referrer">
+            </div>OpenBSD as new OS So I started using OpenBSD in start of 2021. My blog readers know I keep my dotfiles on Github/Gitlab. Most of the programs I have been using in past were okay with this change. But I had to configure many things.
+New Dotfiles I created a new directory dot in my home dir. And cherry picked some of my old dots. But still that wasn&rsquo;t enough. It took me 2 months to figure things out as per my liking.]]></description>
+</item><item>
     <title>Encrypted dotfiles with GnuPG</title>
     <link>https://abdullah.today/encrypted-dotfiles/</link>
     <pubDate>Sun, 12 Jan 2020 00:00:00 &#43;0000</pubDate>

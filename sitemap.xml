@@ -3,15 +3,21 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
             <loc>https://abdullah.today/quran/1/</loc><lastmod>2020-05-28T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://abdullah.today/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/bsd/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/dotfiles/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/openbsd/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/openbsd-as-daily-driver/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/openbsd-dedicated-dotfiles/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/openbsd-on-laptop/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/posts/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/bike/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/honda/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/honda125/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/honda125-2021/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/hondacg125/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://abdullah.today/posts/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/ride/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://abdullah.today/tags/</loc><lastmod>2021-02-01T19:41:58&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/about/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://abdullah.today/tags/about/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://abdullah.today/tags/about-me/</loc><lastmod>2021-01-30T18:37:13&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
@@ -121,7 +127,6 @@
             <loc>https://abdullah.today/contribution-with-git/</loc><lastmod>2020-02-12T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/repository/</loc><lastmod>2020-02-12T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/configuration_files/</loc><lastmod>2020-01-12T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://abdullah.today/tags/dotfiles/</loc><lastmod>2020-01-12T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/encrypted-dotfiles/</loc><lastmod>2020-01-12T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/encrypted_dotfiles/</loc><lastmod>2020-01-12T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/gnupg/</loc><lastmod>2020-01-12T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
