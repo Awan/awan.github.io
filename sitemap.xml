@@ -3,14 +3,21 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
             <loc>https://abdullah.today/quran/1/</loc><lastmod>2020-05-28T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://abdullah.today/</loc><lastmod>2021-02-09T20:12:36&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/</loc><lastmod>2021-02-10T18:52:24&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/backlight-openbsd/</loc><lastmod>2021-02-10T18:52:24&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/encrypted-installation/</loc><lastmod>2021-02-10T18:52:24&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/new-install/</loc><lastmod>2021-02-10T18:52:24&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/openbsd/</loc><lastmod>2021-02-10T18:52:24&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/openbsd-wsconctl/</loc><lastmod>2021-02-10T18:52:24&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/posts/</loc><lastmod>2021-02-10T18:52:24&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/</loc><lastmod>2021-02-10T18:52:24&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/things-to-do-after-new-openbsd-install/</loc><lastmod>2021-02-10T18:52:24&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/todo/</loc><lastmod>2021-02-10T18:52:24&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/xorg-setup-openbsd/</loc><lastmod>2021-02-10T18:52:24&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/encrypted-openbsd-install/</loc><lastmod>2021-02-09T20:12:36&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/encryption/</loc><lastmod>2021-02-09T20:12:36&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/full-disk-encryption/</loc><lastmod>2021-02-09T20:12:36&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://abdullah.today/tags/openbsd/</loc><lastmod>2021-02-09T20:12:36&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/openbsd-encrypted-install/</loc><lastmod>2021-02-09T20:12:36&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://abdullah.today/posts/</loc><lastmod>2021-02-09T20:12:36&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://abdullah.today/tags/</loc><lastmod>2021-02-09T20:12:36&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/bsd/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/dotfiles/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/openbsd-as-daily-driver/</loc><lastmod>2021-02-08T11:37:18&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>

@@ -4,8 +4,17 @@
         <link>https://abdullah.today/posts/</link>
         <description>All Posts | Abdullah Khabir</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
-            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 09 Feb 2021 20:12:36 &#43;0500</lastBuildDate><atom:link href="https://abdullah.today/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Openbsd Encrypted Install</title>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 10 Feb 2021 18:52:24 &#43;0500</lastBuildDate><atom:link href="https://abdullah.today/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Things to Do After New OpenBSD Install</title>
+    <link>https://abdullah.today/things-to-do-after-new-openbsd-install/</link>
+    <pubDate>Wed, 10 Feb 2021 18:52:24 &#43;0500</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/things-to-do-after-new-openbsd-install/</guid>
+    <description><![CDATA[So you have installed OpenBSD as main OS. Most of the things will work out of the box. But still you have to configure some things.
+Lock screen on suspend/hibernate/resume Login as root and create /etc/apm directory if it isn&rsquo;t there already.
+1 2 3 4 5 6 7  mkdir /etc/apm echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/suspend echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/resume echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/hibernate chmod +x /etc/apm/suspend chmod +x /etc/apm/hibernate chmod +x /etc/apm/resume   On lid closure, machines mostly get suspended.]]></description>
+</item><item>
+    <title>OpenBSD Encrypted Install</title>
     <link>https://abdullah.today/openbsd-encrypted-install/</link>
     <pubDate>Tue, 09 Feb 2021 20:12:36 &#43;0500</pubDate>
     <author>Author</author>
@@ -16,7 +25,7 @@ Creating install media If you are on some linux or mac, you can use dd command t
 Suppose your USB drive is appearing as /dev/sdb in lsblk&rsquo;s output:
 1  dd if=install.img of=/dev/sdb bs=1M   Boot from install media Plug the new install media and reboot the system.]]></description>
 </item><item>
-    <title>Openbsd Dedicated Dotfiles</title>
+    <title>OpenBSD Dedicated Dotfiles</title>
     <link>https://abdullah.today/openbsd-dedicated-dotfiles/</link>
     <pubDate>Mon, 08 Feb 2021 11:37:18 &#43;0500</pubDate>
     <author>Author</author>
@@ -97,17 +106,5 @@ Installation In Archlinux, you can install git by:
 1  $ sudo pacman -S git   In Debian and derived distributions:
 1  $ sudo apt install -y git   Configuration You have to tell git about the author who committed changes so lets do it.
 Name and Email Tell git about your name and email:]]></description>
-</item><item>
-    <title>How to set FQDN in Linux</title>
-    <link>https://abdullah.today/fqdn/</link>
-    <pubDate>Sun, 21 Jun 2020 13:26:14 &#43;0500</pubDate>
-    <author>Author</author>
-    <guid>https://abdullah.today/fqdn/</guid>
-    <description><![CDATA[What is FQDN? FQDN stands for Fully Qualified Domain Name. It&rsquo;s complete domain name for a computer or host on the internet. FQDN is made of two things: hostname and domain name.
-Let me give you an example for demonstration.
-FQDN for my mail server is myemailserver.abdullah.today.
-The hostname is myemailserver. The domain is abdullah.today.
-Requirements You will need:
- IP Address Hostname FQDN  Edit hosts file Edit the /etc/hosts file and append this like this.]]></description>
 </item></channel>
 </rss>

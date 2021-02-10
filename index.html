@@ -11,7 +11,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://abdullah.today/" />
 <meta property="og:image" content="https://abdullah.today/logo.png"/>
-<meta property="og:updated_time" content="2021-02-09T20:12:36+05:00" />
+<meta property="og:updated_time" content="2021-02-10T18:52:24+05:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -106,7 +106,14 @@
           Read! And your Lord is the Most Generous.
           Who taught by the pen.</h3></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/openbsd-encrypted-install/">Openbsd Encrypted Install</a>
+        <a href="/things-to-do-after-new-openbsd-install/">Things to Do After New OpenBSD Install</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-02-10">2021-02-10</time></span></div><div class="content">So you have installed OpenBSD as main OS. Most of the things will work out of the box. But still you have to configure some things.
+Lock screen on suspend/hibernate/resume Login as root and create /etc/apm directory if it isn&rsquo;t there already.
+1 2 3 4 5 6 7  mkdir /etc/apm echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/suspend echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/resume echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/hibernate chmod +x /etc/apm/suspend chmod +x /etc/apm/hibernate chmod +x /etc/apm/resume   On lid closure, machines mostly get suspended.</div><div class="post-footer">
+        <a href="/things-to-do-after-new-openbsd-install/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/openbsd/">openbsd</a>,&nbsp;<a href="/tags/new-install/">new install</a>,&nbsp;<a href="/tags/encrypted-installation/">encrypted installation</a>,&nbsp;<a href="/tags/todo/">todo</a>,&nbsp;<a href="/tags/backlight-openbsd/">backlight openbsd</a>,&nbsp;<a href="/tags/xorg-setup-openbsd/">xorg setup openbsd</a>,&nbsp;<a href="/tags/openbsd-wsconctl/">openbsd wsconctl</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/openbsd-encrypted-install/">OpenBSD Encrypted Install</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-02-09">2021-02-09</time></span></div><div class="content">So this is how you can have a fully encrypted OpenBSD installation.
 Getting OpenBSD Go to OpenBSD website and download the .img file for your hardware.
 Creating install media If you are on some linux or mac, you can use dd command to burn it to USB drive.
@@ -124,7 +131,7 @@ Suppose your USB drive is appearing as /dev/sdb in lsblk&rsquo;s output:
         alt="/images/think-securely.png"
         title="My OpenBSD dedicated dotfiles" /></a>
         </div><h1 class="single-title" itemprop="name headline">
-        <a href="/openbsd-dedicated-dotfiles/">Openbsd Dedicated Dotfiles</a>
+        <a href="/openbsd-dedicated-dotfiles/">OpenBSD Dedicated Dotfiles</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-02-08">2021-02-08</time></span></div><div class="content">OpenBSD as new OS So I started using OpenBSD in start of 2021. My blog readers know I keep my dotfiles on Github/Gitlab. Most of the programs I have been using in past were okay with this change. But I had to configure many things.
 New Dotfiles I created a new directory dot in my home dir. And cherry picked some of my old dots. But still that wasn&rsquo;t enough. It took me 2 months to figure things out as per my liking.</div><div class="post-footer">
         <a href="/openbsd-dedicated-dotfiles/">Read More</a><div class="post-tags">
@@ -161,14 +168,6 @@ Tools being used For Arch Linux:
 1  $ sudo apt install -y msmtp   For Fedora, CentOS, Redhat etc:</div><div class="post-footer">
         <a href="/send-mail-using-gmail-from-terminal/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mail/">mail</a>,&nbsp;<a href="/tags/gmail/">gmail</a>,&nbsp;<a href="/tags/msmtp/">msmtp</a>,&nbsp;<a href="/tags/mutt/">mutt</a>,&nbsp;<a href="/tags/terminal/">terminal</a>,&nbsp;<a href="/tags/suckless/">suckless</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/ssh-passwordless-authentication/">SSH Passwordless Authentication</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-10-06">2020-10-06</time></span></div><div class="content">SSH login without password? Yeah you heard it right. Today I&rsquo;m going to teach you how you can enable passwordless authentication in ssh.
-You can login to your linux servers without password. How? Keep reading&hellip;
-Edit the SSH main configuration file.
-1 2 3 4 5 6 7 8 9 10  $ sudo vi /etc/ssh/sshd_config ... PubkeyAuthentication yes ...   Edit this line. If you see no, change it to yes.</div><div class="post-footer">
-        <a href="/ssh-passwordless-authentication/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ssh/">ssh</a>,&nbsp;<a href="/tags/passwordless-authentication/">passwordless authentication</a>,&nbsp;<a href="/tags/login/">login</a>,&nbsp;<a href="/tags/pubkey-authentication/">pubkey authentication</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>
