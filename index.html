@@ -11,7 +11,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://abdullah.today/" />
 <meta property="og:image" content="https://abdullah.today/logo.png"/>
-<meta property="og:updated_time" content="2021-02-08T11:37:18+05:00" />
+<meta property="og:updated_time" content="2021-02-09T20:12:36+05:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -105,7 +105,16 @@
           created humans from a clinging clot.
           Read! And your Lord is the Most Generous.
           Who taught by the pen.</h3></div>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/openbsd-encrypted-install/">Openbsd Encrypted Install</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-02-09">2021-02-09</time></span></div><div class="content">So this is how you can have a fully encrypted OpenBSD installation.
+Getting OpenBSD Go to OpenBSD website and download the .img file for your hardware.
+Creating install media If you are on some linux or mac, you can use dd command to burn it to USB drive.
+Suppose your USB drive is appearing as /dev/sdb in lsblk&rsquo;s output:
+1  dd if=install.img of=/dev/sdb bs=1M   Boot from install media Plug the new install media and reboot the system.</div><div class="post-footer">
+        <a href="/openbsd-encrypted-install/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/openbsd/">openbsd</a>,&nbsp;<a href="/tags/encryption/">encryption</a>,&nbsp;<a href="/tags/full-disk-encryption/">full disk encryption</a>,&nbsp;<a href="/tags/encrypted-openbsd-install/">encrypted openbsd install</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/openbsd-dedicated-dotfiles/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -160,14 +169,6 @@ Edit the SSH main configuration file.
 1 2 3 4 5 6 7 8 9 10  $ sudo vi /etc/ssh/sshd_config ... PubkeyAuthentication yes ...   Edit this line. If you see no, change it to yes.</div><div class="post-footer">
         <a href="/ssh-passwordless-authentication/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ssh/">ssh</a>,&nbsp;<a href="/tags/passwordless-authentication/">passwordless authentication</a>,&nbsp;<a href="/tags/login/">login</a>,&nbsp;<a href="/tags/pubkey-authentication/">pubkey authentication</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/how-to-share-android-screen/">How to Share Android Screen</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-09-15">2020-09-15</time></span></div><div class="content">There are times you want to share your android phone&rsquo;s screen with your Linux/Windows desktop. Like if you have got broken screen or for some purpose.
-So this post may help you.
-Requirements  Android phone ADB installed  In Arch Linux, you can install ADB with:
-1 2 3  $ sudo pacman -S android-tools   There is a program which is used to screen sharing. You can install it using AUR in Arch Linux, use apt if you are using Ubuntu/Debian.</div><div class="post-footer">
-        <a href="/how-to-share-android-screen/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/android/">android</a>,&nbsp;<a href="/tags/adb/">adb</a>,&nbsp;<a href="/tags/scrcpy/">scrcpy</a>,&nbsp;<a href="/tags/android-debugging/">android-debugging</a>,&nbsp;<a href="/tags/screensharing/">screensharing</a>,&nbsp;<a href="/tags/screen-sharing/">screen sharing</a>,&nbsp;<a href="/tags/android-debugging-bride/">android debugging bride</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -184,7 +185,7 @@ Requirements  Android phone ADB installed  In Arch Linux, you can install ADB wi
                     <span class="page-link" aria-hidden="true">&hellip;</span>
                 </li><li class="page-item ">
                     <span class="page-link">
-                        <a href="/page/6/">6</a>
+                        <a href="/page/7/">7</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">

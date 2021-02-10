@@ -4,9 +4,20 @@
         <link>https://abdullah.today/</link>
         <description>An InfoSec related Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
-            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 08 Feb 2021 11:37:18 &#43;0500</lastBuildDate>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 09 Feb 2021 20:12:36 &#43;0500</lastBuildDate>
             <atom:link href="https://abdullah.today/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Openbsd Encrypted Install</title>
+    <link>https://abdullah.today/openbsd-encrypted-install/</link>
+    <pubDate>Tue, 09 Feb 2021 20:12:36 &#43;0500</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/openbsd-encrypted-install/</guid>
+    <description><![CDATA[So this is how you can have a fully encrypted OpenBSD installation.
+Getting OpenBSD Go to OpenBSD website and download the .img file for your hardware.
+Creating install media If you are on some linux or mac, you can use dd command to burn it to USB drive.
+Suppose your USB drive is appearing as /dev/sdb in lsblk&rsquo;s output:
+1  dd if=install.img of=/dev/sdb bs=1M   Boot from install media Plug the new install media and reboot the system.]]></description>
+</item><item>
     <title>Openbsd Dedicated Dotfiles</title>
     <link>https://abdullah.today/openbsd-dedicated-dotfiles/</link>
     <pubDate>Mon, 08 Feb 2021 11:37:18 &#43;0500</pubDate>
@@ -100,15 +111,5 @@ FQDN for my mail server is myemailserver.abdullah.today.
 The hostname is myemailserver. The domain is abdullah.today.
 Requirements You will need:
  IP Address Hostname FQDN  Edit hosts file Edit the /etc/hosts file and append this like this.]]></description>
-</item><item>
-    <title>TMUX</title>
-    <link>https://abdullah.today/tmux/</link>
-    <pubDate>Sat, 06 Jun 2020 18:13:35 &#43;0500</pubDate>
-    <author>Author</author>
-    <guid>https://abdullah.today/tmux/</guid>
-    <description><![CDATA[TMUX tmux is a terminal multiplexer. You can run programs inside a tmux session, detach session and continue running programs in background, reattach later.
-Installation tmux is available in all linux distributions. You can install it using your distribution&rsquo;s package manager. In Arch Linux:
-1  $ sudo pacman -S tmux   Start You can start tmux by invoking tmux command inside your terminal.
-Keybindings The default modifier key is Ctrl + b followed by a key.]]></description>
 </item></channel>
 </rss>
