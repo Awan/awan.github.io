@@ -12,8 +12,9 @@
     <guid>https://abdullah.today/openbsd-dedicated-dotfiles/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/think-securely.png" referrerpolicy="no-referrer">
-            </div>OpenBSD as new OS So I started using OpenBSD in start of 2021. My blog readers know I keep my dotfiles on Github/Gitlab. Most of the programs I have been using in past were okay with this change. But I had to configure many things.
-New Dotfiles I created a new directory dot in my home dir. And cherry picked some of my old dots. But still that wasn&rsquo;t enough. It took me 2 months to figure things out as per my liking.]]></description>
+            </div>OpenBSD as new OS I keep my dotfiles on Github/Gitlab. I had to configure many things so I started a dedicated repository.
+New Dotfiles I created a new directory dot in my home dir. And cherry picked some of my old dots. I have pushed my new dot directory to Git[hub,lab] as [Awan,Abdullah]/dot respectively.
+Old Linux dotfiles Linux users still can find my dotfiles on Github and Gitlab.]]></description>
 </item><item>
     <title>Encrypted dotfiles with GnuPG</title>
     <link>https://abdullah.today/encrypted-dotfiles/</link>
