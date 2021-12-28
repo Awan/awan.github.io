@@ -8,10 +8,10 @@
         <title>How to manage a website using git - Abdullah Khabir</title><meta name="Description" content="How to manage a website using git"><meta property="og:title" content="How to manage a website using git" />
 <meta property="og:description" content="How to manage a website using git" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/site-as-git-repo/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/site-as-git-repo/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-05-10T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -110,67 +110,67 @@
 <p>Install git. Once installed, as root user, create git user and add it to www-data group.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">useradd git -m -G www-data
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">useradd git -m -G www-data
 </code></pre></td></tr></table>
 </div>
 </div><p>Login into this new git user.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">su - git
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">su - git
 </code></pre></td></tr></table>
 </div>
 </div><p>Create an ssh directory for this account.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mkdir .ssh
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir .ssh
 </code></pre></td></tr></table>
 </div>
 </div><p>Upload your user ssh public key to this directory how you want. I use pastebin here. Assuming you pasted your public key somewhere on pastebin, I&rsquo;ll fetch it using curl.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">curl -o .ssh/authorized_keys <span class="s1">&#39;pastebin address where you pasted the public key&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o .ssh/authorized_keys <span class="s1">&#39;pastebin address where you pasted the public key&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Create a directory for your user you wanna use for your site or this user maybe the one you use to login to your vps using ssh. I&rsquo;ll use user z for this post.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="o">&amp;&amp;</span> mkdir z <span class="o">&amp;&amp;</span> <span class="nb">cd</span> z
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="o">&amp;&amp;</span> mkdir z <span class="o">&amp;&amp;</span> <span class="nb">cd</span> z
 </code></pre></td></tr></table>
 </div>
 </div><p>Create a git repo here now.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git init --bare mysite.git
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git init --bare mysite.git
 </code></pre></td></tr></table>
 </div>
 </div><p>Create a hook in .git directory.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;#!/bin/sh \
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;#!/bin/sh \
 </span><span class="s2">cd /var/www/html \
 </span><span class="s2">unset GIT_DIR  \
 </span><span class="s2">git pull \ &#34;</span> &gt; ~/z/mysite.git/hooks/post-receive <span class="o">&amp;&amp;</span> chmod +X ~/z/mysite.git/hooks/post-receive
@@ -179,19 +179,19 @@
 </div><p>That&rsquo;s it. Now go to the directory where your site is hosted, in this example we used /var/www/html for site and z as username which is used to maintain our site in future using git like in above hook we used that. You can modify both hook and here this code too according to your needs.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /var/www/html <span class="o">&amp;&amp;</span> git clone ~/z/mysite.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mysite.git <span class="o">&amp;&amp;</span> mv * /var/www/html/ <span class="o">&amp;&amp;</span>  <span class="nb">cd</span> /var/www/html <span class="o">&amp;&amp;</span> rm -rf mysite.git
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /var/www/html <span class="o">&amp;&amp;</span> git clone ~/z/mysite.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mysite.git <span class="o">&amp;&amp;</span> mv * /var/www/html/ <span class="o">&amp;&amp;</span>  <span class="nb">cd</span> /var/www/html <span class="o">&amp;&amp;</span> rm -rf mysite.git
 </code></pre></td></tr></table>
 </div>
 </div><p>We have made it. Now in your local machine, clone this repo this way.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git clone <span class="s1">&#39;your vps ip or domain if it&#39;</span>s pointed to your vps<span class="err">&#39;</span>:z/site.git
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone <span class="s1">&#39;your vps ip or domain if it&#39;</span>s pointed to your vps<span class="err">&#39;</span>:z/site.git
 </code></pre></td></tr></table>
 </div>
 </div><p>Go to the directory you just cloned, do some modifications and push the changes and you&rsquo;ll see the magic. If you have some problems just ping me and I&rsquo;ll be glad to help.</p>

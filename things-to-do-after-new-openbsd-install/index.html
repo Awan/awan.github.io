@@ -10,10 +10,10 @@
 Lock screen on suspend/hibernate/resume Login as root and create /etc/apm directory if it isn&rsquo;t there already.
 1 2 3 4 5 6 7  mkdir /etc/apm echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/suspend echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/resume echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/hibernate chmod &#43;x /etc/apm/suspend chmod &#43;x /etc/apm/hibernate chmod &#43;x /etc/apm/resume   On lid closure, machines mostly get suspended." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/things-to-do-after-new-openbsd-install/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/things-to-do-after-new-openbsd-install/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-10T18:52:24+05:00" />
 <meta property="article:modified_time" content="2021-02-10T18:52:24+05:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -138,7 +138,7 @@ Lock screen on suspend/hibernate/resume Login as root and create /etc/apm direct
 <p>Login as root and create <code>/etc/apm</code> directory if it isn&rsquo;t there already.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -147,7 +147,7 @@ Lock screen on suspend/hibernate/resume Login as root and create /etc/apm direct
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mkdir /etc/apm
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir /etc/apm
 <span class="nb">echo</span> <span class="s2">&#34;pkill -USR1 xidle&#34;</span> &gt; /etc/apm/suspend
 <span class="nb">echo</span> <span class="s2">&#34;pkill -USR1 xidle&#34;</span> &gt; /etc/apm/resume
 <span class="nb">echo</span> <span class="s2">&#34;pkill -USR1 xidle&#34;</span> &gt; /etc/apm/hibernate
@@ -161,10 +161,10 @@ chmod +x /etc/apm/resume
 <p>Add your user to <code>wheel</code> and <code>staff</code> group.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">usermod -G wheel,staff <span class="s1">&#39;your username&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">usermod -G wheel,staff <span class="s1">&#39;your username&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="configure-doas">Configure <code>doas</code></h3>
@@ -175,13 +175,13 @@ to allow <code>wheel</code> group members runnig privileged commands without pas
 <p>Add this line to <code>/etc/doas.conf</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/doas.conf
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/doas.conf
 ...
 permit nopass keepenv :wheel
 ...
@@ -192,11 +192,11 @@ permit nopass keepenv :wheel
 <p>I have found this settings very useful for my laptop.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">rcctl <span class="nb">enable</span> apmd
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">rcctl <span class="nb">enable</span> apmd
 rcctl <span class="nb">set</span> apmd flags <span class="s2">&#34;-C -z 45&#34;</span>
 </code></pre></td></tr></table>
 </div>
@@ -210,7 +210,7 @@ rcctl <span class="nb">set</span> apmd flags <span class="s2">&#34;-C -z 45&#34;
 Also change <code>openfiles-max</code> and <code>openfiles-cur</code> to <code>4096</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -230,7 +230,7 @@ Also change <code>openfiles-max</code> and <code>openfiles-cur</code> to <code>4
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/login.conf
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/login.conf
 ...
 
 default:<span class="se">\
@@ -254,13 +254,13 @@ default:<span class="se">\
 <p><code>xenodm</code> is default display manager. It enables a console log once <code>X</code> is started. You can disable it by commenting the line like this.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/X11/xenodm/Xsetup_0
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/X11/xenodm/Xsetup_0
 ...
 <span class="c1"># xconsole -geometry 480x130-0-0 -daemon -notify -verbose -fn fixed -exitOnFail</span>
 ...

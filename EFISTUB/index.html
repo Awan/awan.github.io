@@ -8,10 +8,10 @@
         <title>EFISTUB - Abdullah Khabir</title><meta name="Description" content="How to boot linux kernel without grub or extra boot manager"><meta property="og:title" content="EFISTUB" />
 <meta property="og:description" content="How to boot linux kernel without grub or extra boot manager" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/EFISTUB/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/EFISTUB/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-13T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-13T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -127,16 +127,16 @@
 <p>Create a boot entry using efibootmgr.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># efibootmgr --create --disk /dev/sda --part 1 --label Debian --loader /vmlinuz --unicode &#34;root=/dev/sda2 rw initrd=\initrd.img&#34; --verbose
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># efibootmgr --create --disk /dev/sda --part 1 --label Debian --loader /vmlinuz --unicode &#34;root=/dev/sda2 rw initrd=\initrd.img&#34; --verbose
 </code></pre></td></tr></table>
 </div>
 </div><p>Explaination of the command.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -145,7 +145,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"> --create &#39;creates a new boot entry&#39;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"> --create &#39;creates a new boot entry&#39;
  --disk   &#39;disk where you wanna create the boot entry&#39;
  --part   &#39;partition number&#39;
  --label  &#39;the label for new entry&#39;
@@ -157,44 +157,44 @@
 </div><p>I have an encrypted installation on my machine so here is how I create an entry for me.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># efibootmgr --create --disk /dev/sda --part 1 --label &#39;My Debian&#39; --loader /vmlinuz --unicode &#34;cryptdevice=UUID=XXXXXXXXXXXXXXXXXX:cryptlvm root=UUID=XXXXXXXXXXXXXXXXXX rw initrd=\initrd.img resume=UUID=XXXXXXXXXXXXXXXXX&#34; --verbose
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># efibootmgr --create --disk /dev/sda --part 1 --label &#39;My Debian&#39; --loader /vmlinuz --unicode &#34;cryptdevice=UUID=XXXXXXXXXXXXXXXXXX:cryptlvm root=UUID=XXXXXXXXXXXXXXXXXX rw initrd=\initrd.img resume=UUID=XXXXXXXXXXXXXXXXX&#34; --verbose
 </code></pre></td></tr></table>
 </div>
 </div><p>where cryptdevice UUID is the UUID of my SSD&rsquo;s encrypted container&rsquo;s UUID and root&rsquo;s UUID is the UUID for my lvm volume where root is located, resume UUID is the lvm UUID where swap partition is. You can get UUID with blkid command.</p>
 <p>Now go to /boot directory and check for the vmlinuz and initrd.img. They might be in child directories like if EFI/grub or maybe somewhere else depending on your current boot managers. and move them to /boot. Also change your fstab (/etc/fstab) so that it mount your boot partition on /boot.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># mv /boot/efi/grub/vmlinuz-4.19.0-1-rt-amd64 /boot/vmlinuz
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># mv /boot/efi/grub/vmlinuz-4.19.0-1-rt-amd64 /boot/vmlinuz
 # mv /boot/efi/grub/initrd.img-4.9.0-8-amd64 /boot/initrd.img
 </code></pre></td></tr></table>
 </div>
 </div><p>and your fstab should be look like this.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">UUID=XXXX-XXXX    /boot     vfat    umask=0077  0   1
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">UUID=XXXX-XXXX    /boot     vfat    umask=0077  0   1
 </code></pre></td></tr></table>
 </div>
 </div><p>By default, debian installs kernel and initrd images with their version numbers. But also puts a symlink to it in / with vmlinuz name. So we have to write a script so that if we get an update of kernel, it will automatically rename it to vmlinuz and initrd.img. Just create a script with following path and make it executable.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/kernel/postinst.d/update-efistub</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/kernel/postinst.d/update-efistub</span>
 
 <span class="c1">#!/bin/sh</span>
 cp /vmlinuz /boot/
@@ -204,23 +204,23 @@ cp /vmlinuz /boot/
 </div><p>save it and make it executable.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># chmod +x /etc/kernel/postinst.d/update-efistub
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># chmod +x /etc/kernel/postinst.d/update-efistub
 </code></pre></td></tr></table>
 </div>
 </div><p>and do the same with initramfs.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/initramfs/post-update.d/update-efistub</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/initramfs/post-update.d/update-efistub</span>
 
 <span class="c1">#!/bin/sh</span>
 cp /initrd.img /boot/
@@ -230,10 +230,10 @@ cp /initrd.img /boot/
 </div><p>make it executable.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">chmod +x /etc/initramfs/post-update.d/update-efistub
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">chmod +x /etc/initramfs/post-update.d/update-efistub
 </code></pre></td></tr></table>
 </div>
 </div><p>That&rsquo;s it. Now uninstall any extra boot manager and reboot. You&rsquo;ll see that your machine is booting without a boot manager. Yeah, you heard it right. No sensible person will call it bootloader. They are just boot managers which also create an entry just like we did. So why don&rsquo;t we do it ourselves. Feel free to mail me if you get some errors.</p>
@@ -245,12 +245,12 @@ standard install, your command looks like this.</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># efibootmgr --create --disk /dev/sda --part 1 --label Debian --loader
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># efibootmgr --create --disk /dev/sda --part 1 --label Debian --loader
 &#39;\EFI\debian\vmlinuz&#39; --unicode &#39;root=UUID=XXXX-XXXX-XXXX-XXX ro quiet
 initrd=\\EFI\\debian\\initrd.img&#39; --verbose
 </code></pre></td></tr></table>
@@ -258,13 +258,13 @@ initrd=\\EFI\\debian\\initrd.img&#39; --verbose
 </div><p>and for an encrypted installation with lvm, it should be.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># efibootmgr --create --disk /dev/sda --part 1 --label Debian --loader
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># efibootmgr --create --disk /dev/sda --part 1 --label Debian --loader
 &#39;\EFI\debian\vmlinuz&#39; --unicode &#39;cryptdevice=UUID=XXXX-XXXX-XXXX-XXXX:cryptlvm
 root=UUID=XXXX-XXXX-XXXX-XXXX ro quiet initrd=\\EFI\\debian\\initrd.img
 resume=UUID=XXXX-XXXX-XXXX-XXXX&#39; --verbose

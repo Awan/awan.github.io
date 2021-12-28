@@ -8,10 +8,10 @@
         <title>use sudo with no password - Abdullah Khabir</title><meta name="Description" content="How to enable sudo without password in Debian, Ubuntu, Mint"><meta property="og:title" content="use sudo with no password" />
 <meta property="og:description" content="How to enable sudo without password in Debian, Ubuntu, Mint" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/enable%20sudo%20with%20no%20password/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/enable%20sudo%20with%20no%20password/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-18T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -127,16 +127,16 @@ ask for your password and command is executed.</p>
 <p>Assuming you have a privileged user, edit sudoers file.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo visudo
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo visudo
 </code></pre></td></tr></table>
 </div>
 </div><p>On my Debian installation, it looks like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -166,7 +166,7 @@ ask for your password and command is executed.</p>
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">## /etc/sudoers</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">## /etc/sudoers</span>
 <span class="c1">#</span>
 <span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>
 <span class="c1">#</span>
@@ -199,17 +199,17 @@ root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">
 </div><p>At the end of the file, just append this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">username <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> NOPASSWD:ALL
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">username <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> NOPASSWD:ALL
 </code></pre></td></tr></table>
 </div>
 </div><p>Replace <b>username</b> with your username.</p>
 <p>Here is my sudoers file.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -242,7 +242,7 @@ root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo cat /etc/sudoers
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo cat /etc/sudoers
 
 <span class="c1">#</span>
 <span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>

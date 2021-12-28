@@ -8,10 +8,10 @@
         <title>Multihead with BSPWM and Polybar - Abdullah Khabir</title><meta name="Description" content="How to configure dual screen in linux?"><meta property="og:title" content="Multihead with BSPWM and Polybar" />
 <meta property="og:description" content="How to configure dual screen in linux?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/multihead/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/multihead/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-02T10:52:37+05:00" />
 <meta property="article:modified_time" content="2020-06-02T10:52:37+05:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -179,7 +179,7 @@ laptop. What ever you see on first screen, you would see on second one.</p>
 <p>First get outputs names using <em>xrandr</em> without some arguments.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -242,7 +242,7 @@ laptop. What ever you see on first screen, you would see on second one.</p>
 </span><span class="lnt">61
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 xrandr
 
 Screen 0: minimum <span class="m">320</span> x 200, current <span class="m">3200</span> x 1080, maximum <span class="m">16384</span> x <span class="m">16384</span>
@@ -308,12 +308,12 @@ HDMI-2 connected 1280x1024+1920+0 <span class="o">(</span>normal left inverted r
 </div><p>Or to get connected monitors, you can invoke:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 xrandr -q <span class="p">|</span> awk <span class="s1">&#39;/ connected / {print $1}&#39;</span>
 
 </code></pre></td></tr></table>
@@ -326,11 +326,11 @@ on hardware change.</p>
 I want external monitor to appear at right of my laptop screen:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --auto --right-of eDP-1
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --auto --right-of eDP-1
 
 </code></pre></td></tr></table>
 </div>
@@ -340,7 +340,7 @@ away after this session.</p>
 <p>Here is my <em>~/.xpofile</em>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -484,7 +484,7 @@ away after this session.</p>
 </span><span class="lnt">142
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 $ vim ~/.xprofile_
 
 <span class="c1">#!/bin/sh</span>

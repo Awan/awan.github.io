@@ -8,10 +8,10 @@
         <title>How to install fonts in Linux - Abdullah Khabir</title><meta name="Description" content="Fonts"><meta property="og:title" content="How to install fonts in Linux" />
 <meta property="og:description" content="Fonts" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/fonts/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/fonts/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-18T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -129,7 +129,7 @@ On different distributions/machines, it&rsquo;s pain to collect packages you can
 <p>Here is the path I have added the fonts which almost all distributions accept today. And it&rsquo;s easy to maintain them too.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -302,7 +302,7 @@ On different distributions/machines, it&rsquo;s pain to collect packages you can
 </span><span class="lnt">171
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ ls ~/.local/share/fonts
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ls ~/.local/share/fonts
  awesome                                  Tamzen7x13b.pt3
  brands                                   Tamzen7x13b.ttf
  DejaVuMathTeXGyre.ttf                    Tamzen7x13r-13.fnt
@@ -500,11 +500,11 @@ On different distributions/machines, it&rsquo;s pain to collect packages you can
 Just install them and create these directories if they already don&rsquo;t exist.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ mkdir -p ~/.local/share/fonts
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mkdir -p ~/.local/share/fonts
 $ find / -name <span class="s1">&#39;*.ttf&#39;</span> -o -name <span class="s1">&#39;*.psf&#39;</span> -o -name <span class="s1">&#39;*.bdf&#39;</span> -o -name <span class="s1">&#39;*.fnt&#39;</span> -o -name <span class="s1">&#39;*.ttf&#39;</span> -o -name <span class="s1">&#39;*.pcf&#39;</span> -exec cp <span class="o">{}</span> ~/.local/share/fonts <span class="se">\;</span>
 </code></pre></td></tr></table>
 </div>
@@ -512,10 +512,10 @@ $ find / -name <span class="s1">&#39;*.ttf&#39;</span> -o -name <span class="s1"
 <p>After copying the files, we have to load them.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ fc-cache -fvv
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ fc-cache -fvv
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="autoload-fonts-on-boot">Autoload fonts on boot</h2>
@@ -540,11 +540,11 @@ $ find / -name <span class="s1">&#39;*.ttf&#39;</span> -o -name <span class="s1"
 <p>Put this file in session starting file. Like .Xsession or if you&rsquo;re using xorg-xinit to start your Desktop Environment or Windows Manager then put it into ~/.xinitrc.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ xset +fp ~/.local/share/fonts
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ xset +fp ~/.local/share/fonts
 $ xset fp rehash
 </code></pre></td></tr></table>
 </div>

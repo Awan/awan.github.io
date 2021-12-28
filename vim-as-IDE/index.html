@@ -8,10 +8,10 @@
         <title>How to use vIM as IDE in Debian, Ubuntu, Mint - Abdullah Khabir</title><meta name="Description" content="How to use vIM as IDE"><meta property="og:title" content="How to use vIM as IDE in Debian, Ubuntu, Mint" />
 <meta property="og:description" content="How to use vIM as IDE" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/vim-as-IDE/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/vim-as-IDE/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-10-11T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-10-11T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -154,39 +154,39 @@ features and make it default editor.</p>
 <p>Remove vIM if you have it.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt remove vim vim-runtime gvim vim-tiny vim-common vim-gui-common vim-tiny vim-common vim-gui-common 
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt remove vim vim-runtime gvim vim-tiny vim-common vim-gui-common vim-tiny vim-common vim-gui-common 
 </code></pre></td></tr></table>
 </div>
 </div><p>Install vIM.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt install vim-nox
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt install vim-nox
 </code></pre></td></tr></table>
 </div>
 </div><p>Install <em>Addon Manager</em>. You can use plugins without a plugin manager too but it really makes your life easier.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt install vim-addon-manager vim-youcompleteme
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt install vim-addon-manager vim-youcompleteme
 </code></pre></td></tr></table>
 </div>
 </div><p>Make vIM your default editor.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo update-alternatives --set editor /usr/bin/vim.nox
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo update-alternatives --set editor /usr/bin/vim.nox
 $ sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim.nox 1
 $ sudo update-alternatives --set vi /usr/bin/vim.nox
 </code></pre></td></tr></table>
@@ -195,10 +195,10 @@ $ sudo update-alternatives --set vi /usr/bin/vim.nox
 <p>After everything is installed, now you can configure vIM to use these plugins. For example, I use <i>vim-youcompleteme</i>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ vam install youcompleteme
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ vam install youcompleteme
 </code></pre></td></tr></table>
 </div>
 </div><p>That&rsquo;s it. You can always have a look at my

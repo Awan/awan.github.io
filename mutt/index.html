@@ -8,10 +8,10 @@
         <title>My Email Setup - Abdullah Khabir</title><meta name="Description" content="My Terminal based mail setup"><meta property="og:title" content="My Email Setup" />
 <meta property="og:description" content="My Terminal based mail setup" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/mutt/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/mutt/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-17T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -168,11 +168,11 @@ read/reply the emails using mutt.</p>
 <h2 id="install-required-tools">Install required tools</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt install -y isync mutt notmuch
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt install -y isync mutt notmuch
 
 </code></pre></td></tr></table>
 </div>
@@ -200,7 +200,7 @@ read/reply the emails using mutt.</p>
 <p>Let&rsquo;s configure it.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -226,7 +226,7 @@ read/reply the emails using mutt.</p>
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">IMAPAccount abdullah
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">IMAPAccount abdullah
 Host imap.gmail.com
 User user@gmail.com
 PassCmd <span class="s2">&#34;gpg -dq ~/.local/share/misc/abdullah.gpg&#34;</span>
@@ -255,10 +255,10 @@ SyncState *
 </div><p>Replace mailbox stuff with yours where necessary. And start isync.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ mbsync -VXa 
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mbsync -VXa 
 </code></pre></td></tr></table>
 </div>
 </div><p>Don&rsquo;t forget to run <b>notmuch</b> before or after it. Answer all questions
@@ -271,18 +271,18 @@ Pretty easy to use and have tons of features.</p>
 create this directory.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ mkdir -p ~/.config/mutt/credentials
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mkdir -p ~/.config/mutt/credentials
 $ touch ~/.config/mutt/muttrc
 </code></pre></td></tr></table>
 </div>
 </div><p>Edit <b>muttrc</b> to your needs. I&rsquo;m pasting mine here for reference.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -454,7 +454,7 @@ $ touch ~/.config/mutt/muttrc
 </span><span class="lnt">170
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.config/mutt/muttrc
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.config/mutt/muttrc
 
 
 <span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
@@ -651,7 +651,7 @@ synchronization.</p>
 <p>A service file:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -663,7 +663,7 @@ synchronization.</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.config/systemd/user/isync.service
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.config/systemd/user/isync.service
 
 <span class="o">[</span>Unit<span class="o">]</span>
 <span class="nv">Description</span><span class="o">=</span>Mailbox Sync
@@ -678,7 +678,7 @@ synchronization.</p>
 </div><p>and a timer:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -693,7 +693,7 @@ synchronization.</p>
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.config/systemd/user/isync.timer
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.config/systemd/user/isync.timer
 
 <span class="o">[</span>Unit<span class="o">]</span>
 <span class="nv">Description</span><span class="o">=</span>Mailbox Sync Timer
@@ -711,11 +711,11 @@ synchronization.</p>
 </div><p>Start them using:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ systemctl --user --now <span class="nb">enable</span> isync.timer
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ systemctl --user --now <span class="nb">enable</span> isync.timer
 
 </code></pre></td></tr></table>
 </div>

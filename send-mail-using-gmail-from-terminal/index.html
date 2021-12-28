@@ -13,10 +13,10 @@ Tools being used For Arch Linux:
 1  $ sudo pacman -S msmtp   For Debian, Ubuntu and other Debian derived distributions:
 1  $ sudo apt install -y msmtp   For Fedora, CentOS, Redhat etc:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/send-mail-using-gmail-from-terminal/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/send-mail-using-gmail-from-terminal/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-29T07:32:13+05:00" />
 <meta property="article:modified_time" content="2020-11-29T07:32:13+05:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -148,28 +148,28 @@ Tools being used For Arch Linux:
 <p>For Arch Linux:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S msmtp 
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S msmtp 
 </code></pre></td></tr></table>
 </div>
 </div><p>For Debian, Ubuntu and other Debian derived distributions:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt install -y msmtp
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt install -y msmtp
 </code></pre></td></tr></table>
 </div>
 </div><p>For Fedora, CentOS, Redhat etc:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo dnf install msmtp
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo dnf install msmtp
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="encrypt-password">Encrypt password</h3>
@@ -181,10 +181,10 @@ Tools being used For Arch Linux:
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ gpg -er <span class="s1">&#39;your gpg keyID&#39;</span> -o ~/.gmail-password.gpg -
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ gpg -er <span class="s1">&#39;your gpg keyID&#39;</span> -o ~/.gmail-password.gpg -
 </code></pre></td></tr></table>
 </div>
 </div><p>Now enter the password for your gmail from first step. Once done, enter <code>Ctrl + D</code>.</p>
@@ -192,7 +192,7 @@ Tools being used For Arch Linux:
 <p>Paste this into <code>~/.msmtprc</code> or if you want <code>msmtp</code> system wide so any user on this system can use this gmail account to send mails, copy it to <code>/etc/msmtprc</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -209,7 +209,7 @@ Tools being used For Arch Linux:
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">defaults
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">defaults
 auth    on
 tls     on
 tls_starttls    on
@@ -232,10 +232,10 @@ account default: myaccount
 <p>We are done now. Just send a test mail now.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">echo</span> <span class="s2">&#34;Just a test mail&#34;</span> <span class="p">|</span> msmtp -a default <span class="s1">&#39;some email address&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">echo</span> <span class="s2">&#34;Just a test mail&#34;</span> <span class="p">|</span> msmtp -a default <span class="s1">&#39;some email address&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="use-with-mutt">Use with mutt</h3>

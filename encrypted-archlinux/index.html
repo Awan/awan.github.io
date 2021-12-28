@@ -8,10 +8,10 @@
         <title>Encrypted Arch Linux installation - Abdullah Khabir</title><meta name="Description" content="Encrypted Arch Linux installation"><meta property="og:title" content="Encrypted Arch Linux installation" />
 <meta property="og:description" content="Encrypted Arch Linux installation" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/encrypted-archlinux/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/encrypted-archlinux/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-01-03T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-03T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -152,10 +152,10 @@ and open source linux distribution based on the rule Keep it Simple.</p>
 <p>On linux, you can use <strong>dd</strong>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>downloaded iso file <span class="nv">of</span><span class="o">=</span>/dev/sdX <span class="nv">status</span><span class="o">=</span>progress
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>downloaded iso file <span class="nv">of</span><span class="o">=</span>/dev/sdX <span class="nv">status</span><span class="o">=</span>progress
 </code></pre></td></tr></table>
 </div>
 </div><p>where X is your USB device&rsquo;s ID. Don&rsquo;t use a single partition. Use the whole
@@ -168,12 +168,12 @@ come boot options up. Choose your USB device from boot options.</p>
 connection, you have to connect it manually.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">wpa_passphrase <span class="s1">&#39;wifi APN&#39;</span> <span class="s1">&#39;wifi password&#39;</span> &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wpa_passphrase <span class="s1">&#39;wifi APN&#39;</span> <span class="s1">&#39;wifi password&#39;</span> &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf
 wpa_supplicant -Bc /etc/wpa_supplicant/wpa_supplicant.conf -i <span class="s1">&#39;wifi interface&#39;</span>
 dhclient
 </code></pre></td></tr></table>
@@ -190,15 +190,15 @@ It&rsquo;s straightforward.</p>
 archlinux.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">gdisk /dev/sda
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">gdisk /dev/sda
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -246,7 +246,7 @@ archlinux.</p>
 </span><span class="lnt">46
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">GPT fdisk <span class="o">(</span>gdisk<span class="o">)</span> version 1.0.1
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">GPT fdisk <span class="o">(</span>gdisk<span class="o">)</span> version 1.0.1
 
   Partition table scan:
   MBR: protective
@@ -308,19 +308,19 @@ to save the work.</p>
 <p>First, create a filesystem for EFI.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mkfs.vfat -F32 /dev/sda1
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkfs.vfat -F32 /dev/sda1
 </code></pre></td></tr></table>
 </div>
 </div><p>Now create a LUKS container.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> cryptsetup luksFormat /dev/sda2
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> cryptsetup luksFormat /dev/sda2
 </code></pre></td></tr></table>
 </div>
 </div><p>It will ask you to confirm. Type YES in all uppercase. Then choose a good
@@ -329,40 +329,40 @@ it.</p>
 <p>Now open the new container.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> cryptsetup open /dev/sda2 cryptlvm
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> cryptsetup open /dev/sda2 cryptlvm
 </code></pre></td></tr></table>
 </div>
 </div><p>Create a physical volume in this LUKS container.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> pvcreate /dev/mapper/cryptlvm
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> pvcreate /dev/mapper/cryptlvm
 </code></pre></td></tr></table>
 </div>
 </div><p>Create a volume group. I&rsquo;ll name it nix.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> vgcreate nix /dev/mapper/cryptlvm
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> vgcreate nix /dev/mapper/cryptlvm
 </code></pre></td></tr></table>
 </div>
 </div><p>Create logical volumes on volume group. I&rsquo;m creating three, one for encrypted swap
 and another for home and last one for root.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> lvcreate -L 8G nix -n swap
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> lvcreate -L 8G nix -n swap
  lvcreate -L 25G nix -n root
  lvcreate -l +100%FREE nix -n home
 </code></pre></td></tr></table>
@@ -370,12 +370,12 @@ and another for home and last one for root.</p>
 </div><p>Now create filesystems.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> mkfs.ext4 /dev/mapper/nix-root
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> mkfs.ext4 /dev/mapper/nix-root
  mkfs.ext4 /dev/mapper/nix-home
  mkswap /dev/mapper/nix-swap
 </code></pre></td></tr></table>
@@ -383,14 +383,14 @@ and another for home and last one for root.</p>
 </div><p>Mount them.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> mount /dev/mapper/nix-root /mnt
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> mount /dev/mapper/nix-root /mnt
  mkdir /mnt/home
  mkdir /mnt/boot
  mount /dev/mapper/nix-home /mnt/home
@@ -400,28 +400,28 @@ and another for home and last one for root.</p>
 </div><p>Turn the swap partition on.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> swapon /dev/mapper/nix-swap
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> swapon /dev/mapper/nix-swap
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="install-the-base-system">Install the base system</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> pacstrap /mnt base base-devel linux linux-firmware
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> pacstrap /mnt base base-devel linux linux-firmware
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="generate-fstab">Generate fstab</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -430,20 +430,20 @@ and another for home and last one for root.</p>
 <h3 id="chroot-into-new-system">chroot into new system.</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> arch-chroot /mnt
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> arch-chroot /mnt
 </code></pre></td></tr></table>
 </div>
 </div><p>Set the timezone.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> ln -s /usr/share/zoneinfo/Asia/Karachi /etc/localtime
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> ln -s /usr/share/zoneinfo/Asia/Karachi /etc/localtime
  hwclock --systohc
 </code></pre></td></tr></table>
 </div>
@@ -451,17 +451,17 @@ and another for home and last one for root.</p>
 <p>Set hostname</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> <span class="nb">echo</span> nix &gt; /etc/hostname
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> <span class="nb">echo</span> nix &gt; /etc/hostname
 </code></pre></td></tr></table>
 </div>
 </div><p>Replace nix with name you wanna give your machine to.</p>
 <p>Set locales</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -490,7 +490,7 @@ and another for home and last one for root.</p>
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> vim /etc/locale.gen
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> vim /etc/locale.gen
 
   <span class="c1">#en_HK ISO-8859-1  </span>
   <span class="c1">#en_IE.UTF-8 UTF-8  </span>
@@ -522,54 +522,54 @@ and another for home and last one for root.</p>
 </div><p>Uncomment en_US.UTF-8 UTF-8 . (remove # from the beginning)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> <span class="nb">echo</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 &gt; /etc/locale.conf
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> <span class="nb">echo</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 &gt; /etc/locale.conf
  locale-gen
 </code></pre></td></tr></table>
 </div>
 </div><p>Install some necessary software.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> pacman -S wpa_supplicant dhclient dialog
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> pacman -S wpa_supplicant dhclient dialog
 </code></pre></td></tr></table>
 </div>
 </div><p>Create a user.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> useradd -m -G wheel <span class="s1">&#39;username&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> useradd -m -G wheel <span class="s1">&#39;username&#39;</span>
  passwd <span class="s1">&#39;username&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Create root password</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> passwd
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> passwd
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="mkinitcpio-configuration">mkinitcpio configuration</h3>
 <p>Edit the file <strong>/etc/mkinitcpio.conf</strong>. Copy this line or write in order in hooks line. Order matters so don&rsquo;t ignore or you will get un-bootable system.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> vim /etc/mkinitcpio.conf
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> vim /etc/mkinitcpio.conf
 
 <span class="nv">HOOKS</span><span class="o">=(</span>base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems resume fsck<span class="o">)</span>
 
@@ -578,26 +578,26 @@ and another for home and last one for root.</p>
 </div><p>Generate mkinitcpio</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mkinitcpio -p linux
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkinitcpio -p linux
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="install-bootloader">Install bootloader</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> bootctl install 
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> bootctl install 
 </code></pre></td></tr></table>
 </div>
 </div><p>Create entries.</p>
 <p>Create a file <strong>/boot/loader/entries/arch.conf</strong>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -606,7 +606,7 @@ and another for home and last one for root.</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> vim /boot/loader/entries/arch.conf
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> vim /boot/loader/entries/arch.conf
 
 title	ArchLinux
 linux	/vmlinuz-linux
@@ -619,12 +619,12 @@ options <span class="nv">cryptdevice</span><span class="o">=</span><span class="
 <h3 id="un-mount-and-reboot">Un-mount and reboot</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"> <span class="nb">exit</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> <span class="nb">exit</span>
  umount /mnt
  reboot
 </code></pre></td></tr></table>

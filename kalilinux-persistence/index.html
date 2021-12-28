@@ -11,10 +11,10 @@ Make USB bootable Use dd to write the kali image to USB.
 In linux environment:
 1  # dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M   Replace kali-linux-xxxx.x-live-amd64.iso with downloaded iso iamge path and /dev/sdX with path of your USB device. You can find USB path by running lsblk in terminal. Make sure you don&rsquo;t select the existing linux installation drive." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/kalilinux-persistence/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/kalilinux-persistence/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-07-14T17:22:11+05:00" />
 <meta property="article:modified_time" content="2020-07-14T17:22:11+05:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -139,10 +139,10 @@ In linux environment:
 <p>In linux environment:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Replace <code>kali-linux-xxxx.x-live-amd64.iso</code> with downloaded iso iamge path and <code>/dev/sdX</code> with path of your USB device. You can find USB path by running <code>lsblk</code> in terminal. Make sure you don&rsquo;t select the existing linux installation drive.</p>
@@ -150,7 +150,7 @@ In linux environment:
 <p>Create a primary partition with <code>fdisk</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -168,7 +168,7 @@ In linux environment:
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># fdisk /dev/sdx</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># fdisk /dev/sdx</span>
 
 Welcome to fdisk <span class="o">(</span>util-linux 2.35.2<span class="o">)</span>.
 Changes will remain in memory only, <span class="k">until</span> you decide to write them.
@@ -192,13 +192,13 @@ Selected partition <span class="m">3</span>
 <p>Create ext4 filesystem in new partition.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 <span class="c1"># mkfs.ext4 /dev/sdX3 -L persistence</span>
 <span class="c1"># e2label /dev/sdX3 persistence</span>
 
@@ -208,12 +208,12 @@ Selected partition <span class="m">3</span>
 <p>Mount the new created partition somewhere in your filesystem.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 <span class="c1"># mount /dev/sdX3 /mnt</span>
 
 </code></pre></td></tr></table>
@@ -222,12 +222,12 @@ Selected partition <span class="m">3</span>
 <p>Create a configuration file in new partition which we mounted earlier at <code>/mnt</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 <span class="c1"># echo &#34;/ union&#34; &gt; /mnt/persistence.conf</span>
 
 </code></pre></td></tr></table>
@@ -236,12 +236,12 @@ Selected partition <span class="m">3</span>
 <p>Un-mount the partition.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 <span class="c1"># umount /dev/sdX3</span>
 
 </code></pre></td></tr></table>

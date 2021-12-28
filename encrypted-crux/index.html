@@ -8,10 +8,10 @@
         <title>How to install CRUX with encryption - Abdullah Khabir</title><meta name="Description" content="Encrypted CRUX installation"><meta property="og:title" content="How to install CRUX with encryption" />
 <meta property="og:description" content="Encrypted CRUX installation" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abdullah.today/encrypted-crux/" />
-<meta property="og:image" content="https://abdullah.today/logo.png"/>
+<meta property="og:url" content="https://abdullah.today/encrypted-crux/" /><meta property="og:image" content="https://abdullah.today/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-05-12T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://abdullah.today/logo.png"/>
 
@@ -183,14 +183,14 @@
 <p>Let&rsquo;s create a FAT filesystem on it for EFI.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">
 ```bash
 
 # mkfs.fat -F32 /dev/sda1
@@ -201,11 +201,11 @@
 <p>Create an encrypted LUKS container</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cryptsetup luksFormat /dev/sda2</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cryptsetup luksFormat /dev/sda2</span>
 
 </code></pre></td></tr></table>
 </div>
@@ -213,16 +213,16 @@
 <p>Open the encrypted container.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cryptsetup open /dev/sda2 crux</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cryptsetup open /dev/sda2 crux</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Now the encrypted container is available at /dev/mapper/crux so lets create some lvm stuff and create filesystems and a swap partition.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -233,7 +233,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pvcreate /dev/mapper/crux</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pvcreate /dev/mapper/crux</span>
 <span class="c1"># vgcreate ak /dev/mapper/crux</span>
 <span class="c1"># lvcreate -L 8G ak -n swap</span>
 <span class="c1"># lvcreate -L 50G ak -n root</span>
@@ -247,14 +247,14 @@
 </div><p>Mount the partitions and start installations.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># mount /dev/mapper/ak-root /mnt</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># mount /dev/mapper/ak-root /mnt</span>
 <span class="c1"># mkdir /mnt/{boot,home}</span>
 <span class="c1"># mount /dev/mapper/ak-home /mnt/home</span>
 <span class="c1"># mount /dev/sda1 /mnt/boot</span>
@@ -265,11 +265,11 @@
 <p>Start installation. Type &ldquo;setup&rdquo; and select &ldquo;YES&rdquo;. Install all packages. Make sure you get no error messages once installation is finished.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># setup</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># setup</span>
 
 </code></pre></td></tr></table>
 </div>
@@ -277,12 +277,12 @@
 <p>Enter chroot.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 <span class="c1"># setup-chroot</span>
 
 </code></pre></td></tr></table>
@@ -293,12 +293,12 @@
 <p>Generate locales.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># localedef -i en_US -f ISO-8859-1 en_US</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># localedef -i en_US -f ISO-8859-1 en_US</span>
 <span class="c1"># localedef -i en_US -f ISO-8859-1 en_US.ISO-8859-1</span>
 <span class="c1"># localedef -i en_US -f UTF-8 en_US.UTF-8</span>
 </code></pre></td></tr></table>
@@ -307,7 +307,7 @@
 <p>Edit rc.conf. Mine looks like this.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -325,7 +325,7 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/rc.conf</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/rc.conf</span>
 
 <span class="c1">#</span>
 <span class="c1"># /etc/rc.conf: system configuration</span>
@@ -347,14 +347,14 @@
 <p>Edit /etc/resolv.conf. I&rsquo;m using OpenDNS nameserver here.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/resolv.conf</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/resolv.conf</span>
 
 nameserver 208.67.222.222
 
@@ -365,7 +365,7 @@ nameserver 208.67.222.222
 <p>For wireless connection, you can use wpa_supplicant. For example if your interface is wlp3s0 and SSID is nix, add passphrase to it using wpa_passphrase like this.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -373,7 +373,7 @@ nameserver 208.67.222.222
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># wpa_passphrase nix &gt;&gt; /etc/wpa_supplicant.conf</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># wpa_passphrase nix &gt;&gt; /etc/wpa_supplicant.conf</span>
 Reading from STDIN  <span class="c1"># Type your passphrase.</span>
 
 <span class="c1"># wpa_supplicant -i wlp3s0 -B -c /etc/wpa_supplicant.conf</span>
@@ -385,7 +385,7 @@ Reading from STDIN  <span class="c1"># Type your passphrase.</span>
 <p>Compile the kernel now. Go to the /usr/src/linux directory. Configure the kernel config. Since we are gonna have an encrypted installation, we need some extra drivers. Invoke &lsquo;make menuconfig&rsquo; and enable these options. And also enable what is needed for your hardware. I&rsquo;ll add only options needed for encryption here.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -405,7 +405,7 @@ Reading from STDIN  <span class="c1"># Type your passphrase.</span>
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 General setup ---&gt;
 
   <span class="o">[</span>*<span class="o">]</span> Initial RAM filesystem and RAM disk <span class="o">(</span>iniramfs/initrd<span class="o">)</span> support
@@ -425,27 +425,27 @@ Cryptographic API ---&gt;
 
 </code></pre></td></tr></table>
 </div>
-</div><p>You can get my kernel config from <a href="https://gitlab.com/Abdullah/cfg/raw/master/kernel/config">https://gitlab.com/Abdullah/cfg/raw/master/kernel/config</a> by using wget and then edit it as per your hardware. This one is for Thinkpad with SSD.</p>
+</div><p>You can get my kernel config from <a href="https://gitlab.com/Abdullah/cfg/raw/master/kernel/config" target="_blank" rel="noopener noreffer">https://gitlab.com/Abdullah/cfg/raw/master/kernel/config</a> by using wget and then edit it as per your hardware. This one is for Thinkpad with SSD.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># wget https://gitlab.com/Abdullah/cfg/raw/master/kernel/config &gt; .config</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># wget https://gitlab.com/Abdullah/cfg/raw/master/kernel/config &gt; .config</span>
 
 </code></pre></td></tr></table>
 </div>
 </div><p>After you&rsquo;re done with configuring kernel, compile it. Once it&rsquo;s compiled, copy it to /boot directory and install modules.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># make -j8</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># make -j8</span>
 <span class="c1"># make modules_install</span>
 <span class="c1"># cp arch/x86/boot/bzImage /boot/vmlinuz</span>
 <span class="c1"># cp System.map /boot</span>
@@ -456,12 +456,12 @@ Cryptographic API ---&gt;
 <p>Set root password. Create our first user. And then we will create a second user for package management.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># passwd</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># passwd</span>
 <span class="c1"># useradd -G wheel,audio,video -m -U abdullah</span>
 <span class="c1"># passwd abdullah</span>
 </code></pre></td></tr></table>
@@ -470,22 +470,22 @@ Cryptographic API ---&gt;
 <p>Add new created user to sudoers. Uncomment this line in /etc/sudoers.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">%wheel <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> ALL
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">%wheel <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> ALL
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="user-for-creating-packages">User for creating packages</h2>
 <p>Now let&rsquo;s create a user for package management.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># groupadd pkgmk</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># groupadd pkgmk</span>
 <span class="c1"># useradd -m -g pkgmk pkgmk</span>
 
 </code></pre></td></tr></table>
@@ -493,11 +493,11 @@ Cryptographic API ---&gt;
 </div><p>Add our user to this newly created group.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># usermod -aG pkgmk abdullah</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># usermod -aG pkgmk abdullah</span>
 
 </code></pre></td></tr></table>
 </div>
@@ -505,18 +505,18 @@ Cryptographic API ---&gt;
 <p>Edit /etc/prt-get.conf to set up fakeroot building.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># makecommand sudo -H -u pkgmk /usr/bin/fakeroot /usr/bin/pkgmk</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># makecommand sudo -H -u pkgmk /usr/bin/fakeroot /usr/bin/pkgmk</span>
 
 </code></pre></td></tr></table>
 </div>
 </div><p>Edit /etc/pkgmk.conf.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -525,7 +525,7 @@ Cryptographic API ---&gt;
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/pkgmk.conf</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/pkgmk.conf</span>
 
 <span class="nv">PKGMK_SOURCE_DIR</span><span class="o">=</span><span class="s2">&#34;/home/pkgmk/distfiles&#34;</span>
 <span class="nv">PKGMK_PACKAGE_DIR</span><span class="o">=</span><span class="s2">&#34;/home/pkgmk/packages&#34;</span>
@@ -537,13 +537,13 @@ Cryptographic API ---&gt;
 </div><p>Create those directories.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># mkdir /home/pkgmk/{distfiles,packages,work}</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># mkdir /home/pkgmk/{distfiles,packages,work}</span>
 <span class="c1"># chown pkgmk:pkgmk /home/pkgmk/*</span>
 <span class="c1"># chmod 775 /home/pkgmk/*</span>
 
@@ -552,12 +552,12 @@ Cryptographic API ---&gt;
 </div><p>Enable contrib repository.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 <span class="c1"># mv /etc/ports/contrib.rsync.inactive /etc/ports/contrib.rsync</span>
 
 </code></pre></td></tr></table>
@@ -565,13 +565,13 @@ Cryptographic API ---&gt;
 </div><p>Add my custom ports repository.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 <span class="c1"># echo &#34;ROOT_DIR=/usr/ports/ak\nURL=https://abdullah.today/ports&#34; &gt; /etc/ports/ak.httpup</span>
 
 
@@ -580,7 +580,7 @@ Cryptographic API ---&gt;
 </div><p>Enable contrib and my repository by editing /etc/prt-get.conf. Uncomment the line which says &ldquo;prtdir /usr/ports/contrib&rdquo; and add this line on top of the other port directories path. &ldquo;prtdir /usr/ports/ak&rdquo;. Also don&rsquo;t forget to uncomment the line which says, &ldquo;runscripts yes&rdquo;. After editing the file, it should be look like this.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -636,7 +636,7 @@ Cryptographic API ---&gt;
 </span><span class="lnt">54
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 <span class="c1">###</span>
 <span class="c1">### prt-get conf</span>
 <span class="c1">###</span>
@@ -695,12 +695,12 @@ makecommand sudo -H -u pkgmk /usr/bin/fakeroot /usr/bin/pkgmk
 </div><p>Sync ports now.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 <span class="c1"># ports -u</span>
 
 </code></pre></td></tr></table>
@@ -708,12 +708,12 @@ makecommand sudo -H -u pkgmk /usr/bin/fakeroot /usr/bin/pkgmk
 </div><p>Get fakeroot installed if you don&rsquo;t have yet.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 <span class="c1"># prt-get install fakeroot</span>
 
 </code></pre></td></tr></table>
@@ -740,12 +740,12 @@ makecommand sudo -H -u pkgmk /usr/bin/fakeroot /usr/bin/pkgmk
 <p>Get dracut and create an initramfs.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># prt-get depinst dracut</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># prt-get depinst dracut</span>
 <span class="c1"># dracut initramfs.img</span>
 
 </code></pre></td></tr></table>
@@ -772,11 +772,11 @@ makecommand sudo -H -u pkgmk /usr/bin/fakeroot /usr/bin/pkgmk
 <p>I&rsquo;m using EFISTUB. If you&rsquo;re using some other boot manager like grub, consult their wiki. There are some dracut related variables in this example. I&rsquo;d recommand, create a new file with vim, and then in prompt mode, type :r! blkid so you&rsquo;ll get all UUIDs there in the file. Just copy them in the new file, delete other lines and save it. Then redirect this file&rsquo;s output to shell like this, &lsquo;cat newCreatedFile | sh&rsquo;. It will create a new entry. root-UUID=, rd.luks.uuid=, and rd.lvm.vg=. For EFISTUB, create an entry like this.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># efibootmgr --create --disk /dev/sda --part 1 --label &#39;CRUX-Encrypted&#39; --loader /vmlinuz --unicode &#34;root=UUID=XXXX-XXXX-XXXX-XXX rw resume=UUID=XXXX-XXXX-XXXX-XXXX rd.luks.uuid=XXXX-XXXX-XXXX-XXXX rd.lvm.vg=ak&#34; --verbose</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># efibootmgr --create --disk /dev/sda --part 1 --label &#39;CRUX-Encrypted&#39; --loader /vmlinuz --unicode &#34;root=UUID=XXXX-XXXX-XXXX-XXX rw resume=UUID=XXXX-XXXX-XXXX-XXXX rd.luks.uuid=XXXX-XXXX-XXXX-XXXX rd.lvm.vg=ak&#34; --verbose</span>
 
 </code></pre></td></tr></table>
 </div>
