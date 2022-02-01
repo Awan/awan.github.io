@@ -2,16 +2,40 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://abdullah.today/quran/baqara/</loc><lastmod>2021-12-28T12:13:03&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://abdullah.today/quran/fateha/</loc><lastmod>2021-12-28T11:52:11&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://abdullah.today/</loc><lastmod>2022-01-05T14:53:06&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://abdullah.today/categories/</loc><lastmod>2022-01-05T14:53:06&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://abdullah.today/categories/quran/</loc><lastmod>2022-01-05T14:53:06&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://abdullah.today/quran/baqara/</loc><lastmod>2021-12-28T12:13:03&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/quran/fateha/</loc><lastmod>2021-12-28T11:52:11&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/</loc><lastmod>2022-02-01T12:12:17&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/al-jaathiyah/</loc><lastmod>2022-02-01T12:12:17&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/categories/</loc><lastmod>2022-02-01T12:12:17&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/crouching/</loc><lastmod>2022-02-01T12:12:17&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/categories/quran/</loc><lastmod>2022-02-01T12:12:17&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/quran-chapter-45/</loc><lastmod>2022-02-01T12:12:17&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/quran/</loc><lastmod>2022-02-01T12:12:17&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/surah-al-jaathiyah/</loc><lastmod>2022-02-01T12:12:17&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/quran/al-jaathiyah/</loc><lastmod>2022-02-01T12:12:17&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/</loc><lastmod>2022-02-01T12:12:17&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/the-kneeling-down/</loc><lastmod>2022-02-01T12:12:17&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/dukhaan/</loc><lastmod>2022-02-01T12:04:41&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/quran-chapter-44/</loc><lastmod>2022-02-01T12:04:41&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/surah-ad-dukhaan/</loc><lastmod>2022-02-01T12:04:41&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/quran/ad-dukhaan/</loc><lastmod>2022-02-01T12:04:41&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/the-smoke/</loc><lastmod>2022-02-01T12:04:41&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/gold/</loc><lastmod>2022-02-01T12:00:15&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/luxury/</loc><lastmod>2022-02-01T12:00:15&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/quran-chapter-43/</loc><lastmod>2022-02-01T12:00:15&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/surah-az-zukhruf/</loc><lastmod>2022-02-01T12:00:15&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/quran/az-zukhruf/</loc><lastmod>2022-02-01T12:00:15&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/the-gold-adornments/</loc><lastmod>2022-02-01T12:00:15&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/the-ornaments-of-gold/</loc><lastmod>2022-02-01T12:00:15&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/zukhruf/</loc><lastmod>2022-02-01T12:00:15&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/ash-shoora/</loc><lastmod>2022-02-01T11:55:16&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/quran-chapter-42/</loc><lastmod>2022-02-01T11:55:16&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/shoora/</loc><lastmod>2022-02-01T11:55:16&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/quran/ash-shoora/</loc><lastmod>2022-02-01T11:55:16&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://abdullah.today/tags/the-consultation/</loc><lastmod>2022-02-01T11:55:16&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://abdullah.today/tags/quran-chapter-41/</loc><lastmod>2022-01-05T14:53:06&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://abdullah.today/quran/</loc><lastmod>2022-01-05T14:53:06&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://abdullah.today/tags/surah-haa-meem-sajda/</loc><lastmod>2022-01-05T14:53:06&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://abdullah.today/quran/haa-meem-sajda/</loc><lastmod>2022-01-05T14:53:06&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://abdullah.today/tags/</loc><lastmod>2022-01-05T14:53:06&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://abdullah.today/tags/momin/</loc><lastmod>2022-01-05T14:51:46&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://abdullah.today/tags/quran-chapter-40/</loc><lastmod>2022-01-05T14:51:46&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://abdullah.today/tags/surah-momin/</loc><lastmod>2022-01-05T14:51:46&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
@@ -182,13 +206,13 @@
             <loc>https://abdullah.today/tags/aal-e-imran/</loc><lastmod>2021-12-28T12:58:25&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://abdullah.today/tags/alimran/</loc><lastmod>2021-12-28T12:58:25&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://abdullah.today/quran/aalimran/</loc><lastmod>2021-12-28T12:58:25&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://abdullah.today/tags/baqara/</loc><lastmod>2021-12-28T12:13:03&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://abdullah.today/tags/baqarah/</loc><lastmod>2021-12-28T12:13:03&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://abdullah.today/tags/chapter-2/</loc><lastmod>2021-12-28T12:13:03&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://abdullah.today/tags/surah-baqara/</loc><lastmod>2021-12-28T12:13:03&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://abdullah.today/tags/fateha/</loc><lastmod>2021-12-28T11:52:11&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://abdullah.today/tags/quran/</loc><lastmod>2021-12-28T11:52:11&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://abdullah.today/tags/ummulkitab/</loc><lastmod>2021-12-28T11:52:11&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://abdullah.today/tags/baqara/</loc><lastmod>2021-12-28T12:13:03&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/tags/baqarah/</loc><lastmod>2021-12-28T12:13:03&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/tags/chapter-2/</loc><lastmod>2021-12-28T12:13:03&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/tags/surah-baqara/</loc><lastmod>2021-12-28T12:13:03&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/tags/fateha/</loc><lastmod>2021-12-28T11:52:11&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/tags/quran/</loc><lastmod>2021-12-28T11:52:11&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://abdullah.today/tags/ummulkitab/</loc><lastmod>2021-12-28T11:52:11&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/backdoor/</loc><lastmod>2021-02-18T14:53:36&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/malware/</loc><lastmod>2021-02-18T14:53:36&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://abdullah.today/tags/persistent-backdoor/</loc><lastmod>2021-02-18T14:53:36&#43;05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
