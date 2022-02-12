@@ -4,7 +4,7 @@
         <link>https://abdullah.today/categories/quran/</link>
         <description>Quran - Category - Abdullah Khabir</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
-            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 08 Feb 2022 22:46:58 &#43;0500</lastBuildDate><atom:link href="https://abdullah.today/categories/quran/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 12 Feb 2022 00:47:17 -0500</lastBuildDate><atom:link href="https://abdullah.today/categories/quran/" rel="self" type="application/rss+xml" /><item>
     <title>Surah Baqara</title>
     <link>https://abdullah.today/quran/baqara/</link>
     <pubDate>Tue, 28 Dec 2021 12:13:03 &#43;0500</pubDate>
@@ -17,6 +17,20 @@
     <pubDate>Tue, 28 Dec 2021 11:52:11 &#43;0500</pubDate>
     <author>Author</author>
     <guid>https://abdullah.today/quran/fateha/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Surah Al-Maaarij</title>
+    <link>https://abdullah.today/quran/al-maaarij/</link>
+    <pubDate>Sat, 12 Feb 2022 00:47:17 -0500</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/quran/al-maaarij/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Surah Al-Haaqqa</title>
+    <link>https://abdullah.today/quran/al-haaqqa/</link>
+    <pubDate>Sat, 12 Feb 2022 00:43:39 -0500</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/quran/al-haaqqa/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Surah Al-Qalam</title>
@@ -59,20 +73,6 @@
     <pubDate>Sun, 06 Feb 2022 22:28:14 &#43;0500</pubDate>
     <author>Author</author>
     <guid>https://abdullah.today/quran/al-munafiqoon/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Surah Al-Jumua</title>
-    <link>https://abdullah.today/quran/al-jumua/</link>
-    <pubDate>Sun, 06 Feb 2022 22:25:30 &#43;0500</pubDate>
-    <author>Author</author>
-    <guid>https://abdullah.today/quran/al-jumua/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Surah As-Saff</title>
-    <link>https://abdullah.today/quran/as-saff/</link>
-    <pubDate>Sun, 06 Feb 2022 22:21:05 &#43;0500</pubDate>
-    <author>Author</author>
-    <guid>https://abdullah.today/quran/as-saff/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
