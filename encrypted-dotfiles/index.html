@@ -162,9 +162,9 @@ So lets do it in a secure fashion.</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ mkdir -p ~/cfg/etc/.android
-$ mkdir -p ~/cfg/etc/.local/share/misc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ mkdir -p ~/cfg/etc/.android
+</span></span><span class="line"><span class="cl">$ mkdir -p ~/cfg/etc/.local/share/misc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="move-the-sensitive-files">Move the sensitive files</h2>
 <p>So now we have created the directories. Lets move the real files we wanna add to
@@ -174,8 +174,8 @@ git repository for tracking.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ mv ~/.android/adbkey ~/cfg/etc/.local/share/misc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ mv ~/.android/adbkey ~/cfg/etc/.local/share/misc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="create-a-symlink-for-private-file">Create a symlink for private file</h2>
 <div class="highlight"><div class="chroma">
@@ -184,9 +184,9 @@ git repository for tracking.</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~/cfg/etc/.android
-$ ln -sf ../.local/share/misc/adbkey adbkey
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ <span class="nb">cd</span> ~/cfg/etc/.android
+</span></span><span class="line"><span class="cl">$ ln -sf ../.local/share/misc/adbkey adbkey
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="create-a-symlink-or-stow-the-files">Create a symlink or stow the file(s)</h2>
 <p>Let stow do this for you. It&rsquo;s very useful piece of software and I manage my
@@ -198,9 +198,9 @@ distribution repositories.</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~/cfg
-$ stow etc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ <span class="nb">cd</span> ~/cfg
+</span></span><span class="line"><span class="cl">$ stow etc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>It will create a symlink ~/.android/adbkey pointing to
 ~/cfg/etc/.android/adbkey.</p>
@@ -213,9 +213,9 @@ only track the symlink.</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~/cfg
-$ git add etc/.android
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ <span class="nb">cd</span> ~/cfg
+</span></span><span class="line"><span class="cl">$ git add etc/.android
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="tell-git-to-ignore-sensitive-files">Tell git to ignore sensitive file(s)</h2>
 <div class="highlight"><div class="chroma">
@@ -223,8 +223,8 @@ $ git add etc/.android
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">echo</span> <span class="s2">&#34;etc/.local/share/misc/&#34;</span> &gt;&gt; ~/cfg/.gitignore
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;etc/.local/share/misc/&#34;</span> &gt;&gt; ~/cfg/.gitignore
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now it won&rsquo;t track the sensitive files in ~/cfg/.local/share/misc.</p>
 <h2 id="compress-the-sensitive-files-with-tar">Compress the sensitive file(s) with tar</h2>
@@ -234,9 +234,9 @@ $ git add etc/.android
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~/cfg
-$ tar czf encrypted.tar.gz etc/.local/share/misc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ <span class="nb">cd</span> ~/cfg
+</span></span><span class="line"><span class="cl">$ tar czf encrypted.tar.gz etc/.local/share/misc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="encrypt-the-tar-archive-and-delete-the-un-encrypted-archive">Encrypt the tar archive and delete the un-encrypted archive</h2>
 <div class="highlight"><div class="chroma">
@@ -245,9 +245,9 @@ $ tar czf encrypted.tar.gz etc/.local/share/misc
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ gpg -er abdullah@abdullah.today encrypted.tar.gz
-$ rm encrypted.tar.gz
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ gpg -er abdullah@abdullah.today encrypted.tar.gz
+</span></span><span class="line"><span class="cl">$ rm encrypted.tar.gz
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Replace <a href="mailto:abdullah@abdullah.today" rel="">abdullah@abdullah.today</a> with your email ID you used while creating gpg
 key.</p>
@@ -258,9 +258,9 @@ key.</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~/cfg
-$ git add encrypted.tar.gz.gpg
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ <span class="nb">cd</span> ~/cfg
+</span></span><span class="line"><span class="cl">$ git add encrypted.tar.gz.gpg
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="commit-and-push-the-changes-to-remote">Commit and push the changes to remote</h2>
 <div class="highlight"><div class="chroma">
@@ -269,9 +269,9 @@ $ git add encrypted.tar.gz.gpg
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ git commit -m <span class="s1">&#39;adding encrypted dotfiles&#39;</span>
-$ git push
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ git commit -m <span class="s1">&#39;adding encrypted dotfiles&#39;</span>
+</span></span><span class="line"><span class="cl">$ git push
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="functions-to-automate-this-process">Functions to automate this process</h2>
 <p>Here I have written two bash/zsh functions to automate this stuff.
@@ -287,14 +287,14 @@ endot to encrypt the dotfiles and dedot to decrypt them.</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">endot<span class="o">()</span>
-<span class="o">{</span>
-  <span class="nb">cd</span> ~/cfg
-  tar czf encrypted.tar.gz etc/.local/share/misc
-  gpg -er abdullah@abdullah.today encrypted.tar.gz
-  rm encrypted.tar.gz
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">endot<span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">cd</span> ~/cfg
+</span></span><span class="line"><span class="cl">  tar czf encrypted.tar.gz etc/.local/share/misc
+</span></span><span class="line"><span class="cl">  gpg -er abdullah@abdullah.today encrypted.tar.gz
+</span></span><span class="line"><span class="cl">  rm encrypted.tar.gz
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>and</p>
 <div class="highlight"><div class="chroma">
@@ -308,14 +308,14 @@ endot to encrypt the dotfiles and dedot to decrypt them.</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">dedot<span class="o">()</span>
-<span class="o">{</span>
-  <span class="nb">cd</span> ~/cfg
-  gpg -do encrypted.tar.gz encrypted.tar.gz.gpg
-  tar xvf encrypted.tar.gz
-  rm encrypted.tar.gz
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">dedot<span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">cd</span> ~/cfg
+</span></span><span class="line"><span class="cl">  gpg -do encrypted.tar.gz encrypted.tar.gz.gpg
+</span></span><span class="line"><span class="cl">  tar xvf encrypted.tar.gz
+</span></span><span class="line"><span class="cl">  rm encrypted.tar.gz
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>You can save the functions into your shell initialzing files like ~/.zshrc for zsh
 and ~/.bashrc for bash.</p>

@@ -142,8 +142,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>install.img <span class="nv">of</span><span class="o">=</span>/dev/sdb <span class="nv">bs</span><span class="o">=</span>1M
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dd <span class="k">if</span><span class="o">=</span>install.img <span class="nv">of</span><span class="o">=</span>/dev/sdb <span class="nv">bs</span><span class="o">=</span>1M
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="boot-from-install-media">Boot from install media</h3>
 <p>Plug the new install media and reboot the system. Once its starting, press the dedicated button to get the boot options screen. Select the USB drive and hit Enter.</p>
@@ -155,8 +155,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sysctl hw.disknames
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sysctl hw.disknames
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>It will show you disks. First one might be your hard drive/SSD like <code>sd0</code>.</p>
 <p>You can verify your drive by running:</p>
@@ -165,8 +165,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">disklabel /dev/sd0
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">disklabel /dev/sd0
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="erase-data-on-drive">Erase data on drive</h3>
 <p>Once you&rsquo;re sure with target drive, erase data on drive. Its optional step though.</p>
@@ -176,9 +176,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /dev <span class="o">&amp;&amp;</span> sh MAKEDEV sd0
-dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/rsd0c <span class="nv">bs</span><span class="o">=</span>1m
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /dev <span class="o">&amp;&amp;</span> sh MAKEDEV sd0
+</span></span><span class="line"><span class="cl">dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/rsd0c <span class="nv">bs</span><span class="o">=</span>1m
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="partitioning">Partitioning</h3>
 <div class="highlight"><div class="chroma">
@@ -195,17 +195,17 @@ dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">fdisk -iy -g -b <span class="m">960</span> sd0
-disklabel -E sd0
-Label editor <span class="o">(</span>enter <span class="s1">&#39;?&#39;</span> <span class="k">for</span> <span class="nb">help</span> at any prompt<span class="o">)</span>
-sd0&gt; a a			
-offset: <span class="o">[</span>1024<span class="o">]</span>
-size: <span class="o">[</span>39825135<span class="o">]</span> *
-FS type: <span class="o">[</span>4.2BSD<span class="o">]</span> RAID
-sd0*&gt; w
-sd0&gt; q
-No label changes.
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">fdisk -iy -g -b <span class="m">960</span> sd0
+</span></span><span class="line"><span class="cl">disklabel -E sd0
+</span></span><span class="line"><span class="cl">Label editor <span class="o">(</span>enter <span class="s1">&#39;?&#39;</span> <span class="k">for</span> <span class="nb">help</span> at any prompt<span class="o">)</span>
+</span></span><span class="line"><span class="cl">sd0&gt; a a			
+</span></span><span class="line"><span class="cl">offset: <span class="o">[</span>1024<span class="o">]</span>
+</span></span><span class="line"><span class="cl">size: <span class="o">[</span>39825135<span class="o">]</span> *
+</span></span><span class="line"><span class="cl">FS type: <span class="o">[</span>4.2BSD<span class="o">]</span> RAID
+</span></span><span class="line"><span class="cl">sd0*&gt; w
+</span></span><span class="line"><span class="cl">sd0&gt; q
+</span></span><span class="line"><span class="cl">No label changes.
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="encryption">Encryption</h3>
 <div class="highlight"><div class="chroma">
@@ -218,13 +218,13 @@ No label changes.
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">bioctl -c C -l sd0a softraid0
-New passphrase:
-Re-type passphrase:
-sd1 at scsibus2 targ <span class="m">1</span> lun 0: &lt;OPENBSD, SR CRYPTO, 005&gt; SCSI2 0/direct fixed
-sd1: 19445MB, <span class="m">512</span> bytes/sector, <span class="m">39824607</span> sectors
-softraid0: CRYPTO volume attached as sd1
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bioctl -c C -l sd0a softraid0
+</span></span><span class="line"><span class="cl">New passphrase:
+</span></span><span class="line"><span class="cl">Re-type passphrase:
+</span></span><span class="line"><span class="cl">sd1 at scsibus2 targ <span class="m">1</span> lun 0: &lt;OPENBSD, SR CRYPTO, 005&gt; SCSI2 0/direct fixed
+</span></span><span class="line"><span class="cl">sd1: 19445MB, <span class="m">512</span> bytes/sector, <span class="m">39824607</span> sectors
+</span></span><span class="line"><span class="cl">softraid0: CRYPTO volume attached as sd1
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Keep in mind /dev/sd1 exists:</p>
 <div class="highlight"><div class="chroma">
@@ -232,8 +232,8 @@ softraid0: CRYPTO volume attached as sd1
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /dev <span class="o">&amp;&amp;</span> sh MAKEDEV sd1
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /dev <span class="o">&amp;&amp;</span> sh MAKEDEV sd1
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="zero-out-first-megabyte">Zero out first Megabyte</h3>
 <div class="highlight"><div class="chroma">
@@ -241,8 +241,8 @@ softraid0: CRYPTO volume attached as sd1
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/rsd1c <span class="nv">bs</span><span class="o">=</span>1m <span class="nv">count</span><span class="o">=</span><span class="m">1</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/rsd1c <span class="nv">bs</span><span class="o">=</span>1m <span class="nv">count</span><span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="back-to-installer">Back to installer</h3>
 <p>Type <code>exit</code> to get the installer screen back. Now just give it the newly encrypted device for installation.</p>

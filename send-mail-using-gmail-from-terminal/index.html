@@ -151,8 +151,8 @@ Tools being used For Arch Linux:
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S msmtp 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S msmtp 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>For Debian, Ubuntu and other Debian derived distributions:</p>
 <div class="highlight"><div class="chroma">
@@ -160,8 +160,8 @@ Tools being used For Arch Linux:
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt install -y msmtp
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo apt install -y msmtp
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>For Fedora, CentOS, Redhat etc:</p>
 <div class="highlight"><div class="chroma">
@@ -169,8 +169,8 @@ Tools being used For Arch Linux:
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo dnf install msmtp
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo dnf install msmtp
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="encrypt-password">Encrypt password</h3>
 <p>Using <code>gpg</code>, we are going to encrypt our password. I have a detailed video tutorial on <code>gpg</code> if you&rsquo;re interested.</p>
@@ -184,8 +184,8 @@ Tools being used For Arch Linux:
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ gpg -er <span class="s1">&#39;your gpg keyID&#39;</span> -o ~/.gmail-password.gpg -
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ gpg -er <span class="s1">&#39;your gpg keyID&#39;</span> -o ~/.gmail-password.gpg -
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now enter the password for your gmail from first step. Once done, enter <code>Ctrl + D</code>.</p>
 <h3 id="configure-msmtp">Configure msmtp</h3>
@@ -209,22 +209,22 @@ Tools being used For Arch Linux:
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">defaults
-auth    on
-tls     on
-tls_starttls    on
-tls_trust_file  /etc/ssl/certs/ca-certificates.crt
-logfile     ~/.msmtp.log
-
-account myaccount
-host    smtp.gmail.com
-port    <span class="m">587</span>
-from    your_gmail_address
-user    your_gmail_address
-passwordeval    <span class="s2">&#34;echo </span><span class="k">$(</span>gpg --batch -q --decrypt ~/.gmail-password.gpg<span class="k">)</span><span class="s2">&#34;</span>
-
-account default: myaccount
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">defaults
+</span></span><span class="line"><span class="cl">auth    on
+</span></span><span class="line"><span class="cl">tls     on
+</span></span><span class="line"><span class="cl">tls_starttls    on
+</span></span><span class="line"><span class="cl">tls_trust_file  /etc/ssl/certs/ca-certificates.crt
+</span></span><span class="line"><span class="cl">logfile     ~/.msmtp.log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">account myaccount
+</span></span><span class="line"><span class="cl">host    smtp.gmail.com
+</span></span><span class="line"><span class="cl">port    <span class="m">587</span>
+</span></span><span class="line"><span class="cl">from    your_gmail_address
+</span></span><span class="line"><span class="cl">user    your_gmail_address
+</span></span><span class="line"><span class="cl">passwordeval    <span class="s2">&#34;echo </span><span class="k">$(</span>gpg --batch -q --decrypt ~/.gmail-password.gpg<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">account default: myaccount
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Replace <code>your_gmail_address</code> with your gmail address.</p>
 <p>Voila.</p>
@@ -235,8 +235,8 @@ account default: myaccount
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">echo</span> <span class="s2">&#34;Just a test mail&#34;</span> <span class="p">|</span> msmtp -a default <span class="s1">&#39;some email address&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;Just a test mail&#34;</span> <span class="p">|</span> msmtp -a default <span class="s1">&#39;some email address&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="use-with-mutt">Use with mutt</h3>
 <p>You can use this <code>msmtp</code> setup with <code>mutt</code> which is suck less mail client and runs in a terminal.

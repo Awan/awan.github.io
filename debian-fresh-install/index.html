@@ -137,11 +137,11 @@ Don&rsquo;t worry, I have you covered what to do next.</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt install build-essential \
- git zsh mpv feh xss-lock urlview \
- xbindkeys stow offlineimap mutt msmtp \
- notmuch vim.nox rxvt-unicode -y 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ sudo apt install build-essential \
+</span></span><span class="line"><span class="cl"> git zsh mpv feh xss-lock urlview \
+</span></span><span class="line"><span class="cl"> xbindkeys stow offlineimap mutt msmtp \
+</span></span><span class="line"><span class="cl"> notmuch vim.nox rxvt-unicode -y 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="setup-touchpad">Setup touchpad</h2>
 <p>If you have a machine that supports multitouch, enabling tap to click is a good option. Create directories if they don&rsquo;t have already created.</p>
@@ -150,8 +150,8 @@ Don&rsquo;t worry, I have you covered what to do next.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo mkdir -p /etc/X11/xorg.conf.d
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ sudo mkdir -p /etc/X11/xorg.conf.d
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create a file here as 20-libinput.conf. Mine looks like:</p>
 <div class="highlight"><div class="chroma">
@@ -169,18 +169,18 @@ Don&rsquo;t worry, I have you covered what to do next.</p>
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ cat /etc/X11/xorg.conf.d/20-libinput.conf
-
-Section &#34;InputClass&#34;
-	Identifier &#34;libinput touchpad catchall&#34;
-  MatchIsTouchpad &#34;on&#34;
-  Driver &#34;libinput&#34;
-  MatchDevicePath &#34;/dev/input/event*&#34;
-  Option &#34;Tapping&#34; &#34;on&#34;
-  Option &#34;TappingButtonMap&#34; &#34;lrm&#34;
-  Option &#34;NaturalScrolling&#34; &#34;true&#34;
-EndSection
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ cat /etc/X11/xorg.conf.d/20-libinput.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Section &#34;InputClass&#34;
+</span></span><span class="line"><span class="cl">	Identifier &#34;libinput touchpad catchall&#34;
+</span></span><span class="line"><span class="cl">  MatchIsTouchpad &#34;on&#34;
+</span></span><span class="line"><span class="cl">  Driver &#34;libinput&#34;
+</span></span><span class="line"><span class="cl">  MatchDevicePath &#34;/dev/input/event*&#34;
+</span></span><span class="line"><span class="cl">  Option &#34;Tapping&#34; &#34;on&#34;
+</span></span><span class="line"><span class="cl">  Option &#34;TappingButtonMap&#34; &#34;lrm&#34;
+</span></span><span class="line"><span class="cl">  Option &#34;NaturalScrolling&#34; &#34;true&#34;
+</span></span><span class="line"><span class="cl">EndSection
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="brightness-keys">Brightness Keys</h2>
 <p>On some hardware, brightness keys don&rsquo;t work out of the box. So create a file
@@ -197,15 +197,15 @@ EndSection
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ cat /etc/X11/xorg.conf.d/30-backlight.conf 
-
-Section &#34;Device&#34;
-	Identifier &#34;card0&#34;
-	Driver	   &#34;intel&#34;
-	Option	   &#34;Backlight&#34; &#34;intel_backlight&#34;
-	BusID      &#34;PCI:0:2:0&#34;
-EndSection
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ cat /etc/X11/xorg.conf.d/30-backlight.conf 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Section &#34;Device&#34;
+</span></span><span class="line"><span class="cl">	Identifier &#34;card0&#34;
+</span></span><span class="line"><span class="cl">	Driver	   &#34;intel&#34;
+</span></span><span class="line"><span class="cl">	Option	   &#34;Backlight&#34; &#34;intel_backlight&#34;
+</span></span><span class="line"><span class="cl">	BusID      &#34;PCI:0:2:0&#34;
+</span></span><span class="line"><span class="cl">EndSection
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="automatically-lock-screen-on-resume-from-suspension">Automatically lock screen on resume from suspension</h2>
 <p>systemd-logind automatically suspends the laptop if lid is closed. But you have
@@ -231,20 +231,20 @@ use slock.</p>
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ cat /etc/systemd/system/wakelock@.service
-
-[Unit]
-Description=Automatically lock the screen on resume from suspension
-Before=sleep.target suspend.target
-
-[Service]
-User=%i
-Environment=DISPLAY=:0
-ExecStart=/usr/bin/slock
-
-[Install]
-WantedBy=sleep.target suspend.target
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ cat /etc/systemd/system/wakelock@.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Unit]
+</span></span><span class="line"><span class="cl">Description=Automatically lock the screen on resume from suspension
+</span></span><span class="line"><span class="cl">Before=sleep.target suspend.target
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Service]
+</span></span><span class="line"><span class="cl">User=%i
+</span></span><span class="line"><span class="cl">Environment=DISPLAY=:0
+</span></span><span class="line"><span class="cl">ExecStart=/usr/bin/slock
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Install]
+</span></span><span class="line"><span class="cl">WantedBy=sleep.target suspend.target
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Reload the systemd daemon and enable/start it. Replace <b>YOUR USERNAME</b> with
 your username.</p>
@@ -255,10 +255,10 @@ your username.</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo systemctl daemon-reload
-$ sudo systemctl enable wakelock@&lt;YOUR USERNAME&gt;.service
-$ sudo systemctl start wakelock@&lt;YOUR USERNAME&gt;.service
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ sudo systemctl daemon-reload
+</span></span><span class="line"><span class="cl">$ sudo systemctl enable wakelock@&lt;YOUR USERNAME&gt;.service
+</span></span><span class="line"><span class="cl">$ sudo systemctl start wakelock@&lt;YOUR USERNAME&gt;.service
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>That&rsquo;s it. I&rsquo;ll update this article for more things I remember or anytime I had
 to reinstall and find something I had to do&hellip;</p>

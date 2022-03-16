@@ -130,8 +130,8 @@ ask for your password and command is executed.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo visudo
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo visudo
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>On my Debian installation, it looks like this:</p>
 <div class="highlight"><div class="chroma">
@@ -166,35 +166,35 @@ ask for your password and command is executed.</p>
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">## /etc/sudoers</span>
-<span class="c1">#</span>
-<span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>
-<span class="c1">#</span>
-<span class="c1"># Please consider adding local content in /etc/sudoers.d/ instead of</span>
-<span class="c1"># directly modifying this file.</span>
-<span class="c1">#</span>
-<span class="c1"># See the man page for details on how to write a sudoers file.</span>
-<span class="c1">#</span>
-Defaults	env_reset
-Defaults	mail_badpass
-Defaults	<span class="nv">secure_path</span><span class="o">=</span><span class="s2">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
-
-<span class="c1"># Host alias specification</span>
-
-<span class="c1"># User alias specification</span>
-
-<span class="c1"># Cmnd alias specification</span>
-
-<span class="c1"># User privilege specification</span>
-root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
-
-<span class="c1"># Allow members of group sudo to execute any command</span>
-%sudo	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
-
-<span class="c1"># See sudoers(5) for more information on &#34;#include&#34; directives:</span>
-
-<span class="c1">#includedir /etc/sudoers.d</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">## /etc/sudoers</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Please consider adding local content in /etc/sudoers.d/ instead of</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># directly modifying this file.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># See the man page for details on how to write a sudoers file.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl">Defaults	env_reset
+</span></span><span class="line"><span class="cl">Defaults	mail_badpass
+</span></span><span class="line"><span class="cl">Defaults	<span class="nv">secure_path</span><span class="o">=</span><span class="s2">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Host alias specification</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># User alias specification</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Cmnd alias specification</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># User privilege specification</span>
+</span></span><span class="line"><span class="cl">root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Allow members of group sudo to execute any command</span>
+</span></span><span class="line"><span class="cl">%sudo	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># See sudoers(5) for more information on &#34;#include&#34; directives:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#includedir /etc/sudoers.d</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>At the end of the file, just append this:</p>
 <div class="highlight"><div class="chroma">
@@ -202,8 +202,8 @@ root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">username <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> NOPASSWD:ALL
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">username <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> NOPASSWD:ALL
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Replace <b>username</b> with your username.</p>
 <p>Here is my sudoers file.</p>
@@ -242,38 +242,38 @@ root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo cat /etc/sudoers
-
-<span class="c1">#</span>
-<span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>
-<span class="c1">#</span>
-<span class="c1"># Please consider adding local content in /etc/sudoers.d/ instead of</span>
-<span class="c1"># directly modifying this file.</span>
-<span class="c1">#</span>
-<span class="c1"># See the man page for details on how to write a sudoers file.</span>
-<span class="c1">#</span>
-Defaults	env_reset
-Defaults	mail_badpass
-Defaults	<span class="nv">secure_path</span><span class="o">=</span><span class="s2">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
-
-<span class="c1"># Host alias specification</span>
-
-<span class="c1"># User alias specification</span>
-
-<span class="c1"># Cmnd alias specification</span>
-
-<span class="c1"># User privilege specification</span>
-root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
-
-<span class="c1"># Allow members of group sudo to execute any command</span>
-%sudo	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
-
-<span class="c1"># See sudoers(5) for more information on &#34;#include&#34; directives:</span>
-
-<span class="c1"># I don&#39;t want a password everytime for my user.</span>
-ak	<span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> NOPASSWD:ALL
-<span class="c1">#includedir /etc/sudoers.d</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo cat /etc/sudoers
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># This file MUST be edited with the &#39;visudo&#39; command as root.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Please consider adding local content in /etc/sudoers.d/ instead of</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># directly modifying this file.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># See the man page for details on how to write a sudoers file.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl">Defaults	env_reset
+</span></span><span class="line"><span class="cl">Defaults	mail_badpass
+</span></span><span class="line"><span class="cl">Defaults	<span class="nv">secure_path</span><span class="o">=</span><span class="s2">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Host alias specification</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># User alias specification</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Cmnd alias specification</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># User privilege specification</span>
+</span></span><span class="line"><span class="cl">root	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Allow members of group sudo to execute any command</span>
+</span></span><span class="line"><span class="cl">%sudo	<span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># See sudoers(5) for more information on &#34;#include&#34; directives:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># I don&#39;t want a password everytime for my user.</span>
+</span></span><span class="line"><span class="cl">ak	<span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> NOPASSWD:ALL
+</span></span><span class="line"><span class="cl"><span class="c1">#includedir /etc/sudoers.d</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now open a new terminal and try to install something using sudo. You won&rsquo;t be
 asked to enter your password from now.</p>

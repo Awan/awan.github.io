@@ -35,7 +35,7 @@ In linux environment:
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/abdullah.today\/kalilinux-persistence\/"
-        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "kali linux, kali linux persistence, usb, linux in usb, bootable","wordcount":  318 ,
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "kali linux, kali linux persistence, usb, linux in usb, bootable","wordcount":  313 ,
         "url": "https:\/\/abdullah.today\/kalilinux-persistence\/","datePublished": "2020-07-14T17:22:11+05:00","dateModified": "2020-07-14T17:22:11+05:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
@@ -113,7 +113,7 @@ In linux environment:
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Kalilinux Persistence</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-14">2020-07-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;318 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-14">2020-07-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;313 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -142,8 +142,8 @@ In linux environment:
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Replace <code>kali-linux-xxxx.x-live-amd64.iso</code> with downloaded iso iamge path and <code>/dev/sdX</code> with path of your USB device. You can find USB path by running <code>lsblk</code> in terminal. Make sure you don&rsquo;t select the existing linux installation drive.</p>
 <h2 id="create-persistence-partition">Create persistence partition</h2>
@@ -165,26 +165,24 @@ In linux environment:
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
-</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># fdisk /dev/sdx</span>
-
-Welcome to fdisk <span class="o">(</span>util-linux 2.35.2<span class="o">)</span>.
-Changes will remain in memory only, <span class="k">until</span> you decide to write them.
-Be careful before using the write command.
-
-The device contains <span class="s1">&#39;iso9660&#39;</span> signature and it will be removed by a write command. See fdisk<span class="o">(</span>8<span class="o">)</span> man page and --wipe option <span class="k">for</span> more details.
-
-Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
-Partition <span class="nb">type</span>
-   p   primary <span class="o">(</span><span class="m">3</span> primary, <span class="m">0</span> extended, <span class="m">1</span> free<span class="o">)</span>
-   e   extended <span class="o">(</span>container <span class="k">for</span> logical partitions<span class="o">)</span>
-Select <span class="o">(</span>default e<span class="o">)</span>:p
-
-Selected partition <span class="m">3</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># fdisk /dev/sdx</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Welcome to fdisk <span class="o">(</span>util-linux 2.35.2<span class="o">)</span>.
+</span></span><span class="line"><span class="cl">Changes will remain in memory only, <span class="k">until</span> you decide to write them.
+</span></span><span class="line"><span class="cl">Be careful before using the write command.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">The device contains <span class="s1">&#39;iso9660&#39;</span> signature and it will be removed by a write command. See fdisk<span class="o">(</span>8<span class="o">)</span> man page and --wipe option <span class="k">for</span> more details.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
+</span></span><span class="line"><span class="cl">Partition <span class="nb">type</span>
+</span></span><span class="line"><span class="cl">   p   primary <span class="o">(</span><span class="m">3</span> primary, <span class="m">0</span> extended, <span class="m">1</span> free<span class="o">)</span>
+</span></span><span class="line"><span class="cl">   e   extended <span class="o">(</span>container <span class="k">for</span> logical partitions<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Select <span class="o">(</span>default e<span class="o">)</span>:p
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Selected partition <span class="m">3</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Press <code>n</code> to create a new partition. Type <code>p</code> to make it primary. Hit enter twice so all the remaining space would be allocated to new partition.</p>
 <p>Type <code>w</code> to write changes to USB drive.</p>
@@ -195,14 +193,12 @@ Selected partition <span class="m">3</span>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
-<span class="c1"># mkfs.ext4 /dev/sdX3 -L persistence</span>
-<span class="c1"># e2label /dev/sdX3 persistence</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># mkfs.ext4 /dev/sdX3 -L persistence</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># e2label /dev/sdX3 persistence</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="mount-new-partition">Mount new partition</h2>
 <p>Mount the new created partition somewhere in your filesystem.</p>
@@ -210,13 +206,11 @@ Selected partition <span class="m">3</span>
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
-<span class="c1"># mount /dev/sdX3 /mnt</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># mount /dev/sdX3 /mnt</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="create-configuration">Create configuration</h2>
 <p>Create a configuration file in new partition which we mounted earlier at <code>/mnt</code>:</p>
@@ -224,13 +218,11 @@ Selected partition <span class="m">3</span>
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
-<span class="c1"># echo &#34;/ union&#34; &gt; /mnt/persistence.conf</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># echo &#34;/ union&#34; &gt; /mnt/persistence.conf</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="un-mount-the-partition">Un-mount the partition</h2>
 <p>Un-mount the partition.</p>
@@ -238,13 +230,11 @@ Selected partition <span class="m">3</span>
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
-<span class="c1"># umount /dev/sdX3</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># umount /dev/sdX3</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="reboot">Reboot</h2>
 <p>Reboot and press your hardware dedicated button to boot from new created USB. Don&rsquo;t forget to select the persistence option from Kali menu.</p>

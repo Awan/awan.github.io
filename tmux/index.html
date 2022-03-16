@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/abdullah.today\/tmux\/"
-        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "tmux, screen, multiplexer, console","wordcount":  1131 ,
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "tmux, screen, multiplexer, console","wordcount":  1129 ,
         "url": "https:\/\/abdullah.today\/tmux\/","datePublished": "2020-06-06T18:13:35+05:00","dateModified": "2020-06-06T18:13:35+05:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
@@ -107,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">TMUX</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-06">2020-06-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1131 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-06">2020-06-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1129 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -142,8 +142,8 @@ distribution&rsquo;s package manager. In <em>Arch Linux</em>:</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo pacman -S tmux
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo pacman -S tmux
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="start">Start</h3>
 <p>You can start <em>tmux</em> by invoking <code>tmux</code> command inside your terminal.</p>
@@ -164,16 +164,16 @@ then hit another key and tmux will get it.</p>
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
-$ vi ~/.tmux.conf
-
-...
-
-unbind C-b
-<span class="nb">set</span> option -g prefix <span class="sb">`</span>
-...
-:wq
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ vi ~/.tmux.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">unbind C-b
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> option -g prefix <span class="sb">`</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">:wq
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Here I have removed the default prefix and have bounded &ldquo;`&rdquo; as prefix.
 I found it useful than default prefix.</p>
@@ -383,158 +383,156 @@ needs, its well documented with comments.</p>
 </span><span class="lnt">145
 </span><span class="lnt">146
 </span><span class="lnt">147
-</span><span class="lnt">148
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.tmux.conf
-
-
-<span class="c1">#  ██████████ ████     ████ ██     ██ ██     ██</span>
-<span class="c1"># ░░░░░██░░░ ░██░██   ██░██░██    ░██░░██   ██</span>
-<span class="c1">#     ░██    ░██░░██ ██ ░██░██    ░██ ░░██ ██</span>
-<span class="c1">#     ░██    ░██ ░░███  ░██░██    ░██  ░░███</span>
-<span class="c1">#     ░██    ░██  ░░█   ░██░██    ░██   ██░██</span>
-<span class="c1">#     ░██    ░██   ░    ░██░██    ░██  ██ ░░██</span>
-<span class="c1">#     ░██    ░██        ░██░░███████  ██   ░░██</span>
-<span class="c1">#     ░░     ░░         ░░  ░░░░░░░  ░░     ░░</span>
-<span class="c1">#</span>
-<span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
-<span class="c1"># ░▓ Author ▓ AK &lt;abdullah@abdullah.today&gt;</span>
-<span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
-<span class="c1"># ░░░░░░░░░░</span>
-
-<span class="c1"># source powerline</span>
-<span class="nb">source</span> /usr/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf
-
-<span class="c1"># Custom Prefix</span>
-unbind C-b
-set-option -g prefix <span class="sb">`</span>
-<span class="nb">bind</span> <span class="sb">`</span> send-prefix
-
-<span class="c1"># Shell</span>
-<span class="nb">set</span> -g default-command /bin/zsh
-<span class="nb">set</span> -g default-shell /bin/zsh
-
-<span class="c1"># utf-8 support in status bar</span>
-<span class="c1">#set -g status-utf8 on</span>
-
-<span class="c1"># Reload the config</span>
-<span class="nb">bind</span> r source-file ~/.tmux.conf <span class="se">\;</span> display <span class="s2">&#34;~/.tmux.conf reloaded&#34;</span>
-
-<span class="c1"># Synchronize panes</span>
-<span class="nb">bind</span> e setw synchronize-panes <span class="se">\;</span> display <span class="s2">&#34;synchronize mode&#34;</span>
-
-<span class="c1"># Splits</span>
-unbind %
-unbind <span class="s1">&#39;&#34;&#39;</span>
-<span class="nb">bind</span> h split-window -v
-<span class="nb">bind</span> v split-window -h
-<span class="c1">#bind -n M-h send-keys</span>
-
-<span class="c1"># enable vi-mode</span>
-setw -g mode-keys vi
-<span class="nb">set</span> -g status-keys vi
-
-<span class="c1"># copy paste</span>
-unbind <span class="o">[</span>
-<span class="nb">bind</span> Escape copy-mode
-unbind p
-<span class="nb">bind</span> p paste-buffer
-bind-key -T copy-mode-vi <span class="s1">&#39;v&#39;</span> send -X begin-selection
-bind-key -T copy-mode-vi <span class="s1">&#39;y&#39;</span> send -X copy-pipe-and-cancel <span class="s1">&#39;xclip -in -selection clipboard&#39;</span>
-
-<span class="c1"># command mode</span>
-<span class="nb">bind</span> : command-prompt
-
-<span class="c1"># Kill panes</span>
-<span class="nb">bind</span> x kill-pane
-
-<span class="c1"># Status on off key</span>
-<span class="nb">bind</span> t <span class="nb">set</span> status
-
-<span class="c1"># Lock the tty</span>
-
-<span class="nb">bind</span> b run-shell <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.local/bin/unilock&#34;</span>
-
-<span class="c1"># Alerts</span>
-setw -g monitor-activity on
-<span class="nb">set</span> -g visual-activity on
-
-<span class="c1"># Enable mouse mode</span>
-setw -g mouse on
-
-<span class="c1"># Default terminal mode</span>
-<span class="nb">set</span> -g default-terminal <span class="s1">&#39;screen-256color&#39;</span>
-
-<span class="c1"># Status and colors</span>
-<span class="nb">set</span> -g status-justify left
-<span class="nb">set</span> -g status-interval <span class="m">2</span>
-<span class="nb">set</span> -g status-bg colour25
-<span class="nb">set</span> -g status-fg colour222
-
-<span class="c1"># Window status</span>
-set-option -g status-position bottom
-setw -g window-status-format <span class="s2">&#34;#[bg=colour246, fg=colour14, bold] #W &#34;</span>
-setw -g window-status-current-format <span class="s2">&#34;#[bg=colour25, fg=colour14, bold] #W &#34;</span>
-
-<span class="c1"># Right status</span>
-<span class="nb">set</span> -g status-right-length <span class="m">100</span>
-<span class="nb">set</span> -g status-right  <span class="s1">&#39;#(~/.local/bin/tmux-status)&#39;</span>
-<span class="nb">set</span> -g status-left-length <span class="m">50</span>
-<span class="nb">set</span> -g status-left <span class="s1">&#39;&#39;</span>
-
-<span class="c1"># Visuals</span>
-setw -g monitor-activity on
-set-option -g bell-action none
-set-option -g visual-activity on
-set-option -g visual-bell off
-set-option -g visual-silence off
-
-<span class="c1"># clock</span>
-<span class="nb">set</span> -g clock-mode-colour colour20
-
-<span class="c1"># urlview</span>
-run-shell <span class="nv">$HOME</span>/.local/bin/tmux.urlview
-
-<span class="c1"># resize panes</span>
-setw -g aggressive-resize on
-
-<span class="c1"># No delay</span>
-<span class="nb">set</span> -sg escape-time <span class="m">0</span>
-
-<span class="c1"># History</span>
-<span class="nb">set</span> -g history-limit <span class="m">10000</span>
-
-<span class="c1"># Scrolling</span>
-set-option -g terminal-overrides <span class="s1">&#39;xterm*:smcup@:rmcup@&#39;</span>
-
-<span class="c1"># Panes index</span>
-<span class="nb">set</span> -g pane-base-index <span class="m">1</span>
-<span class="nb">set</span> -g renumber-windows on
-
-<span class="c1"># Windows index</span>
-<span class="nb">set</span> -g base-index <span class="m">1</span>
-
-<span class="c1"># Layouts</span>
-<span class="nb">bind</span> Z previous-layout
-<span class="nb">bind</span> X next-layout
-
-<span class="c1"># Detach others</span>
-<span class="nb">bind</span> D detach -a
-
-<span class="c1"># Navigate and resize splits</span>
-<span class="nv">is_vim</span><span class="o">=</span><span class="s2">&#34;ps -o state= -o comm= -t &#39;#{pane_tty}&#39; \
-</span><span class="s2">    | grep -iqE &#39;^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?</span>$<span class="s2">&#39;&#34;</span>
-<span class="nb">bind</span> -n C-h <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-h&#34;</span>  <span class="s2">&#34;select-pane -L&#34;</span>
-<span class="nb">bind</span> -n C-j <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-j&#34;</span>  <span class="s2">&#34;select-pane -D&#34;</span>
-<span class="nb">bind</span> -n C-k <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-k&#34;</span>  <span class="s2">&#34;select-pane -U&#34;</span>
-<span class="nb">bind</span> -n C-l <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-l&#34;</span>  <span class="s2">&#34;select-pane -R&#34;</span>
-<span class="nb">bind</span> -n M-h <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-h&#34;</span> <span class="s2">&#34;resize-pane -L 2&#34;</span>
-<span class="nb">bind</span> -n M-l <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-l&#34;</span> <span class="s2">&#34;resize-pane -R 2&#34;</span>
-<span class="nb">bind</span> -n M-k <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-k&#34;</span> <span class="s2">&#34;resize-pane -U 2&#34;</span>
-<span class="nb">bind</span> -n M-j <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-j&#34;</span> <span class="s2">&#34;resize-pane -D 2&#34;</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat ~/.tmux.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#  ██████████ ████     ████ ██     ██ ██     ██</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░░░░░██░░░ ░██░██   ██░██░██    ░██░░██   ██</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ░██    ░██░░██ ██ ░██░██    ░██ ░░██ ██</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ░██    ░██ ░░███  ░██░██    ░██  ░░███</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ░██    ░██  ░░█   ░██░██    ░██   ██░██</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ░██    ░██   ░    ░██░██    ░██  ██ ░░██</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ░██    ░██        ░██░░███████  ██   ░░██</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ░░     ░░         ░░  ░░░░░░░  ░░     ░░</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░▓ Author ▓ AK &lt;abdullah@abdullah.today&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░░░░░░░░░░</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># source powerline</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /usr/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Custom Prefix</span>
+</span></span><span class="line"><span class="cl">unbind C-b
+</span></span><span class="line"><span class="cl">set-option -g prefix <span class="sb">`</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> <span class="sb">`</span> send-prefix
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Shell</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g default-command /bin/zsh
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g default-shell /bin/zsh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># utf-8 support in status bar</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#set -g status-utf8 on</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Reload the config</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> r source-file ~/.tmux.conf <span class="se">\;</span> display <span class="s2">&#34;~/.tmux.conf reloaded&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Synchronize panes</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> e setw synchronize-panes <span class="se">\;</span> display <span class="s2">&#34;synchronize mode&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Splits</span>
+</span></span><span class="line"><span class="cl">unbind %
+</span></span><span class="line"><span class="cl">unbind <span class="s1">&#39;&#34;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> h split-window -v
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> v split-window -h
+</span></span><span class="line"><span class="cl"><span class="c1">#bind -n M-h send-keys</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># enable vi-mode</span>
+</span></span><span class="line"><span class="cl">setw -g mode-keys vi
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g status-keys vi
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># copy paste</span>
+</span></span><span class="line"><span class="cl">unbind <span class="o">[</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> Escape copy-mode
+</span></span><span class="line"><span class="cl">unbind p
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> p paste-buffer
+</span></span><span class="line"><span class="cl">bind-key -T copy-mode-vi <span class="s1">&#39;v&#39;</span> send -X begin-selection
+</span></span><span class="line"><span class="cl">bind-key -T copy-mode-vi <span class="s1">&#39;y&#39;</span> send -X copy-pipe-and-cancel <span class="s1">&#39;xclip -in -selection clipboard&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># command mode</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> : command-prompt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Kill panes</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> x kill-pane
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Status on off key</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> t <span class="nb">set</span> status
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Lock the tty</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> b run-shell <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.local/bin/unilock&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Alerts</span>
+</span></span><span class="line"><span class="cl">setw -g monitor-activity on
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g visual-activity on
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Enable mouse mode</span>
+</span></span><span class="line"><span class="cl">setw -g mouse on
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Default terminal mode</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g default-terminal <span class="s1">&#39;screen-256color&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Status and colors</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g status-justify left
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g status-interval <span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g status-bg colour25
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g status-fg colour222
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Window status</span>
+</span></span><span class="line"><span class="cl">set-option -g status-position bottom
+</span></span><span class="line"><span class="cl">setw -g window-status-format <span class="s2">&#34;#[bg=colour246, fg=colour14, bold] #W &#34;</span>
+</span></span><span class="line"><span class="cl">setw -g window-status-current-format <span class="s2">&#34;#[bg=colour25, fg=colour14, bold] #W &#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Right status</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g status-right-length <span class="m">100</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g status-right  <span class="s1">&#39;#(~/.local/bin/tmux-status)&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g status-left-length <span class="m">50</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g status-left <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Visuals</span>
+</span></span><span class="line"><span class="cl">setw -g monitor-activity on
+</span></span><span class="line"><span class="cl">set-option -g bell-action none
+</span></span><span class="line"><span class="cl">set-option -g visual-activity on
+</span></span><span class="line"><span class="cl">set-option -g visual-bell off
+</span></span><span class="line"><span class="cl">set-option -g visual-silence off
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># clock</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g clock-mode-colour colour20
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># urlview</span>
+</span></span><span class="line"><span class="cl">run-shell <span class="nv">$HOME</span>/.local/bin/tmux.urlview
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># resize panes</span>
+</span></span><span class="line"><span class="cl">setw -g aggressive-resize on
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># No delay</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -sg escape-time <span class="m">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># History</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g history-limit <span class="m">10000</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Scrolling</span>
+</span></span><span class="line"><span class="cl">set-option -g terminal-overrides <span class="s1">&#39;xterm*:smcup@:rmcup@&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Panes index</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g pane-base-index <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g renumber-windows on
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Windows index</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -g base-index <span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Layouts</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> Z previous-layout
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> X next-layout
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Detach others</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> D detach -a
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Navigate and resize splits</span>
+</span></span><span class="line"><span class="cl"><span class="nv">is_vim</span><span class="o">=</span><span class="s2">&#34;ps -o state= -o comm= -t &#39;#{pane_tty}&#39; \
+</span></span></span><span class="line"><span class="cl"><span class="s2">    | grep -iqE &#39;^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?</span>$<span class="s2">&#39;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> -n C-h <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-h&#34;</span>  <span class="s2">&#34;select-pane -L&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> -n C-j <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-j&#34;</span>  <span class="s2">&#34;select-pane -D&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> -n C-k <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-k&#34;</span>  <span class="s2">&#34;select-pane -U&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> -n C-l <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys C-l&#34;</span>  <span class="s2">&#34;select-pane -R&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> -n M-h <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-h&#34;</span> <span class="s2">&#34;resize-pane -L 2&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> -n M-l <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-l&#34;</span> <span class="s2">&#34;resize-pane -R 2&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> -n M-k <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-k&#34;</span> <span class="s2">&#34;resize-pane -U 2&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> -n M-j <span class="k">if</span>-shell <span class="s2">&#34;</span><span class="nv">$is_vim</span><span class="s2">&#34;</span> <span class="s2">&#34;send-keys M-j&#34;</span> <span class="s2">&#34;resize-pane -D 2&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="auto-start-tmux-on-boot">Auto start tmux on boot</h3>
 <p>I have these lines in my shell startup file <code>~/.zprofile</code>.</p>
@@ -558,29 +556,27 @@ set-option -g terminal-overrides <span class="s1">&#39;xterm*:smcup@:rmcup@&#39;
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
-</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.zprofile
-
-<span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
-<span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today/&gt;</span>
-<span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
-<span class="c1"># ░░░░░░░░░░</span>
-
-
-<span class="c1"># Start X at login</span>
-
-
-<span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$DISPLAY</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">[[</span> <span class="k">$(</span>tty<span class="k">)</span> <span class="o">=</span> /dev/tty1 <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">exec</span> startx -- vt1 -keeptty <span class="p">&amp;</span>&gt;/dev/null
-  <span class="nb">logout</span>
-<span class="k">elif</span> <span class="o">[[</span> <span class="k">$(</span>tty<span class="k">)</span> !<span class="o">=</span> /dev/tty1 <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-  sudo loadkeys <span class="nv">$HOME</span>/.loadkeysrc
-  tmux has-session -t <span class="nv">$USER</span> <span class="o">||</span> tmux new-session -t <span class="nv">$USER</span> <span class="o">&amp;&amp;</span> tmux attach-session -t <span class="nv">$USER</span>
-<span class="k">fi</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat ~/.zprofile
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░░░░░░░░░░</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Start X at login</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$DISPLAY</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">[[</span> <span class="k">$(</span>tty<span class="k">)</span> <span class="o">=</span> /dev/tty1 <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">exec</span> startx -- vt1 -keeptty <span class="p">&amp;</span>&gt;/dev/null
+</span></span><span class="line"><span class="cl">  <span class="nb">logout</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="o">[[</span> <span class="k">$(</span>tty<span class="k">)</span> !<span class="o">=</span> /dev/tty1 <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  sudo loadkeys <span class="nv">$HOME</span>/.loadkeysrc
+</span></span><span class="line"><span class="cl">  tmux has-session -t <span class="nv">$USER</span> <span class="o">||</span> tmux new-session -t <span class="nv">$USER</span> <span class="o">&amp;&amp;</span> tmux attach-session -t <span class="nv">$USER</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>So if I login from other than tty1, and if there is an already running <em>tmux
 session</em>, it attaches me to it. Else starts a new session and get me there.

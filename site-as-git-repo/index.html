@@ -113,8 +113,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">useradd git -m -G www-data
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">useradd git -m -G www-data
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Login into this new git user.</p>
 <div class="highlight"><div class="chroma">
@@ -122,8 +122,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">su - git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su - git
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create an ssh directory for this account.</p>
 <div class="highlight"><div class="chroma">
@@ -131,8 +131,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir .ssh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir .ssh
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Upload your user ssh public key to this directory how you want. I use pastebin here. Assuming you pasted your public key somewhere on pastebin, I&rsquo;ll fetch it using curl.</p>
 <div class="highlight"><div class="chroma">
@@ -140,8 +140,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o .ssh/authorized_keys <span class="s1">&#39;pastebin address where you pasted the public key&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o .ssh/authorized_keys <span class="s1">&#39;pastebin address where you pasted the public key&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create a directory for your user you wanna use for your site or this user maybe the one you use to login to your vps using ssh. I&rsquo;ll use user z for this post.</p>
 <div class="highlight"><div class="chroma">
@@ -149,8 +149,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="o">&amp;&amp;</span> mkdir z <span class="o">&amp;&amp;</span> <span class="nb">cd</span> z
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> <span class="o">&amp;&amp;</span> mkdir z <span class="o">&amp;&amp;</span> <span class="nb">cd</span> z
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create a git repo here now.</p>
 <div class="highlight"><div class="chroma">
@@ -158,8 +158,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git init --bare mysite.git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init --bare mysite.git
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create a hook in .git directory.</p>
 <div class="highlight"><div class="chroma">
@@ -170,11 +170,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;#!/bin/sh \
-</span><span class="s2">cd /var/www/html \
-</span><span class="s2">unset GIT_DIR  \
-</span><span class="s2">git pull \ &#34;</span> &gt; ~/z/mysite.git/hooks/post-receive <span class="o">&amp;&amp;</span> chmod +X ~/z/mysite.git/hooks/post-receive
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;#!/bin/sh \
+</span></span></span><span class="line"><span class="cl"><span class="s2">cd /var/www/html \
+</span></span></span><span class="line"><span class="cl"><span class="s2">unset GIT_DIR  \
+</span></span></span><span class="line"><span class="cl"><span class="s2">git pull \ &#34;</span> &gt; ~/z/mysite.git/hooks/post-receive <span class="o">&amp;&amp;</span> chmod +X ~/z/mysite.git/hooks/post-receive
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>That&rsquo;s it. Now go to the directory where your site is hosted, in this example we used /var/www/html for site and z as username which is used to maintain our site in future using git like in above hook we used that. You can modify both hook and here this code too according to your needs.</p>
 <div class="highlight"><div class="chroma">
@@ -182,8 +182,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /var/www/html <span class="o">&amp;&amp;</span> git clone ~/z/mysite.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mysite.git <span class="o">&amp;&amp;</span> mv * /var/www/html/ <span class="o">&amp;&amp;</span>  <span class="nb">cd</span> /var/www/html <span class="o">&amp;&amp;</span> rm -rf mysite.git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /var/www/html <span class="o">&amp;&amp;</span> git clone ~/z/mysite.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mysite.git <span class="o">&amp;&amp;</span> mv * /var/www/html/ <span class="o">&amp;&amp;</span>  <span class="nb">cd</span> /var/www/html <span class="o">&amp;&amp;</span> rm -rf mysite.git
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We have made it. Now in your local machine, clone this repo this way.</p>
 <div class="highlight"><div class="chroma">
@@ -191,8 +191,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone <span class="s1">&#39;your vps ip or domain if it&#39;</span>s pointed to your vps<span class="err">&#39;</span>:z/site.git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone <span class="s1">&#39;your vps ip or domain if it&#39;</span>s pointed to your vps<span class="err">&#39;</span>:z/site.git
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Go to the directory you just cloned, do some modifications and push the changes and you&rsquo;ll see the magic. If you have some problems just ping me and I&rsquo;ll be glad to help.</p>
 </div><div class="post-footer" id="post-footer">

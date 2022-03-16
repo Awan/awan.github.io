@@ -147,14 +147,14 @@ Lock screen on suspend/hibernate/resume Login as root and create /etc/apm direct
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir /etc/apm
-<span class="nb">echo</span> <span class="s2">&#34;pkill -USR1 xidle&#34;</span> &gt; /etc/apm/suspend
-<span class="nb">echo</span> <span class="s2">&#34;pkill -USR1 xidle&#34;</span> &gt; /etc/apm/resume
-<span class="nb">echo</span> <span class="s2">&#34;pkill -USR1 xidle&#34;</span> &gt; /etc/apm/hibernate
-chmod +x /etc/apm/suspend
-chmod +x /etc/apm/hibernate
-chmod +x /etc/apm/resume
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir /etc/apm
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;pkill -USR1 xidle&#34;</span> &gt; /etc/apm/suspend
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;pkill -USR1 xidle&#34;</span> &gt; /etc/apm/resume
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;pkill -USR1 xidle&#34;</span> &gt; /etc/apm/hibernate
+</span></span><span class="line"><span class="cl">chmod +x /etc/apm/suspend
+</span></span><span class="line"><span class="cl">chmod +x /etc/apm/hibernate
+</span></span><span class="line"><span class="cl">chmod +x /etc/apm/resume
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>On lid closure, machines mostly get suspended. But once you open it up, they won&rsquo;t be locked. Due to these scripts we just created, they will be locked now.</p>
 <h3 id="wheel-group">Wheel group</h3>
@@ -164,8 +164,8 @@ chmod +x /etc/apm/resume
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">usermod -G wheel,staff <span class="s1">&#39;your username&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">usermod -G wheel,staff <span class="s1">&#39;your username&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="configure-doas">Configure <code>doas</code></h3>
 <p>In OpenBSD, we have alternative of <code>sudo</code>. Although you can install and use
@@ -181,11 +181,11 @@ to allow <code>wheel</code> group members runnig privileged commands without pas
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/doas.conf
-...
-permit nopass keepenv :wheel
-...
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/doas.conf
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">permit nopass keepenv :wheel
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="power-management-with-apmd">Power management with <code>apmd</code></h3>
 <p><code>apmd</code> is Advanced Power Management Daemon. You can use it to save some power and also for cooling CPU.</p>
@@ -196,9 +196,9 @@ permit nopass keepenv :wheel
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">rcctl <span class="nb">enable</span> apmd
-rcctl <span class="nb">set</span> apmd flags <span class="s2">&#34;-C -z 45&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rcctl <span class="nb">enable</span> apmd
+</span></span><span class="line"><span class="cl">rcctl <span class="nb">set</span> apmd flags <span class="s2">&#34;-C -z 45&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>You can adopt it to your needs. <code>-C</code> flag will increase or decrease CPU speed depending on CPU load.</p>
 <p>The CPU speed with this will be increased to 50% every second if the load is over 70%. Once the load drops under 70%, apm will decrease the CPU speed 20% every second till the CPU is at its lowest speed.</p>
@@ -230,25 +230,25 @@ Also change <code>openfiles-max</code> and <code>openfiles-cur</code> to <code>4
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/login.conf
-...
-
-default:<span class="se">\
-</span><span class="se"></span>	:path<span class="o">=</span>/usr/bin /bin /usr/sbin /sbin /usr/X11R6/bin /usr/local/bin /usr/local/sbin:<span class="se">\
-</span><span class="se"></span>	:umask<span class="o">=</span>022:<span class="se">\
-</span><span class="se"></span>	:datasize-max<span class="o">=</span>4096M:<span class="se">\
-</span><span class="se"></span>	:datasize-cur<span class="o">=</span>4096M:<span class="se">\
-</span><span class="se"></span>	:maxproc-max<span class="o">=</span>256:<span class="se">\
-</span><span class="se"></span>	:maxproc-cur<span class="o">=</span>128:<span class="se">\
-</span><span class="se"></span>	:openfiles-max<span class="o">=</span>4096:<span class="se">\
-</span><span class="se"></span>	:openfiles-cur<span class="o">=</span>4096:<span class="se">\
-</span><span class="se"></span>	:stacksize-cur<span class="o">=</span>4M:<span class="se">\
-</span><span class="se"></span>	:localcipher<span class="o">=</span>blowfish,a:<span class="se">\
-</span><span class="se"></span>	:tc<span class="o">=</span>auth-defaults:<span class="se">\
-</span><span class="se"></span>	:tc<span class="o">=</span>auth-ftp-defaults:
-
-...
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/login.conf
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">default:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:path<span class="o">=</span>/usr/bin /bin /usr/sbin /sbin /usr/X11R6/bin /usr/local/bin /usr/local/sbin:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:umask<span class="o">=</span>022:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:datasize-max<span class="o">=</span>4096M:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:datasize-cur<span class="o">=</span>4096M:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:maxproc-max<span class="o">=</span>256:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:maxproc-cur<span class="o">=</span>128:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:openfiles-max<span class="o">=</span>4096:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:openfiles-cur<span class="o">=</span>4096:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:stacksize-cur<span class="o">=</span>4M:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:localcipher<span class="o">=</span>blowfish,a:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:tc<span class="o">=</span>auth-defaults:<span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	:tc<span class="o">=</span>auth-ftp-defaults:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="disable-console-log">Disable console log</h3>
 <p><code>xenodm</code> is default display manager. It enables a console log once <code>X</code> is started. You can disable it by commenting the line like this.</p>
@@ -260,11 +260,11 @@ default:<span class="se">\
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/X11/xenodm/Xsetup_0
-...
-<span class="c1"># xconsole -geometry 480x130-0-0 -daemon -notify -verbose -fn fixed -exitOnFail</span>
-...
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/X11/xenodm/Xsetup_0
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl"><span class="c1"># xconsole -geometry 480x130-0-0 -daemon -notify -verbose -fn fixed -exitOnFail</span>
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="ending-this-post">Ending this post</h3>
 <p>There are lot more things I have configured by hand. This list is still not

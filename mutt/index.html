@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/abdullah.today\/mutt\/"
-        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "mutt, email, commandline_email, neomutt, isync, mbsync, sendmail, mail","wordcount":  1271 ,
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "mutt, email, commandline_email, neomutt, isync, mbsync, sendmail, mail","wordcount":  1264 ,
         "url": "https:\/\/abdullah.today\/mutt\/","datePublished": "2019-09-17T00:00:00+00:00","dateModified": "2019-09-17T00:00:00+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
@@ -107,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">My Email Setup</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-17">2019-09-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1271 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-17">2019-09-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1264 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -169,12 +169,10 @@ read/reply the emails using mutt.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt install -y isync mutt notmuch
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo apt install -y isync mutt notmuch
+</span></span></code></pre></td></tr></table>
 </div>
 </div><script
   async
@@ -222,35 +220,31 @@ read/reply the emails using mutt.</p>
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">IMAPAccount abdullah
-Host imap.gmail.com
-User user@gmail.com
-PassCmd <span class="s2">&#34;gpg -dq ~/.local/share/misc/abdullah.gpg&#34;</span>
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-IMAPStore abdullah-remote
-Account abdullah
-
-MaildirStore abdullah-local
-Subfolders Verbatim
-Path ~/.mail/
-Inbox ~/.mail/Inbox
-
-Channel abdullah
-Master :abdullah-remote:
-Slave :abdullah-local:
-Patterns *
-CopyArrivalDate yes
-Create Both
-SyncState *
-
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">IMAPAccount abdullah
+</span></span><span class="line"><span class="cl">Host imap.gmail.com
+</span></span><span class="line"><span class="cl">User user@gmail.com
+</span></span><span class="line"><span class="cl">PassCmd <span class="s2">&#34;gpg -dq ~/.local/share/misc/abdullah.gpg&#34;</span>
+</span></span><span class="line"><span class="cl">SSLType IMAPS
+</span></span><span class="line"><span class="cl">CertificateFile /etc/ssl/certs/ca-certificates.crt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">IMAPStore abdullah-remote
+</span></span><span class="line"><span class="cl">Account abdullah
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">MaildirStore abdullah-local
+</span></span><span class="line"><span class="cl">Subfolders Verbatim
+</span></span><span class="line"><span class="cl">Path ~/.mail/
+</span></span><span class="line"><span class="cl">Inbox ~/.mail/Inbox
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Channel abdullah
+</span></span><span class="line"><span class="cl">Master :abdullah-remote:
+</span></span><span class="line"><span class="cl">Slave :abdullah-local:
+</span></span><span class="line"><span class="cl">Patterns *
+</span></span><span class="line"><span class="cl">CopyArrivalDate yes
+</span></span><span class="line"><span class="cl">Create Both
+</span></span><span class="line"><span class="cl">SyncState *
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Replace mailbox stuff with yours where necessary. And start isync.</p>
 <div class="highlight"><div class="chroma">
@@ -258,8 +252,8 @@ SyncState *
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mbsync -VXa 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mbsync -VXa 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Don&rsquo;t forget to run <b>notmuch</b> before or after it. Answer all questions
 it asks, it&rsquo;s one time process. You can edit the cofiguration later, they
@@ -275,9 +269,9 @@ create this directory.</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ mkdir -p ~/.config/mutt/credentials
-$ touch ~/.config/mutt/muttrc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ mkdir -p ~/.config/mutt/credentials
+</span></span><span class="line"><span class="cl">$ touch ~/.config/mutt/muttrc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Edit <b>muttrc</b> to your needs. I&rsquo;m pasting mine here for reference.</p>
 <div class="highlight"><div class="chroma">
@@ -451,180 +445,178 @@ $ touch ~/.config/mutt/muttrc
 </span><span class="lnt">167
 </span><span class="lnt">168
 </span><span class="lnt">169
-</span><span class="lnt">170
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.config/mutt/muttrc
-
-
-<span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
-<span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today/&gt;</span>
-<span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
-<span class="c1"># ░░░░░░░░░░</span>
-<span class="c1">#</span>
-
-
-<span class="c1"># source important files</span>
-
-<span class="nb">source</span> <span class="nv">$HOME</span>/.config/mutt/colorrc
-<span class="nb">source</span> <span class="nv">$HOME</span>/.config/mutt/gpgforak.rc
-<span class="nb">source</span> ~/.config/mutt/aliases
-
-
-
-<span class="nb">set</span> <span class="nv">folder</span>                         <span class="o">=</span> ~/.mail
-<span class="nv">mailboxes</span>                          <span class="o">=</span> <span class="sb">`</span><span class="nb">echo</span> <span class="nv">$HOME</span>/.mail/*<span class="sb">`</span>
-<span class="nb">set</span> <span class="nv">from</span>                           <span class="o">=</span> abdullah@abdullah.today
-<span class="nb">set</span> <span class="nv">sendmail</span>                       <span class="o">=</span> msmtp
-<span class="nb">set</span> <span class="nv">abort_noattach</span>                 <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
-<span class="nb">set</span> <span class="nv">abort_noattach_regexp</span>          <span class="o">=</span> <span class="s2">&#34;attach&#34;</span>
-<span class="nb">set</span> <span class="nv">abort_nosubject</span>                <span class="o">=</span> <span class="s2">&#34;ask-yes&#34;</span>
-<span class="nb">set</span> <span class="nv">alias_file</span>                     <span class="o">=</span> <span class="s2">&#34;~/.config/mutt/aliases&#34;</span> <span class="c1">#source it</span>
-<span class="nb">set</span> <span class="nv">alias_format</span>                   <span class="o">=</span> <span class="s2">&#34;%4n %2f %t %-10a   %r&#34;</span>
-<span class="nb">set</span> <span class="nv">allow_8bit</span>                     <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
-<span class="nb">set</span> <span class="nv">allow_ansi</span>                     <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
-<span class="nb">set</span> <span class="nv">arrow_cursor</span>                   <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
-<span class="nb">set</span> <span class="nv">ascii_chars</span>                    <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
-<span class="nb">set</span> <span class="nv">askbcc</span>                         <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
-<span class="nb">set</span> <span class="nv">askcc</span>                          <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
-<span class="nb">set</span> <span class="nv">assumed_charset</span>                <span class="o">=</span>
-<span class="nb">set</span> <span class="nv">attach_charset</span>                 <span class="o">=</span>
-<span class="nb">set</span> <span class="nv">attach_format</span>                  <span class="o">=</span> <span class="s2">&#34;%u%D%I %t%4n %T%.40d%&gt; [%.7m/%.10M, %.6e%?C?, %C?, %s] &#34;</span>
-<span class="nb">set</span> <span class="nv">attach_sep</span>                     <span class="o">=</span> <span class="s2">&#34;\n&#34;</span>
-<span class="nb">set</span> <span class="nv">attach_split</span>                   <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
-<span class="nb">set</span> <span class="nv">attribution</span>                    <span class="o">=</span> <span class="s2">&#34;On %d, %n wrote:&#34;</span>
-<span class="nb">set</span> <span class="nv">attribution_locale</span>             <span class="o">=</span>
-<span class="nb">set</span> <span class="nv">auto_tag</span>                       <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
-<span class="nb">set</span> <span class="nv">autoedit</span>                       <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
-<span class="nb">set</span> <span class="nv">beep</span>                           <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
-<span class="nb">set</span> <span class="nv">beep_new</span>                       <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
-<span class="nb">set</span> <span class="nv">bounce</span>                         <span class="o">=</span> <span class="s2">&#34;ask-yes&#34;</span>
-<span class="nb">set</span> <span class="nv">bounce_delivered</span>               <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
-<span class="nb">set</span> <span class="nv">braille_friendly</span>               <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
-<span class="nb">set</span> <span class="nv">browser_abbreviate_mailboxes</span>  <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
-<span class="nb">set</span> <span class="nv">certificate_file</span>              <span class="o">=</span> <span class="s2">&#34;~/.config/mutt/certs&#34;</span>
-<span class="nb">set</span> <span class="nv">crypt_autosign</span>                <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">crypt_replyencrypt</span>            <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">date_format</span>                   <span class="o">=</span> <span class="s2">&#34;%d/%m&#34;</span>
-<span class="nb">set</span> <span class="nv">editor</span>                        <span class="o">=</span> vim
-<span class="nb">set</span> <span class="nv">fast_reply</span>                    <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">header_cache</span>                  <span class="o">=</span> ~/.cache/mutt
-<span class="nb">set</span> <span class="nv">imap_keepalive</span>                <span class="o">=</span> <span class="m">300</span>
-<span class="nb">set</span> <span class="nv">include</span>                       <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">mail_check</span>                    <span class="o">=</span> <span class="m">60</span>
-<span class="nb">set</span> <span class="nv">mail_check_stats</span>              <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">mailcap_path</span>                  <span class="o">=</span> ~/.config/mutt/mailcap
-<span class="nb">set</span> <span class="nv">mbox_type</span>                     <span class="o">=</span> Maildir
-<span class="nb">set</span> <span class="nv">message_cachedir</span>              <span class="o">=</span> ~/.cache/mutt/messages
-<span class="nb">set</span> <span class="nv">pager</span>                         <span class="o">=</span> vim
-<span class="nb">set</span> <span class="nv">pager_context</span>                 <span class="o">=</span> <span class="m">3</span>
-<span class="nb">set</span> <span class="nv">pager_index_lines</span>             <span class="o">=</span> <span class="m">8</span>
-<span class="nb">set</span> <span class="nv">pgp_autosign</span>                  <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">pgp_replysign</span>                 <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">pgp_replysignencrypted</span>        <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">pgp_sign_as</span>                   <span class="o">=</span> 0x5CBC7BC7
-<span class="nb">set</span> <span class="nv">pgp_timeout</span>                   <span class="o">=</span> <span class="m">3600</span>
-<span class="nb">set</span> <span class="nv">pgp_use_gpg_agent</span>             <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">postpone_encrypt</span>              <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">postpone_encrypt_as</span>           <span class="o">=</span> 0xE6E81782
-<span class="nb">set</span> <span class="nv">postponed</span>                     <span class="o">=</span> ~/.mail/Drafts
-<span class="nb">set</span> <span class="nv">prompt_after</span>                  <span class="o">=</span> no
-<span class="nb">set</span> <span class="nv">quote_regexp</span>                  <span class="o">=</span> <span class="s2">&#34;^( {0,4}[&gt;|:#%]| {0,4}[a-z0-9]+[&gt;|]+)+&#34;</span>
-<span class="nb">set</span> <span class="nv">record</span>                        <span class="o">=</span> ~/.mail/Sent
-<span class="nb">set</span> <span class="nv">trash</span>                         <span class="o">=</span> ~/.mail/Trash
-<span class="nb">set</span> <span class="nv">reply_regexp</span>                  <span class="o">=</span> <span class="s2">&#34;^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*&#34;</span>
-<span class="nb">set</span> <span class="nv">rfc2047_parameters</span>            <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">send_charset</span>                  <span class="o">=</span> utf-8
-<span class="nb">set</span> <span class="nv">sidebar_format</span>                <span class="o">=</span> <span class="s2">&#34;%B%?F? [%F]?%* %?N?%N/?%S&#34;</span>
-<span class="nb">set</span> <span class="nv">sidebar_visible</span>               <span class="o">=</span> yes
-<span class="nb">set</span> thorough_search
-<span class="nb">set</span> <span class="nv">sidebar_width</span>                 <span class="o">=</span> <span class="m">24</span>
-<span class="nb">set</span> <span class="nv">status_chars</span>                  <span class="o">=</span> <span class="s2">&#34; *%A&#34;</span>
-<span class="nb">set</span> <span class="nv">sig_dashes</span>                    <span class="o">=</span> no
-<span class="nb">set</span> <span class="nv">signature</span>                     <span class="o">=</span> ~/.config/mutt/signature
-<span class="nb">set</span> <span class="nv">sort</span>                          <span class="o">=</span> threads
-<span class="nb">set</span> <span class="nv">sort_aux</span>                      <span class="o">=</span> reverse-last-date-received
-<span class="nb">set</span> <span class="nv">spoolfile</span>                     <span class="o">=</span> ~/.mail/INBOX
-<span class="nb">set</span> <span class="nv">ssl_force_tls</span>                 <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">ssl_starttls</span>                  <span class="o">=</span> yes
-<span class="nb">set</span> <span class="nv">timeout</span>                       <span class="o">=</span> <span class="m">3</span>
-<span class="nb">set</span> <span class="nv">use_from</span>                      <span class="o">=</span> yes
-<span class="nb">set</span> quit
-<span class="nb">set</span> <span class="nv">visual</span>                        <span class="o">=</span> vim
-<span class="nb">set</span> <span class="nv">wait_key</span>                      <span class="o">=</span> no
-<span class="nb">set</span> <span class="nv">status_format</span>                 <span class="o">=</span> <span class="s2">&#34;───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%&gt;─%?p?( %p postponed )?───&#34;</span>
-<span class="nb">set</span> sort_re
-<span class="nb">set</span> edit_headers
-<span class="nb">unset</span> confirmappend
-<span class="nb">unset</span> imap_passive
-<span class="nb">unset</span> mark_old
-<span class="nb">set</span> smart_wrap
-<span class="nb">unset</span> markers
-<span class="nb">set</span> pipe_decode
-<span class="nb">set</span> text_flowed
-<span class="nb">set</span> pager_stop
-auto_view application/pgp-encrypted
-<span class="nb">set</span> menu_scroll
-<span class="nb">set</span> uncollapse_jump
-<span class="nb">set</span> delete
-<span class="nb">set</span> tilde
-<span class="nb">set</span> imap_check_subscribed
-
-<span class="c1"># HTML</span>
-
-auto_view text/html
-alternative_order text/enriched text/plain text/html
-alternative_order text/plain text/enriched text/html
-alternative_order text/plain text/html
-
-<span class="c1"># Keybindings</span>
-
-<span class="nb">bind</span> attach &lt;<span class="k">return</span>&gt; view-mailcap
-<span class="nb">bind</span> attach,index G last-entry
-<span class="nb">bind</span> attach,index g first-entry
-<span class="nb">bind</span> attach,index,pager <span class="se">\C</span>D next-page
-<span class="nb">bind</span> attach,index,pager <span class="se">\C</span>U previous-page
-<span class="nb">bind</span> browser $ check-new
-<span class="nb">bind</span> index   <span class="se">\t</span>   next-unread
-<span class="nb">bind</span> index  ,<span class="se">\t</span> previous-unread
-<span class="nb">bind</span> index &lt;space&gt;  collapse-thread
-<span class="nb">bind</span> index &lt;tab&gt;    sync-mailbox
-<span class="nb">bind</span> index G        last-entry
-<span class="nb">bind</span> index R        group-reply
-<span class="nb">bind</span> index,pager &lt;down&gt;   sidebar-next
-<span class="nb">bind</span> index,pager &lt;right&gt;  sidebar-open
-<span class="nb">bind</span> index,pager &lt;up&gt;     sidebar-prev
-<span class="nb">bind</span> pager G bottom
-<span class="nb">bind</span> pager R  group-reply
-<span class="nb">bind</span> pager g top
-<span class="nb">bind</span> pager gg top
-<span class="nb">bind</span> pager j  next-line
-<span class="nb">bind</span> pager k  previous-line
-
-<span class="c1"># colors</span>
-
-color header blue default <span class="s2">&#34;^(Subject)&#34;</span>
-color index red white <span class="s2">&#34;~v~(~F)!~N&#34;</span>
-color sidebar_new yellow default
-
-<span class="c1"># macros</span>
-
-macro index C <span class="s2">&#34;&lt;copy-message&gt;?&lt;toggle-mailboxes&gt;&#34;</span> 
-<span class="c1"># macro index q &#34;&lt;sync-mailbox&gt;&lt;shell-escape&gt;/usr/bin/offlineimap -o &gt;/dev/null 2&gt;&amp;1&lt;enter&gt;&lt;quit&gt;&#34;</span>
-macro index M <span class="s2">&#34;&lt;save-message&gt;?&lt;toggle-mailboxes&gt;&#34;</span>
-macro index O <span class="s2">&#34;&lt;shell-escape&gt;mbsync -Va&lt;enter&gt;&#34;</span> 
-macro index <span class="se">\C</span>r <span class="s2">&#34;T~U&lt;enter&gt;&lt;tag-prefix&gt;&lt;clear-flag&gt;N&lt;untag-pattern&gt;.&lt;enter&gt;&#34;</span> 
-macro index,pager U <span class="s2">&#34;&lt;enter-command&gt;set pipe_decode  = yes&lt;enter&gt;&lt;pipe-message&gt;urlview&lt;enter&gt;&lt;enter-command&gt;set pipe_decode = no&lt;enter&gt;&#34;&#34;view URLs&#34;</span>
-
-<span class="c1"># headers</span>
-
-my_hdr User-Agent: <span class="s1">&#39;Eat your heart out, Windows Lusers&#39;</span>
-hdr_order from: to: cc: date: subject:
-unhdr_order *
-
-<span class="c1">#vim:filetype=muttrc</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat ~/.config/mutt/muttrc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░░░░░░░░░░</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># source important files</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> <span class="nv">$HOME</span>/.config/mutt/colorrc
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> <span class="nv">$HOME</span>/.config/mutt/gpgforak.rc
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.config/mutt/aliases
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">folder</span>                         <span class="o">=</span> ~/.mail
+</span></span><span class="line"><span class="cl"><span class="nv">mailboxes</span>                          <span class="o">=</span> <span class="sb">`</span><span class="nb">echo</span> <span class="nv">$HOME</span>/.mail/*<span class="sb">`</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">from</span>                           <span class="o">=</span> abdullah@abdullah.today
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">sendmail</span>                       <span class="o">=</span> msmtp
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">abort_noattach</span>                 <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">abort_noattach_regexp</span>          <span class="o">=</span> <span class="s2">&#34;attach&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">abort_nosubject</span>                <span class="o">=</span> <span class="s2">&#34;ask-yes&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">alias_file</span>                     <span class="o">=</span> <span class="s2">&#34;~/.config/mutt/aliases&#34;</span> <span class="c1">#source it</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">alias_format</span>                   <span class="o">=</span> <span class="s2">&#34;%4n %2f %t %-10a   %r&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">allow_8bit</span>                     <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">allow_ansi</span>                     <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">arrow_cursor</span>                   <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">ascii_chars</span>                    <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">askbcc</span>                         <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">askcc</span>                          <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">assumed_charset</span>                <span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">attach_charset</span>                 <span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">attach_format</span>                  <span class="o">=</span> <span class="s2">&#34;%u%D%I %t%4n %T%.40d%&gt; [%.7m/%.10M, %.6e%?C?, %C?, %s] &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">attach_sep</span>                     <span class="o">=</span> <span class="s2">&#34;\n&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">attach_split</span>                   <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">attribution</span>                    <span class="o">=</span> <span class="s2">&#34;On %d, %n wrote:&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">attribution_locale</span>             <span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">auto_tag</span>                       <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">autoedit</span>                       <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">beep</span>                           <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">beep_new</span>                       <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">bounce</span>                         <span class="o">=</span> <span class="s2">&#34;ask-yes&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">bounce_delivered</span>               <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">braille_friendly</span>               <span class="o">=</span> <span class="s2">&#34;no&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">browser_abbreviate_mailboxes</span>  <span class="o">=</span> <span class="s2">&#34;yes&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">certificate_file</span>              <span class="o">=</span> <span class="s2">&#34;~/.config/mutt/certs&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">crypt_autosign</span>                <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">crypt_replyencrypt</span>            <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">date_format</span>                   <span class="o">=</span> <span class="s2">&#34;%d/%m&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">editor</span>                        <span class="o">=</span> vim
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">fast_reply</span>                    <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">header_cache</span>                  <span class="o">=</span> ~/.cache/mutt
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">imap_keepalive</span>                <span class="o">=</span> <span class="m">300</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">include</span>                       <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">mail_check</span>                    <span class="o">=</span> <span class="m">60</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">mail_check_stats</span>              <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">mailcap_path</span>                  <span class="o">=</span> ~/.config/mutt/mailcap
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">mbox_type</span>                     <span class="o">=</span> Maildir
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">message_cachedir</span>              <span class="o">=</span> ~/.cache/mutt/messages
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">pager</span>                         <span class="o">=</span> vim
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">pager_context</span>                 <span class="o">=</span> <span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">pager_index_lines</span>             <span class="o">=</span> <span class="m">8</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">pgp_autosign</span>                  <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">pgp_replysign</span>                 <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">pgp_replysignencrypted</span>        <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">pgp_sign_as</span>                   <span class="o">=</span> 0x5CBC7BC7
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">pgp_timeout</span>                   <span class="o">=</span> <span class="m">3600</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">pgp_use_gpg_agent</span>             <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">postpone_encrypt</span>              <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">postpone_encrypt_as</span>           <span class="o">=</span> 0xE6E81782
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">postponed</span>                     <span class="o">=</span> ~/.mail/Drafts
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">prompt_after</span>                  <span class="o">=</span> no
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">quote_regexp</span>                  <span class="o">=</span> <span class="s2">&#34;^( {0,4}[&gt;|:#%]| {0,4}[a-z0-9]+[&gt;|]+)+&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">record</span>                        <span class="o">=</span> ~/.mail/Sent
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">trash</span>                         <span class="o">=</span> ~/.mail/Trash
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">reply_regexp</span>                  <span class="o">=</span> <span class="s2">&#34;^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">rfc2047_parameters</span>            <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">send_charset</span>                  <span class="o">=</span> utf-8
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">sidebar_format</span>                <span class="o">=</span> <span class="s2">&#34;%B%?F? [%F]?%* %?N?%N/?%S&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">sidebar_visible</span>               <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> thorough_search
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">sidebar_width</span>                 <span class="o">=</span> <span class="m">24</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">status_chars</span>                  <span class="o">=</span> <span class="s2">&#34; *%A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">sig_dashes</span>                    <span class="o">=</span> no
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">signature</span>                     <span class="o">=</span> ~/.config/mutt/signature
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">sort</span>                          <span class="o">=</span> threads
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">sort_aux</span>                      <span class="o">=</span> reverse-last-date-received
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">spoolfile</span>                     <span class="o">=</span> ~/.mail/INBOX
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">ssl_force_tls</span>                 <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">ssl_starttls</span>                  <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">timeout</span>                       <span class="o">=</span> <span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">use_from</span>                      <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> quit
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">visual</span>                        <span class="o">=</span> vim
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">wait_key</span>                      <span class="o">=</span> no
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">status_format</span>                 <span class="o">=</span> <span class="s2">&#34;───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%&gt;─%?p?( %p postponed )?───&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> sort_re
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> edit_headers
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> confirmappend
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> imap_passive
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> mark_old
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> smart_wrap
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> markers
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> pipe_decode
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> text_flowed
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> pager_stop
+</span></span><span class="line"><span class="cl">auto_view application/pgp-encrypted
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> menu_scroll
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> uncollapse_jump
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> delete
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> tilde
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> imap_check_subscribed
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># HTML</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">auto_view text/html
+</span></span><span class="line"><span class="cl">alternative_order text/enriched text/plain text/html
+</span></span><span class="line"><span class="cl">alternative_order text/plain text/enriched text/html
+</span></span><span class="line"><span class="cl">alternative_order text/plain text/html
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Keybindings</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> attach &lt;<span class="k">return</span>&gt; view-mailcap
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> attach,index G last-entry
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> attach,index g first-entry
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> attach,index,pager <span class="se">\C</span>D next-page
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> attach,index,pager <span class="se">\C</span>U previous-page
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> browser $ check-new
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> index   <span class="se">\t</span>   next-unread
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> index  ,<span class="se">\t</span> previous-unread
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> index &lt;space&gt;  collapse-thread
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> index &lt;tab&gt;    sync-mailbox
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> index G        last-entry
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> index R        group-reply
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> index,pager &lt;down&gt;   sidebar-next
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> index,pager &lt;right&gt;  sidebar-open
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> index,pager &lt;up&gt;     sidebar-prev
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> pager G bottom
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> pager R  group-reply
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> pager g top
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> pager gg top
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> pager j  next-line
+</span></span><span class="line"><span class="cl"><span class="nb">bind</span> pager k  previous-line
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># colors</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">color header blue default <span class="s2">&#34;^(Subject)&#34;</span>
+</span></span><span class="line"><span class="cl">color index red white <span class="s2">&#34;~v~(~F)!~N&#34;</span>
+</span></span><span class="line"><span class="cl">color sidebar_new yellow default
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># macros</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">macro index C <span class="s2">&#34;&lt;copy-message&gt;?&lt;toggle-mailboxes&gt;&#34;</span> 
+</span></span><span class="line"><span class="cl"><span class="c1"># macro index q &#34;&lt;sync-mailbox&gt;&lt;shell-escape&gt;/usr/bin/offlineimap -o &gt;/dev/null 2&gt;&amp;1&lt;enter&gt;&lt;quit&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">macro index M <span class="s2">&#34;&lt;save-message&gt;?&lt;toggle-mailboxes&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">macro index O <span class="s2">&#34;&lt;shell-escape&gt;mbsync -Va&lt;enter&gt;&#34;</span> 
+</span></span><span class="line"><span class="cl">macro index <span class="se">\C</span>r <span class="s2">&#34;T~U&lt;enter&gt;&lt;tag-prefix&gt;&lt;clear-flag&gt;N&lt;untag-pattern&gt;.&lt;enter&gt;&#34;</span> 
+</span></span><span class="line"><span class="cl">macro index,pager U <span class="s2">&#34;&lt;enter-command&gt;set pipe_decode  = yes&lt;enter&gt;&lt;pipe-message&gt;urlview&lt;enter&gt;&lt;enter-command&gt;set pipe_decode = no&lt;enter&gt;&#34;&#34;view URLs&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># headers</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">my_hdr User-Agent: <span class="s1">&#39;Eat your heart out, Windows Lusers&#39;</span>
+</span></span><span class="line"><span class="cl">hdr_order from: to: cc: date: subject:
+</span></span><span class="line"><span class="cl">unhdr_order *
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#vim:filetype=muttrc</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><script
   async
@@ -651,29 +643,27 @@ synchronization.</p>
 <p>A service file:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.config/systemd/user/isync.service
-
-<span class="o">[</span>Unit<span class="o">]</span>
-<span class="nv">Description</span><span class="o">=</span>Mailbox Sync
-
-<span class="o">[</span>Service<span class="o">]</span>
-<span class="nv">Type</span><span class="o">=</span>oneshot
-<span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/mbsync -VXa
-<span class="nv">ExecStartPost</span><span class="o">=</span>/usr/bin/notmuch new
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat ~/.config/systemd/user/isync.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>Mailbox Sync
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>oneshot
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/mbsync -VXa
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStartPost</span><span class="o">=</span>/usr/bin/notmuch new
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>and a timer:</p>
 <div class="highlight"><div class="chroma">
@@ -690,34 +680,30 @@ synchronization.</p>
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
-</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.config/systemd/user/isync.timer
-
-<span class="o">[</span>Unit<span class="o">]</span>
-<span class="nv">Description</span><span class="o">=</span>Mailbox Sync Timer
-
-<span class="o">[</span>Timer<span class="o">]</span>
-<span class="nv">OnBootSec</span><span class="o">=</span>1m
-<span class="nv">OnUnitActiveSec</span><span class="o">=</span>2m
-<span class="nv">Unit</span><span class="o">=</span>isync.service
-
-<span class="o">[</span>Install<span class="o">]</span>
-<span class="nv">WantedBy</span><span class="o">=</span>timers.target
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat ~/.config/systemd/user/isync.timer
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>Mailbox Sync Timer
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Timer<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">OnBootSec</span><span class="o">=</span>1m
+</span></span><span class="line"><span class="cl"><span class="nv">OnUnitActiveSec</span><span class="o">=</span>2m
+</span></span><span class="line"><span class="cl"><span class="nv">Unit</span><span class="o">=</span>isync.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>timers.target
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Start them using:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ systemctl --user --now <span class="nb">enable</span> isync.timer
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ systemctl --user --now <span class="nb">enable</span> isync.timer
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="password-management">Password management</h3>
 <p>I use encrypted passwords. You can check my

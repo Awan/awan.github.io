@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/abdullah.today\/multihead\/"
-        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "polybar, bspwm, multihead, multi-display, multi-screen, dual-monitor, dual-screen, multimonitor","wordcount":  1273 ,
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "polybar, bspwm, multihead, multi-display, multi-screen, dual-monitor, dual-screen, multimonitor","wordcount":  1269 ,
         "url": "https:\/\/abdullah.today\/multihead\/","datePublished": "2020-06-02T10:52:37+05:00","dateModified": "2020-06-02T10:52:37+05:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
@@ -107,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Multihead with BSPWM and Polybar</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-02">2020-06-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1273 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-02">2020-06-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1269 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -239,84 +239,80 @@ laptop. What ever you see on first screen, you would see on second one.</p>
 </span><span class="lnt">58
 </span><span class="lnt">59
 </span><span class="lnt">60
-</span><span class="lnt">61
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
-xrandr
-
-Screen 0: minimum <span class="m">320</span> x 200, current <span class="m">3200</span> x 1080, maximum <span class="m">16384</span> x <span class="m">16384</span>
-eDP-1 connected primary 1920x1080+0+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 309mm x 173mm
-   1920x1080     60.03*+  60.01    59.97    59.96    59.93
-   1680x1050     59.95    59.88
-   1400x1050     59.98
-   1600x900      59.99    59.94    59.95    59.82
-   1280x1024     60.02
-   1400x900      59.96    59.88
-   1280x960      60.00
-   1440x810      60.00    59.97
-   1368x768      59.88    59.85
-   1280x800      59.99    59.97    59.81    59.91
-   1280x720      60.00    59.99    59.86    59.74
-   1024x768      60.04    60.00
-   960x720       60.00
-   928x696       60.05
-   896x672       60.01
-   1024x576      59.95    59.96    59.90    59.82
-   960x600       59.93    60.00
-   960x540       59.96    59.99    59.63    59.82
-   800x600       60.00    60.32    56.25
-   840x525       60.01    59.88
-   864x486       59.92    59.57
-   700x525       59.98
-   800x450       59.95    59.82
-   640x512       60.02
-   700x450       59.96    59.88
-   640x480       60.00    59.94
-   720x405       59.51    58.99
-   684x384       59.88    59.85
-   640x400       59.88    59.98
-   640x360       59.86    59.83    59.84    59.32
-   512x384       60.00
-   512x288       60.00    59.92
-   480x270       59.63    59.82
-   400x300       60.32    56.34
-   432x243       59.92    59.57
-   320x240       60.05
-   360x202       59.51    59.13
-   320x180       59.84    59.32
-DP-1 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
-HDMI-1 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
-DP-2 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
-HDMI-2 connected 1280x1024+1920+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 708mm x 398mm
-   1280x1024     60.02*+
-   1920x1080     60.00    50.00    59.94    24.00    23.98
-   1920x1080i    60.00    50.00    59.94
-   1280x960      60.00
-   1280x720      60.00    50.00    59.94
-   1024x768      60.00
-   800x600       60.32    56.25
-   720x576       50.00
-   720x576i      50.00
-   720x480       60.00    59.94
-   720x480i      60.00    59.94
-   640x480       60.00    59.94
-   720x400       70.08
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">xrandr
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Screen 0: minimum <span class="m">320</span> x 200, current <span class="m">3200</span> x 1080, maximum <span class="m">16384</span> x <span class="m">16384</span>
+</span></span><span class="line"><span class="cl">eDP-1 connected primary 1920x1080+0+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 309mm x 173mm
+</span></span><span class="line"><span class="cl">   1920x1080     60.03*+  60.01    59.97    59.96    59.93
+</span></span><span class="line"><span class="cl">   1680x1050     59.95    59.88
+</span></span><span class="line"><span class="cl">   1400x1050     59.98
+</span></span><span class="line"><span class="cl">   1600x900      59.99    59.94    59.95    59.82
+</span></span><span class="line"><span class="cl">   1280x1024     60.02
+</span></span><span class="line"><span class="cl">   1400x900      59.96    59.88
+</span></span><span class="line"><span class="cl">   1280x960      60.00
+</span></span><span class="line"><span class="cl">   1440x810      60.00    59.97
+</span></span><span class="line"><span class="cl">   1368x768      59.88    59.85
+</span></span><span class="line"><span class="cl">   1280x800      59.99    59.97    59.81    59.91
+</span></span><span class="line"><span class="cl">   1280x720      60.00    59.99    59.86    59.74
+</span></span><span class="line"><span class="cl">   1024x768      60.04    60.00
+</span></span><span class="line"><span class="cl">   960x720       60.00
+</span></span><span class="line"><span class="cl">   928x696       60.05
+</span></span><span class="line"><span class="cl">   896x672       60.01
+</span></span><span class="line"><span class="cl">   1024x576      59.95    59.96    59.90    59.82
+</span></span><span class="line"><span class="cl">   960x600       59.93    60.00
+</span></span><span class="line"><span class="cl">   960x540       59.96    59.99    59.63    59.82
+</span></span><span class="line"><span class="cl">   800x600       60.00    60.32    56.25
+</span></span><span class="line"><span class="cl">   840x525       60.01    59.88
+</span></span><span class="line"><span class="cl">   864x486       59.92    59.57
+</span></span><span class="line"><span class="cl">   700x525       59.98
+</span></span><span class="line"><span class="cl">   800x450       59.95    59.82
+</span></span><span class="line"><span class="cl">   640x512       60.02
+</span></span><span class="line"><span class="cl">   700x450       59.96    59.88
+</span></span><span class="line"><span class="cl">   640x480       60.00    59.94
+</span></span><span class="line"><span class="cl">   720x405       59.51    58.99
+</span></span><span class="line"><span class="cl">   684x384       59.88    59.85
+</span></span><span class="line"><span class="cl">   640x400       59.88    59.98
+</span></span><span class="line"><span class="cl">   640x360       59.86    59.83    59.84    59.32
+</span></span><span class="line"><span class="cl">   512x384       60.00
+</span></span><span class="line"><span class="cl">   512x288       60.00    59.92
+</span></span><span class="line"><span class="cl">   480x270       59.63    59.82
+</span></span><span class="line"><span class="cl">   400x300       60.32    56.34
+</span></span><span class="line"><span class="cl">   432x243       59.92    59.57
+</span></span><span class="line"><span class="cl">   320x240       60.05
+</span></span><span class="line"><span class="cl">   360x202       59.51    59.13
+</span></span><span class="line"><span class="cl">   320x180       59.84    59.32
+</span></span><span class="line"><span class="cl">DP-1 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
+</span></span><span class="line"><span class="cl">HDMI-1 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
+</span></span><span class="line"><span class="cl">DP-2 disconnected <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span>
+</span></span><span class="line"><span class="cl">HDMI-2 connected 1280x1024+1920+0 <span class="o">(</span>normal left inverted right x axis y axis<span class="o">)</span> 708mm x 398mm
+</span></span><span class="line"><span class="cl">   1280x1024     60.02*+
+</span></span><span class="line"><span class="cl">   1920x1080     60.00    50.00    59.94    24.00    23.98
+</span></span><span class="line"><span class="cl">   1920x1080i    60.00    50.00    59.94
+</span></span><span class="line"><span class="cl">   1280x960      60.00
+</span></span><span class="line"><span class="cl">   1280x720      60.00    50.00    59.94
+</span></span><span class="line"><span class="cl">   1024x768      60.00
+</span></span><span class="line"><span class="cl">   800x600       60.32    56.25
+</span></span><span class="line"><span class="cl">   720x576       50.00
+</span></span><span class="line"><span class="cl">   720x576i      50.00
+</span></span><span class="line"><span class="cl">   720x480       60.00    59.94
+</span></span><span class="line"><span class="cl">   720x480i      60.00    59.94
+</span></span><span class="line"><span class="cl">   640x480       60.00    59.94
+</span></span><span class="line"><span class="cl">   720x400       70.08
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Or to get connected monitors, you can invoke:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
-xrandr -q <span class="p">|</span> awk <span class="s1">&#39;/ connected / {print $1}&#39;</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">xrandr -q <span class="p">|</span> awk <span class="s1">&#39;/ connected / {print $1}&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>You will get output of <em>N</em> lines where <em>N</em> is numbers of connected monitors.</p>
 <p>The first one you see is your laptop. Others are external monitors if you have
@@ -327,12 +323,10 @@ I want external monitor to appear at right of my laptop screen:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --auto --right-of eDP-1
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">xrandr --output HDMI-2 --auto --right-of eDP-1
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>That&rsquo;s it. You can save these two functions in your <em>~/.xprofile</em> to auto
 start multihead on restart. As the configurations above we done, will go
@@ -481,152 +475,150 @@ away after this session.</p>
 </span><span class="lnt">139
 </span><span class="lnt">140
 </span><span class="lnt">141
-</span><span class="lnt">142
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
-$ vim ~/.xprofile_
-
-<span class="c1">#!/bin/sh</span>
-<span class="c1"># In the name of Allah, the most Gracious, the most Merciful.</span>
-<span class="c1">#</span>
-<span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
-<span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today&gt;</span>
-<span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
-<span class="c1"># ░░░░░░░░░░</span>
-
-
-<span class="c1"># Xresources file</span>
-<span class="nv">user_resources</span><span class="o">=</span><span class="nv">$HOME</span>/.Xresources
-<span class="c1"># custom keymaps</span>
-<span class="nv">user_keymaps</span><span class="o">=</span><span class="nv">$HOME</span>/.Xmodmap
-<span class="c1"># custom fonts</span>
-<span class="nv">user_fonts_dir</span><span class="o">=</span><span class="nv">$HOME</span>/.local/share/fonts
-<span class="c1"># Inactivity timeout</span>
-<span class="nv">inactivity_timeout</span><span class="o">=</span><span class="m">180</span>
-<span class="c1"># Time before exectuing lock</span>
-<span class="nv">notify_time</span><span class="o">=</span><span class="m">10</span>
-
-<span class="c1"># For some java apps</span>
-
-<span class="c1">#wmname LG3D &amp;</span>
-
-run<span class="o">()</span> <span class="o">{</span>
-  <span class="k">if</span> ! pgrep <span class="nv">$1</span> <span class="p">;</span>
-  <span class="k">then</span>
-    <span class="nv">$@</span><span class="p">&amp;</span>
-  <span class="k">fi</span>
-<span class="o">}</span>
-
-
-<span class="k">if</span> <span class="o">[</span> -d /etc/X11/xinit/xinitrc.d <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="k">for</span> f in /etc/X11/xinit/xinitrc.d/?*.sh <span class="p">;</span> <span class="k">do</span>
-    <span class="o">[</span> -x <span class="nv">$f</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> . <span class="nv">$f</span>
-    <span class="k">done</span>
-    <span class="nb">unset</span> f
-<span class="k">fi</span>
-
-<span class="c1"># Session name</span>
-<span class="nb">export</span> <span class="nv">DESKTOP_SESSION</span><span class="o">=</span>bspwm
-<span class="c1"># No tty</span>
-<span class="nb">export</span> <span class="nv">XDG_SESSION_TYPE</span><span class="o">=</span>x11
-
-tab<span class="o">()</span> <span class="o">{</span>
-  <span class="c1"># Configure only laptop&#39;s screen if no external monitor is connected.</span>
-  xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --brightness 1.0 <span class="se">\
-</span><span class="se"></span>    --gamma 0.76:0.75:0.68 <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
-<span class="o">}</span>
-
-tabular<span class="o">()</span> <span class="o">{</span>
-  <span class="c1"># Configure external monitor if exists</span>
-  tab
-  xrandr --output HDMI-2 --mode 1280x1024 --pos 1920x0 <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
-<span class="o">}</span>
-
-<span class="c1"># Start sxhkd</span>
-
-sxhkd <span class="p">&amp;</span>
-
-<span class="c1"># Load Xresources</span>
-
-<span class="o">[</span> -f <span class="nv">$user_resources</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> xrdb -merge <span class="s2">&#34;</span><span class="nv">$user_resources</span><span class="s2">&#34;</span>
-
-<span class="c1"># Load keymaps</span>
-
-<span class="o">[</span> -f <span class="nv">$user_keymaps</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> xmodmap <span class="s2">&#34;</span><span class="nv">$user_keymaps</span><span class="s2">&#34;</span>
-
-<span class="c1"># Run compositor</span>
-
-run picom -b --config <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.config/picom/picom.conf <span class="p">&amp;</span>
-
-<span class="c1"># Restore the last wallpaper</span>
-
-<span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.fehbg <span class="p">&amp;</span>
-
-<span class="c1"># Set cursor shape</span>
-
-xsetroot -cursor_name ul_angle <span class="p">&amp;</span>
-
-<span class="c1">#xcompmgr -c -f D 5 &amp;</span>
-
-<span class="c1"># Add fonts directories</span>
-
-xset +fp <span class="s2">&#34;</span><span class="nv">$user_fonts_dir</span><span class="s2">&#34;</span> <span class="o">&amp;&amp;</span> xset fp rehash
-
-<span class="c1"># Start urxvt in daemon mode</span>
-
-<span class="c1"># run urxvtd -q -o -f &amp;</span>
-
-<span class="c1"># No mouse when idle</span>
-
-run unclutter --ignore-scrolling --fork --timeout <span class="m">1</span> <span class="p">&amp;</span>
-
-<span class="c1"># DPMS and lock screen</span>
-
-xset dpms <span class="nv">$inactivity_timeout</span> <span class="p">&amp;</span>
-<span class="c1">#xss-lock -- physlock -mp &#39;Say, &#34;If the sea were ink for [writing] the words of my Lord, the sea would be exhausted before the words of my Lord were exhausted, even if We brought the like of it as a supplement.&#34;&#39; &amp;</span>
-xss-lock -- i3lock -c <span class="m">000000</span> <span class="p">&amp;</span>
-
-<span class="c1"># Start Notification daemon</span>
-
-run dunst -c <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.config/dunst/dunstrc <span class="p">&amp;</span>
-
-<span class="c1"># Mute the mic</span>
-
-pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo <span class="nb">true</span> <span class="p">&amp;</span>
-
-<span class="c1"># Redshift for less eye strain</span>
-
-<span class="c1">#redshift -c ~/.config/redshift/redshift.conf &amp;</span>
-
-<span class="c1"># Start tmux if not already running</span>
-
-<span class="o">[</span> -z <span class="nv">$TMUX</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> tmux new-session -s <span class="nv">$USER</span> -d
-
-<span class="c1"># Set brightness to 30 at boot</span>
-
-light -S <span class="m">30</span> <span class="p">&amp;</span>
-
-<span class="c1"># Configure multihead.</span>
-
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="k">$(</span>xrandr -q <span class="p">|</span> awk <span class="s1">&#39;/ connected / {print $1}&#39;</span> <span class="p">|</span> wc -l<span class="k">)</span><span class="s2">&#34;</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  tab --primary
-<span class="k">else</span>
-  tabular
-<span class="k">fi</span>
-
-<span class="c1"># Start a scratchpad</span>
-
-<span class="c1">#sleep 1</span>
-<span class="c1">#urxvtc -T &#39;scratchpad&#39; -geometry 65x20 &amp;</span>
-<span class="c1">#termite -t scratchpad &amp;</span>
-xfce4-terminal -T scratchpad --font<span class="o">=</span><span class="s1">&#39;Fantasque Sans Mono Italic 16&#39;</span> <span class="p">&amp;</span>
-
-<span class="c1"># vim:ft=sh</span>
-
-:wq
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ vim ~/.xprofile_
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#!/bin/sh</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># In the name of Allah, the most Gracious, the most Merciful.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  ▓▓▓▓▓▓▓▓▓▓</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░▓ Author ▓ Abdullah &lt;https://abdullah.today&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░▓▓▓▓▓▓▓▓▓▓</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ░░░░░░░░░░</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Xresources file</span>
+</span></span><span class="line"><span class="cl"><span class="nv">user_resources</span><span class="o">=</span><span class="nv">$HOME</span>/.Xresources
+</span></span><span class="line"><span class="cl"><span class="c1"># custom keymaps</span>
+</span></span><span class="line"><span class="cl"><span class="nv">user_keymaps</span><span class="o">=</span><span class="nv">$HOME</span>/.Xmodmap
+</span></span><span class="line"><span class="cl"><span class="c1"># custom fonts</span>
+</span></span><span class="line"><span class="cl"><span class="nv">user_fonts_dir</span><span class="o">=</span><span class="nv">$HOME</span>/.local/share/fonts
+</span></span><span class="line"><span class="cl"><span class="c1"># Inactivity timeout</span>
+</span></span><span class="line"><span class="cl"><span class="nv">inactivity_timeout</span><span class="o">=</span><span class="m">180</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Time before exectuing lock</span>
+</span></span><span class="line"><span class="cl"><span class="nv">notify_time</span><span class="o">=</span><span class="m">10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># For some java apps</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#wmname LG3D &amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">run<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> ! pgrep <span class="nv">$1</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$@</span><span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -d /etc/X11/xinit/xinitrc.d <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> f in /etc/X11/xinit/xinitrc.d/?*.sh <span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="o">[</span> -x <span class="nv">$f</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> . <span class="nv">$f</span>
+</span></span><span class="line"><span class="cl">    <span class="k">done</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">unset</span> f
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Session name</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DESKTOP_SESSION</span><span class="o">=</span>bspwm
+</span></span><span class="line"><span class="cl"><span class="c1"># No tty</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">XDG_SESSION_TYPE</span><span class="o">=</span>x11
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tab<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># Configure only laptop&#39;s screen if no external monitor is connected.</span>
+</span></span><span class="line"><span class="cl">  xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --brightness 1.0 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --gamma 0.76:0.75:0.68 <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tabular<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># Configure external monitor if exists</span>
+</span></span><span class="line"><span class="cl">  tab
+</span></span><span class="line"><span class="cl">  xrandr --output HDMI-2 --mode 1280x1024 --pos 1920x0 <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Start sxhkd</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sxhkd <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Load Xresources</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span> -f <span class="nv">$user_resources</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> xrdb -merge <span class="s2">&#34;</span><span class="nv">$user_resources</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Load keymaps</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span> -f <span class="nv">$user_keymaps</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> xmodmap <span class="s2">&#34;</span><span class="nv">$user_keymaps</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Run compositor</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">run picom -b --config <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.config/picom/picom.conf <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Restore the last wallpaper</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.fehbg <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Set cursor shape</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">xsetroot -cursor_name ul_angle <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#xcompmgr -c -f D 5 &amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Add fonts directories</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">xset +fp <span class="s2">&#34;</span><span class="nv">$user_fonts_dir</span><span class="s2">&#34;</span> <span class="o">&amp;&amp;</span> xset fp rehash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Start urxvt in daemon mode</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># run urxvtd -q -o -f &amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># No mouse when idle</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">run unclutter --ignore-scrolling --fork --timeout <span class="m">1</span> <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># DPMS and lock screen</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">xset dpms <span class="nv">$inactivity_timeout</span> <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#xss-lock -- physlock -mp &#39;Say, &#34;If the sea were ink for [writing] the words of my Lord, the sea would be exhausted before the words of my Lord were exhausted, even if We brought the like of it as a supplement.&#34;&#39; &amp;</span>
+</span></span><span class="line"><span class="cl">xss-lock -- i3lock -c <span class="m">000000</span> <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Start Notification daemon</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">run dunst -c <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.config/dunst/dunstrc <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Mute the mic</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo <span class="nb">true</span> <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Redshift for less eye strain</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#redshift -c ~/.config/redshift/redshift.conf &amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Start tmux if not already running</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span> -z <span class="nv">$TMUX</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> tmux new-session -s <span class="nv">$USER</span> -d
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Set brightness to 30 at boot</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">light -S <span class="m">30</span> <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Configure multihead.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="k">$(</span>xrandr -q <span class="p">|</span> awk <span class="s1">&#39;/ connected / {print $1}&#39;</span> <span class="p">|</span> wc -l<span class="k">)</span><span class="s2">&#34;</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  tab --primary
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  tabular
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Start a scratchpad</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#sleep 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#urxvtc -T &#39;scratchpad&#39; -geometry 65x20 &amp;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#termite -t scratchpad &amp;</span>
+</span></span><span class="line"><span class="cl">xfce4-terminal -T scratchpad --font<span class="o">=</span><span class="s1">&#39;Fantasque Sans Mono Italic 16&#39;</span> <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># vim:ft=sh</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">:wq
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Change the resolution and outputs name in it and enjoy multiheading. 😉</p>
 <p>Here is a demonstration video.</p>

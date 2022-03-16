@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/abdullah.today\/encrypted-archlinux\/"
-        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "archlinux, encryption, encrypted install, luks, lvm, luks_on_lvm","wordcount":  1115 ,
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "archlinux, encryption, encrypted install, luks, lvm, luks_on_lvm","wordcount":  1112 ,
         "url": "https:\/\/abdullah.today\/encrypted-archlinux\/","datePublished": "2020-01-03T00:00:00+00:00","dateModified": "2020-01-03T00:00:00+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
@@ -107,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Encrypted Arch Linux installation</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-03">2020-01-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1115 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-03">2020-01-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1112 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -155,8 +155,8 @@ and open source linux distribution based on the rule Keep it Simple.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>downloaded iso file <span class="nv">of</span><span class="o">=</span>/dev/sdX <span class="nv">status</span><span class="o">=</span>progress
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dd <span class="k">if</span><span class="o">=</span>downloaded iso file <span class="nv">of</span><span class="o">=</span>/dev/sdX <span class="nv">status</span><span class="o">=</span>progress
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>where X is your USB device&rsquo;s ID. Don&rsquo;t use a single partition. Use the whole
 device.</p>
@@ -173,10 +173,10 @@ connection, you have to connect it manually.</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wpa_passphrase <span class="s1">&#39;wifi APN&#39;</span> <span class="s1">&#39;wifi password&#39;</span> &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf
-wpa_supplicant -Bc /etc/wpa_supplicant/wpa_supplicant.conf -i <span class="s1">&#39;wifi interface&#39;</span>
-dhclient
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wpa_passphrase <span class="s1">&#39;wifi APN&#39;</span> <span class="s1">&#39;wifi password&#39;</span> &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf
+</span></span><span class="line"><span class="cl">wpa_supplicant -Bc /etc/wpa_supplicant/wpa_supplicant.conf -i <span class="s1">&#39;wifi interface&#39;</span>
+</span></span><span class="line"><span class="cl">dhclient
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>where wifi APN is the access point name you get when you scan for your wifi. And
 wifi interface you can get using iwconfig. It might be wlp3s0 or wlan0.
@@ -193,8 +193,8 @@ archlinux.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">gdisk /dev/sda
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gdisk /dev/sda
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -243,56 +243,54 @@ archlinux.</p>
 </span><span class="lnt">43
 </span><span class="lnt">44
 </span><span class="lnt">45
-</span><span class="lnt">46
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">GPT fdisk <span class="o">(</span>gdisk<span class="o">)</span> version 1.0.1
-
-  Partition table scan:
-  MBR: protective
-  BSD: not present
-  APM: not present
-  GPT: present
-
-Found valid GPT with protective MBR<span class="p">;</span> using GPT.
-
-Command <span class="o">(</span>? <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: o
-This option deletes all partitions and creates a new protective MBR.
-Proceed? <span class="o">(</span>Y/N<span class="o">)</span>: Y
-
-Command <span class="o">(</span>? <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
-Partition number <span class="o">(</span>1-128, default 1<span class="o">)</span>: 
-First sector <span class="o">(</span>34-242187466, <span class="nv">default</span> <span class="o">=</span> 2048<span class="o">)</span> or <span class="o">{</span>+-<span class="o">}</span>size<span class="o">{</span>KMGTP<span class="o">}</span>: 
-Last sector <span class="o">(</span>2048-242187466, <span class="nv">default</span> <span class="o">=</span> 242187466<span class="o">)</span> or <span class="o">{</span>+-<span class="o">}</span>size<span class="o">{</span>KMGTP<span class="o">}</span>:
-+512M
-Current <span class="nb">type</span> is <span class="s1">&#39;Linux filesystem&#39;</span>
-Hex code or GUID <span class="o">(</span>L to show codes, <span class="nv">Enter</span> <span class="o">=</span> 8300<span class="o">)</span>: EF00
-Changed <span class="nb">type</span> of partition to <span class="s1">&#39;EFI System&#39;</span>
-
-Command <span class="o">(</span>? <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
-Partition number <span class="o">(</span>2-128, default 2<span class="o">)</span>: 
-First sector <span class="o">(</span>34-242187466, <span class="nv">default</span> <span class="o">=</span> 1050624<span class="o">)</span> or <span class="o">{</span>+-<span class="o">}</span>size<span class="o">{</span>KMGTP<span class="o">}</span>: 
-Last sector <span class="o">(</span>1050624-242187466, <span class="nv">default</span> <span class="o">=</span> 242187466<span class="o">)</span> or <span class="o">{</span>+-<span class="o">}</span>size<span class="o">{</span>KMGTP<span class="o">}</span>: 
-Current <span class="nb">type</span> is <span class="s1">&#39;Linux filesystem&#39;</span>
-Hex code or GUID <span class="o">(</span>L to show codes, <span class="nv">Enter</span> <span class="o">=</span> 8300<span class="o">)</span>: <span class="m">8309</span>
-Changed <span class="nb">type</span> of partition to <span class="s1">&#39;Linux LUKS&#39;</span>
-
-Command <span class="o">(</span>? <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: p
-Disk /dev/sda: <span class="m">242187500</span> sectors, 115.5 GiB
-Logical sector size: <span class="m">512</span> bytes
-Disk identifier <span class="o">(</span>GUID<span class="o">)</span>: 569FFB67-6969-49E4-B999-15A681987564
-Partition table holds up to <span class="m">128</span> entries
-First usable sector is 34, last usable sector is <span class="m">242187466</span>
-Partitions will be aligned on 2048-sector boundaries
-Total free space is <span class="m">2014</span> sectors <span class="o">(</span>1007.0 KiB<span class="o">)</span>
-
-Number  Start <span class="o">(</span>sector<span class="o">)</span>    End <span class="o">(</span>sector<span class="o">)</span>  Size       Code  Name
-   <span class="m">1</span>            <span class="m">2048</span>         <span class="m">1050623</span>   512.0 MiB   EF00  EFI System
-   <span class="m">2</span>         <span class="m">1050624</span>       <span class="m">242187466</span>   115.0 GiB   <span class="m">8309</span>  Linux LUKS
-
-<span class="nb">command</span> <span class="o">(</span>? <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: w
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">GPT fdisk <span class="o">(</span>gdisk<span class="o">)</span> version 1.0.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  Partition table scan:
+</span></span><span class="line"><span class="cl">  MBR: protective
+</span></span><span class="line"><span class="cl">  BSD: not present
+</span></span><span class="line"><span class="cl">  APM: not present
+</span></span><span class="line"><span class="cl">  GPT: present
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Found valid GPT with protective MBR<span class="p">;</span> using GPT.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Command <span class="o">(</span>? <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: o
+</span></span><span class="line"><span class="cl">This option deletes all partitions and creates a new protective MBR.
+</span></span><span class="line"><span class="cl">Proceed? <span class="o">(</span>Y/N<span class="o">)</span>: Y
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Command <span class="o">(</span>? <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
+</span></span><span class="line"><span class="cl">Partition number <span class="o">(</span>1-128, default 1<span class="o">)</span>: 
+</span></span><span class="line"><span class="cl">First sector <span class="o">(</span>34-242187466, <span class="nv">default</span> <span class="o">=</span> 2048<span class="o">)</span> or <span class="o">{</span>+-<span class="o">}</span>size<span class="o">{</span>KMGTP<span class="o">}</span>: 
+</span></span><span class="line"><span class="cl">Last sector <span class="o">(</span>2048-242187466, <span class="nv">default</span> <span class="o">=</span> 242187466<span class="o">)</span> or <span class="o">{</span>+-<span class="o">}</span>size<span class="o">{</span>KMGTP<span class="o">}</span>:
+</span></span><span class="line"><span class="cl">+512M
+</span></span><span class="line"><span class="cl">Current <span class="nb">type</span> is <span class="s1">&#39;Linux filesystem&#39;</span>
+</span></span><span class="line"><span class="cl">Hex code or GUID <span class="o">(</span>L to show codes, <span class="nv">Enter</span> <span class="o">=</span> 8300<span class="o">)</span>: EF00
+</span></span><span class="line"><span class="cl">Changed <span class="nb">type</span> of partition to <span class="s1">&#39;EFI System&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Command <span class="o">(</span>? <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
+</span></span><span class="line"><span class="cl">Partition number <span class="o">(</span>2-128, default 2<span class="o">)</span>: 
+</span></span><span class="line"><span class="cl">First sector <span class="o">(</span>34-242187466, <span class="nv">default</span> <span class="o">=</span> 1050624<span class="o">)</span> or <span class="o">{</span>+-<span class="o">}</span>size<span class="o">{</span>KMGTP<span class="o">}</span>: 
+</span></span><span class="line"><span class="cl">Last sector <span class="o">(</span>1050624-242187466, <span class="nv">default</span> <span class="o">=</span> 242187466<span class="o">)</span> or <span class="o">{</span>+-<span class="o">}</span>size<span class="o">{</span>KMGTP<span class="o">}</span>: 
+</span></span><span class="line"><span class="cl">Current <span class="nb">type</span> is <span class="s1">&#39;Linux filesystem&#39;</span>
+</span></span><span class="line"><span class="cl">Hex code or GUID <span class="o">(</span>L to show codes, <span class="nv">Enter</span> <span class="o">=</span> 8300<span class="o">)</span>: <span class="m">8309</span>
+</span></span><span class="line"><span class="cl">Changed <span class="nb">type</span> of partition to <span class="s1">&#39;Linux LUKS&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Command <span class="o">(</span>? <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: p
+</span></span><span class="line"><span class="cl">Disk /dev/sda: <span class="m">242187500</span> sectors, 115.5 GiB
+</span></span><span class="line"><span class="cl">Logical sector size: <span class="m">512</span> bytes
+</span></span><span class="line"><span class="cl">Disk identifier <span class="o">(</span>GUID<span class="o">)</span>: 569FFB67-6969-49E4-B999-15A681987564
+</span></span><span class="line"><span class="cl">Partition table holds up to <span class="m">128</span> entries
+</span></span><span class="line"><span class="cl">First usable sector is 34, last usable sector is <span class="m">242187466</span>
+</span></span><span class="line"><span class="cl">Partitions will be aligned on 2048-sector boundaries
+</span></span><span class="line"><span class="cl">Total free space is <span class="m">2014</span> sectors <span class="o">(</span>1007.0 KiB<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Number  Start <span class="o">(</span>sector<span class="o">)</span>    End <span class="o">(</span>sector<span class="o">)</span>  Size       Code  Name
+</span></span><span class="line"><span class="cl">   <span class="m">1</span>            <span class="m">2048</span>         <span class="m">1050623</span>   512.0 MiB   EF00  EFI System
+</span></span><span class="line"><span class="cl">   <span class="m">2</span>         <span class="m">1050624</span>       <span class="m">242187466</span>   115.0 GiB   <span class="m">8309</span>  Linux LUKS
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">command</span> <span class="o">(</span>? <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: w
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Type o and then Y.</p>
 <p>Type n to create a new partition. Select 1 to create a very first partition for
@@ -311,8 +309,8 @@ to save the work.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkfs.vfat -F32 /dev/sda1
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkfs.vfat -F32 /dev/sda1
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now create a LUKS container.</p>
 <div class="highlight"><div class="chroma">
@@ -320,8 +318,8 @@ to save the work.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> cryptsetup luksFormat /dev/sda2
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> cryptsetup luksFormat /dev/sda2
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>It will ask you to confirm. Type YES in all uppercase. Then choose a good
 passphrase. Write it if you can&rsquo;t memorize it. Once forgotten, you can&rsquo;t recover
@@ -332,8 +330,8 @@ it.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> cryptsetup open /dev/sda2 cryptlvm
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> cryptsetup open /dev/sda2 cryptlvm
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create a physical volume in this LUKS container.</p>
 <div class="highlight"><div class="chroma">
@@ -341,8 +339,8 @@ it.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> pvcreate /dev/mapper/cryptlvm
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> pvcreate /dev/mapper/cryptlvm
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create a volume group. I&rsquo;ll name it nix.</p>
 <div class="highlight"><div class="chroma">
@@ -350,8 +348,8 @@ it.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> vgcreate nix /dev/mapper/cryptlvm
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> vgcreate nix /dev/mapper/cryptlvm
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create logical volumes on volume group. I&rsquo;m creating three, one for encrypted swap
 and another for home and last one for root.</p>
@@ -362,10 +360,10 @@ and another for home and last one for root.</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> lvcreate -L 8G nix -n swap
- lvcreate -L 25G nix -n root
- lvcreate -l +100%FREE nix -n home
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> lvcreate -L 8G nix -n swap
+</span></span><span class="line"><span class="cl"> lvcreate -L 25G nix -n root
+</span></span><span class="line"><span class="cl"> lvcreate -l +100%FREE nix -n home
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now create filesystems.</p>
 <div class="highlight"><div class="chroma">
@@ -375,10 +373,10 @@ and another for home and last one for root.</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> mkfs.ext4 /dev/mapper/nix-root
- mkfs.ext4 /dev/mapper/nix-home
- mkswap /dev/mapper/nix-swap
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> mkfs.ext4 /dev/mapper/nix-root
+</span></span><span class="line"><span class="cl"> mkfs.ext4 /dev/mapper/nix-home
+</span></span><span class="line"><span class="cl"> mkswap /dev/mapper/nix-swap
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Mount them.</p>
 <div class="highlight"><div class="chroma">
@@ -390,12 +388,12 @@ and another for home and last one for root.</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> mount /dev/mapper/nix-root /mnt
- mkdir /mnt/home
- mkdir /mnt/boot
- mount /dev/mapper/nix-home /mnt/home
- mount /dev/sda1 /mnt/boot
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> mount /dev/mapper/nix-root /mnt
+</span></span><span class="line"><span class="cl"> mkdir /mnt/home
+</span></span><span class="line"><span class="cl"> mkdir /mnt/boot
+</span></span><span class="line"><span class="cl"> mount /dev/mapper/nix-home /mnt/home
+</span></span><span class="line"><span class="cl"> mount /dev/sda1 /mnt/boot
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Turn the swap partition on.</p>
 <div class="highlight"><div class="chroma">
@@ -403,8 +401,8 @@ and another for home and last one for root.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> swapon /dev/mapper/nix-swap
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> swapon /dev/mapper/nix-swap
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="install-the-base-system">Install the base system</h3>
 <div class="highlight"><div class="chroma">
@@ -412,8 +410,8 @@ and another for home and last one for root.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> pacstrap /mnt base base-devel linux linux-firmware
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> pacstrap /mnt base base-devel linux linux-firmware
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="generate-fstab">Generate fstab</h3>
 <div class="highlight"><div class="chroma">
@@ -421,8 +419,8 @@ and another for home and last one for root.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p><strong><em>NOTE:</em></strong> If you&rsquo;re using an SSD, replace relatime with noatime in  /mnt/etc/fstab except boot partition.</p>
@@ -433,8 +431,8 @@ and another for home and last one for root.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> arch-chroot /mnt
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> arch-chroot /mnt
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Set the timezone.</p>
 <div class="highlight"><div class="chroma">
@@ -443,9 +441,9 @@ and another for home and last one for root.</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> ln -s /usr/share/zoneinfo/Asia/Karachi /etc/localtime
- hwclock --systohc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> ln -s /usr/share/zoneinfo/Asia/Karachi /etc/localtime
+</span></span><span class="line"><span class="cl"> hwclock --systohc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Replace Asia with your continent and Karachi with city.</p>
 <p>Set hostname</p>
@@ -454,8 +452,8 @@ and another for home and last one for root.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> <span class="nb">echo</span> nix &gt; /etc/hostname
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="nb">echo</span> nix &gt; /etc/hostname
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Replace nix with name you wanna give your machine to.</p>
 <p>Set locales</p>
@@ -490,34 +488,34 @@ and another for home and last one for root.</p>
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> vim /etc/locale.gen
-
-  <span class="c1">#en_HK ISO-8859-1  </span>
-  <span class="c1">#en_IE.UTF-8 UTF-8  </span>
-  <span class="c1">#en_IE ISO-8859-1  </span>
-  <span class="c1">#en_IE@euro ISO-8859-15  </span>
-  <span class="c1">#en_IL UTF-8  </span>
-  <span class="c1">#en_IN UTF-8  </span>
-  <span class="c1">#en_NG UTF-8  </span>
-  <span class="c1">#en_NZ.UTF-8 UTF-8  </span>
-  <span class="c1">#en_NZ ISO-8859-1  </span>
-  <span class="c1">#en_PH.UTF-8 UTF-8  </span>
-  <span class="c1">#en_PH ISO-8859-1  </span>
-  <span class="c1">#en_SC.UTF-8 UTF-8  </span>
-  <span class="c1">#en_SG.UTF-8 UTF-8  </span>
-  <span class="c1">#en_SG ISO-8859-1  </span>
-  en_US.UTF-8 UTF-8  
-  <span class="c1">#en_US ISO-8859-1  </span>
-  <span class="c1">#en_ZA.UTF-8 UTF-8  </span>
-  <span class="c1">#en_ZA ISO-8859-1  </span>
-  <span class="c1">#en_ZM UTF-8  </span>
-  <span class="c1">#en_ZW.UTF-8 UTF-8  </span>
-  <span class="c1">#en_ZW ISO-8859-1  </span>
-  <span class="c1">#eo UTF-8  </span>
-  <span class="c1">#es_AR.UTF-8 UTF-8  </span>
-  <span class="c1">#es_AR ISO-8859-1  </span>
-  <span class="c1">#es_BO.UTF-8 UTF-8  </span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> vim /etc/locale.gen
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_HK ISO-8859-1  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_IE.UTF-8 UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_IE ISO-8859-1  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_IE@euro ISO-8859-15  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_IL UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_IN UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_NG UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_NZ.UTF-8 UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_NZ ISO-8859-1  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_PH.UTF-8 UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_PH ISO-8859-1  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_SC.UTF-8 UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_SG.UTF-8 UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_SG ISO-8859-1  </span>
+</span></span><span class="line"><span class="cl">  en_US.UTF-8 UTF-8  
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_US ISO-8859-1  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_ZA.UTF-8 UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_ZA ISO-8859-1  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_ZM UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_ZW.UTF-8 UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#en_ZW ISO-8859-1  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#eo UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#es_AR.UTF-8 UTF-8  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#es_AR ISO-8859-1  </span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#es_BO.UTF-8 UTF-8  </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Uncomment en_US.UTF-8 UTF-8 . (remove # from the beginning)</p>
 <div class="highlight"><div class="chroma">
@@ -526,9 +524,9 @@ and another for home and last one for root.</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> <span class="nb">echo</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 &gt; /etc/locale.conf
- locale-gen
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="nb">echo</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 &gt; /etc/locale.conf
+</span></span><span class="line"><span class="cl"> locale-gen
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Install some necessary software.</p>
 <div class="highlight"><div class="chroma">
@@ -536,8 +534,8 @@ and another for home and last one for root.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> pacman -S wpa_supplicant dhclient dialog
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> pacman -S wpa_supplicant dhclient dialog
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create a user.</p>
 <div class="highlight"><div class="chroma">
@@ -546,9 +544,9 @@ and another for home and last one for root.</p>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> useradd -m -G wheel <span class="s1">&#39;username&#39;</span>
- passwd <span class="s1">&#39;username&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> useradd -m -G wheel <span class="s1">&#39;username&#39;</span>
+</span></span><span class="line"><span class="cl"> passwd <span class="s1">&#39;username&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create root password</p>
 <div class="highlight"><div class="chroma">
@@ -556,8 +554,8 @@ and another for home and last one for root.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> passwd
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> passwd
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="mkinitcpio-configuration">mkinitcpio configuration</h3>
 <p>Edit the file <strong>/etc/mkinitcpio.conf</strong>. Copy this line or write in order in hooks line. Order matters so don&rsquo;t ignore or you will get un-bootable system.</p>
@@ -566,14 +564,12 @@ and another for home and last one for root.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> vim /etc/mkinitcpio.conf
-
-<span class="nv">HOOKS</span><span class="o">=(</span>base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems resume fsck<span class="o">)</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> vim /etc/mkinitcpio.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">HOOKS</span><span class="o">=(</span>base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems resume fsck<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Generate mkinitcpio</p>
 <div class="highlight"><div class="chroma">
@@ -581,8 +577,8 @@ and another for home and last one for root.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkinitcpio -p linux
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkinitcpio -p linux
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="install-bootloader">Install bootloader</h3>
 <div class="highlight"><div class="chroma">
@@ -590,8 +586,8 @@ and another for home and last one for root.</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> bootctl install 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> bootctl install 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Create entries.</p>
 <p>Create a file <strong>/boot/loader/entries/arch.conf</strong>.</p>
@@ -603,17 +599,15 @@ and another for home and last one for root.</p>
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> vim /boot/loader/entries/arch.conf
-
-title	ArchLinux
-linux	/vmlinuz-linux
-initrd	/initramfs-linux.img
-options <span class="nv">cryptdevice</span><span class="o">=</span><span class="nv">UUID</span><span class="o">=</span>&lt;YOUR-PARTITION-UUID&gt;:lvm:allow-discards <span class="nv">resume</span><span class="o">=</span>/dev/mapper/nix-swap <span class="nv">root</span><span class="o">=</span>/dev/mapper/nix-root rw quiet
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> vim /boot/loader/entries/arch.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">title	ArchLinux
+</span></span><span class="line"><span class="cl">linux	/vmlinuz-linux
+</span></span><span class="line"><span class="cl">initrd	/initramfs-linux.img
+</span></span><span class="line"><span class="cl">options <span class="nv">cryptdevice</span><span class="o">=</span><span class="nv">UUID</span><span class="o">=</span>&lt;YOUR-PARTITION-UUID&gt;:lvm:allow-discards <span class="nv">resume</span><span class="o">=</span>/dev/mapper/nix-swap <span class="nv">root</span><span class="o">=</span>/dev/mapper/nix-root rw quiet
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Where UUID you can get using blkid. It would be in /dev/sda2.</p>
 <h3 id="un-mount-and-reboot">Un-mount and reboot</h3>
@@ -624,10 +618,10 @@ options <span class="nv">cryptdevice</span><span class="o">=</span><span class="
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> <span class="nb">exit</span>
- umount /mnt
- reboot
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="nb">exit</span>
+</span></span><span class="line"><span class="cl"> umount /mnt
+</span></span><span class="line"><span class="cl"> reboot
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Remove the USB device. And enjoy your new archlinux encrypted installation.</p>
 </div><div class="post-footer" id="post-footer">

@@ -133,12 +133,12 @@ systemd there is explaination in repository readme file too.</p>
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ git clone https://github.com/Awan/beautify.git
-$ cp beautify/beautify.py ~/bin/beautify
-$ cp beautify/systemd/beautify.service ~/.config/systemd/user/default.target.wants/
-$ systemctl <span class="nb">enable</span> --user beautify.service
-$ systemctl start --user beautify.service
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone https://github.com/Awan/beautify.git
+</span></span><span class="line"><span class="cl">$ cp beautify/beautify.py ~/bin/beautify
+</span></span><span class="line"><span class="cl">$ cp beautify/systemd/beautify.service ~/.config/systemd/user/default.target.wants/
+</span></span><span class="line"><span class="cl">$ systemctl <span class="nb">enable</span> --user beautify.service
+</span></span><span class="line"><span class="cl">$ systemctl start --user beautify.service
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Don&rsquo;t forget to edit the beautify.service. Add path
 to beautify script where you copied it, and also add
@@ -175,14 +175,14 @@ copy the <em>beautify.py</em> to ~/bin and execute it from
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ vi ~/.xinitrc
-...
-
-~/bin/beautify ~/pix/wallpapers 300
-...
-
-:wq!
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ vi ~/.xinitrc
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">~/bin/beautify ~/pix/wallpapers 300
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">:wq!
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>It will change the wallpapers from <em>~/pix/wallpapers</em> every 5
 minutes. Enjoy!</p>

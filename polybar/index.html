@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/abdullah.today\/polybar\/"
-        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "polybar, bspwm, status_bar","wordcount":  4296 ,
+        },"image": ["https:\/\/abdullah.today\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "polybar, bspwm, status_bar","wordcount":  4295 ,
         "url": "https:\/\/abdullah.today\/polybar\/","datePublished": "2019-10-12T00:00:00+00:00","dateModified": "2019-10-12T00:00:00+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Abdullah Khabir","logo": "https:\/\/abdullah.today\/images\/avatar.png"},"author": {
@@ -107,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Polybar - A stylish bar</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-12">2019-10-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4296 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-12">2019-10-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4295 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;21 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -891,773 +891,771 @@ bspwm, dwm and many other window managers even with xfce4.</p>
 </span><span class="lnt">760
 </span><span class="lnt">761
 </span><span class="lnt">762
-</span><span class="lnt">763
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ cat $HOME/.config/polybar/config
-[colors]
-background = #FF000000
-background-alt = ${xrdb:polybar*color8}
-foreground = ${xrdb:polybar*foreground}
-urgent = #B34747
-foreground-alt = #555
-primary = ${xrdb:polybar*color3}
-secondary = ${xrdb:polybar*color1}
-alert = ${xrdb:polybar*color13}
-
-
-[settings]
-screenchange-reload = true
-screenchange = true
-throttle-output = 5
-throttle-output-for = 10
-throttle-input-for = 30
-compositing-background = source
-compositing-foreground = over
-compositing-overline = over
-compositing-underline = over
-compositing-border = over
-pseudo-transparency = true
-
-
-[global/wm]
-margin-top = 0
-margin-bottom = 0
-
-
-[bar/eDP-1]
-monitor = ${env:MONITOR:eDP-1}
-monitor-fallback = eDP1
-bottom = false
-width = 100%
-height = 25
-offset-x = 0
-offset-y = 0
-radius = 10
-fixed-center = true
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-size = 0
-line-color = #f00
-border-size = 0
-border-top-size = 0
-border-color = ${xrdb:background}
-padding-left = 0
-padding-right = 1
-module-margin-left = 2
-module-margin-right = 2
-font-0 =  FontAwesome
-font-1 = Monospace:weight=regular:pixelsize=13
-font-2 = DejaVu Sans:pixelsize=11
-font-3 =  Segoe UI Emoji
-modules-right = bspwm
-modules-center = mpd
-modules-left = date hijri wlan battery temperature cpu memory pulseaudio arch_backlight
-tray-position = right
-tray-padding = 6
-;tray-background = #24292A00
-tray-background = ${root.background}
-wm-restack = bspwm
-override-redirect = false
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-
-[module/bspwm]
-type = internal/bspwm
-pin-workspaces = true
-inline-mode = false
-enable-click = true
-enable-scroll = true
-reverse-scroll = true
-fuzzy-match = false
-ws-icon-0 = &#34;I&#34;
-ws-icon-1 = &#34;II&#34;
-ws-icon-2 = &#34;III&#34;
-ws-icon-3 = &#34;IV&#34;
-ws-icon-4 = &#34;V&#34;
-ws-icon-5 = &#34;VI&#34;
-ws-icon-6 = &#34;VII&#34;
-ws-icon-7 = &#34;VIII&#34;
-ws-icon-8 = &#34;IX&#34;
-ws-icon-9 = &#34;X&#34;
-format = &lt;label-state&gt; &lt;label-mode&gt;
-label-monitor = %name%
-label-dimmed-foreground = #555
-;label-dimmed-focused-background = #f00
-label-focused = %icon% %name%
-label-focused-underline= ${colors.primary}
-label-focused-foreground = #f00000
-label-occupied = %icon% %name%
-label-occupied-underline = #555555
-label-urgent = %icon% %name%
-label-urgent-underline = ${colors.primary}
-label-urgent-background = ${colors.alert}
-label-empty = %icon% %name%
-label-empty-foreground = #d700ff
-;label-empty-foreground = ${colors.foreground-alt}
-label-monocle = &#34;  &#34;
-label-monocle-foreground = #fff995
-label-tiled = &#34;  &#34;
-;label-tiled-foreground = #750080
-label-tiled-foreground = #00ffff
-label-fullscreen = &#34;  &#34;
-;label-floating = &#34;  &#34;
-label-floating = &#34;  &#34;
-label-floating-foreground = #ff45ff
-label-pseudotiled = &#34;  &#34;
-label-locked = &#34;  &#34;
-label-locked-foreground = #bd2c40
-label-sticky = &#34;  &#34;
-label-sticky-foreground = #fba922
-label-private = &#34;     &#34;
-label-private-foreground = #bd2c40
-label-marked = &#34; &#34;
-label-marked-foreground = #0000ff
-label-separator = 
-label-separator-padding = 3
-label-separator-foreground = #ffb52a
-label-occupied-padding = 3
-label-empty-padding = 3
-label-urgent-padding = 3
-
-
-
-[module/xwindow]
-type = internal/xwindow
-label = &#34;    /  %title:0:48:...%&#34;
-
-
-[module/backlight-acpi]
-type = internal/backlight
-sub = module/backlight-acpi
-base = module/xbacklight
-inherit = module/xbacklight
-card = intel_backlight
-format = &lt;ramp&gt;&lt;label&gt;
-label = %percentage%%
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
-
-;[module/backlight]
-;type = internal/backlight
-;card = intel_backlight
-;;output = eDP-1
-;format = &lt;ramp&gt;&lt;label&gt;
-;label = %percentage%%
-;label-foreground = #3EC13F
-;format-padding = 1
-;ramp-0 = 🌕
-;ramp-1 = 🌔
-;ramp-2 = 🌓
-;ramp-3 = 🌒
-;ramp-4 = 🌑
-;enable-scroll = true
-;scroll-up = exec light -A 5
-;scroll-down = exec light -U 6
-;
-
-[module/pavolume]
-type = custom/script
-tail = true
-label = %output%
-label-foreground = #D1FF00
-exec = ~/.config/polybar/scripts/pavolume.sh --listen
-click-right = exec pavucontrol
-scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
-scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-format-underline = #3EC13F
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-
-[module/xworkspaces]
-type = internal/xworkspaces
-pin-workspaces = true
-; Create click handler used to focus desktop
-enable-click = true
-index-sort = true
-wrapping-scroll = false
-#ws-num = 9
-icon-0 = code;♚
-icon-1 = office;♛
-icon-2 = graphics;♜
-icon-3 = mail;♝
-icon-4 = web;♞
-icon-default = ♟
-show-all = true
-label-empty-foreground =  ${colors.foreground-alt}
-#label-empty = %icon%
-label-mode-padding = 3
-label-mode-foreground = ${colors.background}
-label-mode-background = #a8df5a
-label-focused = %icon%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
-label-unfocused = %icon%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
-; visible = Active workspace on unfocused monitor
-label-visible = %icon%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-; urgent = Workspace with urgency hint set
-label-urgent-foreground = ${xrdb:polybar*color8}
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
-; Create scroll handlers used to cycle desktops
-enable-scroll = true
-label-monitor = %name%
-format = &lt;label-state&gt;
-label-active = %icon% %name%
-label-active-foreground = #ffffff
-#label-active-background = #3f3f3f
-label-active-underline = #fba922
-label-occupied = %icon%
-label-occupied-underline = #555555
-label-urgent = %icon%
-#label-empty = %icon%
-#label-empty-foreground = #55
-
-
-
-[module/wlan]
-type = internal/network
-interface = wlp3s0
-#interval = 3.0
-tail = true
-format-connected = &lt;ramp-signal&gt; &lt;label-connected&gt;
-format-connected-underline = #9f78e1
-label-connected =  %essid%%{A}
-label-connected-foreground = ${xrdb:polybar.color16}
-label-disconnected = 
-format-disconnected = &lt;label-disconnected&gt;
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-;ramp-signal-0 = 😱
-;ramp-signal-1 = 😠
-;ramp-signal-2 = 😒
-;ramp-signal-3 = 😊
-;ramp-signal-4 = 😃
-;ramp-signal-5 = 😈
-
-;label-connected = %essid%
-;format-disconnected = &lt;label-disconnected&gt;
-;label-disconnected =   Disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
-format-packetloss = &lt;animation-packetloss&gt; &lt;label-connected&gt;
-animation-packetloss-0 = ⚠
-animation-packetloss-0-foreground = #ffa64c
-animation-packetloss-1 = 📶
-animation-packetloss-1-foreground = #000000
-; Framerate in milliseconds
-animation-packetloss-framerate = 500
-label-packetloss = %essid%
-label-packetloss-foreground = #eefafafa
-;ramp-signal-0 =  
-;ramp-signal-1 =  
-;ramp-signal-2 =  
-;ramp-signal-3 =  
-;ramp-signal-4 =  
-;ramp-signal-5 =  
-
-ramp-signal-foreground = ${colors.foreground-alt}
-
-
-[module/xbacklight]
-type = internal/xbacklight
-format = &lt;label&gt; &lt;bar&gt;
-bar-width = 10
-bar-indicator =  
-bar-indicator-foreground = #fff
-bar-empty = 
-bar-fill = 
-format-prefix = &#34; &#34;
-label-foreground = #3EC13F
-format-padding = 1
-
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = &#34;cpu &#34;
-format-prefix-foreground = ${xrdb:polybar.color3}
-format-underline = #f90000
-label = %percentage%%
-label-foreground = ${xrdb:polybar.color16}
-
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = &#34;mem &#34;
-format-prefix-foreground = ${xrdb:polybar.color2}
-format-underline = #4bffdc
-label = %percentage_used%%
-label-foreground = ${xrdb:polybar.color12}
-
-
-[module/date]
-type = internal/date
-interval = 1
-date = &#34; %a %d %b -&#34;
-date-alt = &#34; %d %b -&#34;
-time = %H:%M
-time-alt = %H:%M:%S
-format-prefix = &#34; &#34;
-;format-prefix = &#34;🕓&#34;
-format-prefix-foreground = ${xrdb:polybar*color5}
-format-underline = #0a6cf5
-;label = %date% %time%
-label = %time%
-label-foreground = #9A32DB
-
-[module/time]
-type = custom/script
-exec = ~/.config/polybar/scripts/time.py
-format-prefix = &#34; &#34;
-format-prefix-foreground = ${xrdb:polybar*color4}
-format-underline = #0a6cf5
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = AC0
-full-at = 100
-poll-interval = 5
-time-format = %H:%M
-format-charging = &lt;animation-charging&gt; &lt;label-charging&gt;
-format-charging-underline = #ffb52a
-label-charging =  %percentage%% %time%
-label-charging-foreground = ${xrdb:polybar.color9}
-format-discharging = &lt;ramp-capacity&gt; &lt;label-discharging&gt;
-format-discharging-underline = ${self.format-charging-underline}
-label-discharging = %percentage%% %time%
-label-discharging-foreground = ${xrdb:polybar.color9}
-format-full = &lt;ramp-capacity&gt; &lt;label-full&gt;
-format-full-prefix = &#34; &#34;
-format-full-prefix-foreground = ${xrdb:polybar.color1}
-format-full-underline = ${self.format-charging-underline}
-;label-full = %percentage%% - fully charged!
-ramp-capacity-0 = &#34; &#34;
-ramp-capacity-1 = &#34; &#34;
-ramp-capacity-2 = &#34; &#34;
-ramp-capacity-3 = &#34; &#34;
-ramp-capacity-4 = &#34; &#34;
-ramp-capacity-foreground = ${colors.foreground-alt}
-animation-charging-0 = &#34;  &#34;
-animation-charging-1 = &#34;  &#34;
-animation-charging-2 = &#34;  &#34;
-animation-charging-3 = &#34;  &#34;
-animation-charging-4 = &#34;  &#34;
-animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 750
-
-[module/battery2]
-type = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 95
-
-format-charging = &#34;&lt;animation-charging&gt;&lt;label-charging&gt;&#34;
-;format-charging-underline = ${colors.foreground}
-label-charging = %percentage%% - time left %time%
-label-charging-foreground = ${colors.foreground}
-label-charging-background = ${colors.background}
-
-format-discharging = &#34;&lt;ramp-capacity&gt;&lt;label-discharging&gt;&#34;
-;format-discharging-underline = ${self.format-charging-underline}
-label-discharging = %percentage%% - time left %time%
-label-discharging-foreground = ${colors.foreground}
-label-discharging-background = ${colors.background}
-
-format-full-prefix = &#34;  &#34;
-format-full-prefix-foreground = ${colors.foreground}
-format-full-prefix-background = ${colors.background}
-;format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = &#34;  &#34;
-ramp-capacity-0-foreground = ${colors.alert}
-ramp-capacity-1 = &#34;  &#34;
-ramp-capacity-2 = &#34;  &#34;
-ramp-capacity-3 = &#34;  &#34;
-ramp-capacity-foreground = ${colors.foreground}
-ramp-capacity-background = ${colors.background}
-
-animation-charging-0 = &#34;  &#34;
-animation-charging-1 = &#34;  &#34;
-animation-charging-2 = &#34;  &#34;
-animation-charging-3 = &#34;  &#34;
-animation-charging-foreground = ${colors.foreground}
-animation-charging-background = ${colors.background}
-animation-charging-framerate = 750
-
-
-[module/mpd]
-type = internal/mpd
-format-online = &#34;&lt;label-song&gt; &lt;label-time&gt; &lt;icon-prev&gt; &lt;icon-stop&gt; &lt;toggle&gt; &lt;icon-next&gt;&#34;
-format-underline = #FF00DB
-format-prefix-foreground = #00A5FF
-icon-prev = 
-icon-stop = 
-icon-play-prefix = #f00
-icon-play = 
-icon-pause = 
-icon-next = 
-label-song = %title%
-label-song-foreground = #00A5FF
-label-song-maxlen = 40
-label-song-ellipsis = true
-bar-progress-width = 10
-bar-progress-indicator = 
-bar-progress-fill = 
-bar-progress-empty = 
-bar-progress-fill-foreground = #ff0
-bar-progress-fill-background = ${colors.background}
-bar-progress-indicator-foreground = ${colors.foreground}
-;format-online-foreground = ${colors.foreground}
-;format-online-background = ${colors.background}
-label-time-foreground = #ff0
-
-[module/gmail]
-type = custom/script
-#exec = python3 ~/.config/polybar/gmail/run.py 2&gt;/dev/null
-#exec = ping -c 1 google.com 2&amp;&gt;/dev/null &amp;&amp; python3 ~/.config/polybar/gmail/run.py || echo &#39;no network&#39;
-exec = ~/bin/gmailScript4Polybar 
-tail = true
-click-right= /usr/bin/google-chrome-stable https://mail.google.com
-click-left= urxvtc -e mutg
-;format-background = #00A5FF
-;format-underline = #FF00DB
-
-[module/abdullah]
-type = custom/script
-exec = python3 ~/.config/polybar/abdullah/inbox.py 
-tail = true
-interval = 60
-click-right= google-chrome https://mail.google.com
-click-left= urxvtc -e mutt -F ~/.config/mutt/muttrc
-;format-background = #00A5FF
-;format-underline = #FF00DB
-
-[module/mail]
-type = custom/script
-#exec = python3 ~/.config/polybar/theak/myinbox.py 2&gt;/dev/null
-#exec = python3 ~/.config/polybar/theak/networktheak.py
-tail = true
-#exec = &#34;if ping -c 1 google.com &amp;&gt; /dev/null \
-#then python3 ~/.config/polybar/theak/myinbox.py \
-#else \
-#  echo &#34;no network&#34;
-#  fi&#34;
-#exec = &#34;ping -c 1 theak.me \&amp;&gt; /dev/null &amp;&amp; python3 ~/.config/polybar/theak/myinbox.py || echo &#34;
-exec = ping -c 1 theak.me \&amp;&gt; /dev/null \&amp;&amp; python3 ~/.config/polybar/theak/myinbox.py || echo &#39;no network&#39;
-#click-right= qutebrowser https://mail.theak.me
-click-left= urxvtc -e mutt 
-#format-background = #00A5FF
-format-underline = #FF00DB
-
-
-[module/music]
-type = custom/script
-exec = mpc current | skroll -l
-tail = true
-
-
-[module/mpd1]
-type = custom/script
-exec = ~/.config/polybar/scripts/mpd.sh
-tail = true
-format-foreground = ${colors.foreground}
-format-underline = #FF00DB
-format-prefix-foreground = #00A5FF
-format-background = ${colors.background}
-click-left = exec smus
-click-right = mpc pause &amp; pkill -F /tmp/smus.pid
-
-
-[module/bluetooth]
-type = custom/script
-exec = ~/.config/polybar/scripts/isactive-bluetooth.sh
-tail = true
-;format-foreground = ${colors.foreground}
-format-underline = #FF00DB
-format-background = ${colors.background}
-format-prefix = &#34;&#34;
-
-
-[module/menu]
-type = custom/menu
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${xrdb:polybar*color9}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-format-spacing = 1
-;label-open = &#34;  &#34;
-;label-open-foreground = ${colors.foreground}
-;label-close = &#34;  &#34;
-;label-close-foreground = ${colors.foreground}
-;label-separator = &#34;│&#34;
-;label-separator-foreground = ${colors.foreground-alt}
-menu-0-0 = Top
-menu-0-0-exec = menu-open-1
-menu-0-1 = Extra
-menu-0-1-exec = menu-open-2
-menu-0-2 = Music
-menu-0-2-exec = menu-open-3
-menu-0-3 = Power
-menu-0-3-exec = menu-open-4
-menu-1-0 = &#34;  &#34;
-menu-1-0-exec = qutebrowser
-menu-1-1 = &#34;  &#34;
-menu-1-1-exec = urxvt
-menu-1-2 = &#34;  &#34;
-menu-1-2-exec = urxvtc -e ranger
-menu-1-3 = &#34;  &#34;
-menu-1-3-exec = subl3
-menu-2-0 = &#34;  &#34;
-menu-2-0-exec = gimp-2.8
-menu-2-1 = &#34;  &#34;
-menu-2-1-exec = spotify --force-device-scale-factor=1.5
-menu-2-2 = &#34;  &#34;
-menu-2-2-exec = deluge
-menu-2-3 = &#34;  &#34;
-menu-2-3-exec = claws-mail
-menu-2-4 = &#34;  &#34;
-menu-2-4-exec = steam-runtime
-menu-2-5 = &#34;  &#34;
-menu-2-5-exec = scrot %F-%S_$wx$h_scrot.png -e &#39;mv $f /tmp/foo.png&#39;
-menu-3-0 = &#34;  &#34;
-menu-3-0-exec = $HOME/bin/smus
-menu-3-1 = &#34;  &#34;
-menu-3-1-exec = mpc prev
-menu-3-2 = &#34;  &#34;
-menu-3-2-exec = mpc stop 
-menu-3-3 = &#34;  &#34;
-menu-3-3-exec = mpc pause 
-menu-3-4 = &#34;  &#34;
-menu-3-4-exec = mpc next
-menu-4-0 = &#34;  &#34;
-menu-4-0-exec = lock
-menu-4-1 = &#34;  &#34;
-menu-4-1-exec = systemctl reboot
-menu-4-2 = &#34;  &#34;
-menu-4-2-exec = systemctl poweroff
-
-
-[module/arch_backlight]
-type = custom/script
-exec = ~/.config/polybar/scripts/backlight.sh
-tail = true
-scroll-up = exec light -A 5
-scroll-down = exec light -U 5
-format-prefix = &#34; &#34;
-label = %output%%
-label-foreground = #3EC13F
-format-padding = 1
-
-[module/backlight]
-type = internal/backlight
-card = intel_backlight
-exec = light | cut -d . -f1
-format = &lt;label&gt;
-;tail = true
-;interval = 0.2
-label = %percentage%%
-enable-scroll = true
-scroll-up = exec /usr/sbin/light -A 5
-scroll-down = exec /usr/sbin/light -U 5
-format-prefix = &#34; &#34;
-;label = %output%%
-label-foreground = #3EC13F
-format-padding = 1
-
-
-
-[module/mpd-new]
-type = internal/mpd
-format-online = &lt;label-song&gt; &lt;icon-prev&gt; &lt;toggle&gt; &lt;icon-next&gt; &lt;icon-random&gt;  &lt;icon-repeat&gt; &lt;label-time&gt; 
-format-offline = &lt;label-offline&gt;
-label-offline =  no music
-icon-prev = 
-icon-stop = o
-icon-play = 
-icon-pause = 
-icon-next = 
-icon-seekf = &gt;&gt;
-icon-random = 
-icon-repeat = 
-label-song = 𝄞 %title% - %artist% 
-label-song-maxlen = 25
-label-song-ellipsis = true
-toggle-on-foreground = #e60053
-toggle-off-foreground = #66
-
-
-[module/pulseaudio]
-type = internal/pulseaudio
-sink = alsa_output.pci-0000_00_1b.0.analog-stereo
-use-ui-max = true
-format-volume = &lt;ramp-volume&gt;&lt;label-volume&gt; 
-label-volume =  %percentage%%
-label-volume-foreground = ${xrdb:polybar.color13}
-label-muted = 🔇 
-label-muted-foreground = #
-label-active-font = 4
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = true
-bar-volume-indicator = 
-bar-volume-indicator-font = 2
-bar-volume-fill = 
-bar-volume-fill-font = 2
-bar-volume-empty = 
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
-
-[module/mic]
-type = internal/pulseaudio
-sink = alsa_input.pci-0000_00_1b.0.analog-stereo
-format-volume = &lt;label-volume&gt; &lt;bar-volume&gt;
-label-volume =  %percentage%%
-label-volume-foreground = ${root.foreground}
-label-muted = 🔇 muted
-label-muted-foreground = #666
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = 
-bar-volume-indicator-font = 2
-bar-volume-fill = 
-bar-volume-fill-font = 2
-bar-volume-empty = 
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-
-[module/tags]
-type = internal/xworkspaces
-label-active = %name%
-label-active-padding = 2
-label-active-background = ${colors.background}
-label-active-foreground = ${colors.foreground}
-label-occupied = %name%
-label-occupied-background = #ff0000
-label-empty = %name%
-label-empty-padding = 2
-label-urgent = %name%
-label-urgent-padding = 2
-label-urgent-background = ${colors.background}
-label-urgent-foreground = ${colors.foreground}
-
-
-[module/temperature]
-type = internal/temperature
-interval = 3
-thermal-zone = 0
-warn-temperature = 70
-format = &lt;ramp&gt;&lt;label&gt;
-format-padding = 1
-;label = %{A1:termite --exec=&#39;watch sensors&#39; &amp; disown:} %temperature%%{A}
-label-foreground = ${xrdb:polybar.color11}
-ramp-0 = &#34;&#34;
-ramp-0-foreground = ${xrdb:polybar*color4}
-ramp-1 = &#34;&#34;
-ramp-1-foreground = ${xrdb:polybar*color16}
-ramp-2 = &#34;&#34;
-ramp-2-foreground = ${xrdb:polybar*color17}
-ramp-3 = &#34;&#34;
-ramp-3-foreground = ${xrdb:polybar*urgent}
-format-warn = &lt;label-warn&gt;
-label-warn = &#34; %temperature-c%&#34;
-label-warn-padding = 1
-label-warn-foreground = ${xrdb:polybar.urgent}
-
-
-[module/window_switch]
-type = custom/script
-interval = 5
-label = &#34;%{A1:skippy-xd:} %{A3:skippy-xd:} %output% %{A} %{A}&#34;
-exec = echo &#34;&#34;
-format = &lt;label&gt;
-
-[module/hijri]
-type = custom/script
-#exec = &#34;python -c &#39;from ummalqura.hijri_date import HijriDate; from datetime import date; print(HijriDate.get_hijri_date(date.today()))&#39;&#34;
-exec = ~/.config/polybar/scripts/hijri.py
-tail = false
-interval = 180
-label-foreground = ${xrdb:polybar.color5}
-
-
-[bar/dwm]
-inherit = settings
-background = ${colors.background}
-foreground = ${colors.foreground}
-override-redirect = true
-;width = 55%
-;height = 26
-;offset-x = 45%
-modules-left = date wlan memory cpu pulseaudio backlight-acpi battery 
-modules-right = mpd-new
-modules-center = window_switch
-font-0 =  Segoe UI Emoji
-font-1 = DejaVu Sans:pixelsize=11
-bottom = true
-width = 100%
-height = 20
-;offset-x = 1%
-offset-y = -1
-radius = 0
-fixed-center = true
-line-size = 0
-line-color = #f00
-border-size = 0
-border-color = #00000000
-padding-left = 0
-padding-right = 1
-module-margin-left = 2
-module-margin-right = 2
-
-
-[bar/HDMI-2]
-inherit = bar/eDP-1
-monitor = HDMI-2
-
-
-
-[bar/XWAYLAND0]
-inherit = bar/eDP-1
-monitor = XWAYLAND0
-
-; vim:ft=dosini
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ cat $HOME/.config/polybar/config
+</span></span><span class="line"><span class="cl">[colors]
+</span></span><span class="line"><span class="cl">background = #FF000000
+</span></span><span class="line"><span class="cl">background-alt = ${xrdb:polybar*color8}
+</span></span><span class="line"><span class="cl">foreground = ${xrdb:polybar*foreground}
+</span></span><span class="line"><span class="cl">urgent = #B34747
+</span></span><span class="line"><span class="cl">foreground-alt = #555
+</span></span><span class="line"><span class="cl">primary = ${xrdb:polybar*color3}
+</span></span><span class="line"><span class="cl">secondary = ${xrdb:polybar*color1}
+</span></span><span class="line"><span class="cl">alert = ${xrdb:polybar*color13}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[settings]
+</span></span><span class="line"><span class="cl">screenchange-reload = true
+</span></span><span class="line"><span class="cl">screenchange = true
+</span></span><span class="line"><span class="cl">throttle-output = 5
+</span></span><span class="line"><span class="cl">throttle-output-for = 10
+</span></span><span class="line"><span class="cl">throttle-input-for = 30
+</span></span><span class="line"><span class="cl">compositing-background = source
+</span></span><span class="line"><span class="cl">compositing-foreground = over
+</span></span><span class="line"><span class="cl">compositing-overline = over
+</span></span><span class="line"><span class="cl">compositing-underline = over
+</span></span><span class="line"><span class="cl">compositing-border = over
+</span></span><span class="line"><span class="cl">pseudo-transparency = true
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[global/wm]
+</span></span><span class="line"><span class="cl">margin-top = 0
+</span></span><span class="line"><span class="cl">margin-bottom = 0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[bar/eDP-1]
+</span></span><span class="line"><span class="cl">monitor = ${env:MONITOR:eDP-1}
+</span></span><span class="line"><span class="cl">monitor-fallback = eDP1
+</span></span><span class="line"><span class="cl">bottom = false
+</span></span><span class="line"><span class="cl">width = 100%
+</span></span><span class="line"><span class="cl">height = 25
+</span></span><span class="line"><span class="cl">offset-x = 0
+</span></span><span class="line"><span class="cl">offset-y = 0
+</span></span><span class="line"><span class="cl">radius = 10
+</span></span><span class="line"><span class="cl">fixed-center = true
+</span></span><span class="line"><span class="cl">background = ${colors.background}
+</span></span><span class="line"><span class="cl">foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">line-size = 0
+</span></span><span class="line"><span class="cl">line-color = #f00
+</span></span><span class="line"><span class="cl">border-size = 0
+</span></span><span class="line"><span class="cl">border-top-size = 0
+</span></span><span class="line"><span class="cl">border-color = ${xrdb:background}
+</span></span><span class="line"><span class="cl">padding-left = 0
+</span></span><span class="line"><span class="cl">padding-right = 1
+</span></span><span class="line"><span class="cl">module-margin-left = 2
+</span></span><span class="line"><span class="cl">module-margin-right = 2
+</span></span><span class="line"><span class="cl">font-0 =  FontAwesome
+</span></span><span class="line"><span class="cl">font-1 = Monospace:weight=regular:pixelsize=13
+</span></span><span class="line"><span class="cl">font-2 = DejaVu Sans:pixelsize=11
+</span></span><span class="line"><span class="cl">font-3 =  Segoe UI Emoji
+</span></span><span class="line"><span class="cl">modules-right = bspwm
+</span></span><span class="line"><span class="cl">modules-center = mpd
+</span></span><span class="line"><span class="cl">modules-left = date hijri wlan battery temperature cpu memory pulseaudio arch_backlight
+</span></span><span class="line"><span class="cl">tray-position = right
+</span></span><span class="line"><span class="cl">tray-padding = 6
+</span></span><span class="line"><span class="cl">;tray-background = #24292A00
+</span></span><span class="line"><span class="cl">tray-background = ${root.background}
+</span></span><span class="line"><span class="cl">wm-restack = bspwm
+</span></span><span class="line"><span class="cl">override-redirect = false
+</span></span><span class="line"><span class="cl">;scroll-up = bspwm-desknext
+</span></span><span class="line"><span class="cl">;scroll-down = bspwm-deskprev
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/bspwm]
+</span></span><span class="line"><span class="cl">type = internal/bspwm
+</span></span><span class="line"><span class="cl">pin-workspaces = true
+</span></span><span class="line"><span class="cl">inline-mode = false
+</span></span><span class="line"><span class="cl">enable-click = true
+</span></span><span class="line"><span class="cl">enable-scroll = true
+</span></span><span class="line"><span class="cl">reverse-scroll = true
+</span></span><span class="line"><span class="cl">fuzzy-match = false
+</span></span><span class="line"><span class="cl">ws-icon-0 = &#34;I&#34;
+</span></span><span class="line"><span class="cl">ws-icon-1 = &#34;II&#34;
+</span></span><span class="line"><span class="cl">ws-icon-2 = &#34;III&#34;
+</span></span><span class="line"><span class="cl">ws-icon-3 = &#34;IV&#34;
+</span></span><span class="line"><span class="cl">ws-icon-4 = &#34;V&#34;
+</span></span><span class="line"><span class="cl">ws-icon-5 = &#34;VI&#34;
+</span></span><span class="line"><span class="cl">ws-icon-6 = &#34;VII&#34;
+</span></span><span class="line"><span class="cl">ws-icon-7 = &#34;VIII&#34;
+</span></span><span class="line"><span class="cl">ws-icon-8 = &#34;IX&#34;
+</span></span><span class="line"><span class="cl">ws-icon-9 = &#34;X&#34;
+</span></span><span class="line"><span class="cl">format = &lt;label-state&gt; &lt;label-mode&gt;
+</span></span><span class="line"><span class="cl">label-monitor = %name%
+</span></span><span class="line"><span class="cl">label-dimmed-foreground = #555
+</span></span><span class="line"><span class="cl">;label-dimmed-focused-background = #f00
+</span></span><span class="line"><span class="cl">label-focused = %icon% %name%
+</span></span><span class="line"><span class="cl">label-focused-underline= ${colors.primary}
+</span></span><span class="line"><span class="cl">label-focused-foreground = #f00000
+</span></span><span class="line"><span class="cl">label-occupied = %icon% %name%
+</span></span><span class="line"><span class="cl">label-occupied-underline = #555555
+</span></span><span class="line"><span class="cl">label-urgent = %icon% %name%
+</span></span><span class="line"><span class="cl">label-urgent-underline = ${colors.primary}
+</span></span><span class="line"><span class="cl">label-urgent-background = ${colors.alert}
+</span></span><span class="line"><span class="cl">label-empty = %icon% %name%
+</span></span><span class="line"><span class="cl">label-empty-foreground = #d700ff
+</span></span><span class="line"><span class="cl">;label-empty-foreground = ${colors.foreground-alt}
+</span></span><span class="line"><span class="cl">label-monocle = &#34;  &#34;
+</span></span><span class="line"><span class="cl">label-monocle-foreground = #fff995
+</span></span><span class="line"><span class="cl">label-tiled = &#34;  &#34;
+</span></span><span class="line"><span class="cl">;label-tiled-foreground = #750080
+</span></span><span class="line"><span class="cl">label-tiled-foreground = #00ffff
+</span></span><span class="line"><span class="cl">label-fullscreen = &#34;  &#34;
+</span></span><span class="line"><span class="cl">;label-floating = &#34;  &#34;
+</span></span><span class="line"><span class="cl">label-floating = &#34;  &#34;
+</span></span><span class="line"><span class="cl">label-floating-foreground = #ff45ff
+</span></span><span class="line"><span class="cl">label-pseudotiled = &#34;  &#34;
+</span></span><span class="line"><span class="cl">label-locked = &#34;  &#34;
+</span></span><span class="line"><span class="cl">label-locked-foreground = #bd2c40
+</span></span><span class="line"><span class="cl">label-sticky = &#34;  &#34;
+</span></span><span class="line"><span class="cl">label-sticky-foreground = #fba922
+</span></span><span class="line"><span class="cl">label-private = &#34;     &#34;
+</span></span><span class="line"><span class="cl">label-private-foreground = #bd2c40
+</span></span><span class="line"><span class="cl">label-marked = &#34; &#34;
+</span></span><span class="line"><span class="cl">label-marked-foreground = #0000ff
+</span></span><span class="line"><span class="cl">label-separator = 
+</span></span><span class="line"><span class="cl">label-separator-padding = 3
+</span></span><span class="line"><span class="cl">label-separator-foreground = #ffb52a
+</span></span><span class="line"><span class="cl">label-occupied-padding = 3
+</span></span><span class="line"><span class="cl">label-empty-padding = 3
+</span></span><span class="line"><span class="cl">label-urgent-padding = 3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/xwindow]
+</span></span><span class="line"><span class="cl">type = internal/xwindow
+</span></span><span class="line"><span class="cl">label = &#34;    /  %title:0:48:...%&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/backlight-acpi]
+</span></span><span class="line"><span class="cl">type = internal/backlight
+</span></span><span class="line"><span class="cl">sub = module/backlight-acpi
+</span></span><span class="line"><span class="cl">base = module/xbacklight
+</span></span><span class="line"><span class="cl">inherit = module/xbacklight
+</span></span><span class="line"><span class="cl">card = intel_backlight
+</span></span><span class="line"><span class="cl">format = &lt;ramp&gt;&lt;label&gt;
+</span></span><span class="line"><span class="cl">label = %percentage%%
+</span></span><span class="line"><span class="cl">ramp-0 = 🌕
+</span></span><span class="line"><span class="cl">ramp-1 = 🌔
+</span></span><span class="line"><span class="cl">ramp-2 = 🌓
+</span></span><span class="line"><span class="cl">ramp-3 = 🌒
+</span></span><span class="line"><span class="cl">ramp-4 = 🌑
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">;[module/backlight]
+</span></span><span class="line"><span class="cl">;type = internal/backlight
+</span></span><span class="line"><span class="cl">;card = intel_backlight
+</span></span><span class="line"><span class="cl">;;output = eDP-1
+</span></span><span class="line"><span class="cl">;format = &lt;ramp&gt;&lt;label&gt;
+</span></span><span class="line"><span class="cl">;label = %percentage%%
+</span></span><span class="line"><span class="cl">;label-foreground = #3EC13F
+</span></span><span class="line"><span class="cl">;format-padding = 1
+</span></span><span class="line"><span class="cl">;ramp-0 = 🌕
+</span></span><span class="line"><span class="cl">;ramp-1 = 🌔
+</span></span><span class="line"><span class="cl">;ramp-2 = 🌓
+</span></span><span class="line"><span class="cl">;ramp-3 = 🌒
+</span></span><span class="line"><span class="cl">;ramp-4 = 🌑
+</span></span><span class="line"><span class="cl">;enable-scroll = true
+</span></span><span class="line"><span class="cl">;scroll-up = exec light -A 5
+</span></span><span class="line"><span class="cl">;scroll-down = exec light -U 6
+</span></span><span class="line"><span class="cl">;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/pavolume]
+</span></span><span class="line"><span class="cl">type = custom/script
+</span></span><span class="line"><span class="cl">tail = true
+</span></span><span class="line"><span class="cl">label = %output%
+</span></span><span class="line"><span class="cl">label-foreground = #D1FF00
+</span></span><span class="line"><span class="cl">exec = ~/.config/polybar/scripts/pavolume.sh --listen
+</span></span><span class="line"><span class="cl">click-right = exec pavucontrol
+</span></span><span class="line"><span class="cl">scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
+</span></span><span class="line"><span class="cl">scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
+</span></span><span class="line"><span class="cl">format-underline = #3EC13F
+</span></span><span class="line"><span class="cl">format-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">format-background = ${colors.background}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/xworkspaces]
+</span></span><span class="line"><span class="cl">type = internal/xworkspaces
+</span></span><span class="line"><span class="cl">pin-workspaces = true
+</span></span><span class="line"><span class="cl">; Create click handler used to focus desktop
+</span></span><span class="line"><span class="cl">enable-click = true
+</span></span><span class="line"><span class="cl">index-sort = true
+</span></span><span class="line"><span class="cl">wrapping-scroll = false
+</span></span><span class="line"><span class="cl">#ws-num = 9
+</span></span><span class="line"><span class="cl">icon-0 = code;♚
+</span></span><span class="line"><span class="cl">icon-1 = office;♛
+</span></span><span class="line"><span class="cl">icon-2 = graphics;♜
+</span></span><span class="line"><span class="cl">icon-3 = mail;♝
+</span></span><span class="line"><span class="cl">icon-4 = web;♞
+</span></span><span class="line"><span class="cl">icon-default = ♟
+</span></span><span class="line"><span class="cl">show-all = true
+</span></span><span class="line"><span class="cl">label-empty-foreground =  ${colors.foreground-alt}
+</span></span><span class="line"><span class="cl">#label-empty = %icon%
+</span></span><span class="line"><span class="cl">label-mode-padding = 3
+</span></span><span class="line"><span class="cl">label-mode-foreground = ${colors.background}
+</span></span><span class="line"><span class="cl">label-mode-background = #a8df5a
+</span></span><span class="line"><span class="cl">label-focused = %icon%
+</span></span><span class="line"><span class="cl">label-focused-background = ${module/bspwm.label-focused-background}
+</span></span><span class="line"><span class="cl">label-focused-underline = ${module/bspwm.label-focused-underline}
+</span></span><span class="line"><span class="cl">label-focused-padding = ${module/bspwm.label-focused-padding}
+</span></span><span class="line"><span class="cl">label-unfocused = %icon%
+</span></span><span class="line"><span class="cl">label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+</span></span><span class="line"><span class="cl">; visible = Active workspace on unfocused monitor
+</span></span><span class="line"><span class="cl">label-visible = %icon%
+</span></span><span class="line"><span class="cl">label-visible-background = ${self.label-focused-background}
+</span></span><span class="line"><span class="cl">label-visible-underline = ${self.label-focused-underline}
+</span></span><span class="line"><span class="cl">label-visible-padding = ${self.label-focused-padding}
+</span></span><span class="line"><span class="cl">; urgent = Workspace with urgency hint set
+</span></span><span class="line"><span class="cl">label-urgent-foreground = ${xrdb:polybar*color8}
+</span></span><span class="line"><span class="cl">label-urgent-background = ${module/bspwm.label-urgent-background}
+</span></span><span class="line"><span class="cl">label-urgent-padding = ${module/bspwm.label-urgent-padding}
+</span></span><span class="line"><span class="cl">; Create scroll handlers used to cycle desktops
+</span></span><span class="line"><span class="cl">enable-scroll = true
+</span></span><span class="line"><span class="cl">label-monitor = %name%
+</span></span><span class="line"><span class="cl">format = &lt;label-state&gt;
+</span></span><span class="line"><span class="cl">label-active = %icon% %name%
+</span></span><span class="line"><span class="cl">label-active-foreground = #ffffff
+</span></span><span class="line"><span class="cl">#label-active-background = #3f3f3f
+</span></span><span class="line"><span class="cl">label-active-underline = #fba922
+</span></span><span class="line"><span class="cl">label-occupied = %icon%
+</span></span><span class="line"><span class="cl">label-occupied-underline = #555555
+</span></span><span class="line"><span class="cl">label-urgent = %icon%
+</span></span><span class="line"><span class="cl">#label-empty = %icon%
+</span></span><span class="line"><span class="cl">#label-empty-foreground = #55
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/wlan]
+</span></span><span class="line"><span class="cl">type = internal/network
+</span></span><span class="line"><span class="cl">interface = wlp3s0
+</span></span><span class="line"><span class="cl">#interval = 3.0
+</span></span><span class="line"><span class="cl">tail = true
+</span></span><span class="line"><span class="cl">format-connected = &lt;ramp-signal&gt; &lt;label-connected&gt;
+</span></span><span class="line"><span class="cl">format-connected-underline = #9f78e1
+</span></span><span class="line"><span class="cl">label-connected =  %essid%%{A}
+</span></span><span class="line"><span class="cl">label-connected-foreground = ${xrdb:polybar.color16}
+</span></span><span class="line"><span class="cl">label-disconnected = 
+</span></span><span class="line"><span class="cl">format-disconnected = &lt;label-disconnected&gt;
+</span></span><span class="line"><span class="cl">ramp-signal-0 = 
+</span></span><span class="line"><span class="cl">ramp-signal-1 = 
+</span></span><span class="line"><span class="cl">ramp-signal-2 = 
+</span></span><span class="line"><span class="cl">ramp-signal-3 = 
+</span></span><span class="line"><span class="cl">ramp-signal-4 = 
+</span></span><span class="line"><span class="cl">;ramp-signal-0 = 😱
+</span></span><span class="line"><span class="cl">;ramp-signal-1 = 😠
+</span></span><span class="line"><span class="cl">;ramp-signal-2 = 😒
+</span></span><span class="line"><span class="cl">;ramp-signal-3 = 😊
+</span></span><span class="line"><span class="cl">;ramp-signal-4 = 😃
+</span></span><span class="line"><span class="cl">;ramp-signal-5 = 😈
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">;label-connected = %essid%
+</span></span><span class="line"><span class="cl">;format-disconnected = &lt;label-disconnected&gt;
+</span></span><span class="line"><span class="cl">;label-disconnected =   Disconnected
+</span></span><span class="line"><span class="cl">label-disconnected-foreground = ${colors.foreground-alt}
+</span></span><span class="line"><span class="cl">format-packetloss = &lt;animation-packetloss&gt; &lt;label-connected&gt;
+</span></span><span class="line"><span class="cl">animation-packetloss-0 = ⚠
+</span></span><span class="line"><span class="cl">animation-packetloss-0-foreground = #ffa64c
+</span></span><span class="line"><span class="cl">animation-packetloss-1 = 📶
+</span></span><span class="line"><span class="cl">animation-packetloss-1-foreground = #000000
+</span></span><span class="line"><span class="cl">; Framerate in milliseconds
+</span></span><span class="line"><span class="cl">animation-packetloss-framerate = 500
+</span></span><span class="line"><span class="cl">label-packetloss = %essid%
+</span></span><span class="line"><span class="cl">label-packetloss-foreground = #eefafafa
+</span></span><span class="line"><span class="cl">;ramp-signal-0 =  
+</span></span><span class="line"><span class="cl">;ramp-signal-1 =  
+</span></span><span class="line"><span class="cl">;ramp-signal-2 =  
+</span></span><span class="line"><span class="cl">;ramp-signal-3 =  
+</span></span><span class="line"><span class="cl">;ramp-signal-4 =  
+</span></span><span class="line"><span class="cl">;ramp-signal-5 =  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ramp-signal-foreground = ${colors.foreground-alt}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/xbacklight]
+</span></span><span class="line"><span class="cl">type = internal/xbacklight
+</span></span><span class="line"><span class="cl">format = &lt;label&gt; &lt;bar&gt;
+</span></span><span class="line"><span class="cl">bar-width = 10
+</span></span><span class="line"><span class="cl">bar-indicator =  
+</span></span><span class="line"><span class="cl">bar-indicator-foreground = #fff
+</span></span><span class="line"><span class="cl">bar-empty = 
+</span></span><span class="line"><span class="cl">bar-fill = 
+</span></span><span class="line"><span class="cl">format-prefix = &#34; &#34;
+</span></span><span class="line"><span class="cl">label-foreground = #3EC13F
+</span></span><span class="line"><span class="cl">format-padding = 1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/cpu]
+</span></span><span class="line"><span class="cl">type = internal/cpu
+</span></span><span class="line"><span class="cl">interval = 2
+</span></span><span class="line"><span class="cl">format-prefix = &#34;cpu &#34;
+</span></span><span class="line"><span class="cl">format-prefix-foreground = ${xrdb:polybar.color3}
+</span></span><span class="line"><span class="cl">format-underline = #f90000
+</span></span><span class="line"><span class="cl">label = %percentage%%
+</span></span><span class="line"><span class="cl">label-foreground = ${xrdb:polybar.color16}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/memory]
+</span></span><span class="line"><span class="cl">type = internal/memory
+</span></span><span class="line"><span class="cl">interval = 2
+</span></span><span class="line"><span class="cl">format-prefix = &#34;mem &#34;
+</span></span><span class="line"><span class="cl">format-prefix-foreground = ${xrdb:polybar.color2}
+</span></span><span class="line"><span class="cl">format-underline = #4bffdc
+</span></span><span class="line"><span class="cl">label = %percentage_used%%
+</span></span><span class="line"><span class="cl">label-foreground = ${xrdb:polybar.color12}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/date]
+</span></span><span class="line"><span class="cl">type = internal/date
+</span></span><span class="line"><span class="cl">interval = 1
+</span></span><span class="line"><span class="cl">date = &#34; %a %d %b -&#34;
+</span></span><span class="line"><span class="cl">date-alt = &#34; %d %b -&#34;
+</span></span><span class="line"><span class="cl">time = %H:%M
+</span></span><span class="line"><span class="cl">time-alt = %H:%M:%S
+</span></span><span class="line"><span class="cl">format-prefix = &#34; &#34;
+</span></span><span class="line"><span class="cl">;format-prefix = &#34;🕓&#34;
+</span></span><span class="line"><span class="cl">format-prefix-foreground = ${xrdb:polybar*color5}
+</span></span><span class="line"><span class="cl">format-underline = #0a6cf5
+</span></span><span class="line"><span class="cl">;label = %date% %time%
+</span></span><span class="line"><span class="cl">label = %time%
+</span></span><span class="line"><span class="cl">label-foreground = #9A32DB
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/time]
+</span></span><span class="line"><span class="cl">type = custom/script
+</span></span><span class="line"><span class="cl">exec = ~/.config/polybar/scripts/time.py
+</span></span><span class="line"><span class="cl">format-prefix = &#34; &#34;
+</span></span><span class="line"><span class="cl">format-prefix-foreground = ${xrdb:polybar*color4}
+</span></span><span class="line"><span class="cl">format-underline = #0a6cf5
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/battery]
+</span></span><span class="line"><span class="cl">type = internal/battery
+</span></span><span class="line"><span class="cl">battery = BAT0
+</span></span><span class="line"><span class="cl">adapter = AC0
+</span></span><span class="line"><span class="cl">full-at = 100
+</span></span><span class="line"><span class="cl">poll-interval = 5
+</span></span><span class="line"><span class="cl">time-format = %H:%M
+</span></span><span class="line"><span class="cl">format-charging = &lt;animation-charging&gt; &lt;label-charging&gt;
+</span></span><span class="line"><span class="cl">format-charging-underline = #ffb52a
+</span></span><span class="line"><span class="cl">label-charging =  %percentage%% %time%
+</span></span><span class="line"><span class="cl">label-charging-foreground = ${xrdb:polybar.color9}
+</span></span><span class="line"><span class="cl">format-discharging = &lt;ramp-capacity&gt; &lt;label-discharging&gt;
+</span></span><span class="line"><span class="cl">format-discharging-underline = ${self.format-charging-underline}
+</span></span><span class="line"><span class="cl">label-discharging = %percentage%% %time%
+</span></span><span class="line"><span class="cl">label-discharging-foreground = ${xrdb:polybar.color9}
+</span></span><span class="line"><span class="cl">format-full = &lt;ramp-capacity&gt; &lt;label-full&gt;
+</span></span><span class="line"><span class="cl">format-full-prefix = &#34; &#34;
+</span></span><span class="line"><span class="cl">format-full-prefix-foreground = ${xrdb:polybar.color1}
+</span></span><span class="line"><span class="cl">format-full-underline = ${self.format-charging-underline}
+</span></span><span class="line"><span class="cl">;label-full = %percentage%% - fully charged!
+</span></span><span class="line"><span class="cl">ramp-capacity-0 = &#34; &#34;
+</span></span><span class="line"><span class="cl">ramp-capacity-1 = &#34; &#34;
+</span></span><span class="line"><span class="cl">ramp-capacity-2 = &#34; &#34;
+</span></span><span class="line"><span class="cl">ramp-capacity-3 = &#34; &#34;
+</span></span><span class="line"><span class="cl">ramp-capacity-4 = &#34; &#34;
+</span></span><span class="line"><span class="cl">ramp-capacity-foreground = ${colors.foreground-alt}
+</span></span><span class="line"><span class="cl">animation-charging-0 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">animation-charging-1 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">animation-charging-2 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">animation-charging-3 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">animation-charging-4 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">animation-charging-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">animation-charging-framerate = 750
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/battery2]
+</span></span><span class="line"><span class="cl">type = internal/battery
+</span></span><span class="line"><span class="cl">battery = BAT0
+</span></span><span class="line"><span class="cl">adapter = AC
+</span></span><span class="line"><span class="cl">full-at = 95
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">format-charging = &#34;&lt;animation-charging&gt;&lt;label-charging&gt;&#34;
+</span></span><span class="line"><span class="cl">;format-charging-underline = ${colors.foreground}
+</span></span><span class="line"><span class="cl">label-charging = %percentage%% - time left %time%
+</span></span><span class="line"><span class="cl">label-charging-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">label-charging-background = ${colors.background}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">format-discharging = &#34;&lt;ramp-capacity&gt;&lt;label-discharging&gt;&#34;
+</span></span><span class="line"><span class="cl">;format-discharging-underline = ${self.format-charging-underline}
+</span></span><span class="line"><span class="cl">label-discharging = %percentage%% - time left %time%
+</span></span><span class="line"><span class="cl">label-discharging-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">label-discharging-background = ${colors.background}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">format-full-prefix = &#34;  &#34;
+</span></span><span class="line"><span class="cl">format-full-prefix-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">format-full-prefix-background = ${colors.background}
+</span></span><span class="line"><span class="cl">;format-full-underline = ${self.format-charging-underline}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ramp-capacity-0 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">ramp-capacity-0-foreground = ${colors.alert}
+</span></span><span class="line"><span class="cl">ramp-capacity-1 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">ramp-capacity-2 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">ramp-capacity-3 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">ramp-capacity-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">ramp-capacity-background = ${colors.background}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">animation-charging-0 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">animation-charging-1 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">animation-charging-2 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">animation-charging-3 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">animation-charging-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">animation-charging-background = ${colors.background}
+</span></span><span class="line"><span class="cl">animation-charging-framerate = 750
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/mpd]
+</span></span><span class="line"><span class="cl">type = internal/mpd
+</span></span><span class="line"><span class="cl">format-online = &#34;&lt;label-song&gt; &lt;label-time&gt; &lt;icon-prev&gt; &lt;icon-stop&gt; &lt;toggle&gt; &lt;icon-next&gt;&#34;
+</span></span><span class="line"><span class="cl">format-underline = #FF00DB
+</span></span><span class="line"><span class="cl">format-prefix-foreground = #00A5FF
+</span></span><span class="line"><span class="cl">icon-prev = 
+</span></span><span class="line"><span class="cl">icon-stop = 
+</span></span><span class="line"><span class="cl">icon-play-prefix = #f00
+</span></span><span class="line"><span class="cl">icon-play = 
+</span></span><span class="line"><span class="cl">icon-pause = 
+</span></span><span class="line"><span class="cl">icon-next = 
+</span></span><span class="line"><span class="cl">label-song = %title%
+</span></span><span class="line"><span class="cl">label-song-foreground = #00A5FF
+</span></span><span class="line"><span class="cl">label-song-maxlen = 40
+</span></span><span class="line"><span class="cl">label-song-ellipsis = true
+</span></span><span class="line"><span class="cl">bar-progress-width = 10
+</span></span><span class="line"><span class="cl">bar-progress-indicator = 
+</span></span><span class="line"><span class="cl">bar-progress-fill = 
+</span></span><span class="line"><span class="cl">bar-progress-empty = 
+</span></span><span class="line"><span class="cl">bar-progress-fill-foreground = #ff0
+</span></span><span class="line"><span class="cl">bar-progress-fill-background = ${colors.background}
+</span></span><span class="line"><span class="cl">bar-progress-indicator-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">;format-online-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">;format-online-background = ${colors.background}
+</span></span><span class="line"><span class="cl">label-time-foreground = #ff0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/gmail]
+</span></span><span class="line"><span class="cl">type = custom/script
+</span></span><span class="line"><span class="cl">#exec = python3 ~/.config/polybar/gmail/run.py 2&gt;/dev/null
+</span></span><span class="line"><span class="cl">#exec = ping -c 1 google.com 2&amp;&gt;/dev/null &amp;&amp; python3 ~/.config/polybar/gmail/run.py || echo &#39;no network&#39;
+</span></span><span class="line"><span class="cl">exec = ~/bin/gmailScript4Polybar 
+</span></span><span class="line"><span class="cl">tail = true
+</span></span><span class="line"><span class="cl">click-right= /usr/bin/google-chrome-stable https://mail.google.com
+</span></span><span class="line"><span class="cl">click-left= urxvtc -e mutg
+</span></span><span class="line"><span class="cl">;format-background = #00A5FF
+</span></span><span class="line"><span class="cl">;format-underline = #FF00DB
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/abdullah]
+</span></span><span class="line"><span class="cl">type = custom/script
+</span></span><span class="line"><span class="cl">exec = python3 ~/.config/polybar/abdullah/inbox.py 
+</span></span><span class="line"><span class="cl">tail = true
+</span></span><span class="line"><span class="cl">interval = 60
+</span></span><span class="line"><span class="cl">click-right= google-chrome https://mail.google.com
+</span></span><span class="line"><span class="cl">click-left= urxvtc -e mutt -F ~/.config/mutt/muttrc
+</span></span><span class="line"><span class="cl">;format-background = #00A5FF
+</span></span><span class="line"><span class="cl">;format-underline = #FF00DB
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/mail]
+</span></span><span class="line"><span class="cl">type = custom/script
+</span></span><span class="line"><span class="cl">#exec = python3 ~/.config/polybar/theak/myinbox.py 2&gt;/dev/null
+</span></span><span class="line"><span class="cl">#exec = python3 ~/.config/polybar/theak/networktheak.py
+</span></span><span class="line"><span class="cl">tail = true
+</span></span><span class="line"><span class="cl">#exec = &#34;if ping -c 1 google.com &amp;&gt; /dev/null \
+</span></span><span class="line"><span class="cl">#then python3 ~/.config/polybar/theak/myinbox.py \
+</span></span><span class="line"><span class="cl">#else \
+</span></span><span class="line"><span class="cl">#  echo &#34;no network&#34;
+</span></span><span class="line"><span class="cl">#  fi&#34;
+</span></span><span class="line"><span class="cl">#exec = &#34;ping -c 1 theak.me \&amp;&gt; /dev/null &amp;&amp; python3 ~/.config/polybar/theak/myinbox.py || echo &#34;
+</span></span><span class="line"><span class="cl">exec = ping -c 1 theak.me \&amp;&gt; /dev/null \&amp;&amp; python3 ~/.config/polybar/theak/myinbox.py || echo &#39;no network&#39;
+</span></span><span class="line"><span class="cl">#click-right= qutebrowser https://mail.theak.me
+</span></span><span class="line"><span class="cl">click-left= urxvtc -e mutt 
+</span></span><span class="line"><span class="cl">#format-background = #00A5FF
+</span></span><span class="line"><span class="cl">format-underline = #FF00DB
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/music]
+</span></span><span class="line"><span class="cl">type = custom/script
+</span></span><span class="line"><span class="cl">exec = mpc current | skroll -l
+</span></span><span class="line"><span class="cl">tail = true
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/mpd1]
+</span></span><span class="line"><span class="cl">type = custom/script
+</span></span><span class="line"><span class="cl">exec = ~/.config/polybar/scripts/mpd.sh
+</span></span><span class="line"><span class="cl">tail = true
+</span></span><span class="line"><span class="cl">format-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">format-underline = #FF00DB
+</span></span><span class="line"><span class="cl">format-prefix-foreground = #00A5FF
+</span></span><span class="line"><span class="cl">format-background = ${colors.background}
+</span></span><span class="line"><span class="cl">click-left = exec smus
+</span></span><span class="line"><span class="cl">click-right = mpc pause &amp; pkill -F /tmp/smus.pid
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/bluetooth]
+</span></span><span class="line"><span class="cl">type = custom/script
+</span></span><span class="line"><span class="cl">exec = ~/.config/polybar/scripts/isactive-bluetooth.sh
+</span></span><span class="line"><span class="cl">tail = true
+</span></span><span class="line"><span class="cl">;format-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">format-underline = #FF00DB
+</span></span><span class="line"><span class="cl">format-background = ${colors.background}
+</span></span><span class="line"><span class="cl">format-prefix = &#34;&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/menu]
+</span></span><span class="line"><span class="cl">type = custom/menu
+</span></span><span class="line"><span class="cl">label-open = 
+</span></span><span class="line"><span class="cl">label-open-foreground = ${colors.secondary}
+</span></span><span class="line"><span class="cl">label-close =  cancel
+</span></span><span class="line"><span class="cl">label-close-foreground = ${xrdb:polybar*color9}
+</span></span><span class="line"><span class="cl">label-separator = |
+</span></span><span class="line"><span class="cl">label-separator-foreground = ${colors.foreground-alt}
+</span></span><span class="line"><span class="cl">format-spacing = 1
+</span></span><span class="line"><span class="cl">;label-open = &#34;  &#34;
+</span></span><span class="line"><span class="cl">;label-open-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">;label-close = &#34;  &#34;
+</span></span><span class="line"><span class="cl">;label-close-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">;label-separator = &#34;│&#34;
+</span></span><span class="line"><span class="cl">;label-separator-foreground = ${colors.foreground-alt}
+</span></span><span class="line"><span class="cl">menu-0-0 = Top
+</span></span><span class="line"><span class="cl">menu-0-0-exec = menu-open-1
+</span></span><span class="line"><span class="cl">menu-0-1 = Extra
+</span></span><span class="line"><span class="cl">menu-0-1-exec = menu-open-2
+</span></span><span class="line"><span class="cl">menu-0-2 = Music
+</span></span><span class="line"><span class="cl">menu-0-2-exec = menu-open-3
+</span></span><span class="line"><span class="cl">menu-0-3 = Power
+</span></span><span class="line"><span class="cl">menu-0-3-exec = menu-open-4
+</span></span><span class="line"><span class="cl">menu-1-0 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-1-0-exec = qutebrowser
+</span></span><span class="line"><span class="cl">menu-1-1 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-1-1-exec = urxvt
+</span></span><span class="line"><span class="cl">menu-1-2 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-1-2-exec = urxvtc -e ranger
+</span></span><span class="line"><span class="cl">menu-1-3 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-1-3-exec = subl3
+</span></span><span class="line"><span class="cl">menu-2-0 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-2-0-exec = gimp-2.8
+</span></span><span class="line"><span class="cl">menu-2-1 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-2-1-exec = spotify --force-device-scale-factor=1.5
+</span></span><span class="line"><span class="cl">menu-2-2 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-2-2-exec = deluge
+</span></span><span class="line"><span class="cl">menu-2-3 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-2-3-exec = claws-mail
+</span></span><span class="line"><span class="cl">menu-2-4 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-2-4-exec = steam-runtime
+</span></span><span class="line"><span class="cl">menu-2-5 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-2-5-exec = scrot %F-%S_$wx$h_scrot.png -e &#39;mv $f /tmp/foo.png&#39;
+</span></span><span class="line"><span class="cl">menu-3-0 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-3-0-exec = $HOME/bin/smus
+</span></span><span class="line"><span class="cl">menu-3-1 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-3-1-exec = mpc prev
+</span></span><span class="line"><span class="cl">menu-3-2 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-3-2-exec = mpc stop 
+</span></span><span class="line"><span class="cl">menu-3-3 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-3-3-exec = mpc pause 
+</span></span><span class="line"><span class="cl">menu-3-4 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-3-4-exec = mpc next
+</span></span><span class="line"><span class="cl">menu-4-0 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-4-0-exec = lock
+</span></span><span class="line"><span class="cl">menu-4-1 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-4-1-exec = systemctl reboot
+</span></span><span class="line"><span class="cl">menu-4-2 = &#34;  &#34;
+</span></span><span class="line"><span class="cl">menu-4-2-exec = systemctl poweroff
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/arch_backlight]
+</span></span><span class="line"><span class="cl">type = custom/script
+</span></span><span class="line"><span class="cl">exec = ~/.config/polybar/scripts/backlight.sh
+</span></span><span class="line"><span class="cl">tail = true
+</span></span><span class="line"><span class="cl">scroll-up = exec light -A 5
+</span></span><span class="line"><span class="cl">scroll-down = exec light -U 5
+</span></span><span class="line"><span class="cl">format-prefix = &#34; &#34;
+</span></span><span class="line"><span class="cl">label = %output%%
+</span></span><span class="line"><span class="cl">label-foreground = #3EC13F
+</span></span><span class="line"><span class="cl">format-padding = 1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/backlight]
+</span></span><span class="line"><span class="cl">type = internal/backlight
+</span></span><span class="line"><span class="cl">card = intel_backlight
+</span></span><span class="line"><span class="cl">exec = light | cut -d . -f1
+</span></span><span class="line"><span class="cl">format = &lt;label&gt;
+</span></span><span class="line"><span class="cl">;tail = true
+</span></span><span class="line"><span class="cl">;interval = 0.2
+</span></span><span class="line"><span class="cl">label = %percentage%%
+</span></span><span class="line"><span class="cl">enable-scroll = true
+</span></span><span class="line"><span class="cl">scroll-up = exec /usr/sbin/light -A 5
+</span></span><span class="line"><span class="cl">scroll-down = exec /usr/sbin/light -U 5
+</span></span><span class="line"><span class="cl">format-prefix = &#34; &#34;
+</span></span><span class="line"><span class="cl">;label = %output%%
+</span></span><span class="line"><span class="cl">label-foreground = #3EC13F
+</span></span><span class="line"><span class="cl">format-padding = 1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/mpd-new]
+</span></span><span class="line"><span class="cl">type = internal/mpd
+</span></span><span class="line"><span class="cl">format-online = &lt;label-song&gt; &lt;icon-prev&gt; &lt;toggle&gt; &lt;icon-next&gt; &lt;icon-random&gt;  &lt;icon-repeat&gt; &lt;label-time&gt; 
+</span></span><span class="line"><span class="cl">format-offline = &lt;label-offline&gt;
+</span></span><span class="line"><span class="cl">label-offline =  no music
+</span></span><span class="line"><span class="cl">icon-prev = 
+</span></span><span class="line"><span class="cl">icon-stop = o
+</span></span><span class="line"><span class="cl">icon-play = 
+</span></span><span class="line"><span class="cl">icon-pause = 
+</span></span><span class="line"><span class="cl">icon-next = 
+</span></span><span class="line"><span class="cl">icon-seekf = &gt;&gt;
+</span></span><span class="line"><span class="cl">icon-random = 
+</span></span><span class="line"><span class="cl">icon-repeat = 
+</span></span><span class="line"><span class="cl">label-song = 𝄞 %title% - %artist% 
+</span></span><span class="line"><span class="cl">label-song-maxlen = 25
+</span></span><span class="line"><span class="cl">label-song-ellipsis = true
+</span></span><span class="line"><span class="cl">toggle-on-foreground = #e60053
+</span></span><span class="line"><span class="cl">toggle-off-foreground = #66
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/pulseaudio]
+</span></span><span class="line"><span class="cl">type = internal/pulseaudio
+</span></span><span class="line"><span class="cl">sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+</span></span><span class="line"><span class="cl">use-ui-max = true
+</span></span><span class="line"><span class="cl">format-volume = &lt;ramp-volume&gt;&lt;label-volume&gt; 
+</span></span><span class="line"><span class="cl">label-volume =  %percentage%%
+</span></span><span class="line"><span class="cl">label-volume-foreground = ${xrdb:polybar.color13}
+</span></span><span class="line"><span class="cl">label-muted = 🔇 
+</span></span><span class="line"><span class="cl">label-muted-foreground = #
+</span></span><span class="line"><span class="cl">label-active-font = 4
+</span></span><span class="line"><span class="cl">bar-volume-width = 10
+</span></span><span class="line"><span class="cl">bar-volume-foreground-0 = #55aa55
+</span></span><span class="line"><span class="cl">bar-volume-foreground-1 = #55aa55
+</span></span><span class="line"><span class="cl">bar-volume-foreground-2 = #55aa55
+</span></span><span class="line"><span class="cl">bar-volume-foreground-3 = #55aa55
+</span></span><span class="line"><span class="cl">bar-volume-foreground-4 = #55aa55
+</span></span><span class="line"><span class="cl">bar-volume-foreground-5 = #f5a70a
+</span></span><span class="line"><span class="cl">bar-volume-foreground-6 = #ff5555
+</span></span><span class="line"><span class="cl">bar-volume-gradient = true
+</span></span><span class="line"><span class="cl">bar-volume-indicator = 
+</span></span><span class="line"><span class="cl">bar-volume-indicator-font = 2
+</span></span><span class="line"><span class="cl">bar-volume-fill = 
+</span></span><span class="line"><span class="cl">bar-volume-fill-font = 2
+</span></span><span class="line"><span class="cl">bar-volume-empty = 
+</span></span><span class="line"><span class="cl">bar-volume-empty-font = 2
+</span></span><span class="line"><span class="cl">bar-volume-empty-foreground = ${colors.foreground-alt}
+</span></span><span class="line"><span class="cl">ramp-volume-0 = 🔈
+</span></span><span class="line"><span class="cl">ramp-volume-1 = 🔉
+</span></span><span class="line"><span class="cl">ramp-volume-2 = 🔊
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/mic]
+</span></span><span class="line"><span class="cl">type = internal/pulseaudio
+</span></span><span class="line"><span class="cl">sink = alsa_input.pci-0000_00_1b.0.analog-stereo
+</span></span><span class="line"><span class="cl">format-volume = &lt;label-volume&gt; &lt;bar-volume&gt;
+</span></span><span class="line"><span class="cl">label-volume =  %percentage%%
+</span></span><span class="line"><span class="cl">label-volume-foreground = ${root.foreground}
+</span></span><span class="line"><span class="cl">label-muted = 🔇 muted
+</span></span><span class="line"><span class="cl">label-muted-foreground = #666
+</span></span><span class="line"><span class="cl">bar-volume-width = 10
+</span></span><span class="line"><span class="cl">bar-volume-foreground-0 = #55aa55
+</span></span><span class="line"><span class="cl">bar-volume-foreground-1 = #55aa55
+</span></span><span class="line"><span class="cl">bar-volume-foreground-2 = #55aa55
+</span></span><span class="line"><span class="cl">bar-volume-foreground-3 = #55aa55
+</span></span><span class="line"><span class="cl">bar-volume-foreground-4 = #55aa55
+</span></span><span class="line"><span class="cl">bar-volume-foreground-5 = #f5a70a
+</span></span><span class="line"><span class="cl">bar-volume-foreground-6 = #ff5555
+</span></span><span class="line"><span class="cl">bar-volume-gradient = false
+</span></span><span class="line"><span class="cl">bar-volume-indicator = 
+</span></span><span class="line"><span class="cl">bar-volume-indicator-font = 2
+</span></span><span class="line"><span class="cl">bar-volume-fill = 
+</span></span><span class="line"><span class="cl">bar-volume-fill-font = 2
+</span></span><span class="line"><span class="cl">bar-volume-empty = 
+</span></span><span class="line"><span class="cl">bar-volume-empty-font = 2
+</span></span><span class="line"><span class="cl">bar-volume-empty-foreground = ${colors.foreground-alt}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/tags]
+</span></span><span class="line"><span class="cl">type = internal/xworkspaces
+</span></span><span class="line"><span class="cl">label-active = %name%
+</span></span><span class="line"><span class="cl">label-active-padding = 2
+</span></span><span class="line"><span class="cl">label-active-background = ${colors.background}
+</span></span><span class="line"><span class="cl">label-active-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">label-occupied = %name%
+</span></span><span class="line"><span class="cl">label-occupied-background = #ff0000
+</span></span><span class="line"><span class="cl">label-empty = %name%
+</span></span><span class="line"><span class="cl">label-empty-padding = 2
+</span></span><span class="line"><span class="cl">label-urgent = %name%
+</span></span><span class="line"><span class="cl">label-urgent-padding = 2
+</span></span><span class="line"><span class="cl">label-urgent-background = ${colors.background}
+</span></span><span class="line"><span class="cl">label-urgent-foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/temperature]
+</span></span><span class="line"><span class="cl">type = internal/temperature
+</span></span><span class="line"><span class="cl">interval = 3
+</span></span><span class="line"><span class="cl">thermal-zone = 0
+</span></span><span class="line"><span class="cl">warn-temperature = 70
+</span></span><span class="line"><span class="cl">format = &lt;ramp&gt;&lt;label&gt;
+</span></span><span class="line"><span class="cl">format-padding = 1
+</span></span><span class="line"><span class="cl">;label = %{A1:termite --exec=&#39;watch sensors&#39; &amp; disown:} %temperature%%{A}
+</span></span><span class="line"><span class="cl">label-foreground = ${xrdb:polybar.color11}
+</span></span><span class="line"><span class="cl">ramp-0 = &#34;&#34;
+</span></span><span class="line"><span class="cl">ramp-0-foreground = ${xrdb:polybar*color4}
+</span></span><span class="line"><span class="cl">ramp-1 = &#34;&#34;
+</span></span><span class="line"><span class="cl">ramp-1-foreground = ${xrdb:polybar*color16}
+</span></span><span class="line"><span class="cl">ramp-2 = &#34;&#34;
+</span></span><span class="line"><span class="cl">ramp-2-foreground = ${xrdb:polybar*color17}
+</span></span><span class="line"><span class="cl">ramp-3 = &#34;&#34;
+</span></span><span class="line"><span class="cl">ramp-3-foreground = ${xrdb:polybar*urgent}
+</span></span><span class="line"><span class="cl">format-warn = &lt;label-warn&gt;
+</span></span><span class="line"><span class="cl">label-warn = &#34; %temperature-c%&#34;
+</span></span><span class="line"><span class="cl">label-warn-padding = 1
+</span></span><span class="line"><span class="cl">label-warn-foreground = ${xrdb:polybar.urgent}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/window_switch]
+</span></span><span class="line"><span class="cl">type = custom/script
+</span></span><span class="line"><span class="cl">interval = 5
+</span></span><span class="line"><span class="cl">label = &#34;%{A1:skippy-xd:} %{A3:skippy-xd:} %output% %{A} %{A}&#34;
+</span></span><span class="line"><span class="cl">exec = echo &#34;&#34;
+</span></span><span class="line"><span class="cl">format = &lt;label&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[module/hijri]
+</span></span><span class="line"><span class="cl">type = custom/script
+</span></span><span class="line"><span class="cl">#exec = &#34;python -c &#39;from ummalqura.hijri_date import HijriDate; from datetime import date; print(HijriDate.get_hijri_date(date.today()))&#39;&#34;
+</span></span><span class="line"><span class="cl">exec = ~/.config/polybar/scripts/hijri.py
+</span></span><span class="line"><span class="cl">tail = false
+</span></span><span class="line"><span class="cl">interval = 180
+</span></span><span class="line"><span class="cl">label-foreground = ${xrdb:polybar.color5}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[bar/dwm]
+</span></span><span class="line"><span class="cl">inherit = settings
+</span></span><span class="line"><span class="cl">background = ${colors.background}
+</span></span><span class="line"><span class="cl">foreground = ${colors.foreground}
+</span></span><span class="line"><span class="cl">override-redirect = true
+</span></span><span class="line"><span class="cl">;width = 55%
+</span></span><span class="line"><span class="cl">;height = 26
+</span></span><span class="line"><span class="cl">;offset-x = 45%
+</span></span><span class="line"><span class="cl">modules-left = date wlan memory cpu pulseaudio backlight-acpi battery 
+</span></span><span class="line"><span class="cl">modules-right = mpd-new
+</span></span><span class="line"><span class="cl">modules-center = window_switch
+</span></span><span class="line"><span class="cl">font-0 =  Segoe UI Emoji
+</span></span><span class="line"><span class="cl">font-1 = DejaVu Sans:pixelsize=11
+</span></span><span class="line"><span class="cl">bottom = true
+</span></span><span class="line"><span class="cl">width = 100%
+</span></span><span class="line"><span class="cl">height = 20
+</span></span><span class="line"><span class="cl">;offset-x = 1%
+</span></span><span class="line"><span class="cl">offset-y = -1
+</span></span><span class="line"><span class="cl">radius = 0
+</span></span><span class="line"><span class="cl">fixed-center = true
+</span></span><span class="line"><span class="cl">line-size = 0
+</span></span><span class="line"><span class="cl">line-color = #f00
+</span></span><span class="line"><span class="cl">border-size = 0
+</span></span><span class="line"><span class="cl">border-color = #00000000
+</span></span><span class="line"><span class="cl">padding-left = 0
+</span></span><span class="line"><span class="cl">padding-right = 1
+</span></span><span class="line"><span class="cl">module-margin-left = 2
+</span></span><span class="line"><span class="cl">module-margin-right = 2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[bar/HDMI-2]
+</span></span><span class="line"><span class="cl">inherit = bar/eDP-1
+</span></span><span class="line"><span class="cl">monitor = HDMI-2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[bar/XWAYLAND0]
+</span></span><span class="line"><span class="cl">inherit = bar/eDP-1
+</span></span><span class="line"><span class="cl">monitor = XWAYLAND0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">; vim:ft=dosini
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="bspwm">BSPWM</h1>
 <blockquote>
@@ -1726,64 +1724,64 @@ management keybindings. Here is both configurations for both programs. You can u
 </span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat <span class="nv">$HOME</span>/.config/bspwm/bspwrc
-
-<span class="c1">#! /bin/sh</span>
-
-sxhkd <span class="p">&amp;</span>
-xsetroot -cursor_name left_ptr
-<span class="nv">$HOME</span>/.config/bspwm/autostart.sh <span class="p">&amp;</span>
-
-bspc monitor -d I II III IV V VI VII VIII IX X
-
-bspc config border_width         <span class="m">2</span>
-bspc config window_gap           <span class="m">7</span>
-bspc config split_ratio          0.52
-bspc config borderless_monocle   <span class="nb">true</span>
-bspc config gapless_monocle      <span class="nb">true</span>
-bspc config top_padding	       	 <span class="m">0</span>
-bspc config split_ratio          0.50
-bspc config borderless_monocle   <span class="nb">true</span>
-bspc config gapless_monocle      <span class="nb">true</span>
-bspc config focus_follows_pointer <span class="nb">true</span>
-bspc config click_to_focus        <span class="nb">true</span>
-bspc config focus_by_distance     <span class="nb">true</span>
-bspc config history_aware_focus   <span class="nb">true</span>
-bspc config single_monocle        <span class="nb">false</span>
-bspc config normal_border_color   <span class="s2">&#34;#4c566a&#34;</span>
-bspc config focused_border_color  <span class="s2">&#34;#5e81ac&#34;</span>
-bspc config presel_feedback_color <span class="s2">&#34;#5e81ac&#34;</span>
-
-bspc rule -a Sxiv <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
-bspc rule -a Chromium <span class="nv">desktop</span><span class="o">=</span><span class="s1">&#39;^2&#39;</span>
-bspc rule -a Kupfer.py <span class="nv">focus</span><span class="o">=</span>on
-bspc rule -a Screenkey <span class="nv">manage</span><span class="o">=</span>off
-<span class="c1">#bspc rule -a URxvt follow=on focus=on</span>
-bspc rule -a feh <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
-bspc rule -a Gpicview <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
-bspc rule -a Pavucontrol <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
-bspc rule -a mpv <span class="nv">state</span><span class="o">=</span>floating <span class="nv">sticky</span><span class="o">=</span>on
-bspc rule -a feh <span class="nv">state</span><span class="o">=</span>floating
-bspc rule -a Nitrogen <span class="nv">state</span><span class="o">=</span>floating
-bspc rule -a Arandr <span class="nv">state</span><span class="o">=</span>floating
-bspc rule -a Galculator <span class="nv">state</span><span class="o">=</span>floating
-bspc rule -a Font-manager <span class="nv">state</span><span class="o">=</span>floating
-bspc rule -a Oblogout <span class="nv">state</span><span class="o">=</span>floating
-<span class="c1">#bspc rule -a Peek state=floating</span>
-<span class="c1">#bspc rule -a Skype state=floating</span>
-<span class="c1">#bspc rule -a Pavucontrol state=floating sticky=on</span>
-<span class="c1">#bspc rule -a Xfce4-appfinder  state=floating sticky=on</span>
-<span class="c1">#bspc rule -a Gpick state=floating sticky=on</span>
-
-
-<span class="c1"># Colors</span>
-bspc config focused_border_color <span class="s2">&#34;#d8dee8&#34;</span>
-bspc config normal_border_color <span class="s2">&#34;#2f343f&#34;</span>
-
-<span class="c1"># Scratchpad </span>
-bspc rule <span class="nv">title</span><span class="o">=</span>scratchpad <span class="nv">class</span><span class="o">=</span>scratchpad <span class="nv">sticky</span><span class="o">=</span>on <span class="nv">state</span><span class="o">=</span>floating <span class="nv">hidden</span><span class="o">=</span>on
-urxvtc -name scratchpad -geometry 75x20 <span class="p">&amp;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat <span class="nv">$HOME</span>/.config/bspwm/bspwrc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#! /bin/sh</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sxhkd <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">xsetroot -cursor_name left_ptr
+</span></span><span class="line"><span class="cl"><span class="nv">$HOME</span>/.config/bspwm/autostart.sh <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">bspc monitor -d I II III IV V VI VII VIII IX X
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">bspc config border_width         <span class="m">2</span>
+</span></span><span class="line"><span class="cl">bspc config window_gap           <span class="m">7</span>
+</span></span><span class="line"><span class="cl">bspc config split_ratio          0.52
+</span></span><span class="line"><span class="cl">bspc config borderless_monocle   <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">bspc config gapless_monocle      <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">bspc config top_padding	       	 <span class="m">0</span>
+</span></span><span class="line"><span class="cl">bspc config split_ratio          0.50
+</span></span><span class="line"><span class="cl">bspc config borderless_monocle   <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">bspc config gapless_monocle      <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">bspc config focus_follows_pointer <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">bspc config click_to_focus        <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">bspc config focus_by_distance     <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">bspc config history_aware_focus   <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">bspc config single_monocle        <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">bspc config normal_border_color   <span class="s2">&#34;#4c566a&#34;</span>
+</span></span><span class="line"><span class="cl">bspc config focused_border_color  <span class="s2">&#34;#5e81ac&#34;</span>
+</span></span><span class="line"><span class="cl">bspc config presel_feedback_color <span class="s2">&#34;#5e81ac&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">bspc rule -a Sxiv <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
+</span></span><span class="line"><span class="cl">bspc rule -a Chromium <span class="nv">desktop</span><span class="o">=</span><span class="s1">&#39;^2&#39;</span>
+</span></span><span class="line"><span class="cl">bspc rule -a Kupfer.py <span class="nv">focus</span><span class="o">=</span>on
+</span></span><span class="line"><span class="cl">bspc rule -a Screenkey <span class="nv">manage</span><span class="o">=</span>off
+</span></span><span class="line"><span class="cl"><span class="c1">#bspc rule -a URxvt follow=on focus=on</span>
+</span></span><span class="line"><span class="cl">bspc rule -a feh <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
+</span></span><span class="line"><span class="cl">bspc rule -a Gpicview <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
+</span></span><span class="line"><span class="cl">bspc rule -a Pavucontrol <span class="nv">state</span><span class="o">=</span>floating <span class="nv">follow</span><span class="o">=</span>on
+</span></span><span class="line"><span class="cl">bspc rule -a mpv <span class="nv">state</span><span class="o">=</span>floating <span class="nv">sticky</span><span class="o">=</span>on
+</span></span><span class="line"><span class="cl">bspc rule -a feh <span class="nv">state</span><span class="o">=</span>floating
+</span></span><span class="line"><span class="cl">bspc rule -a Nitrogen <span class="nv">state</span><span class="o">=</span>floating
+</span></span><span class="line"><span class="cl">bspc rule -a Arandr <span class="nv">state</span><span class="o">=</span>floating
+</span></span><span class="line"><span class="cl">bspc rule -a Galculator <span class="nv">state</span><span class="o">=</span>floating
+</span></span><span class="line"><span class="cl">bspc rule -a Font-manager <span class="nv">state</span><span class="o">=</span>floating
+</span></span><span class="line"><span class="cl">bspc rule -a Oblogout <span class="nv">state</span><span class="o">=</span>floating
+</span></span><span class="line"><span class="cl"><span class="c1">#bspc rule -a Peek state=floating</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#bspc rule -a Skype state=floating</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#bspc rule -a Pavucontrol state=floating sticky=on</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#bspc rule -a Xfce4-appfinder  state=floating sticky=on</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#bspc rule -a Gpick state=floating sticky=on</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Colors</span>
+</span></span><span class="line"><span class="cl">bspc config focused_border_color <span class="s2">&#34;#d8dee8&#34;</span>
+</span></span><span class="line"><span class="cl">bspc config normal_border_color <span class="s2">&#34;#2f343f&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Scratchpad </span>
+</span></span><span class="line"><span class="cl">bspc rule <span class="nv">title</span><span class="o">=</span>scratchpad <span class="nv">class</span><span class="o">=</span>scratchpad <span class="nv">sticky</span><span class="o">=</span>on <span class="nv">state</span><span class="o">=</span>floating <span class="nv">hidden</span><span class="o">=</span>on
+</span></span><span class="line"><span class="cl">urxvtc -name scratchpad -geometry 75x20 <span class="p">&amp;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="sxhkd">SXHKD</h2>
 <div class="highlight"><div class="chroma">
@@ -1995,212 +1993,212 @@ urxvtc -name scratchpad -geometry 75x20 <span class="p">&amp;</span>
 </span><span class="lnt">205
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat <span class="nv">$HOME</span>/.config/sxhkd/sxhkdrc
-
-<span class="c1">#!/bin/sh</span>
-
-<span class="c1"># Reload functions</span>
-<span class="c1">#super + Escape</span>
-<span class="c1">#	&#34;$XDG_CONFIG_HOME&#34;/sxhkd/functions</span>
-
-<span class="c1"># Reload sxhkd</span>
-super + Escape
-  pkill -USR1 -x sxhkd
-
-<span class="c1"># Exit bspwm</span>
-super + <span class="nb">shift</span> + q
-  bspc quit
-
-<span class="c1"># Alternate between the tiled and monocle layout</span>
-super + t
-	bspc desktop -l next
-
-<span class="c1"># Swap the current node and the biggest node</span>
-super + g
-	bspc node -s biggest
-
-<span class="c1"># Kill a window</span>
-super + q
-  bspc node -c
-
-<span class="c1"># Scratchpad</span>
-super + i
-  ~/.local/bin/scratchtoggle
-
-super + Return
-  urxvtc
-
-Alt + Return
-  termite
-
-super + d
-  dmenu_run
-
-super + <span class="o">{</span>h,j,k,l<span class="o">}</span>
-	bspc node -f <span class="o">{</span>west,south,north,east<span class="o">}</span>
-
-super + w
-  <span class="nv">$BROWSER</span>
-
-super + alt + <span class="o">{</span>0-9<span class="o">}</span>
-	mpc -q seek <span class="o">{</span>0-9<span class="o">}</span>0%
-
-super + <span class="o">{</span>_,alt + <span class="o">}{</span>h,j,k,l<span class="o">}</span>
-	bspc node -<span class="o">{</span>f,s<span class="o">}</span> <span class="o">{</span>west,south,north,east<span class="o">}</span>
-
-<span class="c1">#XF86Audio{RaiseVolume,LowerVolume,Mute}</span>
-<span class="c1">#	amixer {-q set Master 5%+,-q set Master 5%-,set Master toggle}</span>
-
-<span class="c1"># set the window state</span>
-super + <span class="o">{</span>t,shift + t,s,f<span class="o">}</span>
-	bspc node -t <span class="o">{</span>tiled,pseudo_tiled,floating,fullscreen<span class="o">}</span>
-
-<span class="c1"># set the node flags</span>
-super + ctrl + <span class="o">{</span>m,x,y,z<span class="o">}</span>
-	bspc node -g <span class="o">{</span>marked,locked,sticky,private<span class="o">}</span>
-
-<span class="c1"># Music</span>
-XF86LaunchA
-  mpc toggle
-
-<span class="c1">#</span>
-<span class="c1"># focus/swap</span>
-<span class="c1">#</span>
-
-<span class="c1"># focus the node in the given direction</span>
-<span class="c1">#super + {_,shift + }{h,j,k,l}</span>
-<span class="c1">#	bspc node -{f,s} {west,south,north,east}</span>
-
-<span class="c1"># focus the node for the given path jump</span>
-super + <span class="o">{</span>p,b,comma,period<span class="o">}</span>
-	bspc node -f @<span class="o">{</span>parent,brother,first,second<span class="o">}</span>
-
-<span class="c1"># focus the next/previous node in the current desktop</span>
-super + <span class="o">{</span>_,shift + <span class="o">}</span>c
-	bspc node -f <span class="o">{</span>next,prev<span class="o">}</span>.local
-
-<span class="c1"># focus the next/previous desktop in the current monitor</span>
-super + bracket<span class="o">{</span>left,right<span class="o">}</span>
-	bspc desktop -f <span class="o">{</span>prev,next<span class="o">}</span>.local
-
-<span class="c1"># focus the last node/desktop</span>
-super + <span class="o">{</span>Tab,semicolon<span class="o">}</span>
-	bspc <span class="o">{</span>node,desktop<span class="o">}</span> -f next
-
-<span class="c1"># focus the older or newer node in the focus history</span>
-super + <span class="o">{</span>o,i<span class="o">}</span>
-	bspc wm -h off<span class="p">;</span> <span class="se">\
-</span><span class="se"></span>	bspc node <span class="o">{</span>older,newer<span class="o">}</span> -f<span class="p">;</span> <span class="se">\
-</span><span class="se"></span>	bspc wm -h on
-
-<span class="c1"># focus or send to the given desktop</span>
-super + <span class="o">{</span>_,shift + <span class="o">}{</span>1-9,0<span class="o">}</span>
-	bspc <span class="o">{</span>desktop -f,node -d<span class="o">}</span> <span class="s1">&#39;^{1-9,10}&#39;</span>
-
-<span class="c1">#</span>
-<span class="c1"># preselect</span>
-<span class="c1">#</span>
-
-<span class="c1"># preselect the direction</span>
-super + ctrl + <span class="o">{</span>h,j,k,l<span class="o">}</span>
-	bspc node -p <span class="o">{</span>west,south,north,east<span class="o">}</span>
-
-<span class="c1"># preselect the ratio</span>
-super + ctrl + <span class="o">{</span>1-9<span class="o">}</span>
-	bspc node -o 0.<span class="o">{</span>1-9<span class="o">}</span>
-
-<span class="c1"># cancel the preselection for the focused node</span>
-super + ctrl + space
-	bspc node -p cancel
-
-<span class="c1"># cancel the preselection for the focused desktop</span>
-super + ctrl + <span class="nb">shift</span> + space
-	bspc query -N -d <span class="p">|</span> xargs -I id -n <span class="m">1</span> bspc node id -p cancel
-
-<span class="c1">#</span>
-<span class="c1"># move/resize</span>
-<span class="c1">#</span>
-
-<span class="c1"># expand a window by moving one of its side outward</span>
-super + <span class="nb">shift</span> + <span class="o">{</span>h,j,k,l<span class="o">}</span>
-	bspc node -z <span class="o">{</span>left -20 0,bottom <span class="m">0</span> 20,top <span class="m">0</span> -20,right <span class="m">20</span> 0<span class="o">}</span>
-
-<span class="c1"># contract a window by moving one of its side inward</span>
-super + alt + <span class="nb">shift</span> + <span class="o">{</span>h,j,k,l<span class="o">}</span>
-	bspc node -z <span class="o">{</span>right -20 0,top <span class="m">0</span> 20,bottom <span class="m">0</span> -20,left <span class="m">20</span> 0<span class="o">}</span>
-
-<span class="c1"># move a floating window</span>
-super + <span class="o">{</span>Left,Down,Up,Right<span class="o">}</span>
-	bspc node -v <span class="o">{</span>-20 0,0 20,0 -20,20 0<span class="o">}</span>
-
-
-
-
-
-<span class="c1">############################################################################ </span>
-<span class="c1">#                                        ▗▄▖       ▗▖                      # </span>
-<span class="c1">#                                        ▝▜▌       ▐▌                      # </span>
-<span class="c1">#     ▐▙█▙  ▟█▙  █▟█▌▗▟██▖ ▟█▙ ▐▙██▖ ▟██▖ ▐▌       ▐▌▟▛  ▟█▙ ▝█ █▌▗▟██▖    # </span>
-<span class="c1">#     ▐▛ ▜▌▐▙▄▟▌ █▘  ▐▙▄▖▘▐▛ ▜▌▐▛ ▐▌ ▘▄▟▌ ▐▌       ▐▙█  ▐▙▄▟▌ █▖█ ▐▙▄▖▘    # </span>
-<span class="c1">#     ▐▌ ▐▌▐▛▀▀▘ █    ▀▀█▖▐▌ ▐▌▐▌ ▐▌▗█▀▜▌ ▐▌       ▐▛█▖ ▐▛▀▀▘ ▐█▛  ▀▀█▖    # </span>
-<span class="c1">#     ▐█▄█▘▝█▄▄▌ █   ▐▄▄▟▌▝█▄█▘▐▌ ▐▌▐▙▄█▌ ▐▙▄      ▐▌▝▙ ▝█▄▄▌  █▌ ▐▄▄▟▌    # </span>
-<span class="c1">#     ▐▌▀▘  ▝▀▀  ▀    ▀▀▀  ▝▀▘ ▝▘ ▝▘ ▀▀▝▘  ▀▀      ▝▘ ▀▘ ▝▀▀   █   ▀▀▀     # </span>
-<span class="c1">#     ▐▌                                                      █▌           # </span>
-<span class="c1">############################################################################ </span>
-
-<span class="c1"># Brightness keys</span>
-XF86MonBrightnessDown
-  xbacklight -5
-
-XF86MonBrightnessUp
-  xbacklight +5
-
-<span class="c1"># Raise Volume</span>
-XF86AudioRaiseVolume
-        amixer <span class="nb">set</span> Master 10%+
-
-
-<span class="c1"># Lower Volume</span>
-XF86AudioLowerVolume
-        amixer <span class="nb">set</span> Master 10%-
-
-<span class="c1"># Mute </span>
-XF86AudioMute
-        amixer -D pulse <span class="nb">set</span> Master 1+ toggle
-
-<span class="c1"># Screenshot</span>
-Print
-    import -window root /tmp/foo.png<span class="p">;</span> cat /tmp/foo.png <span class="p">|</span> xclip -selection clipboard -t image/png
-
-<span class="c1"># File Manager</span>
-XF86Explorer
-    urxvtc -e ranger
-
-<span class="c1">## Mouse buttons</span>
-<span class="c1">#super + button{1-3}</span>
-<span class="c1">#   bspc pointer -g {move,resize_side,resize_corner}</span>
-<span class="c1">#</span>
-<span class="c1">#super + !button{1-3}</span>
-<span class="c1">#   bspc pointer -t %i %i</span>
-<span class="c1">#</span>
-<span class="c1">#super + @button{1-3}</span>
-<span class="c1">#   bspc pointer -u</span>
-<span class="c1">#</span>
-
-<span class="c1"># Music little backward/forward</span>
-alt + bracket<span class="o">{</span>left,right<span class="o">}</span>
-  mpc seek <span class="o">{</span>-10,+10<span class="o">}</span>
-
-<span class="c1"># Music backward/forward</span>
-alt + <span class="nb">shift</span> + bracket<span class="o">{</span>left,right<span class="o">}</span>
-  mpc seek <span class="o">{</span>-120,+120<span class="o">}</span>
- 
-<span class="c1"># Lock the screen</span>
-super + x
-  slock
-
-<span class="c1"># vim:ft=sxhkdrc</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat <span class="nv">$HOME</span>/.config/sxhkd/sxhkdrc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#!/bin/sh</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Reload functions</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#super + Escape</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#	&#34;$XDG_CONFIG_HOME&#34;/sxhkd/functions</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Reload sxhkd</span>
+</span></span><span class="line"><span class="cl">super + Escape
+</span></span><span class="line"><span class="cl">  pkill -USR1 -x sxhkd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Exit bspwm</span>
+</span></span><span class="line"><span class="cl">super + <span class="nb">shift</span> + q
+</span></span><span class="line"><span class="cl">  bspc quit
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Alternate between the tiled and monocle layout</span>
+</span></span><span class="line"><span class="cl">super + t
+</span></span><span class="line"><span class="cl">	bspc desktop -l next
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Swap the current node and the biggest node</span>
+</span></span><span class="line"><span class="cl">super + g
+</span></span><span class="line"><span class="cl">	bspc node -s biggest
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Kill a window</span>
+</span></span><span class="line"><span class="cl">super + q
+</span></span><span class="line"><span class="cl">  bspc node -c
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Scratchpad</span>
+</span></span><span class="line"><span class="cl">super + i
+</span></span><span class="line"><span class="cl">  ~/.local/bin/scratchtoggle
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">super + Return
+</span></span><span class="line"><span class="cl">  urxvtc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Alt + Return
+</span></span><span class="line"><span class="cl">  termite
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">super + d
+</span></span><span class="line"><span class="cl">  dmenu_run
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">super + <span class="o">{</span>h,j,k,l<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc node -f <span class="o">{</span>west,south,north,east<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">super + w
+</span></span><span class="line"><span class="cl">  <span class="nv">$BROWSER</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">super + alt + <span class="o">{</span>0-9<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	mpc -q seek <span class="o">{</span>0-9<span class="o">}</span>0%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">super + <span class="o">{</span>_,alt + <span class="o">}{</span>h,j,k,l<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc node -<span class="o">{</span>f,s<span class="o">}</span> <span class="o">{</span>west,south,north,east<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#XF86Audio{RaiseVolume,LowerVolume,Mute}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#	amixer {-q set Master 5%+,-q set Master 5%-,set Master toggle}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set the window state</span>
+</span></span><span class="line"><span class="cl">super + <span class="o">{</span>t,shift + t,s,f<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc node -t <span class="o">{</span>tiled,pseudo_tiled,floating,fullscreen<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set the node flags</span>
+</span></span><span class="line"><span class="cl">super + ctrl + <span class="o">{</span>m,x,y,z<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc node -g <span class="o">{</span>marked,locked,sticky,private<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Music</span>
+</span></span><span class="line"><span class="cl">XF86LaunchA
+</span></span><span class="line"><span class="cl">  mpc toggle
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># focus/swap</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># focus the node in the given direction</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#super + {_,shift + }{h,j,k,l}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#	bspc node -{f,s} {west,south,north,east}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># focus the node for the given path jump</span>
+</span></span><span class="line"><span class="cl">super + <span class="o">{</span>p,b,comma,period<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc node -f @<span class="o">{</span>parent,brother,first,second<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># focus the next/previous node in the current desktop</span>
+</span></span><span class="line"><span class="cl">super + <span class="o">{</span>_,shift + <span class="o">}</span>c
+</span></span><span class="line"><span class="cl">	bspc node -f <span class="o">{</span>next,prev<span class="o">}</span>.local
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># focus the next/previous desktop in the current monitor</span>
+</span></span><span class="line"><span class="cl">super + bracket<span class="o">{</span>left,right<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc desktop -f <span class="o">{</span>prev,next<span class="o">}</span>.local
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># focus the last node/desktop</span>
+</span></span><span class="line"><span class="cl">super + <span class="o">{</span>Tab,semicolon<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc <span class="o">{</span>node,desktop<span class="o">}</span> -f next
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># focus the older or newer node in the focus history</span>
+</span></span><span class="line"><span class="cl">super + <span class="o">{</span>o,i<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc wm -h off<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	bspc node <span class="o">{</span>older,newer<span class="o">}</span> -f<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	bspc wm -h on
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># focus or send to the given desktop</span>
+</span></span><span class="line"><span class="cl">super + <span class="o">{</span>_,shift + <span class="o">}{</span>1-9,0<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc <span class="o">{</span>desktop -f,node -d<span class="o">}</span> <span class="s1">&#39;^{1-9,10}&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># preselect</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># preselect the direction</span>
+</span></span><span class="line"><span class="cl">super + ctrl + <span class="o">{</span>h,j,k,l<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc node -p <span class="o">{</span>west,south,north,east<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># preselect the ratio</span>
+</span></span><span class="line"><span class="cl">super + ctrl + <span class="o">{</span>1-9<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc node -o 0.<span class="o">{</span>1-9<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># cancel the preselection for the focused node</span>
+</span></span><span class="line"><span class="cl">super + ctrl + space
+</span></span><span class="line"><span class="cl">	bspc node -p cancel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># cancel the preselection for the focused desktop</span>
+</span></span><span class="line"><span class="cl">super + ctrl + <span class="nb">shift</span> + space
+</span></span><span class="line"><span class="cl">	bspc query -N -d <span class="p">|</span> xargs -I id -n <span class="m">1</span> bspc node id -p cancel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># move/resize</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># expand a window by moving one of its side outward</span>
+</span></span><span class="line"><span class="cl">super + <span class="nb">shift</span> + <span class="o">{</span>h,j,k,l<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc node -z <span class="o">{</span>left -20 0,bottom <span class="m">0</span> 20,top <span class="m">0</span> -20,right <span class="m">20</span> 0<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># contract a window by moving one of its side inward</span>
+</span></span><span class="line"><span class="cl">super + alt + <span class="nb">shift</span> + <span class="o">{</span>h,j,k,l<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc node -z <span class="o">{</span>right -20 0,top <span class="m">0</span> 20,bottom <span class="m">0</span> -20,left <span class="m">20</span> 0<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># move a floating window</span>
+</span></span><span class="line"><span class="cl">super + <span class="o">{</span>Left,Down,Up,Right<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	bspc node -v <span class="o">{</span>-20 0,0 20,0 -20,20 0<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">############################################################################ </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                                        ▗▄▖       ▗▖                      # </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                                        ▝▜▌       ▐▌                      # </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ▐▙█▙  ▟█▙  █▟█▌▗▟██▖ ▟█▙ ▐▙██▖ ▟██▖ ▐▌       ▐▌▟▛  ▟█▙ ▝█ █▌▗▟██▖    # </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ▐▛ ▜▌▐▙▄▟▌ █▘  ▐▙▄▖▘▐▛ ▜▌▐▛ ▐▌ ▘▄▟▌ ▐▌       ▐▙█  ▐▙▄▟▌ █▖█ ▐▙▄▖▘    # </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ▐▌ ▐▌▐▛▀▀▘ █    ▀▀█▖▐▌ ▐▌▐▌ ▐▌▗█▀▜▌ ▐▌       ▐▛█▖ ▐▛▀▀▘ ▐█▛  ▀▀█▖    # </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ▐█▄█▘▝█▄▄▌ █   ▐▄▄▟▌▝█▄█▘▐▌ ▐▌▐▙▄█▌ ▐▙▄      ▐▌▝▙ ▝█▄▄▌  █▌ ▐▄▄▟▌    # </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ▐▌▀▘  ▝▀▀  ▀    ▀▀▀  ▝▀▘ ▝▘ ▝▘ ▀▀▝▘  ▀▀      ▝▘ ▀▘ ▝▀▀   █   ▀▀▀     # </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ▐▌                                                      █▌           # </span>
+</span></span><span class="line"><span class="cl"><span class="c1">############################################################################ </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Brightness keys</span>
+</span></span><span class="line"><span class="cl">XF86MonBrightnessDown
+</span></span><span class="line"><span class="cl">  xbacklight -5
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">XF86MonBrightnessUp
+</span></span><span class="line"><span class="cl">  xbacklight +5
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Raise Volume</span>
+</span></span><span class="line"><span class="cl">XF86AudioRaiseVolume
+</span></span><span class="line"><span class="cl">        amixer <span class="nb">set</span> Master 10%+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Lower Volume</span>
+</span></span><span class="line"><span class="cl">XF86AudioLowerVolume
+</span></span><span class="line"><span class="cl">        amixer <span class="nb">set</span> Master 10%-
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Mute </span>
+</span></span><span class="line"><span class="cl">XF86AudioMute
+</span></span><span class="line"><span class="cl">        amixer -D pulse <span class="nb">set</span> Master 1+ toggle
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Screenshot</span>
+</span></span><span class="line"><span class="cl">Print
+</span></span><span class="line"><span class="cl">    import -window root /tmp/foo.png<span class="p">;</span> cat /tmp/foo.png <span class="p">|</span> xclip -selection clipboard -t image/png
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># File Manager</span>
+</span></span><span class="line"><span class="cl">XF86Explorer
+</span></span><span class="line"><span class="cl">    urxvtc -e ranger
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Mouse buttons</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#super + button{1-3}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   bspc pointer -g {move,resize_side,resize_corner}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#super + !button{1-3}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   bspc pointer -t %i %i</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#super + @button{1-3}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   bspc pointer -u</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Music little backward/forward</span>
+</span></span><span class="line"><span class="cl">alt + bracket<span class="o">{</span>left,right<span class="o">}</span>
+</span></span><span class="line"><span class="cl">  mpc seek <span class="o">{</span>-10,+10<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Music backward/forward</span>
+</span></span><span class="line"><span class="cl">alt + <span class="nb">shift</span> + bracket<span class="o">{</span>left,right<span class="o">}</span>
+</span></span><span class="line"><span class="cl">  mpc seek <span class="o">{</span>-120,+120<span class="o">}</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="c1"># Lock the screen</span>
+</span></span><span class="line"><span class="cl">super + x
+</span></span><span class="line"><span class="cl">  slock
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># vim:ft=sxhkdrc</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>I hope you will get a working desktop experience with these configurations. It&rsquo;s easy to manipulate them to your needs.</p>
 <p>Here is a demonstration video.</p>
