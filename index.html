@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.94.2" />
+	<meta name="generator" content="Hugo 0.100.2" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -104,18 +104,34 @@
           created humans from a clinging clot.
           Read! And your Lord is the Most Generous.
           Who taught by the pen.</h3></div>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/install-mpd-on-centos7/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/mpd.png"
+        data-srcset="/images/mpd.png, /images/mpd.png 1.5x, /images/mpd.png 2x"
+        data-sizes="auto"
+        alt="/images/mpd.png"
+        title="How to install MPD on CentOS7" /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/install-mpd-on-centos7/">Installing MPD on CentOS7</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-06-19">2022-06-19</time></span>&nbsp;<span class="post-category">included in <a href="/categories/music/"><i class="far fa-folder fa-fw"></i>music</a>&nbsp;<a href="/categories/software/"><i class="far fa-folder fa-fw"></i>software</a>&nbsp;<a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>linux</a></span></div><div class="content">Why CentOS7? Sometimes in production you have to use CentOS7 even if it has lost its life. Or you might be working with vagrant and only OS you have available is CentOS7.
+Installing packages from official repositories CentOS7 has very limited packages available in official repositories. So you have to install epel-release and nux-dextop packages to extend your packages list.
+Install epel-release By default, epel-release isn&rsquo;t installed. So first step you have to install epel-release.</div><div class="post-footer">
+        <a href="/install-mpd-on-centos7/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/centos7/">CentOS7</a>,&nbsp;<a href="/tags/mpd/">mpd</a>,&nbsp;<a href="/tags/epel-release/">epel-release</a>,&nbsp;<a href="/tags/music/">music</a>,&nbsp;<a href="/tags/mpd/">mpd</a>,&nbsp;<a href="/tags/ncmpcpp/">ncmpcpp</a>,&nbsp;<a href="/tags/mpc/">mpc</a>,&nbsp;<a href="/tags/music-player-daemon/">music player daemon</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/persistent-backdoor-in-linux-environment/">Persistent Backdoor in Linux Environment</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-02-18">2021-02-18</time></span></div><div class="content">So you have hacked a linux box. Next step should be leave a persistent backdoor so in case, it is rebooted, you have to repeat all those steps again and again.
 There are multiple methods available to create a persistent backdoor. Today I&rsquo;m going to explain how you can create a backdoor in webservers.
-Tools needed  socat weevely some common sense  Installing Tools weevely Install weevely if you don&rsquo;t have it.</div><div class="post-footer">
+Tools needed socat weevely some common sense Installing Tools weevely Install weevely if you don&rsquo;t have it.</div><div class="post-footer">
         <a href="/persistent-backdoor-in-linux-environment/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/backdoor/">backdoor</a>,&nbsp;<a href="/tags/persistent-backdoor/">persistent backdoor</a>,&nbsp;<a href="/tags/trojan/">trojan</a>,&nbsp;<a href="/tags/malware/">malware</a>,&nbsp;<a href="/tags/rat/">RAT</a>,&nbsp;<a href="/tags/security/">security</a>,&nbsp;<a href="/tags/weevely/">weevely</a>,&nbsp;<a href="/tags/super-user/">super user</a>,&nbsp;<a href="/tags/privileges-escalation/">privileges escalation</a>,&nbsp;<a href="/tags/pivoting/">pivoting</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/things-to-do-after-new-openbsd-install/">Things to Do After New OpenBSD Install</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-02-10">2021-02-10</time></span></div><div class="content">So you have installed OpenBSD as main OS. Most of the things will work out of the box. But still you have to configure some things.
 Lock screen on suspend/hibernate/resume Login as root and create /etc/apm directory if it isn&rsquo;t there already.
-1 2 3 4 5 6 7  mkdir /etc/apm echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/suspend echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/resume echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/hibernate chmod +x /etc/apm/suspend chmod +x /etc/apm/hibernate chmod +x /etc/apm/resume   On lid closure, machines mostly get suspended.</div><div class="post-footer">
+1 2 3 4 5 6 7 mkdir /etc/apm echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/suspend echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/resume echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/hibernate chmod +x /etc/apm/suspend chmod +x /etc/apm/hibernate chmod +x /etc/apm/resume On lid closure, machines mostly get suspended.</div><div class="post-footer">
         <a href="/things-to-do-after-new-openbsd-install/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/openbsd/">openbsd</a>,&nbsp;<a href="/tags/new-install/">new install</a>,&nbsp;<a href="/tags/encrypted-installation/">encrypted installation</a>,&nbsp;<a href="/tags/todo/">todo</a>,&nbsp;<a href="/tags/backlight-openbsd/">backlight openbsd</a>,&nbsp;<a href="/tags/xorg-setup-openbsd/">xorg setup openbsd</a>,&nbsp;<a href="/tags/openbsd-wsconctl/">openbsd wsconctl</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
@@ -124,7 +140,7 @@ Lock screen on suspend/hibernate/resume Login as root and create /etc/apm direct
 Getting OpenBSD Go to OpenBSD website and download the .img file for your hardware.
 Creating install media If you are on some linux or mac, you can use dd command to burn it to USB drive.
 Suppose your USB drive is appearing as /dev/sdb in lsblk&rsquo;s output:
-1  dd if=install.img of=/dev/sdb bs=1M   Boot from install media Plug the new install media and reboot the system.</div><div class="post-footer">
+1 dd if=install.img of=/dev/sdb bs=1M Boot from install media Plug the new install media and reboot the system.</div><div class="post-footer">
         <a href="/openbsd-encrypted-install/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/openbsd/">openbsd</a>,&nbsp;<a href="/tags/encryption/">encryption</a>,&nbsp;<a href="/tags/full-disk-encryption/">full disk encryption</a>,&nbsp;<a href="/tags/encrypted-openbsd-install/">encrypted openbsd install</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
@@ -155,16 +171,9 @@ Old Linux dotfiles Linux users still can find my dotfiles on Github and Gitlab.<
         </div><h1 class="single-title" itemprop="name headline">
         <a href="/honda125-2021/">Honda125 2021</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-02-01">2021-02-01</time></span></div><div class="content">So here is new bike for 2021. Here are some pictures. I hope you&rsquo;ll like them&hellip;
-Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125</div><div class="post-footer">
+Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 </div><div class="post-footer">
         <a href="/honda125-2021/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/honda/">honda</a>,&nbsp;<a href="/tags/honda125/">honda125</a>,&nbsp;<a href="/tags/hondacg125/">hondacg125</a>,&nbsp;<a href="/tags/bike/">bike</a>,&nbsp;<a href="/tags/ride/">ride</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/linux-filesystem-directory-structure/">Linux Filesystem Directory Structure</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-12-17">2020-12-17</time></span></div><div class="content">Unlike other operating systems, in linux everything starts from /. This is called root directory.
-You can use cd command to navigate in filesystem. If you&rsquo;re inside some directory and you want to know where you&rsquo;re inside the directory tree, just type pwd and it will show you the current working directory. pwd stands for print working directory.
-cd command needs some arguments if you want to visit some other directory.</div><div class="post-footer">
-        <a href="/linux-filesystem-directory-structure/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux-filesystem-directory-structure/">linux filesystem directory structure</a>,&nbsp;<a href="/tags/filesystem/">filesystem</a>,&nbsp;<a href="/tags/pathnames/">pathnames</a>,&nbsp;<a href="/tags/absolute-pathnames/">absolute pathnames</a>,&nbsp;<a href="/tags/relative-pathnames/">relative pathnames</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>

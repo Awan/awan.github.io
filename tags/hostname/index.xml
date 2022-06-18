@@ -15,6 +15,6 @@ Let me give you an example for demonstration.
 FQDN for my mail server is myemailserver.abdullah.today.
 The hostname is myemailserver. The domain is abdullah.today.
 Requirements You will need:
- IP Address Hostname FQDN  Edit hosts file Edit the /etc/hosts file and append this like this.]]></description>
+IP Address Hostname FQDN Edit hosts file Edit the /etc/hosts file and append this like this.]]></description>
 </item></channel>
 </rss>

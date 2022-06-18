@@ -14,8 +14,9 @@
 Requirements You have two options here.
 Gmail account settings Either enable less secure apps in your Google account or Generate an app password.
 Tools being used For Arch Linux:
-1  $ sudo pacman -S msmtp   For Debian, Ubuntu and other Debian derived distributions:
-1  $ sudo apt install -y msmtp   For Fedora, CentOS, Redhat etc:]]></description>
+1 $ sudo pacman -S msmtp For Debian, Ubuntu and other Debian derived distributions:
+1 $ sudo apt install -y msmtp For Fedora, CentOS, Redhat etc:
+1 $ sudo dnf install msmtp Encrypt password Using gpg, we are going to encrypt our password.]]></description>
 </item><item>
     <title>URXVT - Terminal for Geeks</title>
     <link>https://abdullah.today/urxvt/</link>

@@ -4,9 +4,20 @@
         <link>https://abdullah.today/</link>
         <description>An InfoSec related Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
-            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 24 Feb 2022 17:14:04 &#43;0500</lastBuildDate>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 19 Jun 2022 01:32:54 &#43;0500</lastBuildDate>
             <atom:link href="https://abdullah.today/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Installing MPD on CentOS7</title>
+    <link>https://abdullah.today/install-mpd-on-centos7/</link>
+    <pubDate>Sun, 19 Jun 2022 01:32:54 &#43;0500</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/install-mpd-on-centos7/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/mpd.png" referrerpolicy="no-referrer">
+            </div>Why CentOS7? Sometimes in production you have to use CentOS7 even if it has lost its life. Or you might be working with vagrant and only OS you have available is CentOS7.
+Installing packages from official repositories CentOS7 has very limited packages available in official repositories. So you have to install epel-release and nux-dextop packages to extend your packages list.
+Install epel-release By default, epel-release isn&rsquo;t installed. So first step you have to install epel-release.]]></description>
+</item><item>
     <title>Persistent Backdoor in Linux Environment</title>
     <link>https://abdullah.today/persistent-backdoor-in-linux-environment/</link>
     <pubDate>Thu, 18 Feb 2021 14:53:36 &#43;0500</pubDate>
@@ -14,7 +25,7 @@
     <guid>https://abdullah.today/persistent-backdoor-in-linux-environment/</guid>
     <description><![CDATA[So you have hacked a linux box. Next step should be leave a persistent backdoor so in case, it is rebooted, you have to repeat all those steps again and again.
 There are multiple methods available to create a persistent backdoor. Today I&rsquo;m going to explain how you can create a backdoor in webservers.
-Tools needed  socat weevely some common sense  Installing Tools weevely Install weevely if you don&rsquo;t have it.]]></description>
+Tools needed socat weevely some common sense Installing Tools weevely Install weevely if you don&rsquo;t have it.]]></description>
 </item><item>
     <title>Things to Do After New OpenBSD Install</title>
     <link>https://abdullah.today/things-to-do-after-new-openbsd-install/</link>
@@ -23,7 +34,7 @@ Tools needed  socat weevely some common sense  Installing Tools weevely Install 
     <guid>https://abdullah.today/things-to-do-after-new-openbsd-install/</guid>
     <description><![CDATA[So you have installed OpenBSD as main OS. Most of the things will work out of the box. But still you have to configure some things.
 Lock screen on suspend/hibernate/resume Login as root and create /etc/apm directory if it isn&rsquo;t there already.
-1 2 3 4 5 6 7  mkdir /etc/apm echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/suspend echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/resume echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/hibernate chmod +x /etc/apm/suspend chmod +x /etc/apm/hibernate chmod +x /etc/apm/resume   On lid closure, machines mostly get suspended.]]></description>
+1 2 3 4 5 6 7 mkdir /etc/apm echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/suspend echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/resume echo &#34;pkill -USR1 xidle&#34; &gt; /etc/apm/hibernate chmod +x /etc/apm/suspend chmod +x /etc/apm/hibernate chmod +x /etc/apm/resume On lid closure, machines mostly get suspended.]]></description>
 </item><item>
     <title>OpenBSD Encrypted Install</title>
     <link>https://abdullah.today/openbsd-encrypted-install/</link>
@@ -34,7 +45,7 @@ Lock screen on suspend/hibernate/resume Login as root and create /etc/apm direct
 Getting OpenBSD Go to OpenBSD website and download the .img file for your hardware.
 Creating install media If you are on some linux or mac, you can use dd command to burn it to USB drive.
 Suppose your USB drive is appearing as /dev/sdb in lsblk&rsquo;s output:
-1  dd if=install.img of=/dev/sdb bs=1M   Boot from install media Plug the new install media and reboot the system.]]></description>
+1 dd if=install.img of=/dev/sdb bs=1M Boot from install media Plug the new install media and reboot the system.]]></description>
 </item><item>
     <title>OpenBSD Dedicated Dotfiles</title>
     <link>https://abdullah.today/openbsd-dedicated-dotfiles/</link>
@@ -55,7 +66,7 @@ Old Linux dotfiles Linux users still can find my dotfiles on Github and Gitlab.]
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/bike8.jpg" referrerpolicy="no-referrer">
             </div>So here is new bike for 2021. Here are some pictures. I hope you&rsquo;ll like them&hellip;
-Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125  Honda 125" Honda 125]]></description>
+Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 Honda 125 ]]></description>
 </item><item>
     <title>Linux Filesystem Directory Structure</title>
     <link>https://abdullah.today/linux-filesystem-directory-structure/</link>
@@ -75,8 +86,9 @@ cd command needs some arguments if you want to visit some other directory.]]></d
 Requirements You have two options here.
 Gmail account settings Either enable less secure apps in your Google account or Generate an app password.
 Tools being used For Arch Linux:
-1  $ sudo pacman -S msmtp   For Debian, Ubuntu and other Debian derived distributions:
-1  $ sudo apt install -y msmtp   For Fedora, CentOS, Redhat etc:]]></description>
+1 $ sudo pacman -S msmtp For Debian, Ubuntu and other Debian derived distributions:
+1 $ sudo apt install -y msmtp For Fedora, CentOS, Redhat etc:
+1 $ sudo dnf install msmtp Encrypt password Using gpg, we are going to encrypt our password.]]></description>
 </item><item>
     <title>SSH Passwordless Authentication</title>
     <link>https://abdullah.today/ssh-passwordless-authentication/</link>
@@ -86,7 +98,7 @@ Tools being used For Arch Linux:
     <description><![CDATA[SSH login without password? Yeah you heard it right. Today I&rsquo;m going to teach you how you can enable passwordless authentication in ssh.
 You can login to your linux servers without password. How? Keep reading&hellip;
 Edit the SSH main configuration file.
-1 2 3 4 5 6 7 8 9  $ sudo vi /etc/ssh/sshd_config ... PubkeyAuthentication yes ...   Edit this line. If you see no, change it to yes.]]></description>
+1 2 3 4 5 6 7 8 9 $ sudo vi /etc/ssh/sshd_config ... PubkeyAuthentication yes ... Edit this line. If you see no, change it to yes. If this line is commented out, uncomment it.]]></description>
 </item><item>
     <title>How to Share Android Screen</title>
     <link>https://abdullah.today/how-to-share-android-screen/</link>
@@ -95,17 +107,7 @@ Edit the SSH main configuration file.
     <guid>https://abdullah.today/how-to-share-android-screen/</guid>
     <description><![CDATA[There are times you want to share your android phone&rsquo;s screen with your Linux/Windows desktop. Like if you have got broken screen or for some purpose.
 So this post may help you.
-Requirements  Android phone ADB installed  In Arch Linux, you can install ADB with:
-1 2  $ sudo pacman -S android-tools   There is a program which is used to screen sharing. You can install it using AUR in Arch Linux, use apt if you are using Ubuntu/Debian.]]></description>
-</item><item>
-    <title>Kalilinux Persistence</title>
-    <link>https://abdullah.today/kalilinux-persistence/</link>
-    <pubDate>Tue, 14 Jul 2020 17:22:11 &#43;0500</pubDate>
-    <author>Author</author>
-    <guid>https://abdullah.today/kalilinux-persistence/</guid>
-    <description><![CDATA[Getting Kalilinux image Go to Downloads and download latest live image. Make sure you don&rsquo;t download the installer image.
-Make USB bootable Use dd to write the kali image to USB.
-In linux environment:
-1  # dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M   Replace kali-linux-xxxx.x-live-amd64.iso with downloaded iso iamge path and /dev/sdX with path of your USB device. You can find USB path by running lsblk in terminal. Make sure you don&rsquo;t select the existing linux installation drive.]]></description>
+Requirements Android phone ADB installed In Arch Linux, you can install ADB with:
+1 2 $ sudo pacman -S android-tools There is a program which is used to screen sharing. You can install it using AUR in Arch Linux, use apt if you are using Ubuntu/Debian.]]></description>
 </item></channel>
 </rss>

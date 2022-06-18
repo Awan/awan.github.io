@@ -18,6 +18,6 @@
     <author>Author</author>
     <guid>https://abdullah.today/encrypted-crux/</guid>
     <description><![CDATA[How to install fully encrypted CRUX This post is for crux users who wanna secure their crux installation.
-Partitioning I&rsquo;m gonna use two partitions. First boot partition will be unencrypted which holds kernel. I use secure boot with my own keys. You can find a post in my blog how to do that. and I have some ports too for secure boot.    ;(adsbygoogle = window.adsbygoogle || []).push({})  Unencrypted Boot Partition    ;(adsbygoogle = window.]]></description>
+Partitioning I&rsquo;m gonna use two partitions. First boot partition will be unencrypted which holds kernel. I use secure boot with my own keys. You can find a post in my blog how to do that. and I have some ports too for secure boot. Unencrypted Boot Partition Create a partition more than 200 Mbs for boot ESP with gdisk code ef00.]]></description>
 </item></channel>
 </rss>

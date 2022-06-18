@@ -12,7 +12,7 @@
     <guid>https://abdullah.today/EFISTUB/</guid>
     <description><![CDATA[So in this post I&rsquo;m gonna guide you how you can use efistub, a feature which you can use to boot the kernel without an extra boot manager(grub, systemd-boot, rEFInd etc.)
 Create a boot entry using efibootmgr.
-1  # efibootmgr --create --disk /dev/sda --part 1 --label Debian --loader /vmlinuz --unicode &#34;root=/dev/sda2 rw initrd=\initrd.img&#34; --verbose   Explaination of the command.
-1 2 3 4 5 6 7  --create &#39;creates a new boot entry&#39; --disk &#39;disk where you wanna create the boot entry&#39; --part &#39;partition number&#39; --label &#39;the label for new entry&#39; --loader &#39;loader to boot, it&#39;s vmlinuz in this example&#39; --unicode &#39;kernel parameters you can define here like initrd, swap, encrypted container for root&#39; --verbose &#39;let it verbose&#39;   I have an encrypted installation on my machine so here is how I create an entry for me.]]></description>
+1 # efibootmgr --create --disk /dev/sda --part 1 --label Debian --loader /vmlinuz --unicode &#34;root=/dev/sda2 rw initrd=\initrd.img&#34; --verbose Explaination of the command.
+1 2 3 4 5 6 7 --create &#39;creates a new boot entry&#39; --disk &#39;disk where you wanna create the boot entry&#39; --part &#39;partition number&#39; --label &#39;the label for new entry&#39; --loader &#39;loader to boot, it&#39;s vmlinuz in this example&#39; --unicode &#39;kernel parameters you can define here like initrd, swap, encrypted container for root&#39; --verbose &#39;let it verbose&#39; I have an encrypted installation on my machine so here is how I create an entry for me.]]></description>
 </item></channel>
 </rss>

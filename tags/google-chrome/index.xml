@@ -12,6 +12,6 @@
     <guid>https://abdullah.today/chrome/</guid>
     <description><![CDATA[You&rsquo;ll have to admit google chrome is super fast. Along with other plugins I love to use it as main browser. But unfortunately it isn&rsquo;t in debian repositories.
 So how to install it? Here is the procedure you can follow to get latest chrome from google.
-1 2 3  $ echo &#39;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&#39; | sudo tee -a /etc/apt/sources.list &gt; /dev/null $ sudo apt update $ sudo apt install -y google-chrome-stable      ;(adsbygoogle = window.]]></description>
+1 2 3 $ echo &#39;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&#39; | sudo tee -a /etc/apt/sources.list &gt; /dev/null $ sudo apt update $ sudo apt install -y google-chrome-stable Enjoy using Chrome.]]></description>
 </item></channel>
 </rss>

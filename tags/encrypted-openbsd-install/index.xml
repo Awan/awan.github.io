@@ -14,6 +14,6 @@
 Getting OpenBSD Go to OpenBSD website and download the .img file for your hardware.
 Creating install media If you are on some linux or mac, you can use dd command to burn it to USB drive.
 Suppose your USB drive is appearing as /dev/sdb in lsblk&rsquo;s output:
-1  dd if=install.img of=/dev/sdb bs=1M   Boot from install media Plug the new install media and reboot the system.]]></description>
+1 dd if=install.img of=/dev/sdb bs=1M Boot from install media Plug the new install media and reboot the system.]]></description>
 </item></channel>
 </rss>

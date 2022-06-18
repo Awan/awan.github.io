@@ -11,9 +11,9 @@
     <author>Author</author>
     <guid>https://abdullah.today/tzdata/</guid>
     <description><![CDATA[Sometimes we install systems and don&rsquo;t care about setting timezone. Or we travel to some other countries where timezone is different. So here is how you can change timezone in Debian, Ubuntu, Mint, Raspbian and almost all distributions derived from Debian.
-1  # dpkg-reconfigure tzdata   You will see a dialog box opened.
+1 # dpkg-reconfigure tzdata You will see a dialog box opened.
 Select your continent.
 Hit enter after selecting your continent using arrow keys.
-Select your city and hit Enter.]]></description>
+Select your city and hit Enter. Voila, you are done!]]></description>
 </item></channel>
 </rss>

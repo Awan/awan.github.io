@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.94.2" />
+	<meta name="generator" content="Hugo 0.100.2" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -105,13 +105,21 @@
           Read! And your Lord is the Most Generous.
           Who taught by the pen.</h3></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/linux-filesystem-directory-structure/">Linux Filesystem Directory Structure</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-12-17">2020-12-17</time></span></div><div class="content">Unlike other operating systems, in linux everything starts from /. This is called root directory.
+You can use cd command to navigate in filesystem. If you&rsquo;re inside some directory and you want to know where you&rsquo;re inside the directory tree, just type pwd and it will show you the current working directory. pwd stands for print working directory.
+cd command needs some arguments if you want to visit some other directory.</div><div class="post-footer">
+        <a href="/linux-filesystem-directory-structure/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux-filesystem-directory-structure/">linux filesystem directory structure</a>,&nbsp;<a href="/tags/filesystem/">filesystem</a>,&nbsp;<a href="/tags/pathnames/">pathnames</a>,&nbsp;<a href="/tags/absolute-pathnames/">absolute pathnames</a>,&nbsp;<a href="/tags/relative-pathnames/">relative pathnames</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/send-mail-using-gmail-from-terminal/">Send Mail Using Gmail using Command Line</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-11-29">2020-11-29</time></span></div><div class="content">Yeah, you can send mail from your gmail account using command line.
 Requirements You have two options here.
 Gmail account settings Either enable less secure apps in your Google account or Generate an app password.
 Tools being used For Arch Linux:
-1  $ sudo pacman -S msmtp   For Debian, Ubuntu and other Debian derived distributions:
-1  $ sudo apt install -y msmtp   For Fedora, CentOS, Redhat etc:</div><div class="post-footer">
+1 $ sudo pacman -S msmtp For Debian, Ubuntu and other Debian derived distributions:
+1 $ sudo apt install -y msmtp For Fedora, CentOS, Redhat etc:
+1 $ sudo dnf install msmtp Encrypt password Using gpg, we are going to encrypt our password.</div><div class="post-footer">
         <a href="/send-mail-using-gmail-from-terminal/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mail/">mail</a>,&nbsp;<a href="/tags/gmail/">gmail</a>,&nbsp;<a href="/tags/msmtp/">msmtp</a>,&nbsp;<a href="/tags/mutt/">mutt</a>,&nbsp;<a href="/tags/terminal/">terminal</a>,&nbsp;<a href="/tags/suckless/">suckless</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
@@ -119,15 +127,15 @@ Tools being used For Arch Linux:
     </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-10-06">2020-10-06</time></span></div><div class="content">SSH login without password? Yeah you heard it right. Today I&rsquo;m going to teach you how you can enable passwordless authentication in ssh.
 You can login to your linux servers without password. How? Keep reading&hellip;
 Edit the SSH main configuration file.
-1 2 3 4 5 6 7 8 9  $ sudo vi /etc/ssh/sshd_config ... PubkeyAuthentication yes ...   Edit this line. If you see no, change it to yes.</div><div class="post-footer">
+1 2 3 4 5 6 7 8 9 $ sudo vi /etc/ssh/sshd_config ... PubkeyAuthentication yes ... Edit this line. If you see no, change it to yes. If this line is commented out, uncomment it.</div><div class="post-footer">
         <a href="/ssh-passwordless-authentication/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ssh/">ssh</a>,&nbsp;<a href="/tags/passwordless-authentication/">passwordless authentication</a>,&nbsp;<a href="/tags/login/">login</a>,&nbsp;<a href="/tags/pubkey-authentication/">pubkey authentication</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/how-to-share-android-screen/">How to Share Android Screen</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-09-15">2020-09-15</time></span></div><div class="content">There are times you want to share your android phone&rsquo;s screen with your Linux/Windows desktop. Like if you have got broken screen or for some purpose.
 So this post may help you.
-Requirements  Android phone ADB installed  In Arch Linux, you can install ADB with:
-1 2  $ sudo pacman -S android-tools   There is a program which is used to screen sharing. You can install it using AUR in Arch Linux, use apt if you are using Ubuntu/Debian.</div><div class="post-footer">
+Requirements Android phone ADB installed In Arch Linux, you can install ADB with:
+1 2 $ sudo pacman -S android-tools There is a program which is used to screen sharing. You can install it using AUR in Arch Linux, use apt if you are using Ubuntu/Debian.</div><div class="post-footer">
         <a href="/how-to-share-android-screen/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/android/">android</a>,&nbsp;<a href="/tags/adb/">adb</a>,&nbsp;<a href="/tags/scrcpy/">scrcpy</a>,&nbsp;<a href="/tags/android-debugging/">android-debugging</a>,&nbsp;<a href="/tags/screensharing/">screensharing</a>,&nbsp;<a href="/tags/screen-sharing/">screen sharing</a>,&nbsp;<a href="/tags/android-debugging-bride/">android debugging bride</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
@@ -135,28 +143,18 @@ Requirements  Android phone ADB installed  In Arch Linux, you can install ADB wi
     </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-07-14">2020-07-14</time></span></div><div class="content">Getting Kalilinux image Go to Downloads and download latest live image. Make sure you don&rsquo;t download the installer image.
 Make USB bootable Use dd to write the kali image to USB.
 In linux environment:
-1  # dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M   Replace kali-linux-xxxx.x-live-amd64.iso with downloaded iso iamge path and /dev/sdX with path of your USB device. You can find USB path by running lsblk in terminal. Make sure you don&rsquo;t select the existing linux installation drive.</div><div class="post-footer">
+1 # dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M Replace kali-linux-xxxx.x-live-amd64.iso with downloaded iso iamge path and /dev/sdX with path of your USB device. You can find USB path by running lsblk in terminal. Make sure you don&rsquo;t select the existing linux installation drive.</div><div class="post-footer">
         <a href="/kalilinux-persistence/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/kali-linux/">kali linux</a>,&nbsp;<a href="/tags/kali-linux-persistence/">kali linux persistence</a>,&nbsp;<a href="/tags/usb/">usb</a>,&nbsp;<a href="/tags/linux-in-usb/">linux in usb</a>,&nbsp;<a href="/tags/bootable/">bootable</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/configure-git/">Git Initial Setup</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-07-12">2020-07-12</time></span></div><div class="content">How to configure Git Git is a version control system by Linus Torvalds, same person who wrote linux kernel.
 Installation In Archlinux, you can install git by:
-1  $ sudo pacman -S git   In Debian and derived distributions:
-1  $ sudo apt install -y git   Configuration You have to tell git about the author who committed changes so lets do it.
+1 $ sudo pacman -S git In Debian and derived distributions:
+1 $ sudo apt install -y git Configuration You have to tell git about the author who committed changes so lets do it.
 Name and Email Tell git about your name and email:</div><div class="post-footer">
         <a href="/configure-git/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/git/">git</a>,&nbsp;<a href="/tags/initial-git-setup/">initial git setup</a>,&nbsp;<a href="/tags/git-configuration/">git configuration</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/fqdn/">How to set FQDN in Linux</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://abdullah.today" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Abdullah Khabir</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-06-21">2020-06-21</time></span></div><div class="content">What is FQDN? FQDN stands for Fully Qualified Domain Name. It&rsquo;s complete domain name for a computer or host on the internet. FQDN is made of two things: hostname and domain name.
-Let me give you an example for demonstration.
-FQDN for my mail server is myemailserver.abdullah.today.
-The hostname is myemailserver. The domain is abdullah.today.
-Requirements You will need:
- IP Address Hostname FQDN  Edit hosts file Edit the /etc/hosts file and append this like this.</div><div class="post-footer">
-        <a href="/fqdn/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/fqdn/">fqdn</a>,&nbsp;<a href="/tags/hostname/">hostname</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>

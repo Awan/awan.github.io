@@ -14,6 +14,6 @@
 Installation Arch Linux has no graphical installer. You have to install using CLI.
 Installation media creation Go to Downloads page and select a nearby mirror. Download the iso file. If you&rsquo;re on Windows, you can use rufus to create a bootable media.
 On linux, you can use dd:
-1  dd if=downloaded iso file of=/dev/sdX status=progress   where X is your USB device&rsquo;s ID.]]></description>
+1 dd if=downloaded iso file of=/dev/sdX status=progress where X is your USB device&rsquo;s ID.]]></description>
 </item></channel>
 </rss>

@@ -13,6 +13,6 @@
     <description><![CDATA[Getting Kalilinux image Go to Downloads and download latest live image. Make sure you don&rsquo;t download the installer image.
 Make USB bootable Use dd to write the kali image to USB.
 In linux environment:
-1  # dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M   Replace kali-linux-xxxx.x-live-amd64.iso with downloaded iso iamge path and /dev/sdX with path of your USB device. You can find USB path by running lsblk in terminal. Make sure you don&rsquo;t select the existing linux installation drive.]]></description>
+1 # dd if=kali-linux-xxxx.x-live-amd64.iso of=/dev/sdX status=progress bs=4M Replace kali-linux-xxxx.x-live-amd64.iso with downloaded iso iamge path and /dev/sdX with path of your USB device. You can find USB path by running lsblk in terminal. Make sure you don&rsquo;t select the existing linux installation drive.]]></description>
 </item></channel>
 </rss>

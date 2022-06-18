@@ -12,6 +12,6 @@
     <guid>https://abdullah.today/persistent-backdoor-in-linux-environment/</guid>
     <description><![CDATA[So you have hacked a linux box. Next step should be leave a persistent backdoor so in case, it is rebooted, you have to repeat all those steps again and again.
 There are multiple methods available to create a persistent backdoor. Today I&rsquo;m going to explain how you can create a backdoor in webservers.
-Tools needed  socat weevely some common sense  Installing Tools weevely Install weevely if you don&rsquo;t have it.]]></description>
+Tools needed socat weevely some common sense Installing Tools weevely Install weevely if you don&rsquo;t have it.]]></description>
 </item></channel>
 </rss>

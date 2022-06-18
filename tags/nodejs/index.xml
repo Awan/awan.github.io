@@ -10,6 +10,6 @@
     <pubDate>Mon, 16 Sep 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://abdullah.today/latest-nodejs-in-debian/</guid>
-    <description><![CDATA[latest NODE installation in debian 1 2 3 4  $ echo &#39;deb https://deb.nodesource.com/node_12.x sid main&#39; | sudo tee -a /etc/apt/sources.list &gt; /dev/null $ sudo apt update $ sudo apt install -y nodejs   Enjoy using NODEjs!]]></description>
+    <description><![CDATA[latest NODE installation in debian 1 2 3 4 $ echo &#39;deb https://deb.nodesource.com/node_12.x sid main&#39; | sudo tee -a /etc/apt/sources.list &gt; /dev/null $ sudo apt update $ sudo apt install -y nodejs Enjoy using NODEjs!]]></description>
 </item></channel>
 </rss>

@@ -12,7 +12,7 @@
     <guid>https://abdullah.today/how-to-share-android-screen/</guid>
     <description><![CDATA[There are times you want to share your android phone&rsquo;s screen with your Linux/Windows desktop. Like if you have got broken screen or for some purpose.
 So this post may help you.
-Requirements  Android phone ADB installed  In Arch Linux, you can install ADB with:
-1 2  $ sudo pacman -S android-tools   There is a program which is used to screen sharing. You can install it using AUR in Arch Linux, use apt if you are using Ubuntu/Debian.]]></description>
+Requirements Android phone ADB installed In Arch Linux, you can install ADB with:
+1 2 $ sudo pacman -S android-tools There is a program which is used to screen sharing. You can install it using AUR in Arch Linux, use apt if you are using Ubuntu/Debian.]]></description>
 </item></channel>
 </rss>
