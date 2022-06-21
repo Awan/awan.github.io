@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>continuous integration - Category - Abdullah Khabir</title>
+        <link>https://abdullah.today/categories/continuous-integration/</link>
+        <description>continuous integration - Category - Abdullah Khabir</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>abdullah@abdullah.today (Abdullah Khabir)</managingEditor>
+            <webMaster>abdullah@abdullah.today (Abdullah Khabir)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 21 Jun 2022 18:07:52 &#43;0500</lastBuildDate><atom:link href="https://abdullah.today/categories/continuous-integration/" rel="self" type="application/rss+xml" /><item>
+    <title>Trigger a Jenkins Build on Every Code Push Event</title>
+    <link>https://abdullah.today/trigger-a-jenkins-build-on-every-code-push-event/</link>
+    <pubDate>Tue, 21 Jun 2022 18:07:52 &#43;0500</pubDate>
+    <author>Author</author>
+    <guid>https://abdullah.today/trigger-a-jenkins-build-on-every-code-push-event/</guid>
+    <description><![CDATA[Configure GitHub project Go to your GitHub repository settings and click on Webhooks. Click on add a webhook.
+In payload URL, add your jenkins installation URL + &lsquo;/github-webhook/&rsquo;. For example if my jenkins is running at https://jenkins.example.com:8080, I&rsquo;ll add https://jenkins.example.com:8080/github-webhook/. Disable SSL verification. Select send me everything or you can select only push events. and lastly check the box which says Active.
+Configure Jenkins project Go to your jenkins project configuration.]]></description>
+</item></channel>
+</rss>
