@@ -31,7 +31,7 @@ Suppose your USB drive is appearing as /dev/sdb in lsblk&rsquo;s output:
     <author>Author</author>
     <guid>https://abdullah.today/openbsd-dedicated-dotfiles/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/images/think-securely.png" referrerpolicy="no-referrer">
+                <img src="/images/think-securely.jpeg" referrerpolicy="no-referrer">
             </div>OpenBSD as new OS I keep my dotfiles on Github/Gitlab. I had to configure many things so I started a dedicated repository.
 New Dotfiles I created a new directory dot in my home dir. And cherry picked some of my old dots. I have pushed my new dot directory to Git[hub,lab] as [Awan,Abdullah]/dot respectively.
 Old Linux dotfiles Linux users still can find my dotfiles on Github and Gitlab.]]></description>

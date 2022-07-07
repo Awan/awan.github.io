@@ -10,7 +10,9 @@
     <pubDate>Sat, 06 Jun 2020 18:13:35 &#43;0500</pubDate>
     <author>Author</author>
     <guid>https://abdullah.today/tmux/</guid>
-    <description><![CDATA[TMUX tmux is a terminal multiplexer. You can run programs inside a tmux session, detach session and continue running programs in background, reattach later.
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/tmux.jpeg" referrerpolicy="no-referrer">
+            </div>TMUX tmux is a terminal multiplexer. You can run programs inside a tmux session, detach session and continue running programs in background, reattach later.
 Installation tmux is available in all linux distributions. You can install it using your distribution&rsquo;s package manager. In Arch Linux:
 1 $ sudo pacman -S tmux Start You can start tmux by invoking tmux command inside your terminal.
 Keybindings The default modifier key is Ctrl + b followed by a key.]]></description>

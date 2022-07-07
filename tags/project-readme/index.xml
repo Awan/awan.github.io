@@ -10,7 +10,9 @@
     <pubDate>Mon, 11 May 2020 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://abdullah.today/github-readme/</guid>
-    <description><![CDATA[A picture is worth 1000 words. Working with github repos, sometimes you want to include a screenshot in your repos. Today I&rsquo;ll help you getting this done in one step.
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/readme.jpeg" referrerpolicy="no-referrer">
+            </div>A picture is worth 1000 words. Working with github repos, sometimes you want to include a screenshot in your repos. Today I&rsquo;ll help you getting this done in one step.
 Go to your repo page and click on issues.
 Click new issue
 Take a screenshot you wanna add and paste it there using Control + V or whatever you like.

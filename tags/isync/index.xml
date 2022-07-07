@@ -10,7 +10,9 @@
     <pubDate>Tue, 17 Sep 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://abdullah.today/mutt/</guid>
-    <description><![CDATA[why commandline? TL;DR
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/mutt.jpeg" referrerpolicy="no-referrer">
+            </div>why commandline? TL;DR
 powerful and efficient!
 I have been creating multiple accounts for email since 2009. Some of the accounts I still have them in 2019 and others I don&rsquo;t have access to. I realized that having your own email server on your own domain is a good thing. So I started creating mail server. I did that well. Learned a lot.
 As you know I like things to keep minimalistic yet powerful than most written GUI apps.]]></description>

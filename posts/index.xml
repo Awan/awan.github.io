@@ -20,7 +20,7 @@ Configure Jenkins project Go to your jenkins project configuration.]]></descript
     <author>Author</author>
     <guid>https://abdullah.today/install-mpd-on-centos7/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/images/mpd.png" referrerpolicy="no-referrer">
+                <img src="/images/mpd.jpeg" referrerpolicy="no-referrer">
             </div>Why CentOS7? Sometimes in production you have to use CentOS7 even if it has lost its life. Or you might be working with vagrant and only OS you have available is CentOS7.
 Installing packages from official repositories CentOS7 has very limited packages available in official repositories. So you have to install epel-release and nux-dextop packages to extend your packages list.
 Install epel-release By default, epel-release isn&rsquo;t installed. So first step you have to install epel-release.]]></description>
@@ -60,7 +60,7 @@ Suppose your USB drive is appearing as /dev/sdb in lsblk&rsquo;s output:
     <author>Author</author>
     <guid>https://abdullah.today/openbsd-dedicated-dotfiles/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/images/think-securely.png" referrerpolicy="no-referrer">
+                <img src="/images/think-securely.jpeg" referrerpolicy="no-referrer">
             </div>OpenBSD as new OS I keep my dotfiles on Github/Gitlab. I had to configure many things so I started a dedicated repository.
 New Dotfiles I created a new directory dot in my home dir. And cherry picked some of my old dots. I have pushed my new dot directory to Git[hub,lab] as [Awan,Abdullah]/dot respectively.
 Old Linux dotfiles Linux users still can find my dotfiles on Github and Gitlab.]]></description>
